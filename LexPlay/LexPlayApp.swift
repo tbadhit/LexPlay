@@ -13,8 +13,10 @@ struct LexPlayApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            Change the view
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            AlphabetRecognitionView()
         }
     }
 }
