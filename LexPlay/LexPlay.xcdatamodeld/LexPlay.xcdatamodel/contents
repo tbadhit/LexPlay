@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlphabetEntity" representedClassName="AlphabetEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="char" attributeType="String"/>
+        <attribute name="letterCase" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="AvatarEntity" representedClassName="AvatarEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="image" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="LessonEntity" representedClassName="LessonEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="alphabets" maxCount="1" deletionRule="Nullify" destinationEntity="UserAlphabetEntity" inverseName="lesson" inverseEntity="UserAlphabetEntity"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="lessons" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="NotificationEntity" representedClassName="NotificationEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="active" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="UserAlphabetEntity" representedClassName="UserAlphabetEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="hasDifficulty" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="imageAssociation" optional="YES" attributeType="Binary"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="alphabet" maxCount="1" deletionRule="Nullify" destinationEntity="AlphabetEntity"/>
+        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LessonEntity" inverseName="alphabets" inverseEntity="LessonEntity"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="alphabets" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="login" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="alphabets" toMany="YES" deletionRule="Nullify" destinationEntity="UserAlphabetEntity" inverseName="user" inverseEntity="UserAlphabetEntity"/>
+        <relationship name="avatar" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarEntity"/>
+        <relationship name="lessons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LessonEntity" inverseName="user" inverseEntity="LessonEntity"/>
+        <relationship name="notification" maxCount="1" deletionRule="Nullify" destinationEntity="NotificationEntity"/>
+    </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="UserEntity" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="NotificationEntity" positionX="-63" positionY="-9" width="128" height="74"/>
+        <element name="Item" positionX="-45" positionY="27" width="128" height="44"/>
+        <element name="AlphabetEntity" positionX="-36" positionY="36" width="128" height="74"/>
+        <element name="UserAlphabetEntity" positionX="-18" positionY="63" width="128" height="119"/>
+        <element name="LessonEntity" positionX="0" positionY="90" width="128" height="89"/>
+        <element name="AvatarEntity" positionX="18" positionY="99" width="128" height="74"/>
     </elements>
 </model>
