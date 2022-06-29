@@ -16,6 +16,10 @@
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
+		1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraModel.swift */; };
+		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
+		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
+		16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025082286C642E008D9D15 /* StrokeTextLabel.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +35,10 @@
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
+		1602507B286C63CD008D9D15 /* CameraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		16025082286C642E008D9D15 /* StrokeTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeTextLabel.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,11 +74,11 @@
 			isa = PBXGroup;
 			children = (
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
+				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
+				1602507A286C63BF008D9D15 /* Models */,
 				119C5996286B25CD00B87768 /* Domain */,
 				119C5997286B27A400B87768 /* Controller */,
-				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
-				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
-				114CDF182866A05D0008273B /* ContentView.swift */,
+				1602507D286C63DB008D9D15 /* Views */,
 				114CDF1A2866A0600008273B /* Assets.xcassets */,
 				114CDF1F2866A0600008273B /* Persistence.swift */,
 				114CDF212866A0600008273B /* LexPlay.xcdatamodeld */,
@@ -110,6 +118,26 @@
 				11166ABF2869C08300E32B87 /* Alphabet.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		1602507A286C63BF008D9D15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1602507B286C63CD008D9D15 /* CameraModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1602507D286C63DB008D9D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1602507F286C6409008D9D15 /* CameraPreview.swift */,
+				1602507E286C6409008D9D15 /* CameraView.swift */,
+				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
+				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
+				114CDF182866A05D0008273B /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,11 +212,15 @@
 			files = (
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
+				1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
+				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
+				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
+				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 			);
@@ -319,10 +351,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -350,10 +384,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

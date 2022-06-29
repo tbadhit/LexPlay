@@ -16,7 +16,8 @@ struct LexPlayApp: App {
 //            Change the view
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            AlphabetRecognitionView()
+//          CameraView()
+          AlphabetRecognitionView()
         }
     }
 }
