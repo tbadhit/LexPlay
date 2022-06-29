@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
+		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
+		112BBA2C286CA3540039377A /* DummyReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2B286CA3540039377A /* DummyReminderRepository.swift */; };
+		112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2E286CC60C0039377A /* UserRepository.swift */; };
+		112BBA31286CC7A40039377A /* DummyUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA30286CC7A40039377A /* DummyUserRepository.swift */; };
 		114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF162866A05D0008273B /* LexPlayApp.swift */; };
 		114CDF192866A05D0008273B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF182866A05D0008273B /* ContentView.swift */; };
 		114CDF1B2866A0600008273B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1A2866A0600008273B /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
+		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
+		112BBA2B286CA3540039377A /* DummyReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReminderRepository.swift; sourceTree = "<group>"; };
+		112BBA2E286CC60C0039377A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		112BBA30286CC7A40039377A /* DummyUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUserRepository.swift; sourceTree = "<group>"; };
 		114CDF132866A05D0008273B /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		114CDF162866A05D0008273B /* LexPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexPlayApp.swift; sourceTree = "<group>"; };
 		114CDF182866A05D0008273B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112BBA25286C8F8D0039377A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				114CDF1F2866A0600008273B /* Persistence.swift */,
+				112BBA26286C8FF20039377A /* ReminderRepository.swift */,
+				112BBA2E286CC60C0039377A /* UserRepository.swift */,
+				112BBA2D286CBAF60039377A /* Dummy */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		112BBA2D286CBAF60039377A /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				112BBA2B286CA3540039377A /* DummyReminderRepository.swift */,
+				112BBA30286CC7A40039377A /* DummyUserRepository.swift */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
+		112BBA32286CCB740039377A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		114CDF0A2866A05D0008273B = {
 			isa = PBXGroup;
 			children = (
@@ -75,12 +110,13 @@
 			children = (
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
+				112BBA25286C8F8D0039377A /* Repository */,
 				1602507A286C63BF008D9D15 /* Models */,
 				119C5996286B25CD00B87768 /* Domain */,
 				119C5997286B27A400B87768 /* Controller */,
 				1602507D286C63DB008D9D15 /* Views */,
+				112BBA32286CCB740039377A /* Util */,
 				114CDF1A2866A0600008273B /* Assets.xcassets */,
-				114CDF1F2866A0600008273B /* Persistence.swift */,
 				114CDF212866A0600008273B /* LexPlay.xcdatamodeld */,
 				114CDF1C2866A0600008273B /* Preview Content */,
 			);
@@ -211,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
+				112BBA31286CC7A40039377A /* DummyUserRepository.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
+				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
@@ -220,8 +258,10 @@
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
+				112BBA2C286CA3540039377A /* DummyReminderRepository.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
+				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
