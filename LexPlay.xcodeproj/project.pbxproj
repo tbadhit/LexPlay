@@ -144,6 +144,7 @@
 			children = (
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
+				AD7471D1286C56490077EEFA /* User.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7471D4286CADF60077EEFA /* UserView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				112BBA31286CC7A40039377A /* DummyUserRepository.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct LexPlayApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
 //            Change the view
