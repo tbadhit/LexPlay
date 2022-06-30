@@ -15,8 +15,8 @@ struct LexPlayApp: App {
         WindowGroup {
 //            Change the view
 //            ContentView()
-//          CameraView()
-          AlphabetRecognitionView()
+          CameraView()
+//          AlphabetRecognitionView()
 //            ReminderView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

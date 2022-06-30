@@ -11,6 +11,9 @@ import SwiftUI
 
 class CameraModel: NSObject,ObservableObject, AVCapturePhotoCaptureDelegate {
   
+  private let context = PersistenceController.shared.container.viewContext
+  var userAlphabetRepository = UserAlphabetRepository()
+  
   @Published var isTaken = false
   
   @Published var session = AVCaptureSession()
@@ -136,12 +139,18 @@ class CameraModel: NSObject,ObservableObject, AVCapturePhotoCaptureDelegate {
   }
   
   func savePic() {
-    let image = UIImage(data: self.picData)!
-    
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    
-    self.isSaved = true
-    
-    print("Saved successfully")
+    let userAlphabet = UserAlphabetEntity(context: context)
+    userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: self.picData, hasDifficulity: true)
   }
+  
+  
+//  func savePic() {
+//    let image = UIImage(data: self.picData)!
+//
+//    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//
+//    self.isSaved = true
+//
+//    print("Saved successfully")
+//  }
 }

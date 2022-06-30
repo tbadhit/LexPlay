@@ -32,7 +32,9 @@ extension UserAlphabetRepository: UserAlphabetRepositoryProtocol {
   }
   
   func addPictureAlphabet(userAlphabet: UserAlphabetEntity, imageData: Data, hasDifficulity: Bool) {
-    
+    userAlphabet.hasDifficulty = hasDifficulity
+    userAlphabet.imageAssociation = imageData
+    save()
   }
   
   
