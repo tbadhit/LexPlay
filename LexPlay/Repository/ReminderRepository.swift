@@ -9,14 +9,12 @@ import Foundation
 import SwiftUI
 
 protocol ReminderRepositoryProtocol {
-    func update(reminder: ReminderEntity, isActive: Bool, time: Date)
+    func update(reminder: ReminderEntity, isActive: Bool, time: Date?)
     func get(user: UserEntity) -> ReminderEntity
-    func getPredicate(user: UserEntity) -> FetchRequest<ReminderEntity>
     func getAll() -> [ReminderEntity]
 }
 
 class ReminderRepository {
-    private let persistenceController = PersistenceController.shared
     private let context = PersistenceController.shared.container.viewContext
     
     private func save() {
@@ -29,8 +27,8 @@ class ReminderRepository {
 }
 
 extension ReminderRepository: ReminderRepositoryProtocol {
-    func update(reminder: ReminderEntity, isActive: Bool, time: Date) {
-        if isActive {
+    func update(reminder: ReminderEntity, isActive: Bool, time: Date?) {
+        if let time = time, isActive {
             reminder.time = time
         }
         reminder.active = isActive
@@ -43,10 +41,6 @@ extension ReminderRepository: ReminderRepositoryProtocol {
         return try! context.fetch(request).first!
     }
 
-    func getPredicate(user: UserEntity) -> FetchRequest<ReminderEntity> {
-        return FetchRequest<ReminderEntity>(sortDescriptors: [], predicate: NSPredicate(format: "%K == %@", #keyPath(ReminderEntity.uuid), user.reminder!.uuid! as CVarArg))
-    }
-    
     func getAll() -> [ReminderEntity] {
         return try! context.fetch(ReminderEntity.fetchRequest())
     }

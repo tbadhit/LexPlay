@@ -16,8 +16,8 @@ struct LexPlayApp: App {
 //            Change the view
 //            ContentView()
 //          CameraView()
-          AlphabetRecognitionView()
-//            ReminderView()
+         AlphabetRecognitionView()
+            // ReminderView(reminderNotification: ReminderNotification())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -21,6 +21,7 @@
     </entity>
     <entity name="ReminderEntity" representedClassName="ReminderEntity" syncable="YES" codeGenerationType="class">
         <attribute name="active" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="notifId" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="reminder" inverseEntity="UserEntity"/>
@@ -48,7 +49,7 @@
         <element name="AvatarEntity" positionX="18" positionY="99" width="128" height="74"/>
         <element name="Item" positionX="-45" positionY="27" width="128" height="44"/>
         <element name="LessonEntity" positionX="0" positionY="90" width="128" height="89"/>
-        <element name="ReminderEntity" positionX="-63" positionY="-9" width="128" height="89"/>
+        <element name="ReminderEntity" positionX="-63" positionY="-9" width="128" height="104"/>
         <element name="UserAlphabetEntity" positionX="-18" positionY="63" width="128" height="119"/>
         <element name="UserEntity" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>

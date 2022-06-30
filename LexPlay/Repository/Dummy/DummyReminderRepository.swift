@@ -21,8 +21,8 @@ class DummyReminderRepository {
 }
 
 extension DummyReminderRepository: ReminderRepositoryProtocol {
-    func update(reminder: ReminderEntity, isActive: Bool, time: Date) {
-        if isActive {
+    func update(reminder: ReminderEntity, isActive: Bool, time: Date?) {
+        if let time = time, isActive {
             reminder.time = time
         }
         reminder.active = isActive
@@ -33,10 +33,6 @@ extension DummyReminderRepository: ReminderRepositoryProtocol {
         let request = ReminderEntity.fetchRequest()
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(ReminderEntity.user.uuid), user.uuid! as CVarArg)
         return try! context.fetch(request).first!
-    }
-    
-    func getPredicate(user: UserEntity) -> FetchRequest<ReminderEntity> {
-        return FetchRequest<ReminderEntity>(sortDescriptors: [], predicate: NSPredicate(format: "%K == %@", #keyPath(ReminderEntity.uuid), user.reminder!.uuid! as CVarArg))
     }
     
     func getAll() -> [ReminderEntity] {

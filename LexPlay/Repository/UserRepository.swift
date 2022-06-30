@@ -14,7 +14,6 @@ protocol UserRepositoryProtocol {
 }
 
 class UserRepository {
-    private let persistenceController = PersistenceController.shared
     private let context = PersistenceController.shared.container.viewContext
 
     private func save() {
