@@ -24,6 +24,7 @@
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
 		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
 		16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025082286C642E008D9D15 /* StrokeTextLabel.swift */; };
+		1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		16025082286C642E008D9D15 /* StrokeTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeTextLabel.swift; sourceTree = "<group>"; };
+		1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetRepository.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 				114CDF1F2866A0600008273B /* Persistence.swift */,
 				112BBA26286C8FF20039377A /* ReminderRepository.swift */,
 				112BBA2E286CC60C0039377A /* UserRepository.swift */,
+				1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */,
 				112BBA2D286CBAF60039377A /* Dummy */,
 			);
 			path = Repository;
@@ -261,6 +264,7 @@
 				112BBA2C286CA3540039377A /* DummyReminderRepository.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
+				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 			);
