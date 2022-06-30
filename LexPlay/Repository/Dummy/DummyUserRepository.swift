@@ -36,6 +36,14 @@ class DummyUserRepository {
 }
 
 extension DummyUserRepository: UserRepositoryProtocol {
+    func addUser(name: String, login: Bool, timeStamp: TimeInterval) {
+        
+    }
+    
+    func editUsername(name: String, user: UserEntity) {
+        
+    }
+    
     func getActiveUser() -> UserEntity? {
         let request = UserEntity.fetchRequest()
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true))
