@@ -46,7 +46,8 @@ struct ReminderView: View {
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
         ReminderView(
-            reminderNotification: ReminderNotification(user: DummyUserRepository().getActiveUser()!, reminderRepository: DummyReminderRepository()))
+            reminderNotification: ReminderNotification(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!,
+                                                       reminderRepository: ReminderRepository(viewContext: PersistenceController.preview.container.viewContext)))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

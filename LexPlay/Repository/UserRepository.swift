@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
@@ -14,7 +15,11 @@ protocol UserRepositoryProtocol {
 }
 
 class UserRepository {
-    private let context = PersistenceController.shared.container.viewContext
+    private var context: NSManagedObjectContext
+    
+    init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+        self.context = viewContext
+    }
 
     private func save() {
         do {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+import CoreData
 
 protocol ReminderRepositoryProtocol {
     func update(reminder: ReminderEntity, isActive: Bool, time: Date?)
@@ -15,8 +15,12 @@ protocol ReminderRepositoryProtocol {
 }
 
 class ReminderRepository {
-    private let context = PersistenceController.shared.container.viewContext
+    private let context: NSManagedObjectContext
     
+    init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+        self.context = viewContext
+    }
+
     private func save() {
         do {
             try context.save()
