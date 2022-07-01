@@ -77,6 +77,4 @@ class NotificationDelegate: NSObject, ObservableObject, UNUserNotificationCenter
         
         completionHandler([.badge, .banner, .sound])
     }
-
-
 }

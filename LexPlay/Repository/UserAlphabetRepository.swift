@@ -40,5 +40,20 @@ extension UserAlphabetRepository: UserAlphabetRepositoryProtocol {
     save()
   }
   
-  
+    func saveAlphabets(user : UserEntity, alphabets : [AlphabetEntity]) {
+        //get all alphabets dari A - Z
+        let allAlphabets = try! context.fetch(AlphabetEntity.fetchRequest())
+        for savedAlphabet in allAlphabets {
+            let newUserAlphabet = UserAlphabetEntity(context: context)
+            newUserAlphabet.alphabet = savedAlphabet
+            newUserAlphabet.user = user
+            for alphabet in alphabets {
+                if alphabet.uuid == savedAlphabet.uuid {
+                    newUserAlphabet.hasDifficulty = true
+                    break
+                }
+            }
+        }
+        save()
+    }
 }

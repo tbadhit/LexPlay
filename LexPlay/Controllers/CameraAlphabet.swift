@@ -118,9 +118,7 @@ class CameraAlphabet: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate 
           // clearing...
           self.isSaved = false
         }
-        
       }
-      
     }
   }
   
