@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AlphabetEntity" representedClassName="AlphabetEntity" syncable="YES" codeGenerationType="class">
         <attribute name="char" attributeType="String"/>
         <attribute name="letterCase" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="userAlphabet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserAlphabetEntity" inverseName="alphabet" inverseEntity="UserAlphabetEntity"/>
     </entity>
     <entity name="AvatarEntity" representedClassName="AvatarEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -30,7 +31,7 @@
         <attribute name="hasDifficulty" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="imageAssociation" optional="YES" attributeType="Binary"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="alphabet" maxCount="1" deletionRule="Nullify" destinationEntity="AlphabetEntity"/>
+        <relationship name="alphabet" maxCount="1" deletionRule="Nullify" destinationEntity="AlphabetEntity" inverseName="userAlphabet" inverseEntity="AlphabetEntity"/>
         <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LessonEntity" inverseName="alphabets" inverseEntity="LessonEntity"/>
         <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="alphabets" inverseEntity="UserEntity"/>
     </entity>
@@ -45,12 +46,12 @@
         <relationship name="reminder" maxCount="1" deletionRule="Nullify" destinationEntity="ReminderEntity" inverseName="user" inverseEntity="ReminderEntity"/>
     </entity>
     <elements>
-        <element name="AlphabetEntity" positionX="-36" positionY="36" width="128" height="74"/>
-        <element name="AvatarEntity" positionX="18" positionY="99" width="128" height="74"/>
-        <element name="Item" positionX="-45" positionY="27" width="128" height="44"/>
-        <element name="LessonEntity" positionX="0" positionY="90" width="128" height="89"/>
-        <element name="ReminderEntity" positionX="-63" positionY="-9" width="128" height="104"/>
-        <element name="UserAlphabetEntity" positionX="-18" positionY="63" width="128" height="119"/>
-        <element name="UserEntity" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="AlphabetEntity" positionX="-161.03515625" positionY="12.61328125" width="128" height="103"/>
+        <element name="AvatarEntity" positionX="-538.390625" positionY="-121.39453125" width="128" height="74"/>
+        <element name="Item" positionX="-140.07421875" positionY="-140.60546875" width="128" height="44"/>
+        <element name="LessonEntity" positionX="-37.54296875" positionY="298.796875" width="128" height="89"/>
+        <element name="ReminderEntity" positionX="-424.8671875" positionY="80.64453125" width="128" height="103"/>
+        <element name="UserAlphabetEntity" positionX="-241.875" positionY="207.52734375" width="128" height="119"/>
+        <element name="UserEntity" positionX="-719.18359375" positionY="-44.2421875" width="128" height="149"/>
     </elements>
 </model>
