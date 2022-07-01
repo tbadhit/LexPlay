@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import SwiftUI
 
-class CameraModel: NSObject,ObservableObject, AVCapturePhotoCaptureDelegate {
+class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
   
   private let context = PersistenceController.shared.container.viewContext
   var userAlphabetRepository = UserAlphabetRepository()
@@ -139,8 +139,15 @@ class CameraModel: NSObject,ObservableObject, AVCapturePhotoCaptureDelegate {
   }
   
   func savePic() {
-    let userAlphabet = UserAlphabetEntity(context: context)
-    userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: self.picData, hasDifficulity: true)
+    if self.picData.count > 0 {
+      let userAlphabet = UserAlphabetEntity(context: context)
+      userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: self.picData, hasDifficulity: false)
+      print("data nya \(userAlphabetRepository.getAllUserAlphabet())")
+      print("Saved successfully")
+      print("Berhasil")
+    } else {
+      print("Gagal mengcapture gambar")
+    }
   }
   
   

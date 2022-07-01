@@ -54,7 +54,7 @@ struct CameraView: View {
               
               Button {
                 if !camera.isSaved {
-  //                camera.savePic()
+                  camera.savePic()
                 }
               } label: {
                 Text(camera.isSaved ? "Saved" : "Save")
@@ -68,17 +68,17 @@ struct CameraView: View {
               
               Spacer()
               
-              NavigationLink {
-                TestView()
-              } label: {
-                Text(camera.isSaved ? "Saved" : "Save")
-                  .foregroundColor(.black)
-                  .fontWeight(.semibold)
-                  .padding(.vertical, 10)
-                  .padding(.horizontal, 10)
-                  .background(Color.white)
-                  .clipShape(Capsule())
-              }
+//              NavigationLink {
+////                TestView()
+//              } label: {
+//                Text(camera.isSaved ? "Saved" : "Save")
+//                  .foregroundColor(.black)
+//                  .fontWeight(.semibold)
+//                  .padding(.vertical, 10)
+//                  .padding(.horizontal, 10)
+//                  .background(Color.white)
+//                  .clipShape(Capsule())
+//              }
 
               
             } else {

@@ -31,9 +31,12 @@ extension UserAlphabetRepository: UserAlphabetRepositoryProtocol {
     return try! context.fetch(UserAlphabetEntity.fetchRequest())
   }
   
+  // user punya bbrp lesson -> lesson punya beberapa user alphabet -> user alphabet punya alphabet
+  
   func addPictureAlphabet(userAlphabet: UserAlphabetEntity, imageData: Data, hasDifficulity: Bool) {
     userAlphabet.hasDifficulty = hasDifficulity
     userAlphabet.imageAssociation = imageData
+    
     save()
   }
   

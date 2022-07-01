@@ -26,6 +26,8 @@
 		16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025082286C642E008D9D15 /* StrokeTextLabel.swift */; };
 		1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */; };
 		16025091286D8421008D9D15 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025090286D8421008D9D15 /* TestView.swift */; };
+		16025093286D894F008D9D15 /* AlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025092286D894F008D9D15 /* AlphabetRepository.swift */; };
+		16025097286D9851008D9D15 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025096286D9851008D9D15 /* LessonRepository.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		16025082286C642E008D9D15 /* StrokeTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeTextLabel.swift; sourceTree = "<group>"; };
 		1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetRepository.swift; sourceTree = "<group>"; };
 		16025090286D8421008D9D15 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		16025092286D894F008D9D15 /* AlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRepository.swift; sourceTree = "<group>"; };
+		16025096286D9851008D9D15 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +76,9 @@
 				114CDF1F2866A0600008273B /* Persistence.swift */,
 				112BBA26286C8FF20039377A /* ReminderRepository.swift */,
 				112BBA2E286CC60C0039377A /* UserRepository.swift */,
+				16025092286D894F008D9D15 /* AlphabetRepository.swift */,
 				1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */,
+				16025096286D9851008D9D15 /* LessonRepository.swift */,
 				112BBA2D286CBAF60039377A /* Dummy */,
 			);
 			path = Repository;
@@ -113,7 +119,6 @@
 		114CDF152866A05D0008273B /* LexPlay */ = {
 			isa = PBXGroup;
 			children = (
-				16025090286D8421008D9D15 /* TestView.swift */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
 				112BBA25286C8F8D0039377A /* Repository */,
@@ -176,6 +181,7 @@
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
+				16025090286D8421008D9D15 /* TestView.swift */,
 				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
 				114CDF182866A05D0008273B /* ContentView.swift */,
 			);
@@ -252,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16025093286D894F008D9D15 /* AlphabetRepository.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				112BBA31286CC7A40039377A /* DummyUserRepository.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
@@ -261,6 +268,7 @@
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
+				16025097286D9851008D9D15 /* LessonRepository.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
