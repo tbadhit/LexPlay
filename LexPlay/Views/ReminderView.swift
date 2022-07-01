@@ -9,48 +9,45 @@ import SwiftUI
 import UserNotifications
 
 struct ReminderView: View {
+    private var reminderNotification: ReminderNotification
     @State private var currentDate = Date()
     @State private var isActive = false
     @FetchRequest private var reminders: FetchedResults<ReminderEntity>
-    private let reminderRepository: ReminderRepositoryProtocol
-    
+
     var body: some View {
         VStack {
-            
             DatePicker("Pick Your Time", selection: $currentDate, displayedComponents: [.hourAndMinute]).labelsHidden()
-            
-            Text("You've picked \(currentDate)")
-            
-            
-            Button("Add Notification") {
 
-                ReminderNotification().addNotification(currentDate: currentDate)
-            }
+            Text("You've picked \(currentDate)")
+
             Toggle(isOn: $isActive) {
                 Text("Notification")
             }
             .onChange(of: isActive) { value in
-                reminderRepository.update(reminder: reminders[0], isActive: value, time: currentDate)
+                if let reminder = reminders.first {
+                    reminderNotification.toggleNotification(entity: reminder, time: currentDate, isActive: value)
+                }
             }
         }
         .onAppear {
-            let reminder = reminders[0]
-            currentDate = reminder.time ?? Date()
-            isActive = reminder.active
+            if let reminder = reminders.first {
+                currentDate = reminder.time ?? Date()
+                isActive = reminder.active
+            }
         }
     }
-    
-    init(user: UserEntity = UserRepository().getActiveUser()!, reminderRepository: ReminderRepositoryProtocol = ReminderRepository()) {
-        self.reminderRepository = reminderRepository
-        _reminders = reminderRepository.getPredicate(user: user)
+
+    init(reminderNotification: ReminderNotification) {
+        self.reminderNotification = reminderNotification
+        _reminders = reminderNotification.getPredicate()
     }
 }
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
         ReminderView(
-            user: DummyUserRepository().getActiveUser()!,
-            reminderRepository: DummyReminderRepository())
+            reminderNotification: ReminderNotification(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!,
+                                                       reminderRepository: ReminderRepository(viewContext: PersistenceController.preview.container.viewContext)))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

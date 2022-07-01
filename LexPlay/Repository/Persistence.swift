@@ -17,6 +17,21 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
         }
+        
+//        Add new User
+        let avatar = AvatarEntity(context: viewContext)
+        avatar.uuid = UUID()
+        avatar.path = "lex"
+        let reminder = ReminderEntity(context: viewContext)
+        reminder.uuid = UUID()
+        reminder.time = Date()
+        let user = UserEntity(context: viewContext)
+        user.uuid = UUID()
+        user.name = "Invoker"
+        user.alphabets = []
+        user.avatar = avatar
+        user.reminder = reminder
+        
         do {
             try viewContext.save()
         } catch {

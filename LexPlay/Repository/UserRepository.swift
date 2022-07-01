@@ -6,30 +6,20 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
+    func addUser(name : String, login: Bool, timeStamp : TimeInterval)
+    func editUsername( name : String, user : UserEntity)
 }
 
 class UserRepository {
-    private let persistenceController = PersistenceController.shared
-    private let context = PersistenceController.shared.container.viewContext
-  
-  init() {
-      let avatar = AvatarEntity(context: context)
-      avatar.uuid = UUID()
-      avatar.path = "lex"
-      let reminder = ReminderEntity(context: context)
-      reminder.uuid = UUID()
-      reminder.time = Date()
-      let user = UserEntity(context: context)
-      user.uuid = UUID()
-      user.name = "Invoker"
-      user.alphabets = []
-      user.avatar = avatar
-      user.reminder = reminder
-      save()
-  }
+    private var context: NSManagedObjectContext
+    
+    init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+        self.context = viewContext
+    }
 
     private func save() {
         do {
@@ -46,6 +36,25 @@ extension UserRepository: UserRepositoryProtocol {
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true))
         return try? context.fetch(request).first
     }
-  
     
+    func addUser (name : String, login: Bool, timeStamp : TimeInterval) {
+        //1. create new NSManageobject
+        let newUser = UserEntity(context: context)
+        
+        //2. add/ update the attributes
+        newUser.name = name
+        newUser.login = login
+        newUser.timestamp = timeStamp
+        
+        //3. save context
+        save()
+    }
+    
+    func editUsername( name : String, user : UserEntity) {
+        //1. Change Value
+        user.name = name
+        
+        //2. save context
+        save()
+    }
 }
