@@ -155,7 +155,7 @@
 		119C5996286B25CD00B87768 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
-				119C5998286B27C600B87768 /* Enum */,
+				119C5998286B27C600B87768 /* Enums */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -171,13 +171,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		119C5998286B27C600B87768 /* Enum */ = {
+		119C5998286B27C600B87768 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				11166ABF2869C08300E32B87 /* Alphabet.swift */,
 				1174A154286E93D700BC02BE /* LetterCase.swift */,
 			);
-			path = Enum;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		1602507D286C63DB008D9D15 /* Views */ = {
