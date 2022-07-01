@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CameraView: View {
   
-  @StateObject var camera = CameraModel()
+  @StateObject var camera = CameraAlphabet()
   
   var body: some View {
     NavigationView {

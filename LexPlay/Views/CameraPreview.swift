@@ -10,7 +10,7 @@ import AVFoundation
 
 struct CameraPreview: UIViewRepresentable {
   
-  @ObservedObject var camera: CameraModel
+  @ObservedObject var camera: CameraAlphabet
   
   func makeUIView(context: Context) -> some UIView {
     let view = UIView(frame: UIScreen.main.bounds)

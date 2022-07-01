@@ -16,9 +16,15 @@ struct LexPlayApp: App {
 //            Change the view
 //            ContentView()
 //          CameraView()
-         AlphabetRecognitionView()
+//         AlphabetRecognitionView()
             // ReminderView(reminderNotification: ReminderNotification())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//          UsersView()
+          if UserDefaults.standard.hasOnboarded {
+            MainView()
+          } else {
+            OnboardingView()
+                  .environment(\.managedObjectContext, persistenceController.container.viewContext)
+          }
         }
     }
 }

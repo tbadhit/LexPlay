@@ -18,14 +18,24 @@
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
-		1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraModel.swift */; };
+		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
 		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
 		16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025082286C642E008D9D15 /* StrokeTextLabel.swift */; };
 		1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */; };
-		16025091286D8421008D9D15 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025090286D8421008D9D15 /* TestView.swift */; };
-		16025093286D894F008D9D15 /* AlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025092286D894F008D9D15 /* AlphabetRepository.swift */; };
-		16025097286D9851008D9D15 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025096286D9851008D9D15 /* LessonRepository.swift */; };
+		16025091286D8421008D9D15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025090286D8421008D9D15 /* MainView.swift */; };
+		160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */; };
+		160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */; };
+		160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */; };
+		160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509C286EA01A008D9D15 /* Lexend-Light.ttf */; };
+		160250A6286EA01A008D9D15 /* Lexend-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509D286EA01A008D9D15 /* Lexend-Black.ttf */; };
+		160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509E286EA01A008D9D15 /* Lexend-Thin.ttf */; };
+		160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */; };
+		160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */; };
+		160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */; };
+		160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
+		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
+		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
@@ -44,14 +54,25 @@
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
-		1602507B286C63CD008D9D15 /* CameraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		16025082286C642E008D9D15 /* StrokeTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeTextLabel.swift; sourceTree = "<group>"; };
 		1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetRepository.swift; sourceTree = "<group>"; };
-		16025090286D8421008D9D15 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		16025092286D894F008D9D15 /* AlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRepository.swift; sourceTree = "<group>"; };
-		16025096286D9851008D9D15 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
+		16025090286D8421008D9D15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
+		1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Regular.ttf"; sourceTree = "<group>"; };
+		1602509C286EA01A008D9D15 /* Lexend-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Light.ttf"; sourceTree = "<group>"; };
+		1602509D286EA01A008D9D15 /* Lexend-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Black.ttf"; sourceTree = "<group>"; };
+		1602509E286EA01A008D9D15 /* Lexend-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Thin.ttf"; sourceTree = "<group>"; };
+		1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-SemiBold.ttf"; sourceTree = "<group>"; };
+		160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraLight.ttf"; sourceTree = "<group>"; };
+		160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
+		160250AB286EA033008D9D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		160250AC286EA17E008D9D15 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = SOURCE_ROOT; };
+		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -74,10 +95,7 @@
 				114CDF1F2866A0600008273B /* Persistence.swift */,
 				112BBA26286C8FF20039377A /* ReminderRepository.swift */,
 				112BBA2E286CC60C0039377A /* UserRepository.swift */,
-				16025092286D894F008D9D15 /* AlphabetRepository.swift */,
 				1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */,
-				16025096286D9851008D9D15 /* LessonRepository.swift */,
-				112BBA2D286CBAF60039377A /* Dummy */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -85,6 +103,7 @@
 		112BBA32286CCB740039377A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				160250AC286EA17E008D9D15 /* FontStyle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -108,17 +127,19 @@
 		114CDF152866A05D0008273B /* LexPlay */ = {
 			isa = PBXGroup;
 			children = (
+				160250AB286EA033008D9D15 /* Info.plist */,
+				16025098286E9FFB008D9D15 /* Fonts */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
 				112BBA25286C8F8D0039377A /* Repository */,
-				1602507A286C63BF008D9D15 /* Models */,
 				119C5996286B25CD00B87768 /* Domain */,
-				119C5997286B27A400B87768 /* Controller */,
+				119C5997286B27A400B87768 /* Controllers */,
 				1602507D286C63DB008D9D15 /* Views */,
 				112BBA32286CCB740039377A /* Util */,
 				114CDF1A2866A0600008273B /* Assets.xcassets */,
 				114CDF212866A0600008273B /* LexPlay.xcdatamodeld */,
 				114CDF1C2866A0600008273B /* Preview Content */,
+				160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */,
 			);
 			path = LexPlay;
 			sourceTree = "<group>";
@@ -139,13 +160,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		119C5997286B27A400B87768 /* Controller */ = {
+		119C5997286B27A400B87768 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1602507B286C63CD008D9D15 /* CameraAlphabet.swift */,
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		119C5998286B27C600B87768 /* Enum */ = {
@@ -156,26 +178,35 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		1602507A286C63BF008D9D15 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1602507B286C63CD008D9D15 /* CameraModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		1602507D286C63DB008D9D15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
-				16025090286D8421008D9D15 /* TestView.swift */,
+				16025090286D8421008D9D15 /* MainView.swift */,
 				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
 				114CDF182866A05D0008273B /* ContentView.swift */,
 				AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */,
+				160250AE286EA2D4008D9D15 /* OnboardingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		16025098286E9FFB008D9D15 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1602509D286EA01A008D9D15 /* Lexend-Black.ttf */,
+				1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */,
+				16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */,
+				160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */,
+				1602509C286EA01A008D9D15 /* Lexend-Light.ttf */,
+				160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */,
+				1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */,
+				1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */,
+				1602509E286EA01A008D9D15 /* Lexend-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +267,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */,
+				160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */,
+				160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */,
+				160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */,
+				160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */,
+				160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */,
+				160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */,
 				114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */,
+				160250A6286EA01A008D9D15 /* Lexend-Black.ttf in Resources */,
+				160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */,
 				114CDF1B2866A0600008273B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,26 +288,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16025093286D894F008D9D15 /* AlphabetRepository.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
-				1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */,
+				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
-				16025097286D9851008D9D15 /* LessonRepository.swift in Sources */,
+				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
-				16025091286D8421008D9D15 /* TestView.swift in Sources */,
+				16025091286D8421008D9D15 /* MainView.swift in Sources */,
 				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
+				160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */,
+				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +440,7 @@
 				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LexPlay/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
@@ -432,6 +474,7 @@
 				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LexPlay/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
