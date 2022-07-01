@@ -38,6 +38,7 @@
 		160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
 		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
 		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
+		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
 		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
@@ -74,9 +75,10 @@
 		160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraLight.ttf"; sourceTree = "<group>"; };
 		160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
 		160250AB286EA033008D9D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		160250AC286EA17E008D9D15 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = SOURCE_ROOT; };
+		160250AC286EA17E008D9D15 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = LexPlay/Utils/FontStyle.swift; sourceTree = SOURCE_ROOT; };
 		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
+		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112BBA25286C8F8D0039377A /* Repository */ = {
+		112BBA25286C8F8D0039377A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				1174A156286ED05700BC02BE /* Seeder.swift */,
@@ -102,15 +104,7 @@
 				112BBA2E286CC60C0039377A /* UserRepository.swift */,
 				1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */,
 			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		112BBA32286CCB740039377A /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				160250AC286EA17E008D9D15 /* FontStyle.swift */,
-			);
-			path = Util;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		114CDF0A2866A05D0008273B = {
@@ -132,15 +126,14 @@
 		114CDF152866A05D0008273B /* LexPlay */ = {
 			isa = PBXGroup;
 			children = (
+				160250BA286F42D2008D9D15 /* Utils */,
 				160250AB286EA033008D9D15 /* Info.plist */,
 				16025098286E9FFB008D9D15 /* Fonts */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
-				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
-				112BBA25286C8F8D0039377A /* Repository */,
-				119C5996286B25CD00B87768 /* Domain */,
+				112BBA25286C8F8D0039377A /* Repositories */,
+				119C5996286B25CD00B87768 /* Domains */,
 				119C5997286B27A400B87768 /* Controllers */,
 				1602507D286C63DB008D9D15 /* Views */,
-				112BBA32286CCB740039377A /* Util */,
 				114CDF1A2866A0600008273B /* Assets.xcassets */,
 				114CDF212866A0600008273B /* LexPlay.xcdatamodeld */,
 				114CDF1C2866A0600008273B /* Preview Content */,
@@ -157,12 +150,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		119C5996286B25CD00B87768 /* Domain */ = {
+		119C5996286B25CD00B87768 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
 				119C5998286B27C600B87768 /* Enum */,
 			);
-			path = Domain;
+			path = Domains;
 			sourceTree = "<group>";
 		};
 		119C5997286B27A400B87768 /* Controllers */ = {
@@ -195,6 +188,7 @@
 				114CDF182866A05D0008273B /* ContentView.swift */,
 				AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */,
 				160250AE286EA2D4008D9D15 /* OnboardingView.swift */,
+				160250B6286F2A2A008D9D15 /* CreateUserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +207,15 @@
 				1602509E286EA01A008D9D15 /* Lexend-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		160250BA286F42D2008D9D15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				160250AC286EA17E008D9D15 /* FontStyle.swift */,
+				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,10 +298,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
+				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
-				1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */,
+				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
