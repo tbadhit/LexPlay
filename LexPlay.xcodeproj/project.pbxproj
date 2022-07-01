@@ -16,6 +16,8 @@
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
+		1174A155286E93D700BC02BE /* LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A154286E93D700BC02BE /* LetterCase.swift */; };
+		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
 		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
@@ -52,6 +54,8 @@
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
+		1174A154286E93D700BC02BE /* LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCase.swift; sourceTree = "<group>"; };
+		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
 		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		112BBA25286C8F8D0039377A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1174A156286ED05700BC02BE /* Seeder.swift */,
 				114CDF1F2866A0600008273B /* Persistence.swift */,
 				112BBA26286C8FF20039377A /* ReminderRepository.swift */,
 				112BBA2E286CC60C0039377A /* UserRepository.swift */,
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				11166ABF2869C08300E32B87 /* Alphabet.swift */,
+				1174A154286E93D700BC02BE /* LetterCase.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -292,6 +298,8 @@
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
+				1602507C286C63CD008D9D15 /* CameraModel.swift in Sources */,
+				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
@@ -299,6 +307,7 @@
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
+				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
