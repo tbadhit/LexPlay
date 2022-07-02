@@ -17,7 +17,7 @@ struct LexPlayApp: App {
 //            ContentView()
 //          CameraView()
 //         AlphabetRecognitionView()
-            // ReminderView(reminderNotification: ReminderNotification())
+            ProfileView().environment(\.managedObjectContext, persistenceController.container.viewContext)
 //          UsersView()
 //          if UserDefaults.standard.hasOnboarded {
 //            MainView()
