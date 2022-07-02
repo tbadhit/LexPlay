@@ -15,7 +15,7 @@ protocol UserRepositoryProtocol {
 }
 
 class UserRepository {
-    private var context: NSManagedObjectContext
+    private let context: NSManagedObjectContext
     
     init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         self.context = viewContext

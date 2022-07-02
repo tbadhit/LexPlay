@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UserAlphabetRepositoryProtocol {
   func getAllUserAlphabet() -> [UserAlphabetEntity]
@@ -14,8 +15,12 @@ protocol UserAlphabetRepositoryProtocol {
 
 
 class UserAlphabetRepository {
-  private let persistanceController = PersistenceController.shared
-  private let context = PersistenceController.shared.container.viewContext
+    private let context: NSManagedObjectContext
+    
+  init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+    self.context = viewContext
+  }
+
   
   private func save() {
     do {
