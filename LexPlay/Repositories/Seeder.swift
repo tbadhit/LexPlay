@@ -9,11 +9,7 @@ import CoreData
 
 struct Seeder {
     func seedAlphabet(context: NSManagedObjectContext) {
-        let defaults = UserDefaults.standard
-        let alphabetSeedKey = "AlphabetSeed"
-        let alphabetSeed = defaults.object(forKey: alphabetSeedKey)
-        guard alphabetSeed == nil || (alphabetSeed != nil) == false else { return }
-
+        guard !UserDefaults.standard.seedAlphabet else { return }
         initBothCaseAlphabet(context: context)
         initUppercaseAlphabet(context: context)
         initLowercaseAlphabet(context: context)
@@ -25,7 +21,7 @@ struct Seeder {
             fatalError("Failed to save alphabets: \(nsError), \(nsError.userInfo)")
         }
 
-        defaults.set(true, forKey: alphabetSeedKey)
+        UserDefaults.standard.seedAlphabet = true
     }
 }
 
