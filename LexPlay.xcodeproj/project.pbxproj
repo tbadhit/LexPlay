@@ -255,7 +255,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					114CDF122866A05D0008273B = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -312,7 +312,6 @@
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
-				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,

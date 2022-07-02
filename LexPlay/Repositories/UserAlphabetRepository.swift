@@ -56,4 +56,13 @@ extension UserAlphabetRepository: UserAlphabetRepositoryProtocol {
         }
         save()
     }
+    
+    func getAlphabet (alphabet : Alphabet, letterCase : LetterCase) -> AlphabetEntity {
+        let request = AlphabetEntity.fetchRequest()
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "%K == %@", #keyPath(AlphabetEntity.char), alphabet.rawValue),
+            NSPredicate(format: "%K == %@", #keyPath(AlphabetEntity.letterCase), letterCase.rawValue)
+        ])
+        return try! context.fetch(request).first!
+    }
 }
