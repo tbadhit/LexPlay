@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
+		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
 		112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2E286CC60C0039377A /* UserRepository.swift */; };
 		114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF162866A05D0008273B /* LexPlayApp.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
+		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		112BBA2E286CC60C0039377A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		114CDF132866A05D0008273B /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				114CDF152866A05D0008273B /* LexPlay */,
+				112B08462870107000905CE5 /* .gitignore */,
 				114CDF142866A05D0008273B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */,
 				160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */,
 				160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */,
+				112B08472870107000905CE5 /* .gitignore in Resources */,
 				160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */,
 				160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */,
 				160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */,
