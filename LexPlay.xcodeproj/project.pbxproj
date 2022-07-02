@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
+		112B08492870120400905CE5 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetController.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
 		112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2E286CC60C0039377A /* UserRepository.swift */; };
 		114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF162866A05D0008273B /* LexPlayApp.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		112B08482870120400905CE5 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		112BBA2E286CC60C0039377A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		114CDF132866A05D0008273B /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
 				AD4519C3286F317100704214 /* UserAlphabet.swift */,
+				112B08482870120400905CE5 /* AlphabetController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
+				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,

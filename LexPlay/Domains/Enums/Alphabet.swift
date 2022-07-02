@@ -5,7 +5,7 @@
 //  Created by Muhamad Fahmi Al Kautsar on 27/06/22.
 //
 
-enum Alphabet: String {
+enum Alphabet: String, CaseIterable {
     case a
     case b
     case c
