@@ -19,12 +19,12 @@ struct LexPlayApp: App {
 //         AlphabetRecognitionView()
             // ReminderView(reminderNotification: ReminderNotification())
 //          UsersView()
-          if UserDefaults.standard.hasOnboarded {
-            MainView()
-          } else {
+//          if UserDefaults.standard.hasOnboarded {
+//            MainView()
+//          } else {
             OnboardingView()
                   .environment(\.managedObjectContext, persistenceController.container.viewContext)
-          }
+//          }
         }
     }
 }

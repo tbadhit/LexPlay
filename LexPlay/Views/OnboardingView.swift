@@ -67,7 +67,7 @@ struct OnboardingView2: View {
           .font(.custom(FontStyle.lexendMedium, size: 21))
         Spacer()
         NavigationLink(destination: {
-          MainView()
+          CreateUserView()
         }, label: {
           Text("Next")
             .frame(width: UIScreen.screenWidth / 1.5)
