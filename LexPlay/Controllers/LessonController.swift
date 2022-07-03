@@ -9,9 +9,9 @@ import Foundation
 
 class LessonController {
     private let lessonRepository: LessonRepositoryProtocol
-    private let user: UserEntity
+    let user: UserEntity
     
-    init(lessonRepository: LessonRepositoryProtocol, user: UserEntity) {
+    init(lessonRepository: LessonRepositoryProtocol = LessonRepository(), user: UserEntity = UserRepository().getActiveUser()!) {
         self.lessonRepository = lessonRepository
         self.user = user
     }

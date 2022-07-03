@@ -17,12 +17,15 @@ struct LexPlayApp: App {
 //            ContentView()
 //          CameraView()
 //         AlphabetRecognitionView()
-            ProfileView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            ProfileView()
 //          UsersView()
 //          if UserDefaults.standard.hasOnboarded {
 //            MainView()
 //          } else {
             OnboardingView()
+//            LessonsView()
+                .font(.custom(FontStyle.lexendRegular, size: 16))
+                .foregroundColor(Color("black"))
                   .environment(\.managedObjectContext, persistenceController.container.viewContext)
 //          }
         }

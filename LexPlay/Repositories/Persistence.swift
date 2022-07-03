@@ -31,6 +31,31 @@ struct PersistenceController {
         user.alphabets = []
         user.avatar = avatar
         user.reminder = reminder
+        let lesson1 = LessonEntity(context: viewContext)
+        lesson1.uuid = UUID()
+        lesson1.alphabets = []
+        lesson1.name = "1"
+        lesson1.user = user
+        let lesson2 = LessonEntity(context: viewContext)
+        lesson2.uuid = UUID()
+        lesson2.name = "2"
+        lesson2.alphabets = []
+        lesson2.user = user
+        let lesson3 = LessonEntity(context: viewContext)
+        lesson3.uuid = UUID()
+        lesson3.name = "3"
+        lesson3.alphabets = []
+        lesson3.user = user
+        let lesson4 = LessonEntity(context: viewContext)
+        lesson4.uuid = UUID()
+        lesson4.name = "4"
+        lesson4.alphabets = []
+        lesson4.user = user
+        let lesson5 = LessonEntity(context: viewContext)
+        lesson5.uuid = UUID()
+        lesson5.name = "5"
+        lesson5.alphabets = []
+        lesson5.user = user
 
         do {
             try viewContext.save()
