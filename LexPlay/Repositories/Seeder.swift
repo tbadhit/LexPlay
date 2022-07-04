@@ -10,22 +10,88 @@ import CoreData
 struct Seeder {
     func seedAlphabet(context: NSManagedObjectContext) {
         guard !UserDefaults.standard.seedAlphabet else { return }
-        initBothCaseAlphabet(context: context)
+//        initBothCaseAlphabet(context: context)
         initUppercaseAlphabet(context: context)
         initLowercaseAlphabet(context: context)
 
+        save(context: context)
+
+        UserDefaults.standard.seedAlphabet = true
+    }
+
+    func seedDummy(context: NSManagedObjectContext) {
+//        Add new User
+        let avatar = AvatarEntity(context: context)
+        avatar.uuid = UUID()
+        avatar.path = "lex"
+        let reminder = ReminderEntity(context: context)
+        reminder.uuid = UUID()
+        reminder.time = Date()
+        let user = UserEntity(context: context)
+        user.uuid = UUID()
+        user.name = "Invoker"
+        user.alphabets = []
+        user.avatar = avatar
+        user.reminder = reminder
+        let lesson1 = LessonEntity(context: context)
+        lesson1.uuid = UUID()
+        lesson1.alphabets = []
+        lesson1.name = "1"
+        lesson1.user = user
+        let lesson2 = LessonEntity(context: context)
+        lesson2.uuid = UUID()
+        lesson2.name = "2"
+        lesson2.alphabets = []
+        lesson2.user = user
+        let lesson3 = LessonEntity(context: context)
+        lesson3.uuid = UUID()
+        lesson3.name = "3"
+        lesson3.alphabets = []
+        lesson3.user = user
+        let lesson4 = LessonEntity(context: context)
+        lesson4.uuid = UUID()
+        lesson4.name = "4"
+        lesson4.alphabets = []
+        lesson4.user = user
+        let lesson5 = LessonEntity(context: context)
+        lesson5.uuid = UUID()
+        lesson5.name = "5"
+        lesson5.alphabets = []
+        lesson5.user = user
+        let a = AlphabetEntity(context: context)
+        a.uuid = UUID()
+        a.char = Alphabet.a.rawValue
+        a.letterCase = Int16(LetterCase.upper.rawValue)
+        let b = AlphabetEntity(context: context)
+        b.uuid = UUID()
+        b.char = Alphabet.b.rawValue
+        b.letterCase = Int16(LetterCase.upper.rawValue)
+        let userAlphabetA = UserAlphabetEntity(context: context)
+        userAlphabetA.uuid = UUID()
+        userAlphabetA.user = user
+        userAlphabetA.hasDifficulty = true
+        userAlphabetA.lesson = lesson1
+        userAlphabetA.alphabet = a
+        let userAlphabetB = UserAlphabetEntity(context: context)
+        userAlphabetB.uuid = UUID()
+        userAlphabetB.user = user
+        userAlphabetB.hasDifficulty = true
+        userAlphabetB.lesson = lesson1
+        userAlphabetB.alphabet = b
+        save(context: context)
+    }
+}
+
+extension Seeder {
+    private func save(context: NSManagedObjectContext) {
         do {
             try context.save()
         } catch {
             let nsError = error as NSError
             fatalError("Failed to save alphabets: \(nsError), \(nsError.userInfo)")
         }
-
-        UserDefaults.standard.seedAlphabet = true
     }
-}
 
-extension Seeder {
     private func initBothCaseAlphabet(context: NSManagedObjectContext) {
         let a = AlphabetEntity(context: context)
         a.uuid = UUID()
