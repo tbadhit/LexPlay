@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     func card() -> some View {
-        return background(Color.white)
+        return background(.white)
             .cornerRadius(32)
     }
 

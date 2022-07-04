@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct UserAlphabetView: View {
+struct AlphabetCardFront: View {
     private let audioController: AudioController = AudioController.shared
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showRecognizingResult = false
-    @State private var popInfo = false
+
+    let width: CGFloat
+    let height: CGFloat
     let alphabet: UserAlphabetEntity
+    @Binding var degree: Double
+    @Binding var isFlipped: Bool
+    @State var popInfo: Bool = false
 
     var body: some View {
         VStack {
@@ -56,8 +61,17 @@ struct UserAlphabetView: View {
         }
         .padding(16)
         .card()
+        .opacity(isFlipped ? 0.5 : 1)
+        .animation(.easeInOut(duration: 0.5))
         .padding(.horizontal)
         .padding(.bottom, 48)
+        .rotation3DEffect(.init(degrees: degree), axis: (x: 0, y: 1, z: 0))
+    }
+
+    private func getResult() -> Bool {
+        guard let char = alphabet.alphabet?.char else { return false }
+        guard let alphabet = Alphabet(rawValue: char) else { return false }
+        return speechRecognizer.isCorrect(alphabet: alphabet)
     }
 
     func getAlertTitle(isProcessing: Bool) -> Text {
@@ -73,11 +87,93 @@ struct UserAlphabetView: View {
         }
         return (getResult() ? Text("🥳") : Text("🤔"))
     }
+}
 
-    private func getResult() -> Bool {
-        guard let char = alphabet.alphabet?.char else { return false }
-        guard let alphabet = Alphabet(rawValue: char) else { return false }
-        return speechRecognizer.isCorrect(alphabet: alphabet)
+struct AlphabetCardBack: View {
+    let width: CGFloat
+    let height: CGFloat
+    let userAlphabet: UserAlphabetEntity
+    @Binding var degree: Double
+    @Binding var isFlipped: Bool
+    @State var popInfo: Bool = false
+
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button {
+                    popInfo.toggle()
+                } label: { Image(systemName: "info.circle.fill")
+                    .font(.title)
+                    .foregroundColor(.brandPurple)
+                }
+                .popover(isPresented: $popInfo) {
+                    HowToPlayView()
+                }
+            }
+            Spacer()
+            if let img = userAlphabet.imageAssociation, let uiImage = UIImage(data: img) {
+                Image(uiImage: uiImage)
+            } else {
+                Text("Tidak ada gambar")
+                    .font(.lexendMedium(32))
+            }
+            Spacer()
+            HStack {
+                Image(systemName: "camera.fill")
+                    .font(.title)
+            }
+            .font(.largeTitle)
+            .foregroundColor(.brandPurple)
+        }
+        .padding(16)
+        .card()
+        .opacity(isFlipped ? 1 : 0.5)
+        .animation(.easeInOut(duration: 0.5))
+        .padding(.horizontal)
+        .padding(.bottom, 48)
+        .rotation3DEffect(.init(degrees: degree), axis: (x: 0, y: 1, z: 0))
+    }
+}
+
+struct UserAlphabetView: View {
+    let alphabet: UserAlphabetEntity
+
+    @State private var popInfo = false
+    @State var frontDegree = 0.0
+    @State var backDegree = -90.0
+    @State var isFlipped = false
+
+    let width: CGFloat = 200
+    let height: CGFloat = 250
+    let durationAndDelay: CGFloat = 0.3
+
+    func flipCard() {
+        isFlipped.toggle()
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                backDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                frontDegree = 0
+            }
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped)
+            AlphabetCardBack(width: width, height: height, userAlphabet: alphabet, degree: $backDegree, isFlipped: $isFlipped)
+        }.onTapGesture {
+            flipCard()
+        }
     }
 }
 
@@ -89,6 +185,7 @@ struct UserAlphabetView_Previews: PreviewProvider {
         ).getAlphabets()[0])
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
+            .background(Image("background"))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
