@@ -8,6 +8,11 @@
 import CoreData
 
 struct Seeder {
+    func seedAll(context: NSManagedObjectContext) {
+        seedAlphabet(context: context)
+        seedAvatar(context: context)
+    }
+
     func seedAlphabet(context: NSManagedObjectContext) {
         guard !UserDefaults.standard.seedAlphabet else { return }
 //        initBothCaseAlphabet(context: context)
@@ -17,6 +22,23 @@ struct Seeder {
         save(context: context)
 
         UserDefaults.standard.seedAlphabet = true
+    }
+    
+    func seedAvatar(context: NSManagedObjectContext) {
+        guard !UserDefaults.standard.seedAvatar else { return }
+        let lex = AvatarEntity(context: context)
+        lex.uuid = UUID()
+        lex.path = "lex"
+        lex.name = "Lex"
+        
+        let play = AvatarEntity(context: context)
+        play.uuid = UUID()
+        play.path = "play"
+        play.name = "Play"
+        
+        save(context: context)
+        
+        UserDefaults.standard.seedAvatar = true
     }
 
     func seedDummy(context: NSManagedObjectContext) {

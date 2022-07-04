@@ -11,6 +11,7 @@ extension UserDefaults {
   private enum UserDefaultsKey: String {
     case hasOnboarded
     case seedAlphabet
+    case seedAvatar
   }
   
   var hasOnboarded: Bool {
@@ -31,4 +32,13 @@ extension UserDefaults {
       setValue(newValue, forKey: UserDefaultsKey.seedAlphabet.rawValue)
     }
   }
+    
+    var seedAvatar: Bool {
+      get {
+        bool(forKey: UserDefaultsKey.seedAvatar.rawValue)
+      }
+      set {
+        setValue(newValue, forKey: UserDefaultsKey.seedAvatar.rawValue)
+      }
+    }
 }
