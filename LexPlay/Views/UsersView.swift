@@ -29,7 +29,7 @@ struct UsersView: View {
         )
         
         Button("OK") {
-            UserRepository().addUser(name: username, login: (login as NSString).boolValue, timeStamp: Double(timeStamp)!)
+//            UserRepository().addUser(name: username, login: (login as NSString).boolValue, timeStamp: Double(timeStamp)!)
         }
         Button("EDIT") {
             UserRepository().editUsername(name: username, user: userSelected!)

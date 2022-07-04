@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ChangeAvatarView: View {
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.uuid, ascending: true)],
+                  animation: .default) private var avatars: FetchedResults<AvatarEntity>
+      
     var body: some View {
       ZStack {
         LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
@@ -16,9 +20,9 @@ struct ChangeAvatarView: View {
           Text("Pilih Avatar")
             .font(.custom(FontStyle.lexendSemiBold, size: 24))
           
-          CardAvatar(imageName: "lex", imageWidth: 99, imageHeight: 151, avatarName: "Lex").padding(.bottom, 30)
+            CardAvatar(imageWidth: 99, imageHeight: 151, avatar : avatars[0]).padding(.bottom, 30)
           
-          CardAvatar(imageName: "play", imageWidth: 104, imageHeight: 115, avatarName: "Play")
+            CardAvatar(imageWidth: 104, imageHeight: 115, avatar : avatars[1])
             .padding(.bottom, 70)
           
           Button {

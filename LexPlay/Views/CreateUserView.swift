@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CreateUserView: View {
-  
-  @State var test = ""
+    
+  @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.uuid, ascending: true)],
+                animation: .default) private var avatars: FetchedResults<AvatarEntity>
+  var user : UserController
+  @State var avatar : AvatarEntity? = nil
+  @State var name = ""
   @State var isGoToSpecificLetterView = false
   
   var body: some View {
@@ -20,13 +24,28 @@ struct CreateUserView: View {
         Text("Pilih avatarmu!")
           .font(.custom(FontStyle.lexendMedium, size: 22))
         
-        CardAvatar(imageName: "lex", imageWidth: 99, imageHeight: 151, avatarName: "Lex").padding(.bottom, 11)
+          CardAvatar(imageWidth: 99, imageHeight: 151, avatar: avatars[1]).padding(.bottom, 11)
+              .onTapGesture {
+                  avatar = avatars[1]
+              }
+              .overlay(avatar == avatars[1] ?
+                       RoundedRectangle(cornerRadius: 25)
+                .stroke(Color.red, lineWidth: 5).padding(.bottom, 11) :
+                        RoundedRectangle(cornerRadius: 0)
+                .stroke(Color.red, lineWidth: 0).padding(.bottom, 11))
         
-        CardAvatar(imageName: "play", imageWidth: 104, imageHeight: 115, avatarName: "Play")
+          CardAvatar(imageWidth: 104, imageHeight: 115, avatar: avatars[0])
+          .onTapGesture {
+              avatar = avatars[0]
+          }
           .padding(.bottom, 24)
-          
+          .overlay(avatar == avatars[0] ?
+                   RoundedRectangle(cornerRadius: 25)
+            .stroke(Color.red, lineWidth: 5).padding(.bottom, 24) :
+                    RoundedRectangle(cornerRadius: 0)
+            .stroke(Color.red, lineWidth: 0).padding(.bottom, 24))
         
-        TextField(text: $test) {
+        TextField(text: $name) {
           Text("Username")
             .font(.custom(FontStyle.lexendMedium, size: 21))
         }
@@ -37,6 +56,11 @@ struct CreateUserView: View {
         .padding(.bottom, 11)
         
         Button {
+            guard let avatar = avatar else {
+                return
+            }
+
+            user.saveUser(name: name, avatar: avatar)
           isGoToSpecificLetterView.toggle()
         } label: {
           Text("Create Profile")
@@ -66,8 +90,10 @@ struct CreateUserView: View {
 }
 
 
-struct CreateUserView_Previews: PreviewProvider {
-  static var previews: some View {
-    CreateUserView()
-  }
-}
+//struct CreateUserView_Previews: PreviewProvider {
+//    var user : UserController
+//    @State var avatar : AvatarEntity
+//  static var previews: some View {
+//      CreateUserView(user: user, avatar: avatar)
+//  }
+//}

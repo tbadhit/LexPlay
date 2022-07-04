@@ -10,7 +10,7 @@ import CoreData
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
-    func addUser(name : String, login: Bool, timeStamp : TimeInterval)
+    func addUser(name : String, avatar : AvatarEntity)
     func editUsername( name : String, user : UserEntity)
 }
 
@@ -37,14 +37,19 @@ extension UserRepository: UserRepositoryProtocol {
         return try? context.fetch(request).first
     }
     
-    func addUser (name : String, login: Bool, timeStamp : TimeInterval) {
+    func addUser (name : String, avatar : AvatarEntity) {
+        let reminder = ReminderEntity(context: context)
+                reminder.uuid = UUID()
+                reminder.time = Date()
+        
         //1. create new NSManageobject
         let newUser = UserEntity(context: context)
         
         //2. add/ update the attributes
         newUser.name = name
-        newUser.login = login
-        newUser.timestamp = timeStamp
+        newUser.avatar = avatar
+        newUser.reminder = reminder
+        newUser.alphabets = []
         
         //3. save context
         save()

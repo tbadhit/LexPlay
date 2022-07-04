@@ -67,7 +67,7 @@ struct OnboardingView2: View {
           .font(.custom(FontStyle.lexendMedium, size: 21))
         Spacer()
         NavigationLink(destination: {
-          CreateUserView()
+            CreateUserView(user: UserController())
         }, label: {
           Text("Next")
             .frame(width: UIScreen.screenWidth / 1.5)
@@ -84,11 +84,11 @@ struct OnboardingView2: View {
   }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
-  static var previews: some View {
-    OnboardingView2()
-  }
-}
+//struct OnboardingView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    OnboardingView2()
+//  }
+//}
 
 extension UIScreen {
   static let screenWidth = UIScreen.main.bounds.size.width

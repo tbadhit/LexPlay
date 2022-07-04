@@ -13,7 +13,7 @@ struct SpecificLettersView: View {
         LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
         VStack {
           // Card
-          GreetingCard()
+            GreetingCard(userController: UserController())
             .padding(.bottom, 20)
           
           // Card Question
@@ -62,13 +62,14 @@ struct SpecificLettersView: View {
 
 
 struct GreetingCard: View {
+    let userController: UserController
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 50, style: .continuous)
         .fill(.white)
       
       HStack {
-        Image("lex")
+          Image(userController.getAvatar().lowercased())
           .resizable()
           .frame(width: 108, height: 182)
           .padding(.trailing, 1)
@@ -77,7 +78,7 @@ struct GreetingCard: View {
         VStack(alignment: .leading) {
           Text("Hellow,")
             .font(.custom(FontStyle.lexendMedium, size: 21))
-          Text("Name")
+            Text("\(userController.getUser().name ?? "")")
             .font(.custom(FontStyle.lexendSemiBold, size: 36))
         }
       }.padding(.trailing, 30)
