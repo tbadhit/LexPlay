@@ -12,6 +12,8 @@
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
 		111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65052871C5FA0075DF47 /* MiniProfileView.swift */; };
 		111C650C287206410075DF47 /* MiniReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C650B287206410075DF47 /* MiniReminderView.swift */; };
+		1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B6287291BF00CAD128 /* Color+Ext.swift */; };
+		1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
 		112B08492870120400905CE5 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetController.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
@@ -63,6 +65,8 @@
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		111C65052871C5FA0075DF47 /* MiniProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProfileView.swift; sourceTree = "<group>"; };
 		111C650B287206410075DF47 /* MiniReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniReminderView.swift; sourceTree = "<group>"; };
+		1124C0B6287291BF00CAD128 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		1124C0BF2872A97700CAD128 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		112B08482870120400905CE5 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
@@ -258,9 +262,11 @@
 			isa = PBXGroup;
 			children = (
 				160250AC286EA17E008D9D15 /* FontStyle.swift */,
+				1124C0BF2872A97700CAD128 /* Font+Ext.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
 				160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */,
 				111C65022871B7AA0075DF47 /* View+Ext.swift */,
+				1124C0B6287291BF00CAD128 /* Color+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
+				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
@@ -361,6 +368,7 @@
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
+				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
