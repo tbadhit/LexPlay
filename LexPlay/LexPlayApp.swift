@@ -17,13 +17,13 @@ struct LexPlayApp: App {
 //            ContentView()
 //          CameraView()
 //         AlphabetRecognitionView()
-//            ProfileView()
+//           LetterCaseView()
 //          UsersView()
 //          if UserDefaults.standard.hasOnboarded {
 //            MainView()
 //          } else {
-            OnboardingView()
-//            LessonsView()
+//            OnboardingView()
+            LessonsView()
 //            CustomLessonsView()
                 .font(.lexendRegular())
                 .foregroundColor(Color("black"))

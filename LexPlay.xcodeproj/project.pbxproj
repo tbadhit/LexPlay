@@ -57,8 +57,8 @@
 		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
 		162620362870BD130044895F /* SpecificLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162620352870BD130044895F /* SpecificLettersView.swift */; };
 		AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4519C3286F317100704214 /* UserAlphabet.swift */; };
-		AD6CBBEC2872EB17009403DF /* CameraResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBEA2872EB17009403DF /* CameraResultUI.swift */; };
-		AD6CBBED2872EB17009403DF /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */; };
+		AD6CBBE72872D8C7009403DF /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */; };
+		AD6CBBE92872DA59009403DF /* CameraResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBE82872DA59009403DF /* CameraResultUI.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
@@ -119,6 +119,8 @@
 		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		162620352870BD130044895F /* SpecificLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificLettersView.swift; sourceTree = "<group>"; };
 		AD4519C3286F317100704214 /* UserAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabet.swift; sourceTree = "<group>"; };
+		AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
+		AD6CBBE82872DA59009403DF /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
 		AD6CBBEA2872EB17009403DF /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
 		AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,8 @@
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
+				AD6CBBE82872DA59009403DF /* CameraResultUI.swift */,
+				AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */,
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
 				AD6CBBEA2872EB17009403DF /* CameraResultUI.swift */,
 				AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */,
@@ -386,6 +390,7 @@
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
+				AD6CBBE92872DA59009403DF /* CameraResultUI.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				1124C0B5287224CF00CAD128 /* UserAlphabetController.swift in Sources */,
@@ -398,6 +403,7 @@
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
+				AD6CBBE72872D8C7009403DF /* LetterCaseView.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */,
