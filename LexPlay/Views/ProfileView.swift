@@ -63,10 +63,8 @@ struct ProfileView: View {
                             })
                             //Ntr diganti destinationnya ke page lain
                             NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!"))
-                                .opacity(1)
                                 
                             NavigationLink("Change Lesson Mode", destination: OnboardingView())
-                                .opacity(1)
                         }
                     }
                     .background(Color.white)

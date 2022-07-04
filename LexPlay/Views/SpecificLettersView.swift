@@ -10,7 +10,7 @@ import SwiftUI
 struct SpecificLettersView: View {
     var body: some View {
       ZStack {
-        LinearGradient(gradient: Gradient(colors: [.white, Color("background")]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
         VStack {
           // Card
           GreetingCard()

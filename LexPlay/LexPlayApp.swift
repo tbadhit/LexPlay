@@ -22,8 +22,9 @@ struct LexPlayApp: App {
 //          if UserDefaults.standard.hasOnboarded {
 //            MainView()
 //          } else {
-            OnboardingView()
+//            OnboardingView()
 //            LessonsView()
+          CustomAlphabetView()
                 .font(.custom(FontStyle.lexendRegular, size: 16))
                 .foregroundColor(Color("black"))
                   .environment(\.managedObjectContext, persistenceController.container.viewContext)

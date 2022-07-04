@@ -42,10 +42,11 @@ struct LessonsView: View {
                         .padding(.horizontal)
                         Spacer()
                     }
-                    if lessonController.getLessons().count > 4 {
+                  
+//                    if lessonController.getLessons().count > 4 {
                         LessonItemView(i: 4, image: images[4])
                             .padding(.horizontal)
-                    }
+//                    }
                 }
                 .tabViewStyle(.page)
             }
