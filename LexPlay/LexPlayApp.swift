@@ -24,7 +24,7 @@ struct LexPlayApp: App {
 //          } else {
             OnboardingView()
 //            LessonsView()
-//            CustomLessonView()
+//            CustomLessonsView()
                 .font(.lexendRegular())
                 .foregroundColor(Color("black"))
                   .environment(\.managedObjectContext, persistenceController.container.viewContext)
