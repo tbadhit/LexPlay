@@ -10,7 +10,6 @@ import SwiftUI
 struct CustomAlphabetView: View {
   private let alphabetController: AlphabetController = AlphabetController()
   private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
-  @State var isCardSelected = false
   @State var selectionsAlphabet: [String] = []
   
   func alphabets() -> [String] {
@@ -20,36 +19,6 @@ struct CustomAlphabetView: View {
     }
     
     return items
-  }
-  
-  func generateAlphabet(alphabets: [String], index: Int, tabviewIndex: Int) -> String {
-    var textAlphabet = ""
-    switch tabviewIndex {
-    case 0:
-      textAlphabet = alphabets[index].uppercased() + alphabets[index].lowercased()
-      break
-    case 1:
-      textAlphabet = alphabets[index + 4].uppercased() + alphabets[index + 4].lowercased()
-      break
-    case 2:
-      textAlphabet = alphabets[index + 8].uppercased() + alphabets[index + 8].lowercased()
-      break
-    case 3:
-      textAlphabet = alphabets[index + 12].uppercased() + alphabets[index + 12].lowercased()
-      break
-    case 4:
-      textAlphabet = alphabets[index + 16].uppercased() + alphabets[index + 16].lowercased()
-      break
-    case 5:
-      textAlphabet = alphabets[index + 20].uppercased() + alphabets[index + 20].lowercased()
-      break
-    case 6:
-      textAlphabet = alphabets[index + 24].uppercased() + alphabets[index + 24].lowercased()
-      break
-    default:
-      textAlphabet = ""
-    }
-    return textAlphabet
   }
   
   
@@ -68,8 +37,8 @@ struct CustomAlphabetView: View {
                 LazyVGrid(columns: columns, spacing: 16) {
                   if tabViewIndex == 6 {
                     ForEach(0 ..< 2, id: \.self) { i in
-                      let alphabet = generateAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
-                      CardAlphabet(alphabet: generateAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
+                      let alphabet = alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
+                      CardAlphabet(alphabet: alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
                         if selectionsAlphabet.contains(alphabet) {
                           selectionsAlphabet.removeAll(where: { $0 == alphabet })
                         } else {
@@ -80,8 +49,8 @@ struct CustomAlphabetView: View {
                     }
                   } else {
                     ForEach(0 ..< 4, id: \.self) { i in
-                      let alphabet = generateAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
-                      CardAlphabet(alphabet: generateAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
+                      let alphabet = alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
+                      CardAlphabet(alphabet: alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
                         if selectionsAlphabet.contains(alphabet) {
                           selectionsAlphabet.removeAll(where: { $0 == alphabet })
                         } else {
@@ -150,7 +119,7 @@ struct CardSays: View {
         .padding(.trailing, 10)
       
       Text("Pilih alphabet yang\ningin dipelajari")
-        .font(.custom(FontStyle.lexendMedium, size: 21))
+        .font(.lexendMedium(21))
     }
     .frame(maxWidth: .infinity, maxHeight: 100)
     .card()
@@ -168,7 +137,7 @@ struct CardAlphabet: View {
     Button(action: self.action) {
       if isCardSelected {
         Text(alphabet)
-          .font(.custom(FontStyle.lexendSemiBold, size: 72))
+          .font(.lexendSemiBold(72))
           .foregroundColor(.white)
           .frame(width: UIScreen.screenWidth / 2.5, height: UIScreen.screenWidth / 2.5)
           .background(.red)
@@ -177,7 +146,7 @@ struct CardAlphabet: View {
       } else {
         
         Text(alphabet)
-          .font(.custom(FontStyle.lexendSemiBold, size: 72))
+          .font(.lexendSemiBold(72))
           .frame(width: UIScreen.screenWidth / 2.5, height: UIScreen.screenWidth / 2.5)
           .card()
       }

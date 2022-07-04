@@ -20,7 +20,6 @@
 		1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		1124C0C22872B10500CAD128 /* UserAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C12872B10500CAD128 /* UserAlphabetView.swift */; };
 		1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C52872FA6900CAD128 /* AudioController.swift */; };
-		1124C0C82872FB8E00CAD128 /* CameraResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
 		112B08492870120400905CE5 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetController.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
@@ -62,6 +61,7 @@
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
+		167124F52872FC0200ACEB28 /* CameraResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F42872FC0200ACEB28 /* CameraResultView.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
 		AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4519C3286F317100704214 /* UserAlphabet.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
@@ -85,7 +85,6 @@
 		1124C0BF2872A97700CAD128 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		1124C0C12872B10500CAD128 /* UserAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetView.swift; sourceTree = "<group>"; };
 		1124C0C52872FA6900CAD128 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
-		1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		112B08482870120400905CE5 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
+		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
 		167124F728732A2300ACEB28 /* erlina.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = erlina.m4a; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		AD4519C3286F317100704214 /* UserAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabet.swift; sourceTree = "<group>"; };
@@ -198,6 +198,7 @@
 		114CDF152866A05D0008273B /* LexPlay */ = {
 			isa = PBXGroup;
 			children = (
+				167124F628732A0000ACEB28 /* Audio */,
 				160250BA286F42D2008D9D15 /* Utils */,
 				160250AB286EA033008D9D15 /* Info.plist */,
 				16025098286E9FFB008D9D15 /* Fonts */,
@@ -260,7 +261,6 @@
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
-				1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */,
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
 				AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */,
 				16025090286D8421008D9D15 /* MainView.swift */,
@@ -276,6 +276,7 @@
 				167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */,
 				167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */,
 				1124C0B22872229100CAD128 /* CustomLessonsView.swift */,
+				167124F42872FC0200ACEB28 /* CameraResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +427,7 @@
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
+				167124F52872FC0200ACEB28 /* CameraResultView.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
@@ -442,7 +444,6 @@
 				119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */,
 				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
-				1124C0C82872FB8E00CAD128 /* CameraResultUI.swift in Sources */,
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 				119230D92870ADFD0033F5B3 /* LessonController.swift in Sources */,

@@ -36,6 +36,7 @@ struct CardAvatar: View {
       }
     }
     .frame(maxWidth: .infinity, maxHeight: 166)
+    .card()
     
     
   }
@@ -43,6 +44,7 @@ struct CardAvatar: View {
 
 //struct CardAvatar_Previews: PreviewProvider {
 //  static var previews: some View {
-//    CardAvatar(imageName: "lex", imageWidth: 99, imageHeight: 151, avatarName: "Lex")
+//    CardAvatar(imageName: "lex", imageWidth: 99, avatar: <#AvatarEntity#>, imageHeight: 151, avatarName: "Lex")
+//      .background(.black)
 //  }
 //}

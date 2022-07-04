@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CameraResultUI: View {
+struct CameraResultView: View {
     var body: some View {
         
         NavigationView {
@@ -53,15 +53,15 @@ struct CameraResultUI: View {
                 }
             }
             .frame(minWidth : 0, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity, alignment: .top)
-            .background(LinearGradient(colors: [Color("Color"), Color("Color"), Color.white], startPoint: .bottomLeading, endPoint: .topTrailing))
+            .background(LinearGradient(colors: [Color("background-color"), Color("background-color"), Color.white], startPoint: .bottomLeading, endPoint: .topTrailing))
             .navigationBarHidden(true)
         }
         
     }
 }
 
-struct CameraResultUI_Previews: PreviewProvider {
+struct CameraResultView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraResultUI()
+        CameraResultView()
     }
 }

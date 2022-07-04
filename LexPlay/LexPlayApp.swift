@@ -22,10 +22,11 @@ struct LexPlayApp: App {
 //          if UserDefaults.standard.hasOnboarded {
 //            MainView()
 //          } else {
-//            OnboardingView()
+            OnboardingView()
 //            LessonsView()
 //            CustomAlphabetView()
-            CustomLessonsView()
+//          CameraResultView()
+//          LetterCaseView()
                 .font(.lexendRegular())
                 .foregroundColor(.brandBlack)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)

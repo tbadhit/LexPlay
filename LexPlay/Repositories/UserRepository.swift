@@ -46,6 +46,7 @@ extension UserRepository: UserRepositoryProtocol {
         let newUser = UserEntity(context: context)
         
         //2. add/ update the attributes
+      newUser.uuid = UUID()
         newUser.name = name
         newUser.avatar = avatar
         newUser.reminder = reminder

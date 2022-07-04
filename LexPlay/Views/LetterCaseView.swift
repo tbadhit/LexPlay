@@ -79,7 +79,7 @@ struct LetterCaseView: View {
                             .stroke(Color("gradient1"), lineWidth: 9)
                             .frame(width: UIScreen.screenWidth * 0.9,height: UIScreen.screenHeight * 0.07, alignment: .center)
                     
-                        NavigationLink("Change Lesson Mode", destination: CameraResultUI())
+                        NavigationLink("Change Lesson Mode", destination: CameraResultView())
                                 .font(.custom(FontStyle.lexendMedium, size: 21))
                                 .opacity(1)
                                 .frame(width: UIScreen.screenWidth * 0.9,height: UIScreen.screenHeight * 0.07, alignment: .center)

@@ -13,18 +13,19 @@ struct OnboardingView: View {
   
   var body: some View {
     NavigationView {
-      ZStack {
-        Image("onboard-bg-1")
-          .resizable()
-          .aspectRatio(contentMode: .fill)
-          .edgesIgnoringSafeArea(.top)
-        
-        VStack {
+      HStack {
+        Spacer()
+        VStack() {
           Spacer()
-          Text("Hello I'm Lex")
+          Text("Hello,")
             .foregroundColor(Color.black)
-            .font(.custom(FontStyle.lexendMedium, size: 21))
-            .offset(y: -60)
+            .padding(.bottom, 10)
+            .font(.lexendMedium(28))
+            .offset(x: -109,y: -105)
+          Text("Lexplay merupakan aplikasi\nmedia pembelajaran untuk\nmembantu anak disleksia\nmengenal huruf dengan\nbimbingan dari orang tua.")
+            .foregroundColor(Color.black)
+            .font(.lexendMedium(21))
+            .offset(y: -105)
           Spacer()
           Button {
             withAnimation(.easeIn(duration: 1)) {
@@ -32,20 +33,31 @@ struct OnboardingView: View {
               isNextOnboard.toggle()
             }
           } label: {
-            Text("Next")
-              .frame(width: UIScreen.screenWidth / 1.5)
+            Text("Lanjut")
+              .frame(maxWidth: .infinity)
               .padding()
               .foregroundColor(Color.white)
               .background(Color.red)
-              .cornerRadius(15)
-              .font(.custom(FontStyle.lexendMedium, size: 21))
+              .cornerRadius(38)
+              .font(.lexendMedium(21))
           }
+          .padding(.horizontal, 20)
+          .padding(.bottom, 60)
+          
+          
           NavigationLink(destination: OnboardingView2(), isActive: $isNextOnboard, label: {
             EmptyView()
           })
-          .padding(.bottom, 60)
+          
         }
+        Spacer()
       }
+      .background(Image("onboard-bg-1")
+        .resizable()
+        .aspectRatio(contentMode: .fill)
+        .edgesIgnoringSafeArea(.all
+                              ))
+      
       
       .navigationBarHidden(true)
     }
@@ -53,34 +65,109 @@ struct OnboardingView: View {
 }
 
 struct OnboardingView2: View {
+  private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 1)
+  
+  private let textInfoDashboard = [
+    ("Multisensory", "Menciptakan\npengalaman belajar\nyang menarik dengan\nmetode multisensori\nuntuk menstimulasi\nmemori anak."),
+    ("Notifikasi", "Mengingatkan orang tua\nuntuk menjaga konsistensi\npembelajaran sang anak."),
+    ("Interaksi", "Membangun hubungan\ninteraktif antara anak dan\norang tua dalam proses\npembelajaran."),
+    ("Personalisasi", "Komposisi huruf dapat\ndisesuaikan dengan\nkebutuhan pembelajaran\nanak.")
+  ]
+  
+  @State private var currentCard = 0
+  @State private var isGoToDashboardView = false
+  
   var body: some View {
-    ZStack {
-      Image("onboard-bg-2")
-        .resizable()
-        .aspectRatio(contentMode: .fill)
-        .edgesIgnoringSafeArea(.top)
-      
-      VStack {
-        Spacer()
-        Text("Hello I'm Play")
-          .foregroundColor(Color.black)
-          .font(.custom(FontStyle.lexendMedium, size: 21))
-        Spacer()
-        NavigationLink(destination: {
-            CreateUserView(user: UserController())
-        }, label: {
-          Text("Next")
-            .frame(width: UIScreen.screenWidth / 1.5)
-            .padding()
-            .foregroundColor(Color.white)
-            .background(Color.red)
-            .cornerRadius(15)
-            .font(.custom(FontStyle.lexendMedium, size: 21))
-        })
-        .padding(.bottom, 60)
+    VStack {
+      ZStack {
+        TabView(selection: $currentCard) {
+          ForEach(0 ..< textInfoDashboard.count, id: \.self) { i in
+            LazyVGrid(columns: columns) {
+              CardOnboard(title: textInfoDashboard[i].0,description: textInfoDashboard[i].1)
+                .tag(i)
+            }
+          }
+          
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .padding(.bottom, 100)
+        
+        VStack {
+          Spacer()
+          Image("onboard-play")
+            .resizable()
+            .edgesIgnoringSafeArea(.all)
+            .scaledToFit()
+            
+        }
+        
+        VStack {
+          Spacer()
+          Button( action: {
+            withAnimation(.easeInOut(duration: 1.0)) {
+              if self.currentCard == 3 {
+                isGoToDashboardView = true
+              } else {
+                self.currentCard = (self.currentCard + 1)%self.textInfoDashboard.count
+              }
+            }
+          }, label: {
+            Text("Lanjut")
+              .frame(maxWidth: .infinity)
+              .padding()
+              .foregroundColor(Color.white)
+              .background(Color.red)
+              .cornerRadius(38)
+              .font(.custom(FontStyle.lexendMedium, size: 21))
+          })
+          .padding(.horizontal, 20)
+          .padding(.bottom, 60)
+        }
       }
     }
+    .background(Image("onboard-bg-2")
+      .resizable()
+      .aspectRatio(contentMode: .fill)
+      .edgesIgnoringSafeArea(.all))
+    
+    
+    // Navigation
+    NavigationLink(destination: CreateUserView(user: UserController()), isActive: $isGoToDashboardView, label: {
+      EmptyView()
+    })
+    
     .navigationBarHidden(true)
+    
+  }
+}
+
+struct CardOnboard: View {
+  
+  let title: String
+  let description: String
+  
+  var body: some View {
+    ZStack {
+      VStack(alignment: .leading) {
+        Text(title)
+          .foregroundColor(Color.black)
+          .font(.lexendMedium(28))
+          .padding(.bottom, 10)
+        Text(description)
+          .foregroundColor(Color.black)
+          .font(.custom(FontStyle.lexendMedium, size: 21))
+      }
+      .padding(30)
+      .frame(maxWidth: .infinity, maxHeight: UIScreen.screenWidth)
+      .card()
+      .cardPadding()
+      .padding(.bottom, 105)
+      
+      Image("star")
+        .resizable()
+        .frame(width: 108, height: 125)
+        .offset(x: 100, y: -175)
+    }
   }
 }
 
@@ -90,7 +177,4 @@ struct OnboardingView2: View {
 //  }
 //}
 
-extension UIScreen {
-  static let screenWidth = UIScreen.main.bounds.size.width
-  static let screenHeight = UIScreen.main.bounds.size.height
-}
+
