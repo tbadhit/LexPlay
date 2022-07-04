@@ -38,6 +38,13 @@ extension UserAlphabetController {
     func getPredicate() -> FetchRequest<UserAlphabetEntity> {
         return FetchRequest<UserAlphabetEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \UserAlphabetEntity.alphabet?.char, ascending: true)], predicate: NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), user.uuid! as CVarArg))
     }
+    
+    func getPredicateByLesson(lesson: LessonEntity) -> FetchRequest<UserAlphabetEntity> {
+        return FetchRequest<UserAlphabetEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \UserAlphabetEntity.alphabet?.char, ascending: true)], predicate: NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), user.uuid! as CVarArg),
+            NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.lesson.uuid), lesson.uuid! as CVarArg)
+        ]))
+    }
 
     func getChar(alphabet: UserAlphabetEntity) -> String? {
         let char = (alphabet.alphabet?.char ?? "")

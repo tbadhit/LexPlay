@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomLessonAlphabetsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     private let userAlphabetController: UserAlphabetController
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
 
@@ -26,16 +27,16 @@ struct CustomLessonAlphabetsView: View {
         } else { EmptyView() }
     }
 
-    init(userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository())) {
+    init(predicate: FetchRequest<UserAlphabetEntity>, userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository())) {
+        _alphabets = predicate
         self.userAlphabetController = userAlphabetController
-        _alphabets = userAlphabetController.getPredicate()
     }
 }
 
 struct CustomLessonAlphabetsView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomLessonAlphabetsView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-                                                                                 user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!))
+        CustomLessonAlphabetsView(predicate: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)).getUser()).getPredicate(), userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
+                                                                                                                                                                                                                                                                                                                                                                                        user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!))
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
