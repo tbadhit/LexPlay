@@ -37,6 +37,7 @@ class SpeechRecognizer: ObservableObject {
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     private var recognizer: SFSpeechRecognizer?
+    private let audioSession = AVAudioSession.sharedInstance()
 
     init() {
         recognizer = SFSpeechRecognizer(locale: Locale(identifier: "id-ID"))
@@ -55,6 +56,9 @@ class SpeechRecognizer: ObservableObject {
             } catch {
                 speakError(error)
             }
+            do {
+                _ = try prepareEngine()
+            }
         }
     }
 
@@ -66,8 +70,13 @@ class SpeechRecognizer: ObservableObject {
         task?.cancel()
         reset()
     }
-    
+
     private func reset() {
+        do {
+            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            print(error.localizedDescription)
+        }
         audioEngine?.stop()
         audioEngine = nil
         request = nil
@@ -75,15 +84,14 @@ class SpeechRecognizer: ObservableObject {
         isRecoring = false
     }
 
-    private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
-        let audioEngine = AVAudioEngine()
-
+    private func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
 
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        try audioSession.setCategory(.playAndRecord, mode: .default, options: .overrideMutedMicrophoneInterruption)
+        try audioSession.overrideOutputAudioPort(.speaker)
+
+        let audioEngine = AVAudioEngine()
         let inputNode = audioEngine.inputNode
 
         let recordingFormat = inputNode.outputFormat(forBus: 0)
@@ -91,7 +99,6 @@ class SpeechRecognizer: ObservableObject {
             request.append(buffer)
         }
         audioEngine.prepare()
-        try audioEngine.start()
 
         return (audioEngine, request)
     }
@@ -113,6 +120,7 @@ class SpeechRecognizer: ObservableObject {
 
     private func speak(_ message: String) {
         transcript = message
+        print("You speak: \(transcript)")
     }
 
     private func speakError(_ error: Error) {
@@ -132,6 +140,7 @@ extension SpeechRecognizer {
     func transcribe() {
         DispatchQueue.main.async {
             self.isRecoring = true
+            self.transcript = ""
         }
         DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
@@ -140,7 +149,9 @@ extension SpeechRecognizer {
             }
 
             do {
-                let (audioEngine, request) = try Self.prepareEngine()
+                let (audioEngine, request) = try self.prepareEngine()
+                try self.audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+                try audioEngine.start()
                 self.audioEngine = audioEngine
                 self.request = request
                 self.task = recognizer.recognitionTask(with: request, resultHandler: self.recognitionHandler(result:error:))

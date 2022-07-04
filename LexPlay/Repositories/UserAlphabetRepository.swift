@@ -11,6 +11,8 @@ import CoreData
 protocol UserAlphabetRepositoryProtocol {
   func getAllUserAlphabet() -> [UserAlphabetEntity]
   func addPictureAlphabet(userAlphabet: UserAlphabetEntity, imageData: Data, hasDifficulity: Bool)
+  func saveAlphabets(user : UserEntity, alphabets : [AlphabetEntity])
+  func getAlphabet (alphabet : Alphabet, letterCase : LetterCase) -> AlphabetEntity
 }
 
 

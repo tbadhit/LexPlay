@@ -40,6 +40,7 @@ struct ProfileView: View {
                             .frame(width: UIScreen.screenWidth / 2, alignment: .leading)
                             Image("play-avatar")
                                 .frame(width: UIScreen.screenWidth / 3, alignment: .leading)
+                                
                         }
                         HStack {
                             Text("Username")
@@ -61,6 +62,7 @@ struct ProfileView: View {
                             Toggle(isOn: $boolSavePhoto, label: {
                                 Text("Save Photo to Gallery")
                             })
+                            
                             //Ntr diganti destinationnya ke page lain
                             NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!"))
                                 

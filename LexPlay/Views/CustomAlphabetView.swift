@@ -62,7 +62,7 @@ struct CustomAlphabetView: View {
         
         // Custom Huruf
         TabView {
-          ForEach(0 ..< 7, id: \.self) {tabViewIndex in
+          ForEach(0 ..< Int((Double(alphabets().count ) / 4.0).rounded(.up)), id: \.self) {tabViewIndex in
             VStack {
               VStack {
                 LazyVGrid(columns: columns, spacing: 16) {
@@ -128,6 +128,9 @@ struct CustomAlphabetView: View {
 struct CustomAlphabetView_Previews: PreviewProvider {
   static var previews: some View {
     CustomAlphabetView()
+      .font(.lexendRegular())
+      .foregroundColor(Color("black"))
+      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
   }
 }
 
