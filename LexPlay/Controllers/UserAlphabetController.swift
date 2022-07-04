@@ -5,14 +5,12 @@
 //  Created by Muhamad Fahmi Al Kautsar on 04/07/22.
 //
 
-import AVFoundation
 import Foundation
 import SwiftUI
 
 class UserAlphabetController {
     private let userAlphabetRepository: UserAlphabetRepositoryProtocol
     private let user: UserEntity
-    private let synthesizer = AVSpeechSynthesizer()
 
     init(userAlphabetRepository: UserAlphabetRepositoryProtocol = UserAlphabetRepository(viewContext: PersistenceController.shared.container.viewContext), user: UserEntity = UserRepository().getActiveUser()!) {
         self.userAlphabetRepository = userAlphabetRepository
@@ -63,17 +61,6 @@ extension UserAlphabetController {
             saveLowercaseUserAlphabets(alphabets: alphabets)
             saveUppercaseUserAlphabets(alphabets: alphabets)
         }
-    }
-
-    func speak(alphabet: UserAlphabetEntity) {
-        synthesizer.stopSpeaking(at: .immediate)
-        guard let char = alphabet.alphabet?.char else { return }
-        let utterance = AVSpeechUtterance(string: char)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
-        utterance.rate = 0.4
-        utterance.pitchMultiplier = 0.5
-
-        synthesizer.speak(utterance)
     }
 
     func getAlphabets() -> [UserAlphabetEntity] {

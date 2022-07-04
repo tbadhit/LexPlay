@@ -19,7 +19,7 @@ struct CustomLessonsView: View {
                 .padding(.horizontal)
             MiniReminderView(userController: userController)
                 .padding(.horizontal)
-            UserAlphabetsView(userAlphabetController: userAlphabetController)
+            CustomLessonAlphabetsView(userAlphabetController: userAlphabetController)
             Spacer()
         }
         .font(.custom(FontStyle.lexendMedium, size: 16))

@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct LexPlayApp: App {
     let persistenceController = PersistenceController.shared
-    
+
     var body: some Scene {
         WindowGroup {
 //            Change the view
@@ -24,10 +24,11 @@ struct LexPlayApp: App {
 //          } else {
 //            OnboardingView()
 //            LessonsView()
-            CustomAlphabetView()
+//            CustomAlphabetView()
+            CustomLessonsView()
                 .font(.lexendRegular())
-                .foregroundColor(Color("black"))
-                  .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .foregroundColor(.brandBlack)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 //          }
         }
     }

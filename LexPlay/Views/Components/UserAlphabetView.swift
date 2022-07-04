@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct UserAlphabetView: View {
-    private let userAlphabetController: UserAlphabetController
-    private let alphabet: UserAlphabetEntity
+    private let audioController: AudioController = AudioController.shared
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showRecognizingResult = false
     @State private var popInfo = false
+    let alphabet: UserAlphabetEntity
 
     var body: some View {
         VStack {
@@ -29,12 +29,12 @@ struct UserAlphabetView: View {
                 }
             }
             Spacer()
-            Text(userAlphabetController.getChar(alphabet: alphabet) ?? "")
+            Text(alphabet.alphabet?.char ?? "")
                 .font(.custom(FontStyle.lexendBold, size: 180))
             Spacer()
             HStack {
                 Button {
-                    userAlphabetController.speak(alphabet: alphabet)
+                    audioController.speak(alphabet: alphabet.alphabet)
                 } label: { Image(systemName: "speaker.wave.2.fill") }
                 Button {} label: { Image(systemName: "mic.fill") }
                     .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
@@ -48,7 +48,7 @@ struct UserAlphabetView: View {
                     .alert(isPresented: $showRecognizingResult) {
                         Alert(title: getAlertTitle(isProcessing: speechRecognizer.isProcessing),
                               message: getAlertMessage(isProcessing: speechRecognizer.isProcessing),
-                              dismissButton: .default(Text("Oke")))
+                              dismissButton: !speechRecognizer.isProcessing ? .default(Text("Oke")) : .default(Text("Batalkan")))
                     }
             }
             .font(.largeTitle)
@@ -58,11 +58,6 @@ struct UserAlphabetView: View {
         .card()
         .padding(.horizontal)
         .padding(.bottom, 48)
-    }
-
-    init(userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository()), alphabet: UserAlphabetEntity) {
-        self.userAlphabetController = userAlphabetController
-        self.alphabet = alphabet
     }
 
     func getAlertTitle(isProcessing: Bool) -> Text {
@@ -88,12 +83,12 @@ struct UserAlphabetView: View {
 
 struct UserAlphabetView_Previews: PreviewProvider {
     static var previews: some View {
-        UserAlphabetView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-                                                                        user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
-                         alphabet: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-                                                          user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!).getAlphabets()[0])
-            .font(.custom(FontStyle.lexendRegular, size: 16))
-            .foregroundColor(Color("black"))
+        UserAlphabetView(alphabet: UserAlphabetController(
+            userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
+            user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!
+        ).getAlphabets()[0])
+            .font(.lexendRegular())
+            .foregroundColor(.brandBlack)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

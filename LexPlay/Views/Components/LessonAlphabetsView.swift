@@ -1,5 +1,5 @@
 //
-//  UserAlphabetsView.swift
+//  LessonAlphabetsView.swift
 //  LexPlay
 //
 //  Created by Muhamad Fahmi Al Kautsar on 04/07/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserAlphabetsView: View {
+struct LessonAlphabetsView: View {
     private let userAlphabetController: UserAlphabetController
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
 
@@ -16,7 +16,7 @@ struct UserAlphabetsView: View {
             TabView {
                 ForEach(alphabets) { alphabet in
                     VStack {
-                        UserAlphabetView(userAlphabetController: userAlphabetController, alphabet: alphabet)
+                        UserAlphabetView(alphabet: alphabet)
                         Spacer()
                     }
                 }
@@ -31,12 +31,12 @@ struct UserAlphabetsView: View {
     }
 }
 
-struct UserAlphabetsView_Previews: PreviewProvider {
+struct LessonAlphabetsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserAlphabetsView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
+        LessonAlphabetsView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
                                                                          user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!))
-            .font(.custom(FontStyle.lexendRegular, size: 16))
-            .foregroundColor(Color("black"))
+            .font(.lexendRegular())
+            .foregroundColor(.brandBlack)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

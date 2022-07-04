@@ -15,10 +15,12 @@
 		1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B22872229100CAD128 /* CustomLessonsView.swift */; };
 		1124C0B5287224CF00CAD128 /* UserAlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */; };
 		1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B6287291BF00CAD128 /* Color+Ext.swift */; };
-		1124C0BC2872A1E200CAD128 /* UserAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BB2872A1E200CAD128 /* UserAlphabetsView.swift */; };
+		1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */; };
 		1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */; };
 		1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		1124C0C22872B10500CAD128 /* UserAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C12872B10500CAD128 /* UserAlphabetView.swift */; };
+		1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C52872FA6900CAD128 /* AudioController.swift */; };
+		1124C0C82872FB8E00CAD128 /* CameraResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
 		112B08492870120400905CE5 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetController.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
@@ -35,6 +37,7 @@
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
 		119230D92870ADFD0033F5B3 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D82870ADFD0033F5B3 /* LessonController.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
+		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
 		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
@@ -60,8 +63,6 @@
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
 		AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4519C3286F317100704214 /* UserAlphabet.swift */; };
-		AD6CBBE72872D8C7009403DF /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */; };
-		AD6CBBE92872DA59009403DF /* CameraResultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBBE82872DA59009403DF /* CameraResultUI.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
@@ -78,10 +79,12 @@
 		1124C0B22872229100CAD128 /* CustomLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonsView.swift; sourceTree = "<group>"; };
 		1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetController.swift; sourceTree = "<group>"; };
 		1124C0B6287291BF00CAD128 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		1124C0BB2872A1E200CAD128 /* UserAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetsView.swift; sourceTree = "<group>"; };
+		1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAlphabetsView.swift; sourceTree = "<group>"; };
 		1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		1124C0BF2872A97700CAD128 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		1124C0C12872B10500CAD128 /* UserAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetView.swift; sourceTree = "<group>"; };
+		1124C0C52872FA6900CAD128 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		112B08482870120400905CE5 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		119230D82870ADFD0033F5B3 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
+		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
 		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -125,9 +129,6 @@
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
 		AD4519C3286F317100704214 /* UserAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabet.swift; sourceTree = "<group>"; };
-		AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
-		AD6CBBE82872DA59009403DF /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
-		AD6CBBEA2872EB17009403DF /* CameraResultUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraResultUI.swift; sourceTree = "<group>"; };
 		AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
@@ -153,9 +154,10 @@
 				111C65052871C5FA0075DF47 /* MiniProfileView.swift */,
 				111C650B287206410075DF47 /* MiniReminderView.swift */,
 				167124F02872948900ACEB28 /* CardAvatar.swift */,
-				1124C0BB2872A1E200CAD128 /* UserAlphabetsView.swift */,
+				1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */,
 				1124C0C12872B10500CAD128 /* UserAlphabetView.swift */,
 				1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */,
+				11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,6 +237,7 @@
 				119230D82870ADFD0033F5B3 /* LessonController.swift */,
 				110A4C4F28717E070046C2C1 /* UserController.swift */,
 				1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */,
+				1124C0C52872FA6900CAD128 /* AudioController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,10 +257,8 @@
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
-				AD6CBBE82872DA59009403DF /* CameraResultUI.swift */,
-				AD6CBBE62872D8C7009403DF /* LetterCaseView.swift */,
+				1124C0C72872FB8E00CAD128 /* CameraResultUI.swift */,
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
-				AD6CBBEA2872EB17009403DF /* CameraResultUI.swift */,
 				AD6CBBEB2872EB17009403DF /* LetterCaseView.swift */,
 				16025090286D8421008D9D15 /* MainView.swift */,
 				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
@@ -396,30 +397,28 @@
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
-				1124C0BC2872A1E200CAD128 /* UserAlphabetsView.swift in Sources */,
+				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
-				AD6CBBE92872DA59009403DF /* CameraResultUI.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				1124C0B5287224CF00CAD128 /* UserAlphabetController.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
+				1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
-				AD6CBBED2872EB17009403DF /* LetterCaseView.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
-				AD6CBBE72872D8C7009403DF /* LetterCaseView.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
+				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
 				AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
-				AD6CBBEC2872EB17009403DF /* CameraResultUI.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */,
@@ -430,6 +429,7 @@
 				119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */,
 				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
+				1124C0C82872FB8E00CAD128 /* CameraResultUI.swift in Sources */,
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 				119230D92870ADFD0033F5B3 /* LessonController.swift in Sources */,

@@ -60,12 +60,12 @@ struct Seeder {
         lesson5.user = user
         let a = AlphabetEntity(context: context)
         a.uuid = UUID()
-        a.char = Alphabet.a.rawValue
+        a.char = Alphabet.a.rawValue.uppercased()
         a.letterCase = Int16(LetterCase.upper.rawValue)
         let b = AlphabetEntity(context: context)
         b.uuid = UUID()
-        b.char = Alphabet.b.rawValue
-        b.letterCase = Int16(LetterCase.upper.rawValue)
+        b.char = Alphabet.b.rawValue.lowercased()
+        b.letterCase = Int16(LetterCase.lower.rawValue)
         let userAlphabetA = UserAlphabetEntity(context: context)
         userAlphabetA.uuid = UUID()
         userAlphabetA.user = user
