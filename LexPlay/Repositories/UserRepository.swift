@@ -11,6 +11,7 @@ import CoreData
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
     func addUser(name : String, avatar : AvatarEntity)
+    func addUser(user: UserModel)
     func editUsername( name : String, user : UserEntity)
 }
 
@@ -31,6 +32,21 @@ class UserRepository {
 }
 
 extension UserRepository: UserRepositoryProtocol {
+  func addUser(user: UserModel) {
+    
+    let reminder = ReminderEntity(context: context)
+            reminder.uuid = UUID()
+            reminder.time = Date()
+    
+    let userEntity = UserEntity(context: context)
+    userEntity.name = user.name
+    userEntity.avatar = user.avatar
+    userEntity.uuid = UUID()
+    userEntity.reminder = reminder
+    
+    save()
+  }
+  
     func getActiveUser() -> UserEntity? {
         let request = UserEntity.fetchRequest()
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true))

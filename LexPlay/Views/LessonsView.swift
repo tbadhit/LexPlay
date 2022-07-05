@@ -43,10 +43,10 @@ struct LessonsView: View {
                         Spacer()
                     }
                   
-//                    if lessonController.getLessons().count > 4 {
+                    if lessonController.getLessons().count > 4 {
                         LessonItemView(i: 4, image: images[4])
                             .padding(.horizontal)
-//                    }
+                    }
                 }
                 .tabViewStyle(.page)
             }
@@ -54,6 +54,7 @@ struct LessonsView: View {
         }
         .font(.custom(FontStyle.lexendMedium, size: 16))
         .background(Image("background"))
+        .navigationBarHidden(true)
     }
 
     init(lessonController: LessonController = LessonController(), userController: UserController = UserController()) {

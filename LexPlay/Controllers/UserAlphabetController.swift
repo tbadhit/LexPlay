@@ -10,33 +10,43 @@ import SwiftUI
 
 class UserAlphabetController {
     private let userAlphabetRepository: UserAlphabetRepositoryProtocol
-    private let user: UserEntity
+    private let userRepository: UserRepository
 
-    init(userAlphabetRepository: UserAlphabetRepositoryProtocol = UserAlphabetRepository(viewContext: PersistenceController.shared.container.viewContext), user: UserEntity = UserRepository().getActiveUser()!) {
+    init(userAlphabetRepository: UserAlphabetRepositoryProtocol = UserAlphabetRepository(viewContext: PersistenceController.shared.container.viewContext), userRepository: UserRepository = UserRepository()) {
         self.userAlphabetRepository = userAlphabetRepository
-        self.user = user
+      self.userRepository = userRepository
     }
+  
+  private func getUser() -> UserEntity {
+    return userRepository.getActiveUser()!
+  }
 
     private func saveUppercaseUserAlphabets(alphabets: [Alphabet]) {
         var newAlphabets = [AlphabetEntity]()
         alphabets.forEach { alphabet in
-            newAlphabets.append(userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: .upper))
+          if let alphabet = userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: .upper) {
+            newAlphabets.append(alphabet)
+          }
         }
-        userAlphabetRepository.saveAlphabets(user: user, alphabets: newAlphabets)
+      
+      userAlphabetRepository.saveAlphabets(user: getUser(), alphabets: newAlphabets)
     }
 
     private func saveLowercaseUserAlphabets(alphabets: [Alphabet]) {
         var newAlphabets = [AlphabetEntity]()
         alphabets.forEach { alphabet in
-            newAlphabets.append(userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: .lower))
+          print("Data alpabet : \(alphabet)")
+          if let alphabet = userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: .lower) {
+            newAlphabets.append(alphabet)
+          }
         }
-        userAlphabetRepository.saveAlphabets(user: user, alphabets: newAlphabets)
+        userAlphabetRepository.saveAlphabets(user: getUser(), alphabets: newAlphabets)
     }
 }
 
 extension UserAlphabetController {
     func getPredicate() -> FetchRequest<UserAlphabetEntity> {
-        return FetchRequest<UserAlphabetEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \UserAlphabetEntity.alphabet?.char, ascending: true)], predicate: NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), user.uuid! as CVarArg))
+        return FetchRequest<UserAlphabetEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \UserAlphabetEntity.alphabet?.char, ascending: true)], predicate: NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), getUser().uuid! as CVarArg))
     }
 
     func getChar(alphabet: UserAlphabetEntity) -> String? {

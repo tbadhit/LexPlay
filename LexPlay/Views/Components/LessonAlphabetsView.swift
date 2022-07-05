@@ -33,8 +33,8 @@ struct LessonAlphabetsView: View {
 
 struct LessonAlphabetsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonAlphabetsView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-                                                                         user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!))
+      LessonAlphabetsView(userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
+                                                                           userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

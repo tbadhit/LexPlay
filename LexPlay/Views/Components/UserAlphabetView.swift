@@ -181,7 +181,8 @@ struct UserAlphabetView_Previews: PreviewProvider {
     static var previews: some View {
         UserAlphabetView(alphabet: UserAlphabetController(
             userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-            user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!
+            
+                                                                                     userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)
         ).getAlphabets()[0])
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)

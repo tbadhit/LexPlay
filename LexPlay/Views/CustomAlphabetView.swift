@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct CustomAlphabetView: View {
+  
+  @State var user: UserModel 
+  
   private let alphabetController: AlphabetController = AlphabetController()
   private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
+  
+  
   @State var selectionsAlphabet: [String] = []
+  @State var isGoToSelecLetterCase = false
   
   func alphabets() -> [String] {
     var items: [String] = []
@@ -73,6 +79,10 @@ struct CustomAlphabetView: View {
         
         Button {
           
+          self.user.alphabets = selectionsAlphabet.map {
+            Alphabet(rawValue: $0.lowercased())!
+          }
+          self.isGoToSelecLetterCase.toggle()
         } label: {
           Text("Selesai")
             .font(.custom(FontStyle.lexendMedium, size: 21))
@@ -82,6 +92,13 @@ struct CustomAlphabetView: View {
         .background(.red)
         .cornerRadius(38)
         
+        
+        NavigationLink(isActive: $isGoToSelecLetterCase) {
+          LetterCaseView(user: user)
+        } label: {
+          EmptyView()
+        }
+
         
         
       }
@@ -94,14 +111,14 @@ struct CustomAlphabetView: View {
   }
 }
 
-struct CustomAlphabetView_Previews: PreviewProvider {
-  static var previews: some View {
-    CustomAlphabetView()
-      .font(.lexendRegular())
-      .foregroundColor(Color("black"))
-      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-  }
-}
+//struct CustomAlphabetView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    CustomAlphabetView()
+//      .font(.lexendRegular())
+//      .foregroundColor(Color("black"))
+//      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//  }
+//}
 
 struct CardSays: View {
   

@@ -42,7 +42,14 @@ class UserController {
     func saveUser(name: String, avatar : AvatarEntity) {
         userRepository.addUser(name: name, avatar: avatar)
     }
-    
+  
+  func saveUser(user: UserModel) {
+      let userAlphabetController = UserAlphabetController()
+      userRepository.addUser(user: user)
+      userAlphabetController.saveAlphabetsToUser(alphabets: user.alphabets, letterCase: user.letterCase)
+    }
+  
+  
     func getAvatar () -> String {
         return user?.avatar?.name ?? ""
     }

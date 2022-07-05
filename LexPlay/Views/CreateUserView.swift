@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CreateUserView: View {
+  
+  @State var user = UserModel()
     
   @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.uuid, ascending: true)],
                 animation: .default) private var avatars: FetchedResults<AvatarEntity>
-  var user : UserController
   @State var avatar : AvatarEntity? = nil
   @State var name = ""
   @State var isGoToSpecificLetterView = false
@@ -56,11 +57,8 @@ struct CreateUserView: View {
         .padding(.bottom, 11)
         
         Button {
-            guard let avatar = avatar else {
-                return
-            }
-
-            user.saveUser(name: name, avatar: avatar)
+          self.user.avatar = avatar
+          self.user.name = name
           isGoToSpecificLetterView.toggle()
         } label: {
           Text("Create Profile")
@@ -81,7 +79,9 @@ struct CreateUserView: View {
     
     // Navigation
     NavigationLink(isActive: $isGoToSpecificLetterView, destination: {
-      SpecificLettersView()
+      if let avatar = avatar {
+        SpecificLettersView(user: user)
+      }
     }, label: {
       EmptyView()
     })

@@ -38,7 +38,8 @@ struct CustomLessonView_Previews: PreviewProvider {
         CustomLessonsView(
             lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
             userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)),
-            userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)).getUser())
+            userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
+                                                           userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext))
         )
         .font(.custom(FontStyle.lexendRegular, size: 16))
         .foregroundColor(Color("black"))

@@ -132,7 +132,7 @@ struct OnboardingView2: View {
     
     
     // Navigation
-    NavigationLink(destination: CreateUserView(user: UserController()), isActive: $isGoToDashboardView, label: {
+    NavigationLink(destination: CreateUserView(), isActive: $isGoToDashboardView, label: {
       EmptyView()
     })
     

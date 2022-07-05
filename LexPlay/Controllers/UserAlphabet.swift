@@ -20,7 +20,9 @@ class UserAlphabet {
     private func addUserAlphabet (user: UserEntity, alphabets : [Alphabet], letterCase : LetterCase) {
         var alphabetEntity : [AlphabetEntity] = []
         for alphabet in alphabets {
-            alphabetEntity.append(userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: letterCase))
+          if let alphabet = userAlphabetRepository.getAlphabet(alphabet: alphabet, letterCase: letterCase) {
+            alphabetEntity.append(alphabet)
+          }
         }
         userAlphabetRepository.saveAlphabets(user: user, alphabets: alphabetEntity)
     }
