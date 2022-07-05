@@ -59,7 +59,7 @@ struct LessonsView: View {
     }
 
     func getNavLink(i: Int) -> some View {
-        return NavigationLink(destination: DetailLessonView(lessonController: lessonController, userController: userController, userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: viewContext), user: userController.getUser()), lesson: lessonController.getLessons()[i])
+        return NavigationLink(destination: DetailLessonView(lessonController: lessonController, userController: userController, userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: viewContext), userRepository: UserRepository(viewContext: PersistenceController.shared.container.viewContext)), lesson: lessonController.getLessons()[i])
             .navigationBarTitle("", displayMode: .inline)
             .environment(\.managedObjectContext, viewContext)) {
             LessonItemView(i: i, image: images[i])

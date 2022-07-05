@@ -13,7 +13,7 @@ struct LexPlayApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+//            NavigationView {
                 //            Change the view
                 //            ContentView()
                 //          CameraView()
@@ -23,12 +23,13 @@ struct LexPlayApp: App {
                 //          if UserDefaults.standard.hasOnboarded {
                 //            MainView()
                 //          } else {
-                //            OnboardingView()
-                LessonsView()
+//                            OnboardingView()
+//                LessonsView()
                 //            CustomAlphabetView()
                 //            CustomLessonsView()
                 //          }
-            }
+//            }
+          OnboardingView()
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .navigationBarHidden(true)

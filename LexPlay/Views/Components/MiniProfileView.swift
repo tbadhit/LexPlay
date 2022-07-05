@@ -20,10 +20,14 @@ struct MiniProfileView: View {
                         .offset(y: -5)
                     Text("Ayo Bermain!")
                 }
-                if let button = button {
-                    button
-                        .foregroundColor(Color("red"))
-                }
+//                if let button = button {
+//                    button
+//                        .foregroundColor(Color("red"))
+//                }
+              NavigationLink(destination: ProfileView()) {
+                                  Text("Lihat Profil")
+                                      .foregroundColor(Color("red"))
+                              }
             }
             .foregroundColor(Color("black"))
             Spacer()

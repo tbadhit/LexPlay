@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomAlphabetView: View {
   
+  @Environment(\.managedObjectContext) private var viewContext
+  
   @State var user: UserModel 
   
   private let alphabetController: AlphabetController = AlphabetController()
@@ -94,7 +96,7 @@ struct CustomAlphabetView: View {
         
         
         NavigationLink(isActive: $isGoToSelecLetterCase) {
-          LetterCaseView(user: user)
+          LetterCaseView(user: user).environment(\.managedObjectContext, viewContext)
         } label: {
           EmptyView()
         }

@@ -77,19 +77,24 @@ extension UserAlphabetRepository: UserAlphabetRepositoryProtocol {
         let allAlphabets = try! context.fetch(AlphabetEntity.fetchRequest())
         for savedAlphabet in allAlphabets {
             let newUserAlphabet = UserAlphabetEntity(context: context)
+          newUserAlphabet.uuid = UUID()
             newUserAlphabet.alphabet = savedAlphabet
             newUserAlphabet.user = user
-          userAlphabets.append(newUserAlphabet)
             for alphabet in alphabets {
                 if alphabet.uuid == savedAlphabet.uuid {
                     newUserAlphabet.hasDifficulty = true
                     break
                 }
             }
+          userAlphabets.append(newUserAlphabet)
         }
       
-      let num = userAlphabets.count / 5
-      userAlphabets.forEach { userAlphabet in
+      let finalUserAlphbets = userAlphabets.sorted{alphabet1, alphabet2 in
+        guard let char1 = alphabet1.alphabet?.char, let char2 = alphabet2.alphabet?.char else { return true }
+        return char2 < char1
+      }.filter { $0.hasDifficulty }
+      let num = Int((Double(finalUserAlphbets.count) / 5.0).rounded(.up))
+      finalUserAlphbets.forEach { userAlphabet in
         if count < num {
           userAlphabet.lesson = lesson1
         } else if count < num * 2 {

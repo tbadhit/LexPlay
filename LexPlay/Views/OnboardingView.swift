@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
   
   @State var isNextOnboard = false
+  @Environment(\.managedObjectContext) private var viewContext
   
   var body: some View {
     NavigationView {
@@ -45,14 +46,14 @@ struct OnboardingView: View {
           .padding(.bottom, 60)
           
           
-          NavigationLink(destination: OnboardingView2(), isActive: $isNextOnboard, label: {
+          NavigationLink(destination: OnboardingView2().environment(\.managedObjectContext, viewContext), isActive: $isNextOnboard, label: {
             EmptyView()
           })
           
         }
         Spacer()
       }
-      .background(Image("onboard-bg-1")
+      .background(Image("bg-onboard")
         .resizable()
         .aspectRatio(contentMode: .fill)
         .edgesIgnoringSafeArea(.all
@@ -65,6 +66,9 @@ struct OnboardingView: View {
 }
 
 struct OnboardingView2: View {
+  
+  @Environment(\.managedObjectContext) private var viewContext
+  
   private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 1)
   
   private let textInfoDashboard = [
@@ -125,7 +129,7 @@ struct OnboardingView2: View {
         }
       }
     }
-    .background(Image("onboard-bg-2")
+    .background(Image("background")
       .resizable()
       .aspectRatio(contentMode: .fill)
       .edgesIgnoringSafeArea(.all))

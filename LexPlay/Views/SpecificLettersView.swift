@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct SpecificLettersView: View {
+  
+  @Environment(\.managedObjectContext) private var viewContext
+  
   @State var user: UserModel
   @State var isGoToSelectLetterCase = false
   @State var isGoToCustomAlphabet = false
   
     var body: some View {
       ZStack {
-        LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
+//        LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
+        Image("background")
+          .resizable()
+          .aspectRatio(contentMode: .fill)
+          .edgesIgnoringSafeArea(.all)
         VStack {
           // Card
           GreetingCard(user: self.user)
@@ -57,13 +64,13 @@ struct SpecificLettersView: View {
           }
           
           NavigationLink(isActive: $isGoToCustomAlphabet) {
-            CustomAlphabetView(user: user)
+            CustomAlphabetView(user: user).environment(\.managedObjectContext, viewContext)
           } label: {
             EmptyView()
           }
           
           NavigationLink(isActive: $isGoToSelectLetterCase) {
-            LetterCaseView(user: user)
+            LetterCaseView(user: user).environment(\.managedObjectContext, viewContext)
           } label: {
             EmptyView()
           }

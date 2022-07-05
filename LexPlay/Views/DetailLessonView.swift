@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailLessonView: View {
+  @Environment(\.managedObjectContext) private var viewContext
     private let lessonController: LessonController
     private let userController: UserController
     private let userAlphabetController: UserAlphabetController
@@ -45,7 +46,8 @@ struct DetailLessonView: View {
             .card()
             .cornerRadius(100)
             .padding(.horizontal)
-            LessonAlphabetsView(userAlphabetController: userAlphabetController)
+          LessonAlphabetsView(lesson: lesson, userAlphabetController: userAlphabetController)
+            .environment(\.managedObjectContext, viewContext)
             Spacer()
         }
         .padding(.top)
@@ -67,7 +69,7 @@ struct DetailLessonView_Previews: PreviewProvider {
         DetailLessonView(
             lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
             userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)),
-            userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)).getUser()),
+            userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)),
             lesson: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!).getLessons().first!
         )
         .font(.custom(FontStyle.lexendRegular, size: 16))

@@ -51,7 +51,7 @@ extension UserAlphabetController {
     
     func getPredicateByLesson(lesson: LessonEntity) -> FetchRequest<UserAlphabetEntity> {
         return FetchRequest<UserAlphabetEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \UserAlphabetEntity.alphabet?.char, ascending: true)], predicate: NSCompoundPredicate(andPredicateWithSubpredicates: [
-            NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), user.uuid! as CVarArg),
+            NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.user.uuid), getUser().uuid! as CVarArg),
             NSPredicate(format: "%K == %@", #keyPath(UserAlphabetEntity.lesson.uuid), lesson.uuid! as CVarArg)
         ]))
     }

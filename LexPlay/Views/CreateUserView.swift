@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreateUserView: View {
   
+  @Environment(\.managedObjectContext) private var viewContext
+  
   @State var user = UserModel()
     
   @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.uuid, ascending: true)],
@@ -19,7 +21,11 @@ struct CreateUserView: View {
   
   var body: some View {
     ZStack {
-      LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
+      Image("background")
+        .resizable()
+        .aspectRatio(contentMode: .fill)
+        .edgesIgnoringSafeArea(.all)
+//      LinearGradient(gradient: Gradient(colors: [.white, Color("background-color")]), startPoint: .top, endPoint: .bottom)
       VStack {
         
         Text("Pilih avatarmu!")
@@ -80,7 +86,7 @@ struct CreateUserView: View {
     // Navigation
     NavigationLink(isActive: $isGoToSpecificLetterView, destination: {
       if let avatar = avatar {
-        SpecificLettersView(user: user)
+        SpecificLettersView(user: user).environment(\.managedObjectContext, viewContext)
       }
     }, label: {
       EmptyView()

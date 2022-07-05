@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LetterCaseView: View {
   
+  @Environment(\.managedObjectContext) private var viewContext
+  
   @State var user: UserModel
   @State var buttonTap : Bool = false
   @State var isLinkActive : Bool = false
@@ -117,7 +119,7 @@ struct LetterCaseView: View {
             }
             
             NavigationLink(isActive: $isGoToDashboard) {
-              LessonsView()
+              LessonsView().environment(\.managedObjectContext, viewContext)
             } label: {
               EmptyView()
             }
