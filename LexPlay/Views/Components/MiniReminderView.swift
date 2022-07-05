@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MiniReminderView: View {
-    let userController: UserController
-    
+    private let userService = UserService.shared
+    private let user: UserEntity
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(userController.getReminderDate() ?? "DD/MM/YY")
-                Text(userController.getReminderTime() ?? "00:00")
+                Text(userService.getReminderDate(user: user) ?? "DD/MM/YY")
+                Text(userService.getReminderTime(user: user) ?? "00:00")
             }
             Spacer()
             Image(systemName: "bell.fill")
@@ -24,15 +25,15 @@ struct MiniReminderView: View {
         .cardPadding()
         .card()
     }
-    
-    init(userController: UserController = UserController()) {
-        self.userController = userController
+
+    init(user: UserEntity) {
+        self.user = user
     }
 }
 
 struct MiniReminderView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniReminderView(userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
+        MiniReminderView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
             .background(Image("background"))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }

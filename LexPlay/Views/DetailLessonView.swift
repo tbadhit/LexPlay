@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct DetailLessonView: View {
-  @Environment(\.managedObjectContext) private var viewContext
-    private let lessonController: LessonController
-    private let userController: UserController
-    private let userAlphabetController: UserAlphabetController
+    @Environment(\.managedObjectContext) private var viewContext
+    let user: UserEntity
     let lesson: LessonEntity
 
     var body: some View {
@@ -46,34 +44,23 @@ struct DetailLessonView: View {
             .card()
             .cornerRadius(100)
             .padding(.horizontal)
-          LessonAlphabetsView(lesson: lesson, userAlphabetController: userAlphabetController)
-            .environment(\.managedObjectContext, viewContext)
+            LessonAlphabetsView(user: user, lesson: lesson)
+                .environment(\.managedObjectContext, viewContext)
             Spacer()
         }
         .padding(.top)
         .font(.custom(FontStyle.lexendMedium, size: 16))
         .background(Image("background"))
     }
-
-    init(lessonController: LessonController = LessonController(), userController: UserController = UserController(), userAlphabetController: UserAlphabetController = UserAlphabetController(),
-         lesson: LessonEntity) {
-        self.lessonController = lessonController
-        self.userController = userController
-        self.userAlphabetController = userAlphabetController
-        self.lesson = lesson
-    }
 }
 
-struct DetailLessonView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailLessonView(
-            lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
-            userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)),
-            userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)),
-            lesson: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!).getLessons().first!
-        )
-        .font(.custom(FontStyle.lexendRegular, size: 16))
-        .foregroundColor(Color("black"))
-        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+#if DEBUG
+    struct DetailLessonView_Previews: PreviewProvider {
+        static var previews: some View {
+            DetailLessonView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!, lesson: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.lessons?.toArray(of: LessonEntity.self).first)!)
+                .font(.custom(FontStyle.lexendRegular, size: 16))
+                .foregroundColor(Color("black"))
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
-}
+#endif

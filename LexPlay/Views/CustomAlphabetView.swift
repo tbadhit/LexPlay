@@ -13,7 +13,7 @@ struct CustomAlphabetView: View {
   
   @State var user: UserModel 
   
-  private let alphabetController: AlphabetController = AlphabetController()
+  private let alphabetController: AlphabetService = AlphabetService()
   private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
   
   

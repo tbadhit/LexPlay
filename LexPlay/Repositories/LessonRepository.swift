@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 protocol LessonRepositoryProtocol {
     func getLessons(user: UserEntity) -> [LessonEntity]
@@ -34,5 +35,9 @@ extension LessonRepository: LessonRepositoryProtocol {
         let request = LessonEntity.fetchRequest()
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(LessonEntity.user.uuid), uuid as CVarArg)
         return try! context.fetch(request)
+    }
+    
+    static func getPredicate(user: UserEntity) -> FetchRequest<LessonEntity> {
+        return FetchRequest<LessonEntity>(sortDescriptors: [NSSortDescriptor(keyPath: \LessonEntity.timestamp, ascending: true)], predicate: NSPredicate(format: "%K == %@", #keyPath(LessonEntity.user.uuid), user.uuid! as CVarArg))
     }
 }

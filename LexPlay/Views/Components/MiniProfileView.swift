@@ -8,30 +8,25 @@
 import SwiftUI
 
 struct MiniProfileView: View {
-    let userController: UserController
-    let button: Button<Text>?
+    let user: UserEntity
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 32) {
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Hi, \(userController.getUser().name ?? "")")
+                    Text("Hi, \(user.name ?? "")")
                         .font(.custom(FontStyle.lexendSemiBold, size: 24))
                         .offset(y: -5)
                     Text("Ayo Bermain!")
                 }
-//                if let button = button {
-//                    button
-//                        .foregroundColor(Color("red"))
-//                }
-              NavigationLink(destination: ProfileView()) {
-                                  Text("Lihat Profil")
-                                      .foregroundColor(Color("red"))
-                              }
+                NavigationLink(destination: ProfileView()) {
+                    Text("Lihat Profil")
+                        .foregroundColor(Color("red"))
+                }
             }
             .foregroundColor(Color("black"))
             Spacer()
-            Image(userController.getUser().avatar?.path ?? "play-avatar")
+            Image(user.avatar?.path ?? "play-avatar")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: 100)
@@ -43,15 +38,14 @@ struct MiniProfileView: View {
         .card()
     }
 
-    init(userController: UserController = UserController(), button: Button<Text>? = nil) {
-        self.userController = userController
-        self.button = button
+    init(user: UserEntity) {
+        self.user = user
     }
 }
 
 struct MiniProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniProfileView(userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)), button: Button("Lihat Profil") {})
+        MiniProfileView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
             .background(Image("background")).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

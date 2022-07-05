@@ -9,8 +9,9 @@ import SwiftUI
 
 struct LessonsView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    private let lessonController: LessonController
-    private let userController: UserController
+    @FetchRequest private var lessons: FetchedResults<LessonEntity>
+    private let user: UserEntity
+    
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
     private let images: [(String, CGFloat, CGFloat, CGFloat)] = [
         ("bluey", CGFloat(100), CGFloat(-16), CGFloat(-16)),
@@ -22,11 +23,11 @@ struct LessonsView: View {
 
     var body: some View {
         VStack {
-            MiniProfileView(userController: userController, button: Button("Lihat Profil") {})
+            MiniProfileView(user: user)
                 .padding(.top, 32)
                 .padding(.bottom, 8)
                 .padding(.horizontal)
-            MiniReminderView(userController: userController)
+            MiniReminderView(user: user)
                 .padding(.horizontal)
             VStack(alignment: .leading) {
                 Text("Pelajaran")
@@ -36,7 +37,7 @@ struct LessonsView: View {
                 TabView {
                     VStack {
                         LazyVGrid(columns: columns, spacing: 16) {
-                            ForEach(0 ..< (lessonController.getLessons().count > 4 ? 4 : lessonController.getLessons().count), id: \.self) { i in
+                            ForEach(0 ..< (lessons.count > 4 ? 4 : lessons.count), id: \.self) { i in
                                 getNavLink(i: i)
                             }
                         }
@@ -44,7 +45,7 @@ struct LessonsView: View {
                         Spacer()
                     }
 
-                    if lessonController.getLessons().count > 4 {
+                    if lessons.count > 4 {
                         getNavLink(i: 4)
                             .padding(.horizontal)
                     }
@@ -59,24 +60,22 @@ struct LessonsView: View {
     }
 
     func getNavLink(i: Int) -> some View {
-        return NavigationLink(destination: DetailLessonView(lessonController: lessonController, userController: userController, userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: viewContext), userRepository: UserRepository(viewContext: PersistenceController.shared.container.viewContext)), lesson: lessonController.getLessons()[i])
-            .navigationBarTitle("", displayMode: .inline)
-            .environment(\.managedObjectContext, viewContext)) {
+        return NavigationLink(destination: DetailLessonView(user: user, lesson: lessons[i])
+            .navigationBarTitle("", displayMode: .inline)) {
             LessonItemView(i: i, image: images[i])
         }
     }
 
-    init(lessonController: LessonController = LessonController(), userController: UserController = UserController()) {
-        self.lessonController = lessonController
-        self.userController = userController
+    init(user: UserEntity) {
+        self.user = user
+        _lessons = LessonRepository.getPredicate(user: user)
     }
 }
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LessonsView(lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
-                        userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
+            LessonsView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }

@@ -11,6 +11,9 @@ struct LetterCaseView: View {
   
   @Environment(\.managedObjectContext) private var viewContext
   
+    @State private var userRepository: UserRepository? = nil
+    @State private var userAlphabetRepository: UserAlphabetRepository? = nil
+    @State var userEntity: UserEntity? = nil
   @State var user: UserModel
   @State var buttonTap : Bool = false
   @State var isLinkActive : Bool = false
@@ -20,7 +23,6 @@ struct LetterCaseView: View {
   //@State private var cardTap : Bool = false
   
   var body: some View {
-    NavigationView {
       ZStack {
         Image("background")
           .resizable()
@@ -105,7 +107,13 @@ struct LetterCaseView: View {
               }
               user.letterCase = letterCase
               print("Data : \(user)")
-              UserController().saveUser(user: user)
+                userRepository?.addUser(user: user)
+                userEntity = userRepository?.getActiveUser()
+                guard let userEntity = userEntity else {
+                    print("ERROR: Cannot save alphabets")
+                    return
+                }
+                userAlphabetRepository?.saveAlphabetsToUser(user: userEntity, alphabets: user.alphabets, letterCase: letterCase)
               
               isGoToDashboard.toggle()
             } label: {
@@ -118,11 +126,13 @@ struct LetterCaseView: View {
                 .cornerRadius(25)
             }
             
-            NavigationLink(isActive: $isGoToDashboard) {
-              LessonsView().environment(\.managedObjectContext, viewContext)
-            } label: {
-              EmptyView()
-            }
+              if let userEntity = userEntity {
+                  NavigationLink(isActive: $isGoToDashboard) {
+                      NavigationLazyView(LessonsView(user: userEntity))
+                  } label: {
+                    EmptyView()
+                  }
+              }
 
 
           }
@@ -132,8 +142,11 @@ struct LetterCaseView: View {
         }
         .frame(minWidth : 0, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity, alignment: .topLeading)
       }
-      
-    }.navigationBarHidden(true)
+      .navigationBarHidden(true)
+          .onAppear {
+              userRepository = UserRepository(viewContext: viewContext)
+              userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
+          }
   }
 }
 

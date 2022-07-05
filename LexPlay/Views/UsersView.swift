@@ -40,18 +40,18 @@ struct UsersView: View {
             ForEach(users) {
                 user in
                 VStack(alignment: .leading) {
-                    Text(user.name ?? "")
-                        .font(.headline)
-                        .onTapGesture {
-                            username = user.name ?? "gaada isi"
-                            timeStamp = String(user.timestamp)
-                            login = String(user.login)
-                            userSelected = user
-                        }
-                    Text("\(String(user.login))")
-                        .font(.subheadline)
-                    Text("\(user.timestamp)")
-                        .font(.subheadline)
+//                    Text(user.name ?? "")
+//                        .font(.headline)
+//                        .onTapGesture {
+//                            username = user.name ?? "gaada isi"
+//                            timeStamp = String(user.timestamp)
+//                            login = String(user.login)
+//                            userSelected = user
+//                        }
+//                    Text("\(String(user.login))")
+//                        .font(.subheadline)
+//                    Text("\(user.timestamp)")
+//                        .font(.subheadline)
                 }
             }
         }
