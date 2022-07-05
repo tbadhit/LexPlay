@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomLessonAlphabetsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     private let userAlphabetController: UserAlphabetController
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
 
@@ -26,9 +27,9 @@ struct CustomLessonAlphabetsView: View {
         } else { EmptyView() }
     }
 
-    init(userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository())) {
+    init(predicate: FetchRequest<UserAlphabetEntity>, userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository())) {
+        _alphabets = predicate
         self.userAlphabetController = userAlphabetController
-        _alphabets = userAlphabetController.getPredicate()
     }
 }
 

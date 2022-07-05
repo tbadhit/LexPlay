@@ -30,6 +30,7 @@
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
+		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
 		1174A155286E93D700BC02BE /* LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A154286E93D700BC02BE /* LetterCase.swift */; };
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
@@ -63,7 +64,6 @@
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
-		167124F52872FC0200ACEB28 /* CameraResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F42872FC0200ACEB28 /* CameraResultView.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
 		AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4519C3286F317100704214 /* UserAlphabet.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
@@ -98,6 +98,7 @@
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
+		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
 		1174A154286E93D700BC02BE /* LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCase.swift; sourceTree = "<group>"; };
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 				114CDF152866A05D0008273B /* LexPlay */,
 				112B08462870107000905CE5 /* .gitignore */,
 				114CDF142866A05D0008273B /* Products */,
+				1160155D2873B0BA0034CB02 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +225,14 @@
 				114CDF1D2866A0600008273B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1160155D2873B0BA0034CB02 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				167124F42872FC0200ACEB28 /* CameraResultView.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		119C5996286B25CD00B87768 /* Domains */ = {
@@ -280,7 +290,7 @@
 				AD6E06632870A74600F3BD76 /* ListProfilesView.swift */,
 				167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */,
 				1124C0B22872229100CAD128 /* CustomLessonsView.swift */,
-				167124F42872FC0200ACEB28 /* CameraResultView.swift */,
+				1160155A2873211B0034CB02 /* DetailLessonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,10 +442,10 @@
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
-				167124F52872FC0200ACEB28 /* CameraResultView.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
+				1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */,
 				AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,

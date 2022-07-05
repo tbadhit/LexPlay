@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LessonsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     private let lessonController: LessonController
     private let userController: UserController
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
@@ -36,15 +37,15 @@ struct LessonsView: View {
                     VStack {
                         LazyVGrid(columns: columns, spacing: 16) {
                             ForEach(0 ..< (lessonController.getLessons().count > 4 ? 4 : lessonController.getLessons().count), id: \.self) { i in
-                                LessonItemView(i: i, image: images[i])
+                                getNavLink(i: i)
                             }
                         }
                         .padding(.horizontal)
                         Spacer()
                     }
-                  
+
                     if lessonController.getLessons().count > 4 {
-                        LessonItemView(i: 4, image: images[4])
+                        getNavLink(i: 4)
                             .padding(.horizontal)
                     }
                 }
@@ -57,6 +58,14 @@ struct LessonsView: View {
         .navigationBarHidden(true)
     }
 
+    func getNavLink(i: Int) -> some View {
+        return NavigationLink(destination: DetailLessonView(lessonController: lessonController, userController: userController, userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: viewContext), user: userController.getUser()), lesson: lessonController.getLessons()[i])
+            .navigationBarTitle("", displayMode: .inline)
+            .environment(\.managedObjectContext, viewContext)) {
+            LessonItemView(i: i, image: images[i])
+        }
+    }
+
     init(lessonController: LessonController = LessonController(), userController: UserController = UserController()) {
         self.lessonController = lessonController
         self.userController = userController
@@ -65,9 +74,11 @@ struct LessonsView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsView(lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
-                    userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        NavigationView {
+            LessonsView(lessonController: LessonController(lessonRepository: LessonRepository(viewContext: PersistenceController.preview.container.viewContext), user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!),
+                        userController: UserController(userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
 }
 
