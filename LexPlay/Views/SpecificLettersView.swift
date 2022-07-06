@@ -46,7 +46,7 @@ struct SpecificLettersView: View {
             
             Button {
               isGoToSelectLetterCase.toggle()
-              self.user.alphabets = AlphabetController().getAlphabets()
+              self.user.alphabets = AlphabetService().getAlphabets()
             } label: {
               Text("Tidak")
                 .frame(maxWidth: .infinity, maxHeight: 75)

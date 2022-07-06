@@ -33,18 +33,8 @@ class UserRepository {
 
 extension UserRepository: UserRepositoryProtocol {
   func addUser(user: UserModel) {
-    
-    let reminder = ReminderEntity(context: context)
-            reminder.uuid = UUID()
-            reminder.time = Date()
-    
-    let userEntity = UserEntity(context: context)
-    userEntity.name = user.name
-    userEntity.avatar = user.avatar
-    userEntity.uuid = UUID()
-    userEntity.reminder = reminder
-    
-    save()
+      guard let avatar = user.avatar else { return }
+      addUser(name: user.name, avatar: avatar)
   }
   
     func getActiveUser() -> UserEntity? {
@@ -57,6 +47,7 @@ extension UserRepository: UserRepositoryProtocol {
         let reminder = ReminderEntity(context: context)
                 reminder.uuid = UUID()
                 reminder.time = Date()
+        reminder.timestamp = Date().timeIntervalSince1970
         
         //1. create new NSManageobject
         let newUser = UserEntity(context: context)
@@ -67,6 +58,7 @@ extension UserRepository: UserRepositoryProtocol {
         newUser.avatar = avatar
         newUser.reminder = reminder
         newUser.alphabets = []
+        newUser.timestamp = Date().timeIntervalSince1970
         
         //3. save context
         save()

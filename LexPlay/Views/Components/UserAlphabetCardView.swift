@@ -1,11 +1,52 @@
 //
-//  UserAlphabetView.swift
+//  UserAlphabetCardView.swift
 //  LexPlay
 //
 //  Created by Muhamad Fahmi Al Kautsar on 04/07/22.
 //
 
 import SwiftUI
+
+struct UserAlphabetCardView: View {
+    let alphabet: UserAlphabetEntity
+
+    @State private var popInfo = false
+    @State var frontDegree = 0.0
+    @State var backDegree = -90.0
+    @State var isFlipped = false
+
+    let width: CGFloat = 200
+    let height: CGFloat = 250
+    let durationAndDelay: CGFloat = 0.3
+
+    func flipCard() {
+        isFlipped.toggle()
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                backDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                frontDegree = 0
+            }
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped)
+            AlphabetCardBack(width: width, height: height, userAlphabet: alphabet, degree: $backDegree, isFlipped: $isFlipped)
+        }.onTapGesture {
+            flipCard()
+        }
+    }
+}
 
 struct AlphabetCardFront: View {
     private let audioController: AudioController = AudioController.shared
@@ -136,54 +177,9 @@ struct AlphabetCardBack: View {
     }
 }
 
-struct UserAlphabetView: View {
-    let alphabet: UserAlphabetEntity
-
-    @State private var popInfo = false
-    @State var frontDegree = 0.0
-    @State var backDegree = -90.0
-    @State var isFlipped = false
-
-    let width: CGFloat = 200
-    let height: CGFloat = 250
-    let durationAndDelay: CGFloat = 0.3
-
-    func flipCard() {
-        isFlipped.toggle()
-        if isFlipped {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                frontDegree = 90
-            }
-            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
-                backDegree = 0
-            }
-        } else {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                backDegree = -90
-            }
-            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
-                frontDegree = 0
-            }
-        }
-    }
-
-    var body: some View {
-        ZStack {
-            AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped)
-            AlphabetCardBack(width: width, height: height, userAlphabet: alphabet, degree: $backDegree, isFlipped: $isFlipped)
-        }.onTapGesture {
-            flipCard()
-        }
-    }
-}
-
 struct UserAlphabetView_Previews: PreviewProvider {
     static var previews: some View {
-        UserAlphabetView(alphabet: UserAlphabetController(
-            userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-            
-                                                                                     userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)
-        ).getAlphabets()[0])
+        UserAlphabetCardView(alphabet: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.alphabets?.toArray(of: UserAlphabetEntity.self).first)!)
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .background(Image("background"))

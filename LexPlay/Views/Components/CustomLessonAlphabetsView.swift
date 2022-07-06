@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomLessonAlphabetsView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    private let userAlphabetController: UserAlphabetController
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
 
     var body: some View {
@@ -17,7 +16,7 @@ struct CustomLessonAlphabetsView: View {
             TabView {
                 ForEach(alphabets) { alphabet in
                     VStack {
-                        UserAlphabetView(alphabet: alphabet)
+                        UserAlphabetCardView(alphabet: alphabet)
                         Spacer()
                     }
                 }
@@ -27,16 +26,14 @@ struct CustomLessonAlphabetsView: View {
         } else { EmptyView() }
     }
 
-    init(predicate: FetchRequest<UserAlphabetEntity>, userAlphabetController: UserAlphabetController = UserAlphabetController(userAlphabetRepository: UserAlphabetRepository())) {
-        _alphabets = predicate
-        self.userAlphabetController = userAlphabetController
+    init(user: UserEntity) {
+        _alphabets = UserAlphabetRepository.getCustomPredicate(user: user)
     }
 }
 
 struct CustomLessonAlphabetsView_Previews: PreviewProvider {
     static var previews: some View {
-      CustomLessonAlphabetsView(predicate: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext), userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)).getPredicate(), userAlphabetController: UserAlphabetController(userAlphabetRepository: UserAlphabetRepository(viewContext: PersistenceController.preview.container.viewContext),
-                                                                                 userRepository: UserRepository(viewContext: PersistenceController.preview.container.viewContext)))
+        CustomLessonAlphabetsView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

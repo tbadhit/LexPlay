@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		110A4C5028717E070046C2C1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserController.swift */; };
+		110A4C5028717E070046C2C1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserService.swift */; };
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
 		111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65052871C5FA0075DF47 /* MiniProfileView.swift */; };
 		111C650C287206410075DF47 /* MiniReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C650B287206410075DF47 /* MiniReminderView.swift */; };
 		1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B22872229100CAD128 /* CustomLessonsView.swift */; };
-		1124C0B5287224CF00CAD128 /* UserAlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */; };
 		1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0B6287291BF00CAD128 /* Color+Ext.swift */; };
 		1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */; };
 		1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */; };
 		1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
-		1124C0C22872B10500CAD128 /* UserAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C12872B10500CAD128 /* UserAlphabetView.swift */; };
+		1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */; };
 		1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C52872FA6900CAD128 /* AudioController.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
-		112B08492870120400905CE5 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetController.swift */; };
+		112B08492870120400905CE5 /* AlphabetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetService.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
 		112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2E286CC60C0039377A /* UserRepository.swift */; };
 		114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF162866A05D0008273B /* LexPlayApp.swift */; };
@@ -31,14 +30,16 @@
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
 		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
+		1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D47828752C30006F3D30 /* NSSet+Ext.swift */; };
 		1174A155286E93D700BC02BE /* LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A154286E93D700BC02BE /* LetterCase.swift */; };
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
+		117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D8A77287599660016E913 /* NavigationLazyView.swift */; };
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
-		119230D92870ADFD0033F5B3 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D82870ADFD0033F5B3 /* LessonController.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
+		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
 		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
@@ -65,7 +66,6 @@
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
-		AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4519C3286F317100704214 /* UserAlphabet.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
@@ -74,21 +74,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		110A4C4F28717E070046C2C1 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		110A4C4F28717E070046C2C1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		111C65052871C5FA0075DF47 /* MiniProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProfileView.swift; sourceTree = "<group>"; };
 		111C650B287206410075DF47 /* MiniReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniReminderView.swift; sourceTree = "<group>"; };
 		1124C0B22872229100CAD128 /* CustomLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonsView.swift; sourceTree = "<group>"; };
-		1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetController.swift; sourceTree = "<group>"; };
 		1124C0B6287291BF00CAD128 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAlphabetsView.swift; sourceTree = "<group>"; };
 		1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		1124C0BF2872A97700CAD128 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
-		1124C0C12872B10500CAD128 /* UserAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetView.swift; sourceTree = "<group>"; };
+		1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetCardView.swift; sourceTree = "<group>"; };
 		1124C0C52872FA6900CAD128 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		112B08482870120400905CE5 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
+		112B08482870120400905CE5 /* AlphabetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetService.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		112BBA2E286CC60C0039377A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		114CDF132866A05D0008273B /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,14 +98,16 @@
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
 		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
+		1162D47828752C30006F3D30 /* NSSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Ext.swift"; sourceTree = "<group>"; };
 		1174A154286E93D700BC02BE /* LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCase.swift; sourceTree = "<group>"; };
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		117D8A77287599660016E913 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
-		119230D82870ADFD0033F5B3 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
+		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
 		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -136,7 +137,6 @@
 		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
 		167124F728732A2300ACEB28 /* erlina.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = erlina.m4a; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
-		AD4519C3286F317100704214 /* UserAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabet.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
 		AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				111C650B287206410075DF47 /* MiniReminderView.swift */,
 				167124F02872948900ACEB28 /* CardAvatar.swift */,
 				1124C0BB2872A1E200CAD128 /* LessonAlphabetsView.swift */,
-				1124C0C12872B10500CAD128 /* UserAlphabetView.swift */,
+				1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */,
 				1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */,
 				11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */,
 			);
@@ -203,15 +203,15 @@
 		114CDF152866A05D0008273B /* LexPlay */ = {
 			isa = PBXGroup;
 			children = (
-				167124F628732A0000ACEB28 /* Audio */,
-				160250BA286F42D2008D9D15 /* Utils */,
 				160250AB286EA033008D9D15 /* Info.plist */,
-				16025098286E9FFB008D9D15 /* Fonts */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
 				112BBA25286C8F8D0039377A /* Repositories */,
 				119C5996286B25CD00B87768 /* Domains */,
-				119C5997286B27A400B87768 /* Controllers */,
+				119C5997286B27A400B87768 /* Services */,
 				1602507D286C63DB008D9D15 /* Views */,
+				160250BA286F42D2008D9D15 /* Utils */,
+				16025098286E9FFB008D9D15 /* Fonts */,
+				167124F628732A0000ACEB28 /* Audios */,
 				114CDF1A2866A0600008273B /* Assets.xcassets */,
 				114CDF212866A0600008273B /* LexPlay.xcdatamodeld */,
 				114CDF1C2866A0600008273B /* Preview Content */,
@@ -235,29 +235,34 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		117D8A762875825C0016E913 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				163430BF2873B44F00C6051B /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		119C5996286B25CD00B87768 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				117D8A762875825C0016E913 /* Models */,
 				119C5998286B27C600B87768 /* Enums */,
-				163430BF2873B44F00C6051B /* UserModel.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
 		};
-		119C5997286B27A400B87768 /* Controllers */ = {
+		119C5997286B27A400B87768 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				1602507B286C63CD008D9D15 /* CameraAlphabet.swift */,
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
-				AD4519C3286F317100704214 /* UserAlphabet.swift */,
-				112B08482870120400905CE5 /* AlphabetController.swift */,
-				119230D82870ADFD0033F5B3 /* LessonController.swift */,
-				110A4C4F28717E070046C2C1 /* UserController.swift */,
-				1124C0B4287224CF00CAD128 /* UserAlphabetController.swift */,
+				112B08482870120400905CE5 /* AlphabetService.swift */,
+				110A4C4F28717E070046C2C1 /* UserService.swift */,
 				1124C0C52872FA6900CAD128 /* AudioController.swift */,
 			);
-			path = Controllers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		119C5998286B27C600B87768 /* Enums */ = {
@@ -321,16 +326,19 @@
 				111C65022871B7AA0075DF47 /* View+Ext.swift */,
 				1124C0B6287291BF00CAD128 /* Color+Ext.swift */,
 				16D27004287372E80052814B /* UIScreen+Ext.swift */,
+				1162D47828752C30006F3D30 /* NSSet+Ext.swift */,
+				11D581012875434400027263 /* NSOrderedSet+Ext.swift */,
+				117D8A77287599660016E913 /* NavigationLazyView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		167124F628732A0000ACEB28 /* Audio */ = {
+		167124F628732A0000ACEB28 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
 				167124F728732A2300ACEB28 /* erlina.m4a */,
 			);
-			path = Audio;
+			path = Audios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,21 +426,21 @@
 				162620362870BD130044895F /* SpecificLettersView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */,
-				110A4C5028717E070046C2C1 /* UserController.swift in Sources */,
-				1124C0C22872B10500CAD128 /* UserAlphabetView.swift in Sources */,
+				110A4C5028717E070046C2C1 /* UserService.swift in Sources */,
+				1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */,
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
+				1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */,
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
-				112B08492870120400905CE5 /* AlphabetController.swift in Sources */,
+				112B08492870120400905CE5 /* AlphabetService.swift in Sources */,
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
-				1124C0B5287224CF00CAD128 /* UserAlphabetController.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
@@ -446,7 +454,6 @@
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
 				1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */,
-				AD4519C4286F317100704214 /* UserAlphabet.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
 				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
@@ -456,13 +463,14 @@
 				16025091286D8421008D9D15 /* MainView.swift in Sources */,
 				119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */,
 				1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */,
+				117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */,
 				163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */,
+				11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */,
 				119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */,
 				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
-				119230D92870ADFD0033F5B3 /* LessonController.swift in Sources */,
 				160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */,
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 			);

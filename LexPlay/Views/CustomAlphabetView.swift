@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct CustomAlphabetView: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @State var user: UserModel
-    
-    private let alphabetController: AlphabetController = AlphabetController()
-    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
-    
-    
-    @State var selectionsAlphabet: [String] = []
-    @State var isGoToSelecLetterCase = false
-    
-    func alphabets() -> [String] {
-        var items: [String] = []
+  
+  @Environment(\.managedObjectContext) private var viewContext
+  
+  @State var user: UserModel 
+  
+  private let alphabetController: AlphabetService = AlphabetService()
+  private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
+  
+  
+  @State var selectionsAlphabet: [String] = []
+  @State var isGoToSelecLetterCase = false
+  
+  func alphabets() -> [String] {
+    var items: [String] = []
         for char in alphabetController.getAlphabets() {
-            items.append("\(char.rawValue)")
+        items.append("\(char.rawValue)")
         }
-        
+
         return items
     }
     

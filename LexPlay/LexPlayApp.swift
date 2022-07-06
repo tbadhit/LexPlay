@@ -13,7 +13,7 @@ struct LexPlayApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            NavigationView {
+            NavigationView {
                 //            Change the view
                 //            ContentView()
                 //          CameraView()
@@ -24,15 +24,16 @@ struct LexPlayApp: App {
                 //            MainView()
                 //          } else {
 //                            OnboardingView()
-//                LessonsView()
+//                LessonsView(user: UserRepository(viewContext: persistenceController.container.viewContext).getActiveUser()!)
                 //            CustomAlphabetView()
                 //            CustomLessonsView()
                 //          }
 //            }
-          OnboardingView()
+                OnboardingView()
+                    .navigationBarHidden(true)
+            }
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
-            .navigationBarHidden(true)
             .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
