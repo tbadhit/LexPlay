@@ -28,7 +28,7 @@ struct CardAvatar: View {
           .offset(y: 7.5)
         
         VStack(alignment: .leading) {
-          Text("I'm")
+          Text("Aku")
             .font(.custom(FontStyle.lexendMedium, size: 21))
             Text(avatar.name ?? "")
             .font(.custom(FontStyle.lexendSemiBold, size: 48))
