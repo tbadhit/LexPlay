@@ -10,7 +10,7 @@ import AVFoundation
 class AudioController {
     static let shared = AudioController()
     private let synthesizer = AVSpeechSynthesizer()
-    
+
     func speak(_ str: String) {
         synthesizer.stopSpeaking(at: .immediate)
         let utterance = AVSpeechUtterance(string: str)
@@ -20,7 +20,7 @@ class AudioController {
 
         synthesizer.speak(utterance)
     }
-    
+
     func speak(alphabet: AlphabetEntity?) {
         guard let char = alphabet?.char else { return }
         speak("'\(char)'")

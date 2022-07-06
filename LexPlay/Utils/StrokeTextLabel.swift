@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct StrokeTextLabel: UIViewRepresentable {
-  
-  let text: String
-  
-  func makeUIView(context: Context) -> UILabel {
-    let attributedStringParagraphStyle = NSMutableParagraphStyle()
-    attributedStringParagraphStyle.alignment = NSTextAlignment.center
-    let attributedString = NSAttributedString(
-      string: text,
-      attributes:[
-        NSAttributedString.Key.paragraphStyle: attributedStringParagraphStyle,
-        NSAttributedString.Key.strokeWidth: 2.0,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.strokeColor: UIColor.white,
-        NSAttributedString.Key.font: UIFont(name: FontStyle.lexendMedium, size:400.0)!
-      ]
-    )
-    
-    let strokeLabel = UILabel(frame: CGRect.zero)
-    strokeLabel.attributedText = attributedString
-    strokeLabel.backgroundColor = UIColor.clear
-    strokeLabel.sizeToFit()
-    strokeLabel.center = CGPoint.init(x: 0.0, y: 0.0)
-    return strokeLabel
-  }
-  
-  func updateUIView(_ uiView: UILabel, context: Context) {}
+    let text: String
+
+    func makeUIView(context: Context) -> UILabel {
+        let attributedStringParagraphStyle = NSMutableParagraphStyle()
+        attributedStringParagraphStyle.alignment = NSTextAlignment.center
+        let attributedString = NSAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedString.Key.paragraphStyle: attributedStringParagraphStyle,
+                NSAttributedString.Key.strokeWidth: 2.0,
+                NSAttributedString.Key.foregroundColor: UIColor.black,
+                NSAttributedString.Key.strokeColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont(name: FontStyle.lexendMedium, size: 400.0)!,
+            ]
+        )
+
+        let strokeLabel = UILabel(frame: CGRect.zero)
+        strokeLabel.attributedText = attributedString
+        strokeLabel.backgroundColor = UIColor.clear
+        strokeLabel.sizeToFit()
+        strokeLabel.center = CGPoint(x: 0.0, y: 0.0)
+        return strokeLabel
+    }
+
+    func updateUIView(_ uiView: UILabel, context: Context) {}
 }

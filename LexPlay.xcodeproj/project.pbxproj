@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		110A4C5028717E070046C2C1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserService.swift */; };
+		110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserViewModel.swift */; };
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
 		111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65052871C5FA0075DF47 /* MiniProfileView.swift */; };
@@ -24,7 +24,6 @@
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
 		112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA2E286CC60C0039377A /* UserRepository.swift */; };
 		114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF162866A05D0008273B /* LexPlayApp.swift */; };
-		114CDF192866A05D0008273B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF182866A05D0008273B /* ContentView.swift */; };
 		114CDF1B2866A0600008273B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1A2866A0600008273B /* Assets.xcassets */; };
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
@@ -74,7 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		110A4C4F28717E070046C2C1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		110A4C4F28717E070046C2C1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		111C65052871C5FA0075DF47 /* MiniProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProfileView.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		112BBA2E286CC60C0039377A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		114CDF132866A05D0008273B /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		114CDF162866A05D0008273B /* LexPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexPlayApp.swift; sourceTree = "<group>"; };
-		114CDF182866A05D0008273B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		114CDF1A2866A0600008273B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -169,6 +167,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		111D49192875ECEF00965213 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1602507B286C63CD008D9D15 /* CameraAlphabet.swift */,
+				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
+				110A4C4F28717E070046C2C1 /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		112BBA25286C8F8D0039377A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +216,7 @@
 				112BBA25286C8F8D0039377A /* Repositories */,
 				119C5996286B25CD00B87768 /* Domains */,
 				119C5997286B27A400B87768 /* Services */,
+				111D49192875ECEF00965213 /* ViewModels */,
 				1602507D286C63DB008D9D15 /* Views */,
 				160250BA286F42D2008D9D15 /* Utils */,
 				16025098286E9FFB008D9D15 /* Fonts */,
@@ -255,11 +264,8 @@
 		119C5997286B27A400B87768 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1602507B286C63CD008D9D15 /* CameraAlphabet.swift */,
-				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
 				112B08482870120400905CE5 /* AlphabetService.swift */,
-				110A4C4F28717E070046C2C1 /* UserService.swift */,
 				1124C0C52872FA6900CAD128 /* AudioController.swift */,
 			);
 			path = Services;
@@ -283,7 +289,6 @@
 				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
 				16025090286D8421008D9D15 /* MainView.swift */,
 				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
-				114CDF182866A05D0008273B /* ContentView.swift */,
 				AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */,
 				160250AE286EA2D4008D9D15 /* OnboardingView.swift */,
 				160250B6286F2A2A008D9D15 /* CreateUserView.swift */,
@@ -426,7 +431,7 @@
 				162620362870BD130044895F /* SpecificLettersView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */,
-				110A4C5028717E070046C2C1 /* UserService.swift in Sources */,
+				110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */,
 				1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */,
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
@@ -455,7 +460,6 @@
 				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
 				1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */,
 				16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */,
-				114CDF192866A05D0008273B /* ContentView.swift in Sources */,
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */,
 				16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */,

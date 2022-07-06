@@ -23,7 +23,7 @@ struct Seeder {
 
         UserDefaults.standard.seedAlphabet = true
     }
-    
+
     func seedAvatar(context: NSManagedObjectContext) {
         guard !UserDefaults.standard.seedAvatar else { return }
         let lex = AvatarEntity(context: context)
@@ -31,15 +31,15 @@ struct Seeder {
         lex.path = "lex"
         lex.name = "Lex"
         lex.timestamp = Date().timeIntervalSince1970
-        
+
         let play = AvatarEntity(context: context)
         play.uuid = UUID()
         play.path = "play"
         play.name = "Play"
         play.timestamp = Date().timeIntervalSince1970
-        
+
         save(context: context)
-        
+
         UserDefaults.standard.seedAvatar = true
     }
 

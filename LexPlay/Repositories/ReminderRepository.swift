@@ -5,8 +5,8 @@
 //  Created by Muhamad Fahmi Al Kautsar on 29/06/22.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 protocol ReminderRepositoryProtocol {
     func update(reminder: ReminderEntity, isActive: Bool, time: Date?)
@@ -16,9 +16,9 @@ protocol ReminderRepositoryProtocol {
 
 class ReminderRepository {
     private let context: NSManagedObjectContext
-    
-    init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
-        self.context = viewContext
+
+    init(viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+        context = viewContext
     }
 
     private func save() {

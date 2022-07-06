@@ -32,7 +32,7 @@ enum Alphabet: String, CaseIterable {
     case x
     case y
     case z
-    
+
     public var spellings: [String] {
         switch self {
         case .a:

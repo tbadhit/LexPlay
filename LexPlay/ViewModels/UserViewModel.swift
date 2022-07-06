@@ -1,5 +1,5 @@
 //
-//  UserService.swift
+//  UserViewModel.swift
 //  LexPlay
 //
 //  Created by Muhamad Fahmi Al Kautsar on 03/07/22.
@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class UserService: ObservableObject {
-    static let shared = UserService()
+class UserViewModel: ObservableObject {
+    static let shared = UserViewModel()
     init() {}
 
     func getReminderDate(user: UserEntity) -> String? {

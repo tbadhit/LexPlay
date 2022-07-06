@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserModel {
-  var avatar: AvatarEntity?
-  var name: String = ""
-  var alphabets: [Alphabet] = []
-  var letterCase: LetterCase = .upper
+    var avatar: AvatarEntity?
+    var name: String = ""
+    var alphabets: [Alphabet] = []
+    var letterCase: LetterCase = .upper
 }

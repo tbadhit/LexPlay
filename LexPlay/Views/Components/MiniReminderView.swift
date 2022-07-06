@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MiniReminderView: View {
-    private let userService = UserService.shared
+    private let userService = UserViewModel.shared
     private let user: UserEntity
 
     var body: some View {

@@ -17,7 +17,7 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
         }
-        
+
         let seeder = Seeder()
         seeder.seedDummy(context: viewContext)
 

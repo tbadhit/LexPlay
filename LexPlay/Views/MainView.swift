@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-  
     var body: some View {
-      Text("Welcome to main page")
-        .font(.custom(FontStyle.lexendMedium, size: 21))
-        .navigationBarHidden(true)
+        Text("Welcome to main page")
+            .font(.custom(FontStyle.lexendMedium, size: 21))
+            .navigationBarHidden(true)
     }
 }

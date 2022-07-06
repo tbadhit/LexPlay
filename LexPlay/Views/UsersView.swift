@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct UsersView: View {
-    @FetchRequest (entity: UserEntity.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users : FetchedResults<UserEntity>
+    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users: FetchedResults<UserEntity>
     @State private var username: String = ""
-    @State private var login:  String = ""
-    @State private var timeStamp:  String = ""
+    @State private var login: String = ""
+    @State private var timeStamp: String = ""
     @State private var userSelected: UserEntity?
-    
+
     var body: some View {
         TextField(
             "User name (email address)",
@@ -27,18 +27,18 @@ struct UsersView: View {
             "Timestamp (email address)",
             text: $timeStamp
         )
-        
+
         Button("OK") {
 //            UserRepository().addUser(name: username, login: (login as NSString).boolValue, timeStamp: Double(timeStamp)!)
         }
         Button("EDIT") {
             UserRepository().editUsername(name: username, user: userSelected!)
         }
-        
-        List{
+
+        List {
             Text("DISINI")
             ForEach(users) {
-                user in
+                _ in
                 VStack(alignment: .leading) {
 //                    Text(user.name ?? "")
 //                        .font(.headline)

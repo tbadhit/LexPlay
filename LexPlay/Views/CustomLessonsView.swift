@@ -32,8 +32,8 @@ struct CustomLessonsView: View {
 struct CustomLessonView_Previews: PreviewProvider {
     static var previews: some View {
         CustomLessonsView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
-        .font(.custom(FontStyle.lexendRegular, size: 16))
-        .foregroundColor(Color("black"))
-        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .font(.custom(FontStyle.lexendRegular, size: 16))
+            .foregroundColor(Color("black"))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -10,20 +10,20 @@ import SwiftUI
 struct AlphabetRecognitionView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
     private let alphabet: Alphabet = .b
-    
+
     var body: some View {
         VStack {
             HStack {
-                Button ("Hold to speak") {}
-                .padding()
-                .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
-                    if pressing {
-                        speechRecognizer.transcribe()
-                    } else {
-                        speechRecognizer.stopTranscribing()
-                    }
-                }, perform: {}) 
-                .padding()
+                Button("Hold to speak") {}
+                    .padding()
+                    .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
+                        if pressing {
+                            speechRecognizer.transcribe()
+                        } else {
+                            speechRecognizer.stopTranscribing()
+                        }
+                    }, perform: {})
+                    .padding()
             }
             Text(speechRecognizer.isProcessing ? "Recognizing" : "Recognized")
             Text("You say:")

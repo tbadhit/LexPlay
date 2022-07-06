@@ -11,7 +11,7 @@ struct LessonsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest private var lessons: FetchedResults<LessonEntity>
     private let user: UserEntity
-    
+
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
     private let images: [(String, CGFloat, CGFloat, CGFloat)] = [
         ("bluey", CGFloat(100), CGFloat(-16), CGFloat(-16)),

@@ -5,21 +5,21 @@
 //  Created by Muhamad Fahmi Al Kautsar on 29/06/22.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
-    func addUser(name : String, avatar : AvatarEntity)
+    func addUser(name: String, avatar: AvatarEntity)
     func addUser(user: UserModel)
-    func editUsername( name : String, user : UserEntity)
+    func editUsername(name: String, user: UserEntity)
 }
 
 class UserRepository {
     private let context: NSManagedObjectContext
-    
-    init (viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
-        self.context = viewContext
+
+    init(viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+        context = viewContext
     }
 
     private func save() {
@@ -32,43 +32,43 @@ class UserRepository {
 }
 
 extension UserRepository: UserRepositoryProtocol {
-  func addUser(user: UserModel) {
-      guard let avatar = user.avatar else { return }
-      addUser(name: user.name, avatar: avatar)
-  }
-  
+    func addUser(user: UserModel) {
+        guard let avatar = user.avatar else { return }
+        addUser(name: user.name, avatar: avatar)
+    }
+
     func getActiveUser() -> UserEntity? {
         let request = UserEntity.fetchRequest()
         request.predicate = NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true))
         return try? context.fetch(request).first
     }
-    
-    func addUser (name : String, avatar : AvatarEntity) {
+
+    func addUser(name: String, avatar: AvatarEntity) {
         let reminder = ReminderEntity(context: context)
-                reminder.uuid = UUID()
-                reminder.time = Date()
+        reminder.uuid = UUID()
+        reminder.time = Date()
         reminder.timestamp = Date().timeIntervalSince1970
-        
-        //1. create new NSManageobject
+
+        // 1. create new NSManageobject
         let newUser = UserEntity(context: context)
-        
-        //2. add/ update the attributes
-      newUser.uuid = UUID()
+
+        // 2. add/ update the attributes
+        newUser.uuid = UUID()
         newUser.name = name
         newUser.avatar = avatar
         newUser.reminder = reminder
         newUser.alphabets = []
         newUser.timestamp = Date().timeIntervalSince1970
-        
-        //3. save context
+
+        // 3. save context
         save()
     }
-    
-    func editUsername( name : String, user : UserEntity) {
-        //1. Change Value
+
+    func editUsername(name: String, user: UserEntity) {
+        // 1. Change Value
         user.name = name
-        
-        //2. save context
+
+        // 2. save context
         save()
     }
 }
