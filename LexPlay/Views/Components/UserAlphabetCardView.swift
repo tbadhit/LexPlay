@@ -49,7 +49,7 @@ struct UserAlphabetCardView: View {
 }
 
 struct AlphabetCardFront: View {
-    private let audioController: AudioController = AudioController.shared
+    private let audioController: AudioService = AudioService.shared
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showRecognizingResult = false
 

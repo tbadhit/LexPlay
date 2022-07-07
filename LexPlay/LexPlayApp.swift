@@ -24,12 +24,12 @@ struct LexPlayApp: App {
                 //            MainView()
                 //          } else {
 //                            OnboardingView()
-//                LessonsView(user: UserRepository(viewContext: persistenceController.container.viewContext).getActiveUser()!)
+                LessonsView(user: UserRepository(viewContext: persistenceController.container.viewContext).getActiveUser()!)
                 //            CustomAlphabetView()
                 //            CustomLessonsView()
                 //          }
 //            }
-                OnboardingView()
+//                OnboardingView()
                     .navigationBarHidden(true)
             }
             .font(.lexendRegular())

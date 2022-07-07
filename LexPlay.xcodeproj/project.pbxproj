@@ -18,7 +18,7 @@
 		1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */; };
 		1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */; };
-		1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C52872FA6900CAD128 /* AudioController.swift */; };
+		1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0C52872FA6900CAD128 /* AudioService.swift */; };
 		112B08472870107000905CE5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 112B08462870107000905CE5 /* .gitignore */; };
 		112B08492870120400905CE5 /* AlphabetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B08482870120400905CE5 /* AlphabetService.swift */; };
 		112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BBA26286C8FF20039377A /* ReminderRepository.swift */; };
@@ -30,6 +30,8 @@
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
 		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
 		1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D47828752C30006F3D30 /* NSSet+Ext.swift */; };
+		116CDA7228770AFF002E81A7 /* AudioName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDA7128770AFF002E81A7 /* AudioName.swift */; };
+		116CDA7328770C26002E81A7 /* howToPlay.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 167124F728732A2300ACEB28 /* howToPlay.m4a */; };
 		1174A155286E93D700BC02BE /* LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A154286E93D700BC02BE /* LetterCase.swift */; };
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
@@ -84,7 +86,7 @@
 		1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		1124C0BF2872A97700CAD128 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetCardView.swift; sourceTree = "<group>"; };
-		1124C0C52872FA6900CAD128 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		1124C0C52872FA6900CAD128 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		112B08462870107000905CE5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		112B08482870120400905CE5 /* AlphabetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetService.swift; sourceTree = "<group>"; };
 		112BBA26286C8FF20039377A /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
 		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
 		1162D47828752C30006F3D30 /* NSSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Ext.swift"; sourceTree = "<group>"; };
+		116CDA7128770AFF002E81A7 /* AudioName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioName.swift; sourceTree = "<group>"; };
 		1174A154286E93D700BC02BE /* LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCase.swift; sourceTree = "<group>"; };
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
@@ -133,7 +136,7 @@
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
 		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
-		167124F728732A2300ACEB28 /* erlina.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = erlina.m4a; sourceTree = "<group>"; };
+		167124F728732A2300ACEB28 /* howToPlay.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToPlay.m4a; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
@@ -266,7 +269,7 @@
 			children = (
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
 				112B08482870120400905CE5 /* AlphabetService.swift */,
-				1124C0C52872FA6900CAD128 /* AudioController.swift */,
+				1124C0C52872FA6900CAD128 /* AudioService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			children = (
 				11166ABF2869C08300E32B87 /* Alphabet.swift */,
 				1174A154286E93D700BC02BE /* LetterCase.swift */,
+				116CDA7128770AFF002E81A7 /* AudioName.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -341,7 +345,7 @@
 		167124F628732A0000ACEB28 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
-				167124F728732A2300ACEB28 /* erlina.m4a */,
+				167124F728732A2300ACEB28 /* howToPlay.m4a */,
 			);
 			path = Audios;
 			sourceTree = "<group>";
@@ -405,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */,
+				116CDA7328770C26002E81A7 /* howToPlay.m4a in Resources */,
 				160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */,
 				160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */,
 				160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */,
@@ -447,7 +452,7 @@
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
-				1124C0C62872FA6900CAD128 /* AudioController.swift in Sources */,
+				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
@@ -470,6 +475,7 @@
 				117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */,
 				163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */,
 				11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */,
+				116CDA7228770AFF002E81A7 /* AudioName.swift in Sources */,
 				119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */,
 				1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */,
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,

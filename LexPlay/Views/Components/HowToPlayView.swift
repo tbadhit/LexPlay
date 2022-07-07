@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HowToPlayView: View {
+    private let audioService = AudioService.shared
+
     var body: some View {
         VStack {
             Text("Cara Bermain")
@@ -29,7 +31,7 @@ struct HowToPlayView: View {
                 }
                 HStack {
                     Image(systemName: "rectangle.2.swap")
-                    Text("Swap kartu")
+                    Text("Sentuh kartu")
                 }
                 HStack {
                     Image(systemName: "camera.fill")
@@ -38,7 +40,13 @@ struct HowToPlayView: View {
             }
             HStack {
                 Spacer()
-                Button {} label: {
+                Button {
+                    if audioService.isSpeaking() {
+                        audioService.stopSpeaking()
+                    } else {
+                        audioService.speak(name: .howToPlay)
+                    }
+                } label: {
                     Image(systemName: "speaker.wave.2.fill")
                         .foregroundColor(.brandPurple)
                 }
