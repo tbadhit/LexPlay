@@ -48,7 +48,7 @@ struct UserAlphabetCardView: View {
     }
 }
 
-struct AlphabetCardFront: View {
+fileprivate struct AlphabetCardFront: View {
     private let audioController: AudioService = AudioService.shared
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showRecognizingResult = false
@@ -126,11 +126,17 @@ struct AlphabetCardFront: View {
         guard !isProcessing else {
             return Text("Sedang mengenali")
         }
-        return (getResult() ? Text("🥳") : Text("🤔"))
+        let feedbackGenerator = UINotificationFeedbackGenerator()
+        if getResult() {
+            feedbackGenerator.notificationOccurred(.success)
+            return Text("🥳")
+        }
+        feedbackGenerator.notificationOccurred(.error)
+        return Text("🤔")
     }
 }
 
-struct AlphabetCardBack: View {
+fileprivate struct AlphabetCardBack: View {
     let width: CGFloat
     let height: CGFloat
     let userAlphabet: UserAlphabetEntity

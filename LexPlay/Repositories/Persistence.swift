@@ -60,7 +60,9 @@ struct PersistenceController {
 //        Seeder
         let seeder = Seeder()
         seeder.seedAll(context: container.viewContext)
+        #if DEBUG
 //        Uncomment this if you just uninstalled your app, then comment it again
 //        seeder.seedDummy(context: container.viewContext)
+        #endif
     }
 }
