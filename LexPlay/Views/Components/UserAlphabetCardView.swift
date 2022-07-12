@@ -15,8 +15,8 @@ struct UserAlphabetCardView: View {
     @State var backDegree = -90.0
     @State var isFlipped = false
 
-    let width: CGFloat = 200
-    let height: CGFloat = 250
+    let width: CGFloat = UIScreen.screenWidth
+    let height: CGFloat = UIScreen.screenHeight
     let durationAndDelay: CGFloat = 0.3
 
     func flipCard() {

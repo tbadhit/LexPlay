@@ -10,27 +10,46 @@ import SwiftUI
 @main
 struct LexPlayApp: App {
     let persistenceController = PersistenceController.shared
-
+    @State private var userRepository: UserRepository = UserRepository()
+    @State private var alphabetService: AlphabetService = AlphabetService()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 //            Change the view
                 //            ContentView()
-                //          CameraView()
+                //                          CameraView()
                 //         AlphabetRecognitionView()
                 //           LetterCaseView()
                 //          UsersView()
-                //          if UserDefaults.standard.hasOnboarded {
-                //            MainView()
-                //          } else {
-//                            OnboardingView()
-                LessonsView(user: UserRepository(viewContext: persistenceController.container.viewContext).getActiveUser()!)
+                if UserDefaults.standard.hasOnboarded {
+                    NavigationLink(isActive: .constant(true)) {
+                        if userRepository.getActiveUser()!.isLearnCustomLesson {
+                            CustomLessonsView(user: userRepository.getActiveUser()!)
+                        } else {
+                            LessonsView(user: userRepository.getActiveUser()!)
+                                .onAppear {
+                                    
+//                                    UserAlphabetRepository.getCustomPredicate(user: userRepository.getActiveUser())
+                                    print(UserAlphabetRepository.getCustomPredicate(user: userRepository.getActiveUser()!))
+                                }
+                        }
+                        
+                    } label: {
+                        EmptyView()
+                    }
+
+                } else {
+                    OnboardingView()
+                        .navigationBarHidden(true)
+                }
+                //                            OnboardingView()
+                //                LessonsView(user: UserRepository(viewContext: persistenceController.container.viewContext).getActiveUser()!)
                 //            CustomAlphabetView()
                 //            CustomLessonsView()
                 //          }
-//            }
-//                OnboardingView()
-                    .navigationBarHidden(true)
+                //            }
+                //                OnboardingView()
             }
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)

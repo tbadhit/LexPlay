@@ -21,7 +21,9 @@ struct CustomLessonsView: View {
             Spacer()
         }
         .font(.custom(FontStyle.lexendMedium, size: 16))
+        .scrollOnOverflow()
         .background(Image("background"))
+        .navigationBarHidden(true)
     }
 
     init(user: UserEntity) {

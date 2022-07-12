@@ -12,4 +12,5 @@ struct UserModel {
     var name: String = ""
     var alphabets: [Alphabet] = []
     var letterCase: LetterCase = .upper
+    var isLearnCustomLesson: Bool = false
 }

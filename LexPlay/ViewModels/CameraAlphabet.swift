@@ -114,6 +114,7 @@ class CameraAlphabet: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate 
 
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if error != nil {
+            print(error)
             return
         }
 

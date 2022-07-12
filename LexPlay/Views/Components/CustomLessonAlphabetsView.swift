@@ -22,6 +22,7 @@ struct CustomLessonAlphabetsView: View {
                 }
                 AlphabetPlusButtonView()
             }
+            .frame(height: UIScreen.screenWidth + 50)
             .tabViewStyle(.page)
         } else { EmptyView() }
     }

@@ -17,7 +17,6 @@ struct ProfileView: View {
     }
 
     var body: some View {
-        NavigationView {
             VStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -90,7 +89,6 @@ struct ProfileView: View {
             }
             .background(Image("background"))
             .navigationBarHidden(true)
-        }
     }
 }
 

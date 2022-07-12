@@ -39,14 +39,12 @@
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
-		11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C517D928695D000037943B /* AlphabetRecognitionView.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
 		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
 		16025083286C642E008D9D15 /* StrokeTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025082286C642E008D9D15 /* StrokeTextLabel.swift */; };
 		1602508F286D7C9D008D9D15 /* UserAlphabetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */; };
-		16025091286D8421008D9D15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16025090286D8421008D9D15 /* MainView.swift */; };
 		160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */; };
 		160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */; };
 		160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */; };
@@ -66,10 +64,11 @@
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
+		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
+		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
-		AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -107,14 +106,12 @@
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
-		11C517D928695D000037943B /* AlphabetRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRecognitionView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
 		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		16025082286C642E008D9D15 /* StrokeTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeTextLabel.swift; sourceTree = "<group>"; };
 		1602508E286D7C9D008D9D15 /* UserAlphabetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlphabetRepository.swift; sourceTree = "<group>"; };
-		16025090286D8421008D9D15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraBold.ttf"; sourceTree = "<group>"; };
 		1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
 		1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Regular.ttf"; sourceTree = "<group>"; };
@@ -136,11 +133,12 @@
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
 		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
+		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
+		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		167124F728732A2300ACEB28 /* howToPlay.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToPlay.m4a; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
-		AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +164,7 @@
 				1124C0C12872B10500CAD128 /* UserAlphabetCardView.swift */,
 				1124C0BD2872A8DE00CAD128 /* HowToPlayView.swift */,
 				11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */,
+				16A6697728784835001AEE0F /* CardSays.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -290,10 +289,7 @@
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
-				11C517D928695D000037943B /* AlphabetRecognitionView.swift */,
-				16025090286D8421008D9D15 /* MainView.swift */,
 				ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */,
-				AD8EBAB8286DF3E5003E63F8 /* UsersView.swift */,
 				160250AE286EA2D4008D9D15 /* OnboardingView.swift */,
 				160250B6286F2A2A008D9D15 /* CreateUserView.swift */,
 				162620352870BD130044895F /* SpecificLettersView.swift */,
@@ -338,6 +334,7 @@
 				1162D47828752C30006F3D30 /* NSSet+Ext.swift */,
 				11D581012875434400027263 /* NSOrderedSet+Ext.swift */,
 				117D8A77287599660016E913 /* NavigationLazyView.swift */,
+				16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -454,13 +451,14 @@
 				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
-				11C517DA28695D000037943B /* AlphabetRecognitionView.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
+				16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */,
 				11166AC02869C08300E32B87 /* Alphabet.swift in Sources */,
 				ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */,
 				1124C0B32872229100CAD128 /* CustomLessonsView.swift in Sources */,
 				160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */,
 				16025080286C6409008D9D15 /* CameraView.swift in Sources */,
+				16A6697828784835001AEE0F /* CardSays.swift in Sources */,
 				1174A157286ED05700BC02BE /* Seeder.swift in Sources */,
 				11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */,
 				1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */,
@@ -469,7 +467,6 @@
 				167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */,
 				16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
-				16025091286D8421008D9D15 /* MainView.swift in Sources */,
 				119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */,
 				1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */,
 				117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */,
@@ -611,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;
@@ -646,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;

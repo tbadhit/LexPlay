@@ -11,7 +11,6 @@ struct CameraView: View {
     @StateObject var camera = CameraAlphabet()
 
     var body: some View {
-        NavigationView {
             ZStack {
                 // Going to Be Camera Preview...
                 CameraPreview(camera: camera)
@@ -98,7 +97,6 @@ struct CameraView: View {
                 camera.check()
             })
             .navigationBarHidden(true)
-        }
     }
 }
 

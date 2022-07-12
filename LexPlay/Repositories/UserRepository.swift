@@ -10,7 +10,7 @@ import Foundation
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
-    func addUser(name: String, avatar: AvatarEntity)
+    func addUser(name: String, avatar: AvatarEntity, isLearnCustomLesson: Bool)
     func addUser(user: UserModel)
     func editUsername(name: String, user: UserEntity)
 }
@@ -34,7 +34,7 @@ class UserRepository {
 extension UserRepository: UserRepositoryProtocol {
     func addUser(user: UserModel) {
         guard let avatar = user.avatar else { return }
-        addUser(name: user.name, avatar: avatar)
+        addUser(name: user.name, avatar: avatar, isLearnCustomLesson: user.isLearnCustomLesson)
     }
 
     func getActiveUser() -> UserEntity? {
@@ -43,7 +43,7 @@ extension UserRepository: UserRepositoryProtocol {
         return try? context.fetch(request).first
     }
 
-    func addUser(name: String, avatar: AvatarEntity) {
+    func addUser(name: String, avatar: AvatarEntity, isLearnCustomLesson: Bool) {
         let reminder = ReminderEntity(context: context)
         reminder.uuid = UUID()
         reminder.time = Date()
@@ -56,6 +56,7 @@ extension UserRepository: UserRepositoryProtocol {
         newUser.uuid = UUID()
         newUser.name = name
         newUser.avatar = avatar
+        newUser.isLearnCustomLesson = isLearnCustomLesson
         newUser.reminder = reminder
         newUser.alphabets = []
         newUser.timestamp = Date().timeIntervalSince1970

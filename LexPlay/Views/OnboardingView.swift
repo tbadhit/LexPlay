@@ -12,7 +12,6 @@ struct OnboardingView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        NavigationView {
             HStack {
                 Spacer()
                 VStack {
@@ -29,7 +28,6 @@ struct OnboardingView: View {
                     Spacer()
                     Button {
                         withAnimation(.easeIn(duration: 1)) {
-                            UserDefaults.standard.hasOnboarded = true
                             isNextOnboard.toggle()
                         }
                     } label: {
@@ -37,7 +35,7 @@ struct OnboardingView: View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color.red)
+                            .background(Color.buttonAndSelectedtColor)
                             .cornerRadius(38)
                             .font(.lexendMedium(21))
                     }
@@ -57,7 +55,6 @@ struct OnboardingView: View {
                 ))
 
             .navigationBarHidden(true)
-        }
     }
 }
 
@@ -113,7 +110,7 @@ struct OnboardingView2: View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color.red)
+                            .background(Color.buttonAndSelectedtColor)
                             .cornerRadius(38)
                             .font(.custom(FontStyle.lexendMedium, size: 21))
                     })
@@ -165,8 +162,8 @@ struct CardOnboard: View {
     }
 }
 
-// struct OnboardingView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    OnboardingView2()
-//  }
-// }
+ struct OnboardingView_Previews: PreviewProvider {
+  static var previews: some View {
+    OnboardingView()
+  }
+ }

@@ -34,7 +34,6 @@ struct ListProfilesView: View {
     @State private var userSelected: UserEntity?
 
     var body: some View {
-        NavigationView {
             ZStack(alignment: .top) {
                 Image("background")
                     .resizable()
@@ -96,7 +95,6 @@ struct ListProfilesView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
             }
             .navigationBarHidden(true)
-        }
     }
 }
 

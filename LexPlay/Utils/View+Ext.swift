@@ -12,9 +12,26 @@ extension View {
         return background(.white)
             .cornerRadius(32)
     }
-
+    
     func cardPadding() -> some View {
         return padding(.horizontal, 32)
             .padding(.vertical, 16)
+    }
+    
+    func scrollOnOverflow() -> some View {
+        modifier(OverflowContentViewModifier())
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func wrappedInScrollView(when condition: Bool) -> some View {
+        if condition {
+            ScrollView {
+                self
+            }
+        } else {
+            self
+        }
     }
 }
