@@ -8,92 +8,98 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    //@FetchRequest private var users: FetchedResults<UserEntity>
+    private let user: UserEntity
+    
     @State private var username: String = ""
     @State private var boolNotification: Bool = true
     @State private var boolSavePhoto: Bool = true
-
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-    }
+    //@State var user = UserModel()
 
     var body: some View {
-            VStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(.white)
-                        .padding()
-                    VStack {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Hi, Name")
-                                    .foregroundColor(Color("black"))
-                                    .font(.custom(FontStyle.lexendMedium, size: 24))
-                                    .fontWeight(.semibold)
-                                    .offset(y: -10)
-                                Text("Change Avatar")
-                                    .foregroundColor(Color("red"))
-                                    .font(.custom(FontStyle.lexendMedium, size: 16))
-                                    .fontWeight(.medium)
-                                    .offset(y: -5)
+        Form {
+            //Section untuk User Info (Username & Avatar)
+            Section {
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Hi, \(user.name ?? "")")
+                                .foregroundColor(Color("black"))
+                                .font(.custom(FontStyle.lexendMedium, size: 24))
+                                .fontWeight(.semibold)
+                                .offset(y: -5)
+                            Text("Change Avatar")
+                                .foregroundColor(Color("red"))
+                                .font(.custom(FontStyle.lexendMedium, size: 16))
+                                .fontWeight(.medium)
+                                .offset(y: -5)
+                            HStack {
+                                Text("Username")
+                                TextField("Username", text: $username)
                             }
-                            .frame(width: UIScreen.screenWidth / 2, alignment: .leading)
-                            Image("play-avatar")
-                                .frame(width: UIScreen.screenWidth / 3, alignment: .leading)
+                            .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
+                            .padding(.top, 25)
                         }
-                        HStack {
-                            Text("Username")
-                            TextField("Username", text: $username)
-                        }
-                        .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
+                        .frame(width: UIScreen.screenWidth / 2, alignment: .leading)
+                        .padding(.top, -10)
+                        
+                        Image(user.avatar?.path ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
+                            .offset(x:-10)
                     }
                 }
-
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.28, alignment: .leading)
-
-                ZStack {
-                    Form {
-                        Section {
-                            Toggle(isOn: $boolNotification, label: {
-                                Text("Notification")
-                            })
-                            Toggle(isOn: $boolSavePhoto, label: {
-                                Text("Save Photo to Gallery")
-                            })
-
-                            // Ntr diganti destinationnya ke page lain
-                            NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!"))
-
-                            NavigationLink("Change Lesson Mode", destination: OnboardingView())
-                        }
-                    }
-                    .background(Color.white)
-                    .listStyle(GroupedListStyle())
-                    .environment(\.horizontalSizeClass, .regular)
-                    .cornerRadius(25)
-                }
-                .padding()
-                .frame(height: UIScreen.screenHeight * 0.32)
-
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(.white)
-                        .padding()
-                    NavigationLink("Change Lesson Mode", destination: ListProfilesView())
-                        .opacity(1)
-                        .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
-                        .foregroundColor(.black)
-                }
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.1, alignment: .leading)
-
-                Spacer()
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.2, alignment: .leading)
             }
-            .background(Image("background"))
-            .navigationBarHidden(true)
+            //.padding(.top, -60)
+            
+            //Section Setting Option
+            Section {
+                Toggle(isOn: $boolNotification, label: {
+                    Text("Notification")
+                })
+                Toggle(isOn: $boolSavePhoto, label: {
+                    Text("Save Photo to Gallery")
+                })
+
+                // Ntr diganti destinationnya ke page lain
+                NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
+
+                NavigationLink("Change Lesson Mode", destination: EmptyView().environment(\.managedObjectContext, viewContext))
+            }
+            .environment(\.horizontalSizeClass, .regular)
+            .padding(.top, 10)
+            .padding(.bottom, 10)
+
+            //Section untuk switch profile
+            Section {
+                NavigationLink("Switch Profiles", destination: EmptyView().environment(\.managedObjectContext, viewContext))
+            }
+
+
+
+        }
+        .background(Image("background"))
+        .navigationBarItems(trailing:
+            Button(action: {
+                print("Edit button pressed...")
+            }) {
+                Text("Save")
+            }
+        )
+        //.navigationBarHidden(true)
     }
+    init(user: UserEntity) {
+        self.user = user
+        //users = UserRepository.getActiveUser(user)
+    }
+    
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}
