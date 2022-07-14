@@ -10,12 +10,12 @@ import SwiftUI
 struct LetterCaseView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest private var activeUsers: FetchedResults<UserEntity>
     
     @State var user: UserModel
     
     @State private var userRepository: UserRepository? = nil
     @State private var userAlphabetRepository: UserAlphabetRepository? = nil
-    @State var userEntity: UserEntity? = nil
     @State var buttonTap : Bool = false
     @State var isLinkActive : Bool = false
     @State var idx : Int = 0
@@ -74,13 +74,12 @@ struct LetterCaseView: View {
                     }
                     user.letterCase = letterCase
                     userRepository?.addUser(user: user)
-                    userEntity = userRepository?.getActiveUser()
                     
-                    guard let userEntity = userEntity else {
+                    guard let activeUser = activeUsers.first else {
                         print("ERROR: Cannot save alphabets")
                         return
                     }
-                    userAlphabetRepository?.saveAlphabetsToUser(user: userEntity, alphabets: user.alphabets, letterCase: letterCase)
+                    userAlphabetRepository?.saveAlphabetsToUser(user: activeUser, alphabets: user.alphabets, letterCase: letterCase)
                     
                     if user.isLearnCustomLesson {
                         isGoToCustomLessonView.toggle()
@@ -99,12 +98,12 @@ struct LetterCaseView: View {
                 
                 
                 
-                if let userEntity = userEntity {
+                if let activeUser = activeUsers.first {
                     NavigationLink(isActive: user.isLearnCustomLesson ? $isGoToCustomLessonView : $isGoToLessonView) {
                         if user.isLearnCustomLesson {
-                            NavigationLazyView(CustomLessonsView(user: userEntity))
+                            NavigationLazyView(CustomLessonsView(user: activeUser))
                         } else {
-                            NavigationLazyView(LessonsView(user: userEntity))
+                            NavigationLazyView(LessonsView(user: activeUser))
                         }
                     } label: {
                         EmptyView()
@@ -125,6 +124,11 @@ struct LetterCaseView: View {
             userRepository = UserRepository(viewContext: viewContext)
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
         }
+    }
+    
+    init(user: UserModel) {
+        _activeUsers = UserRepository.getActiveUserPredicate()
+        _user = State(initialValue: user)
     }
 }
 

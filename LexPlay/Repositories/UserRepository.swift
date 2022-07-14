@@ -7,12 +7,14 @@
 
 import CoreData
 import Foundation
+import SwiftUI
 
 protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
     func addUser(name: String, avatar: AvatarEntity, isLearnCustomLesson: Bool)
     func addUser(user: UserModel)
     func editUsername(name: String, user: UserEntity)
+    static func getActiveUserPredicate() -> FetchRequest<UserEntity>
 }
 
 class UserRepository {
@@ -71,5 +73,9 @@ extension UserRepository: UserRepositoryProtocol {
 
         // 2. save context
         save()
+    }
+    
+    static func getActiveUserPredicate() -> FetchRequest<UserEntity> {
+        return FetchRequest<UserEntity>(sortDescriptors: [], predicate: NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true)))
     }
 }

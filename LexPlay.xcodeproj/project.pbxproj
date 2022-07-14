@@ -28,6 +28,7 @@
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
+		11587179288075AC00E7FF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11587178288075AC00E7FF37 /* ContentView.swift */; };
 		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
 		1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D47828752C30006F3D30 /* NSSet+Ext.swift */; };
 		116CDA7228770AFF002E81A7 /* AudioName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDA7128770AFF002E81A7 /* AudioName.swift */; };
@@ -96,6 +97,7 @@
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
+		11587178288075AC00E7FF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
 		1162D47828752C30006F3D30 /* NSSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Ext.swift"; sourceTree = "<group>"; };
 		116CDA7128770AFF002E81A7 /* AudioName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioName.swift; sourceTree = "<group>"; };
@@ -133,9 +135,9 @@
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
 		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
+		167124F728732A2300ACEB28 /* howToPlay.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToPlay.m4a; sourceTree = "<group>"; };
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
-		167124F728732A2300ACEB28 /* howToPlay.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToPlay.m4a; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		1602507D286C63DB008D9D15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11587178288075AC00E7FF37 /* ContentView.swift */,
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
@@ -438,6 +441,7 @@
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */,
+				11587179288075AC00E7FF37 /* ContentView.swift in Sources */,
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
@@ -448,7 +452,6 @@
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
-				AD8EBAB9286DF3E5003E63F8 /* UsersView.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
