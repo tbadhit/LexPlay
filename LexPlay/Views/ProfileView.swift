@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    //@FetchRequest private var users: FetchedResults<UserEntity>
+    @FetchRequest private var users: FetchedResults<UserEntity>
     private let user: UserEntity
-    
+    @State private var userRepository: UserRepository? = nil
     @State private var username: String = ""
     @State private var boolNotification: Bool = true
     @State private var boolSavePhoto: Bool = true
@@ -48,7 +48,7 @@ struct ProfileView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
-                            .offset(x:-10)
+                            .offset(x:-5)
                     }
                     
                     //                }
@@ -97,10 +97,20 @@ struct ProfileView: View {
                 
                 
             }
-            .background(Image("background"))
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                print("Edit button pressed...")
+
+
+
+        }
+        .background(Image("background"))
+        .onAppear{
+            userRepository = UserRepository(viewContext: viewContext)
+        }
+        .navigationBarItems(trailing:
+            Button(action: {
+            userRepository?.editUsername(name: username, user: user)
+            print(user.name)
+            print(username)
+            
             }) {
                 Text("Save")
             }
@@ -111,7 +121,7 @@ struct ProfileView: View {
     }
     init(user: UserEntity) {
         self.user = user
-        //users = UserRepository.getActiveUser(user)
+        _users = UserRepository.getActiveUser(userRepository!)
     }
 }
 
