@@ -173,6 +173,10 @@ extension SpeechRecognizer {
     func isCorrect(alphabet: Alphabet) -> Bool {
         return alphabet.spellings.contains(transcript.lowercased())
     }
+    
+    func isCorrect(startsWith: Alphabet) -> Bool {
+        return transcript.lowercased().starts(with: startsWith.rawValue.lowercased())
+    }
 }
 
 extension SFSpeechRecognizer {
