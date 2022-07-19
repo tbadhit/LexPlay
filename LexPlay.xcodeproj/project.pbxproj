@@ -65,6 +65,16 @@
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
+		16814ADB28869E540029E71E /* AlphaPlay WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 16814ADA28869E540029E71E /* AlphaPlay WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		16814AE028869E550029E71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16814ADF28869E550029E71E /* Assets.xcassets */; };
+		16814AE628869E550029E71E /* AlphaPlay WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16814AE528869E550029E71E /* AlphaPlay WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		16814AEB28869E550029E71E /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16814AEA28869E550029E71E /* LexPlayApp.swift */; };
+		16814AED28869E550029E71E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16814AEC28869E550029E71E /* ContentView.swift */; };
+		16814AEF28869E550029E71E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16814AEE28869E550029E71E /* NotificationController.swift */; };
+		16814AF128869E550029E71E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16814AF028869E550029E71E /* NotificationView.swift */; };
+		16814AF328869E550029E71E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16814AF228869E550029E71E /* ComplicationController.swift */; };
+		16814AF528869E560029E71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16814AF428869E560029E71E /* Assets.xcassets */; };
+		16814AF828869E560029E71E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16814AF728869E560029E71E /* Preview Assets.xcassets */; };
 		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
 		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
@@ -73,6 +83,48 @@
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16814ADC28869E540029E71E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 114CDF0B2866A05D0008273B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16814AD928869E540029E71E;
+			remoteInfo = "AlphaPlay WatchKit App";
+		};
+		16814AE728869E550029E71E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 114CDF0B2866A05D0008273B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16814AE428869E550029E71E;
+			remoteInfo = "AlphaPlay WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		16814AFD28869E560029E71E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				16814ADB28869E540029E71E /* AlphaPlay WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16814B0028869E560029E71E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				16814AE628869E550029E71E /* AlphaPlay WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		110A4C4F28717E070046C2C1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +188,19 @@
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
 		167124F42872FC0200ACEB28 /* CameraResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResultView.swift; sourceTree = "<group>"; };
 		167124F728732A2300ACEB28 /* howToPlay.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToPlay.m4a; sourceTree = "<group>"; };
+		16814AD728869E540029E71E /* AlphaPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16814ADA28869E540029E71E /* AlphaPlay WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlphaPlay WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16814ADF28869E550029E71E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16814AE528869E550029E71E /* AlphaPlay WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlphaPlay WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16814AEA28869E550029E71E /* LexPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexPlayApp.swift; sourceTree = "<group>"; };
+		16814AEC28869E550029E71E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16814AEE28869E550029E71E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		16814AF028869E550029E71E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		16814AF228869E550029E71E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		16814AF428869E560029E71E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16814AF728869E560029E71E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16814AF928869E560029E71E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16814AFA28869E560029E71E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
@@ -147,6 +212,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		114CDF102866A05D0008273B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16814AE228869E550029E71E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,6 +271,8 @@
 			children = (
 				114CDF152866A05D0008273B /* LexPlay */,
 				112B08462870107000905CE5 /* .gitignore */,
+				16814ADE28869E540029E71E /* AlphaPlay WatchKit App */,
+				16814AE928869E550029E71E /* AlphaPlay WatchKit Extension */,
 				114CDF142866A05D0008273B /* Products */,
 				1160155D2873B0BA0034CB02 /* Recovered References */,
 			);
@@ -208,6 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				114CDF132866A05D0008273B /* LexPlay.app */,
+				16814AD728869E540029E71E /* AlphaPlay.app */,
+				16814ADA28869E540029E71E /* AlphaPlay WatchKit App.app */,
+				16814AE528869E550029E71E /* AlphaPlay WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -350,6 +427,38 @@
 			path = Audios;
 			sourceTree = "<group>";
 		};
+		16814ADE28869E540029E71E /* AlphaPlay WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				16814ADF28869E550029E71E /* Assets.xcassets */,
+			);
+			path = "AlphaPlay WatchKit App";
+			sourceTree = "<group>";
+		};
+		16814AE928869E550029E71E /* AlphaPlay WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				16814AEA28869E550029E71E /* LexPlayApp.swift */,
+				16814AEC28869E550029E71E /* ContentView.swift */,
+				16814AEE28869E550029E71E /* NotificationController.swift */,
+				16814AF028869E550029E71E /* NotificationView.swift */,
+				16814AF228869E550029E71E /* ComplicationController.swift */,
+				16814AF428869E560029E71E /* Assets.xcassets */,
+				16814AF928869E560029E71E /* Info.plist */,
+				16814AFA28869E560029E71E /* PushNotificationPayload.apns */,
+				16814AF628869E560029E71E /* Preview Content */,
+			);
+			path = "AlphaPlay WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		16814AF628869E560029E71E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				16814AF728869E560029E71E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +479,57 @@
 			productReference = 114CDF132866A05D0008273B /* LexPlay.app */;
 			productType = "com.apple.product-type.application";
 		};
+		16814AD628869E540029E71E /* AlphaPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16814B0528869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay" */;
+			buildPhases = (
+				16814AD528869E540029E71E /* Resources */,
+				16814AFD28869E560029E71E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16814ADD28869E540029E71E /* PBXTargetDependency */,
+			);
+			name = AlphaPlay;
+			productName = AlphaPlay;
+			productReference = 16814AD728869E540029E71E /* AlphaPlay.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		16814AD928869E540029E71E /* AlphaPlay WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16814B0428869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay WatchKit App" */;
+			buildPhases = (
+				16814AD828869E540029E71E /* Resources */,
+				16814B0028869E560029E71E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16814AE828869E550029E71E /* PBXTargetDependency */,
+			);
+			name = "AlphaPlay WatchKit App";
+			productName = "AlphaPlay WatchKit App";
+			productReference = 16814ADA28869E540029E71E /* AlphaPlay WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		16814AE428869E550029E71E /* AlphaPlay WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16814B0328869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay WatchKit Extension" */;
+			buildPhases = (
+				16814AE128869E550029E71E /* Sources */,
+				16814AE228869E550029E71E /* Frameworks */,
+				16814AE328869E550029E71E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AlphaPlay WatchKit Extension";
+			productName = "AlphaPlay WatchKit Extension";
+			productReference = 16814AE528869E550029E71E /* AlphaPlay WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -377,11 +537,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					114CDF122866A05D0008273B = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					16814AD628869E540029E71E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					16814AD928869E540029E71E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					16814AE428869E550029E71E = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
@@ -399,6 +568,9 @@
 			projectRoot = "";
 			targets = (
 				114CDF122866A05D0008273B /* LexPlay */,
+				16814AD628869E540029E71E /* AlphaPlay */,
+				16814AD928869E540029E71E /* AlphaPlay WatchKit App */,
+				16814AE428869E550029E71E /* AlphaPlay WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -421,6 +593,30 @@
 				160250A6286EA01A008D9D15 /* Lexend-Black.ttf in Resources */,
 				160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */,
 				114CDF1B2866A0600008273B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16814AD528869E540029E71E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16814AD828869E540029E71E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16814AE028869E550029E71E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16814AE328869E550029E71E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16814AF828869E560029E71E /* Preview Assets.xcassets in Resources */,
+				16814AF528869E560029E71E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +682,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16814AE128869E550029E71E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16814AEF28869E550029E71E /* NotificationController.swift in Sources */,
+				16814AED28869E550029E71E /* ContentView.swift in Sources */,
+				16814AF328869E550029E71E /* ComplicationController.swift in Sources */,
+				16814AEB28869E550029E71E /* LexPlayApp.swift in Sources */,
+				16814AF128869E550029E71E /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16814ADD28869E540029E71E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16814AD928869E540029E71E /* AlphaPlay WatchKit App */;
+			targetProxy = 16814ADC28869E540029E71E /* PBXContainerItemProxy */;
+		};
+		16814AE828869E550029E71E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16814AE428869E550029E71E /* AlphaPlay WatchKit Extension */;
+			targetProxy = 16814AE728869E550029E71E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		114CDF242866A0600008273B /* Debug */ = {
@@ -673,6 +894,146 @@
 			};
 			name = Release;
 		};
+		16814AFB28869E560029E71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		16814AFC28869E560029E71E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		16814AFE28869E560029E71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		16814AFF28869E560029E71E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		16814B0128869E560029E71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		16814B0228869E560029E71E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbadhit.AlphaPlay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -690,6 +1051,33 @@
 			buildConfigurations = (
 				114CDF272866A0600008273B /* Debug */,
 				114CDF282866A0600008273B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16814B0328869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16814B0128869E560029E71E /* Debug */,
+				16814B0228869E560029E71E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16814B0428869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16814AFE28869E560029E71E /* Debug */,
+				16814AFF28869E560029E71E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16814B0528869E560029E71E /* Build configuration list for PBXNativeTarget "AlphaPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16814AFB28869E560029E71E /* Debug */,
+				16814AFC28869E560029E71E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
