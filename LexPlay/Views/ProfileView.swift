@@ -50,29 +50,27 @@ struct ProfileView: View {
 
                 .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.28, alignment: .leading)
 
-                ZStack {
-                    Form {
-                        Section {
-                            Toggle(isOn: $boolNotification, label: {
-                                Text("Notification")
-                            })
-                            Toggle(isOn: $boolSavePhoto, label: {
-                                Text("Save Photo to Gallery")
-                            })
+//                Form {
+                    List {
+                        Toggle(isOn: $boolNotification, label: {
+                            Text("Notification")
+                        })
+                        Toggle(isOn: $boolSavePhoto, label: {
+                            Text("Save Photo to Gallery")
+                        })
 
-                            // Ntr diganti destinationnya ke page lain
-                            NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!"))
+                        // Ntr diganti destinationnya ke page lain
+                        NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!"))
 
-                            NavigationLink("Change Lesson Mode", destination: OnboardingView())
-                        }
+                        NavigationLink("Change Lesson Mode", destination: OnboardingView())
                     }
-                    .background(Color.white)
-                    .listStyle(GroupedListStyle())
-                    .environment(\.horizontalSizeClass, .regular)
-                    .cornerRadius(25)
-                }
-                .padding()
-                .frame(height: UIScreen.screenHeight * 0.32)
+                
+//                }
+//                .background(Color.white)
+//                .environment(\.horizontalSizeClass, .regular)
+//                .cornerRadius(25)
+//                .padding()
+//                .frame(height: UIScreen.screenHeight * 0.32)
 
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
