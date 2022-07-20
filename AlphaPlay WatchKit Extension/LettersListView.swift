@@ -60,6 +60,8 @@ struct LettersListView: View {
             }
         }
         .padding(.top, 0.4)
+        .navigationTitle("AlphaPlay")
+        .navigationBarTitleDisplayMode(.large)
     }
 
     func initScroll(proxy: ScrollViewProxy) {
