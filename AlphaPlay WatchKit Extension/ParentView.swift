@@ -11,8 +11,8 @@ struct ParentView: View {
     @State var currentView: Int = 1
     var body: some View {
         TabView(selection: $currentView) {
-            OnboardingWatch()
-            ContentView()
+            OnboardingWatch().tag(1)
+            ContentView().tag(2)
         }
     }
 }

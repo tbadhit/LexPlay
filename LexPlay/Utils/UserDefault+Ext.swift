@@ -23,6 +23,16 @@ extension UserDefaults {
             setValue(newValue, forKey: UserDefaultsKey.hasOnboarded.rawValue)
         }
     }
+    
+    var hasOnboardedWatch: Bool {
+        get {
+            bool(forKey: UserDefaultsKey.hasOnboarded.rawValue)
+        }
+        
+        set {
+            setValue(newValue, forKey: UserDefaultsKey.hasOnboarded.rawValue)
+        }
+    }
 
     var seedAlphabet: Bool {
         get {

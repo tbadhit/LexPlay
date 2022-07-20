@@ -62,6 +62,7 @@
 		162620362870BD130044895F /* SpecificLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162620352870BD130044895F /* SpecificLettersView.swift */; };
 		163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BD2873AFE100C6051B /* LetterCaseView.swift */; };
 		163430C02873B44F00C6051B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BF2873B44F00C6051B /* UserModel.swift */; };
+		166A7C0E2887EA8900BCFBFB /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
@@ -696,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166A7C0E2887EA8900BCFBFB /* UserDefault+Ext.swift in Sources */,
 				16814B072886C52B0029E71E /* OnboardingWatch.swift in Sources */,
 				16814B082886C80F0029E71E /* Font+Ext.swift in Sources */,
 				16814B0B2886CFB40029E71E /* View+Ext.swift in Sources */,
