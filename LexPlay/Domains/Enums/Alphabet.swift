@@ -5,7 +5,9 @@
 //  Created by Muhamad Fahmi Al Kautsar on 27/06/22.
 //
 
-enum Alphabet: String, CaseIterable {
+enum Alphabet: String, CaseIterable, Identifiable {
+    var id : String { rawValue }
+    
     case a
     case b
     case c
