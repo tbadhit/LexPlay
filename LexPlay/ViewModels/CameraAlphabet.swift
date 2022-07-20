@@ -111,13 +111,12 @@ class CameraAlphabet: NSObject, ObservableObject {
         }
     }
     
-    func savePic() {
+    func savePic(userAlphabet: UserAlphabetEntity) {
         if picData.count > 0 {
-            let userAlphabet = UserAlphabetEntity(context: context)
-            userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: picData, hasDifficulity: false)
-            print("data nya \(userAlphabetRepository.getAllUserAlphabet())")
+            let image = UIImage(data: self.picData)!
+            userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: picData, hasDifficulity: true)
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             print("Saved successfully")
-            print("Berhasil")
         } else {
             print("Gagal mengcapture gambar")
         }

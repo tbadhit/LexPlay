@@ -18,7 +18,7 @@ struct DetailLessonView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Pelajaran \(lesson.name ?? "")")
                         .font(.lexendMedium(24))
-                    Text("Gallery")
+                    Text("Galeri")
                 }
                 Spacer()
                 HStack {

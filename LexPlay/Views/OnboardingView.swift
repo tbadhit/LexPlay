@@ -16,7 +16,7 @@ struct OnboardingView: View {
                 Spacer()
                 VStack {
                     Spacer()
-                    Text("Hello,")
+                    Text("Halo,")
                         .foregroundColor(Color.black)
                         .padding(.bottom, 10)
                         .font(.lexendMedium(28))

@@ -10,6 +10,9 @@ import SwiftUI
 struct CustomLessonAlphabetsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
+    let user: UserEntity
+    
+    @State var isGoToAddMoreAlphabet: Bool = false
 
     var body: some View {
         if alphabets.count > 0 {
@@ -20,14 +23,36 @@ struct CustomLessonAlphabetsView: View {
                         Spacer()
                     }
                 }
-                AlphabetPlusButtonView()
+                Button {
+                   isGoToAddMoreAlphabet = true
+                    print(userAlphabet(alphabets: alphabets))
+                } label: {
+                    AlphabetPlusButtonView()
+                }
             }
+            .background(
+                NavigationLink(isActive: $isGoToAddMoreAlphabet, destination: {
+                    CustomAlphabetView(user: UserModel(), userEntity: user, userAlphabets: userAlphabet(alphabets: alphabets))
+                }, label: {
+                    EmptyView()
+                })
+            )
             .frame(height: UIScreen.screenWidth + 50)
             .tabViewStyle(.page)
         } else { EmptyView() }
     }
+    
+    func userAlphabet(alphabets: FetchedResults<UserAlphabetEntity>) -> [String] {
+        var items: [String] = []
+        for char in alphabets {
+            items.append(char.alphabet?.char ?? "")
+        }
+        
+        return items
+    }
 
     init(user: UserEntity) {
+        self.user = user
         _alphabets = UserAlphabetRepository.getCustomPredicate(user: user)
     }
 }

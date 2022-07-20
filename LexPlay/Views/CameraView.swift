@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CameraView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var camera = CameraAlphabet()
+    let alphabet: String
+    let userAlphabet: UserAlphabetEntity
 
     var body: some View {
             ZStack {
@@ -26,19 +29,43 @@ struct CameraView: View {
                             Button {
                                 camera.reTake()
                             } label: {
-                                Image(systemName: "arrow.triangle.2.circlepath.camera")
+                                HStack {
+                                    Text("Foto ulang")
+                                        .foregroundColor(.black)
+                                        .font(.lexendSemiBold())
+                                        
+                                    Image(systemName: "arrow.triangle.2.circlepath.camera")
+                                        .foregroundColor(.black)
+                                }
+                                .padding()
+                                .background(.white)
+                                .clipShape(Capsule())
+                                
+                            }
+                            .padding(.trailing, 15)
+                        }
+                    } else {
+                        HStack {
+                            Button {
+                                self.presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Text("< Kembali")
                                     .foregroundColor(.black)
+                                    .font(.lexendSemiBold())
                                     .padding()
-                                    .background(Color.white)
-                                    .clipShape(Circle())
+                                    .background(.white)
+                                    .clipShape(Capsule())
                             }
                             .padding(.leading)
+                            
+                            Spacer()
                         }
                     }
 
                     Spacer()
 
-                    StrokeTextLabel(text: "A")
+                    StrokeTextLabel(text: alphabet)
+                        .padding(.bottom,90)
 
                     Spacer()
 
@@ -48,15 +75,15 @@ struct CameraView: View {
                         if camera.isTaken {
                             Button {
                                 if !camera.isSaved {
-                                    camera.savePic()
+                                    camera.savePic(userAlphabet: userAlphabet)
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }
                             } label: {
-                                Text(camera.isSaved ? "Saved" : "Save")
+                                Text(camera.isSaved ? "Saved" : "Simpan gambar")
                                     .foregroundColor(.black)
-                                    .fontWeight(.semibold)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal, 10)
-                                    .background(Color.white)
+                                    .font(.lexendSemiBold())
+                                    .padding()
+                                    .background(.white)
                                     .clipShape(Capsule())
                             }.padding(.leading)
 
@@ -77,6 +104,7 @@ struct CameraView: View {
                         } else {
                             Button {
                                 camera.takePic()
+                                print("Gambar diambil")
                             } label: {
                                 ZStack {
                                     Circle()
@@ -91,6 +119,8 @@ struct CameraView: View {
                         }
 
                     }.frame(height: 75)
+                    
+                    
                 }
             }
             .onAppear(perform: {
@@ -100,8 +130,8 @@ struct CameraView: View {
     }
 }
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
+//struct CameraView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CameraView(alphabet: "a", )
+//    }
+//}

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MiniProfileView: View {
-    let user: UserEntity
+    @ObservedObject var user: UserEntity
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 32) {
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Hi, \(user.name ?? "")")
+                    Text("Hai, \(user.name ?? "")")
                         .font(.custom(FontStyle.lexendSemiBold, size: 24))
                         .offset(y: -5)
                     Text("Ayo Bermain!")

@@ -16,7 +16,7 @@ struct Restaurant: Identifiable {
 // Buat Test
 struct RestaurantRow: View {
     var restaurant: Restaurant
-
+    
     var body: some View {
         Text("Come and eat at \(restaurant.name)")
     }
@@ -32,69 +32,55 @@ struct ListProfilesView: View {
     ]
     @State private var username: String = ""
     @State private var userSelected: UserEntity?
-
+    
     var body: some View {
-            ZStack(alignment: .top) {
-                Image("background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.top)
-
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Profiles")
-                        .foregroundColor(Color("black"))
-                        .font(.custom(FontStyle.lexendMedium, size: 28))
-                        .fontWeight(.semibold)
-                        .frame(alignment: .topLeading)
-                        .padding()
-                        .padding(.top, UIScreen.screenHeight * 0.05)
-
-                    ForEach(users) {
-                        user in
-                        VStack(alignment: .center) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 40, style: .continuous)
-                                    .fill(.white)
-
-                                HStack {
-                                    Image("play-avatar")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                    Text(user.name)
-                                        .foregroundColor(Color("black"))
-                                        .font(.custom(FontStyle.lexendMedium, size: 17))
-                                        .fontWeight(.semibold)
-                                }
-
-                                .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenHeight * 0.085, alignment: .leading)
-                            }
-                            .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.1)
-                        }
-                        .padding(.leading, 20)
+        HStack {
+            Spacer()
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Profil")
+                    .foregroundColor(Color("black"))
+                    .font(.lexendSemiBold(28))
+                    .frame(alignment: .topLeading)
+                
+                ForEach(users) {
+                    user in
+                    HStack {
+                        Image("play-avatar")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Text(user.name)
+                            .foregroundColor(Color("black"))
+                            .font(.lexendSemiBold(17))
+                        
+                        Spacer()
                     }
-
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 40, style: .continuous)
-                            .fill(.white)
-
-                        HStack {
-                            Button(action: {
-                                print("AA")
-                            }) {
-                                Image(systemName: "plus")
-                                    .foregroundColor(Color("red"))
-                                    .font(.custom(FontStyle.lexendMedium, size: 41).bold())
-                            }
-                        }
-                        .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenHeight * 0.085, alignment: .center)
-                    }
-
-                    .padding(.leading, 20)
-                    .frame(width: UIScreen.screenWidth * 0.95, height: UIScreen.screenHeight * 0.09)
+                    .padding(10)
+                    .frame(maxWidth: .infinity, maxHeight: UIScreen.screenWidth / 4.5)
+                    .card()
+                    
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                
+                Button(action: {
+                    print("AA")
+                }) {
+                    Image(systemName: "plus")
+                        .foregroundColor(Color("red"))
+                        .font(.custom(FontStyle.lexendMedium, size: 41).bold())
+                    
+                }
+                .frame(maxWidth: .infinity, maxHeight: UIScreen.screenHeight * 0.10)
+                .background(.white)
+                .cornerRadius(40)
+                
+                Spacer()
             }
-            .navigationBarHidden(true)
+            .padding(.horizontal, 10)
+        }
+        
+        .background(Image("background")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.top))
     }
 }
 

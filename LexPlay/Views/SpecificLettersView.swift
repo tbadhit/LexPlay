@@ -94,7 +94,7 @@ struct GreetingCard: View {
                 .offset(y: 17.7)
             
             VStack(alignment: .leading) {
-                Text("Hellow,")
+                Text("Halo,")
                     .font(.custom(FontStyle.lexendMedium, size: 21))
                 Text("\(user.name)")
                     .font(.custom(FontStyle.lexendSemiBold, size: 36))

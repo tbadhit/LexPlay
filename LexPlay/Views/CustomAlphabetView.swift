@@ -10,32 +10,27 @@ import SwiftUI
 struct CustomAlphabetView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @State private var userAlphabetRepository: UserAlphabetRepository? = nil
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State var user: UserModel
+    @State var user: UserModel?
+    var userEntity: UserEntity? = nil
+    var userAlphabets: [String] = []
     
     private let alphabetController: AlphabetService = AlphabetService()
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
-    
     
     @State var selectionsAlphabet: [String] = []
     @State var isGoToSelecLetterCase = false
     
     @GestureState var buttonWidth = false
     
-    func alphabets() -> [String] {
-        var items: [String] = []
-        for char in alphabetController.getAlphabets() {
-            items.append("\(char.rawValue)")
-        }
-        
-        return items
-    }
-    
     
     var body: some View {
         VStack {
             CardSays(imageName: "lex", information: "Pilih alphabet yang\ningin dipelajari")
                 .padding(.bottom, 30)
+                .padding(.horizontal, 20)
             
             // Custom Huruf
             TabView {
@@ -43,7 +38,7 @@ struct CustomAlphabetView: View {
                     VStack {
                         VStack {
                             LazyVGrid(columns: columns, spacing: 16) {
-                                if tabViewIndex == 6 {
+                                if alphabets().count / 4 == tabViewIndex {
                                     ForEach(0 ..< 2, id: \.self) { i in
                                         let alphabet = alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
                                         CardAlphabet(alphabet: alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
@@ -57,29 +52,54 @@ struct CustomAlphabetView: View {
                                 } else {
                                     ForEach(0 ..< 4, id: \.self) { i in
                                         let alphabet = alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex)
-                                        CardAlphabet(alphabet: alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet)) {
+                                        CardAlphabet(alphabet: alphabetController.generateCustomAlphabet(alphabets: alphabets(), index: i, tabviewIndex: tabViewIndex), isCardSelected: selectionsAlphabet.contains(alphabet), isDisabled: userAlphabets.contains(alphabet)) {
                                             if selectionsAlphabet.contains(alphabet) {
                                                 selectionsAlphabet.removeAll(where: { $0 == alphabet })
                                             } else {
                                                 selectionsAlphabet.append(alphabet)
                                             }
                                         }
+                                        .disabled(userAlphabets.contains(alphabet))
+                                        
                                     }
                                 }
                             }
                         }
                         Spacer()
                     }
+                    .padding(.horizontal, 20)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: UIScreen.screenWidth + 16)
             .tabViewStyle(.page)
             
             Button {
-                self.user.alphabets = selectionsAlphabet.map {
-                    Alphabet(rawValue: ($0.first?.lowercased())!)!
+                if userEntity != nil {
+                    var newLowerAlpabets: [Alphabet] = []
+                    var newUpperAlpabets: [Alphabet] = []
+                    for alphabet in selectionsAlphabet {
+                        if alphabet == alphabet.lowercased() {
+                            newLowerAlpabets.append(Alphabet(rawValue: alphabet.lowercased())!)
+                        } else {
+                            newUpperAlpabets.append(Alphabet(rawValue: alphabet.lowercased())!)
+                        }
+                    }
+                    if !newLowerAlpabets.isEmpty {
+                        userAlphabetRepository?.saveAlphabetsToUser(user: userEntity!, alphabets: newLowerAlpabets, letterCase: .lower)
+                        print("Save Lower")
+                    }
+                    if !newUpperAlpabets.isEmpty {
+                        userAlphabetRepository?.saveAlphabetsToUser(user: userEntity!, alphabets: newUpperAlpabets, letterCase: .upper)
+                        print("Save Upper")
+                    }
+                    
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.user?.alphabets = selectionsAlphabet.map {
+                        Alphabet(rawValue: ($0.first?.lowercased())!)!
+                    }
+                    self.isGoToSelecLetterCase.toggle()
                 }
-                self.isGoToSelecLetterCase.toggle()
             } label: {
                 Text("Selesai")
                     .font(.lexendMedium(21))
@@ -95,6 +115,7 @@ struct CustomAlphabetView: View {
             .animation(.easeInOut, value: buttonWidth)
             .frame(maxHeight: 75)
             .disabled(selectionsAlphabet.count < 1)
+            .padding(.horizontal, 20)
             
             Spacer()
             
@@ -102,17 +123,32 @@ struct CustomAlphabetView: View {
             
             
             NavigationLink(isActive: $isGoToSelecLetterCase) {
-                LetterCaseView(user: user).environment(\.managedObjectContext, viewContext)
+                LetterCaseView(user: user!).environment(\.managedObjectContext, viewContext)
             } label: {
                 EmptyView()
             }
         }
-        .padding(.horizontal, 20)
+        .onAppear{
+            userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
+        }
         .navigationBarTitleDisplayMode(.inline)
         .background(Image("background")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .edgesIgnoringSafeArea(.all))
+    }
+    
+    func alphabets() -> [String] {
+        var items: [String] = []
+        for char in alphabetController.getAlphabets() {
+            if userAlphabets.isEmpty {
+                items.append("\(char.rawValue)")
+            } else {
+                items.append("\(char.rawValue.uppercased())")
+                items.append("\(char.rawValue.lowercased())")
+            }
+        }
+        return items
     }
 }
 
@@ -128,7 +164,9 @@ struct CustomAlphabetView_Previews: PreviewProvider {
 struct CardAlphabet: View {
     let alphabet: String
     var isCardSelected: Bool
+    var isDisabled: Bool = false
     var action: () -> Void
+    
     
     var body: some View {
         Button(action: self.action) {
@@ -143,8 +181,13 @@ struct CardAlphabet: View {
             } else {
                 Text(alphabet)
                     .font(.lexendSemiBold(72))
+                    .foregroundColor(isDisabled ? .white : .black)
                     .frame(width: UIScreen.screenWidth / 2.5, height: UIScreen.screenWidth / 2.5)
-                    .card()
+                    .background(isDisabled ? .gray : .white)
+                    .cornerRadius(32)
+                //                    .font(.lexendSemiBold(72))
+                //                    .frame(width: UIScreen.screenWidth / 2.5, height: UIScreen.screenWidth / 2.5)
+                //                    .card()
             }
         }
     }

@@ -13,7 +13,7 @@ protocol UserRepositoryProtocol {
     func getActiveUser() -> UserEntity?
     func addUser(name: String, avatar: AvatarEntity, isLearnCustomLesson: Bool)
     func addUser(user: UserModel)
-    func editUsername(name: String, user: UserEntity)
+    func editUser(name: String, avatar: AvatarEntity, user: UserEntity)
     static func getActiveUserPredicate() -> FetchRequest<UserEntity>
 }
 
@@ -67,9 +67,10 @@ extension UserRepository: UserRepositoryProtocol {
         save()
     }
 
-    func editUsername(name: String, user: UserEntity) {
+    func editUser(name: String, avatar: AvatarEntity, user: UserEntity) {
         // 1. Change Value
         user.name = name
+        user.avatar = avatar
 
         // 2. save context
         save()

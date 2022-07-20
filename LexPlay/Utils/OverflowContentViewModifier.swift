@@ -15,11 +15,12 @@ struct OverflowContentViewModifier: ViewModifier {
             content
                 .background(
                     GeometryReader {contentGeometry in
-                        Color.clear.onAppear {
+                        Color.clear.onChange(of: geometry.size) { newGeoSize in
                             print("konten geometri : \(contentGeometry.size.height)")
                             print("kalau konten lebih dari geometri true")
-                            print("geometry \(geometry.size.height)")
-                            contentOverflow = contentGeometry.size.height > geometry.size.height
+                            print("geometry \(newGeoSize.height)")
+                            contentOverflow = contentGeometry.size.height > newGeoSize.height
+                            
                         }
                     }
                 )

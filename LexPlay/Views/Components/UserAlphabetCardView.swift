@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct UserAlphabetCardView: View {
-    let alphabet: UserAlphabetEntity
-
+    @ObservedObject var alphabet: UserAlphabetEntity
+    
     @State private var popInfo = false
     @State var frontDegree = 0.0
     @State var backDegree = -90.0
     @State var isFlipped = false
-
+    
     let width: CGFloat = UIScreen.screenWidth
     let height: CGFloat = UIScreen.screenHeight
     let durationAndDelay: CGFloat = 0.3
-
+    
     func flipCard() {
         isFlipped.toggle()
         if isFlipped {
@@ -37,7 +37,7 @@ struct UserAlphabetCardView: View {
             }
         }
     }
-
+    
     var body: some View {
         ZStack {
             AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped)
@@ -52,14 +52,14 @@ fileprivate struct AlphabetCardFront: View {
     private let audioController: AudioService = AudioService.shared
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showRecognizingResult = false
-
+    
     let width: CGFloat
     let height: CGFloat
     let alphabet: UserAlphabetEntity
     @Binding var degree: Double
     @Binding var isFlipped: Bool
     @State var popInfo: Bool = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -67,8 +67,8 @@ fileprivate struct AlphabetCardFront: View {
                 Button {
                     popInfo.toggle()
                 } label: { Image(systemName: "info.circle.fill")
-                    .font(.title)
-                    .foregroundColor(.brandPurple)
+                        .font(.title)
+                        .foregroundColor(.brandPurple)
                 }
                 .popover(isPresented: $popInfo) {
                     HowToPlayView()
@@ -108,20 +108,20 @@ fileprivate struct AlphabetCardFront: View {
         .padding(.bottom, 48)
         .rotation3DEffect(.init(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
-
+    
     private func getResult() -> Bool {
         guard let char = alphabet.alphabet?.char else { return false }
         guard let alphabet = Alphabet(rawValue: char) else { return false }
         return speechRecognizer.isCorrect(alphabet: alphabet)
     }
-
+    
     func getAlertTitle(isProcessing: Bool) -> Text {
         guard !isProcessing else {
             return Text("Tunggu...")
         }
         return getResult() ? Text("Benar!") : Text("Coba Lagi")
     }
-
+    
     func getAlertMessage(isProcessing: Bool) -> Text {
         guard !isProcessing else {
             return Text("Sedang mengenali")
@@ -139,11 +139,12 @@ fileprivate struct AlphabetCardFront: View {
 fileprivate struct AlphabetCardBack: View {
     let width: CGFloat
     let height: CGFloat
-    let userAlphabet: UserAlphabetEntity
+    @ObservedObject var userAlphabet: UserAlphabetEntity
     @Binding var degree: Double
     @Binding var isFlipped: Bool
     @State var popInfo: Bool = false
-
+    @State var isGoToCameraView: Bool = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -151,8 +152,8 @@ fileprivate struct AlphabetCardBack: View {
                 Button {
                     popInfo.toggle()
                 } label: { Image(systemName: "info.circle.fill")
-                    .font(.title)
-                    .foregroundColor(.brandPurple)
+                        .font(.title)
+                        .foregroundColor(.brandPurple)
                 }
                 .popover(isPresented: $popInfo) {
                     HowToPlayView()
@@ -161,18 +162,32 @@ fileprivate struct AlphabetCardBack: View {
             Spacer()
             if let img = userAlphabet.imageAssociation, let uiImage = UIImage(data: img) {
                 Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.screenWidth - 100, height: UIScreen.screenWidth - 130, alignment: .center)
+                    .clipped()
+                
             } else {
                 Text("Tidak ada gambar")
                     .font(.lexendMedium(32))
             }
             Spacer()
-            HStack {
+            Button(action: {
+                self.isGoToCameraView = true
+            }, label: {
                 Image(systemName: "camera.fill")
                     .font(.title)
-            }
+            })
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
         }
+        .background(
+            NavigationLink(isActive: $isGoToCameraView, destination: {
+                CameraView(alphabet: userAlphabet.alphabet?.char ?? "", userAlphabet: userAlphabet)
+            }, label: {
+                EmptyView()
+            }).hidden()
+        )
         .padding(16)
         .card()
         .opacity(isFlipped ? 1 : 0.5)
