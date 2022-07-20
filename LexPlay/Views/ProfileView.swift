@@ -10,8 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     @Environment(\.managedObjectContext) private var viewContext
     //@FetchRequest private var users: FetchedResults<UserEntity>
-    private let user: UserEntity
-    
+    let user: UserEntity
+    @State private var userRepository: UserRepository? = nil
     @State private var username: String = ""
     @State private var boolNotification: Bool = true
     @State private var boolSavePhoto: Bool = true
@@ -48,7 +48,7 @@ struct ProfileView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
-                            .offset(x:-10)
+                            .offset(x:-5)
                     }
                     
                     //                }
@@ -57,61 +57,51 @@ struct ProfileView: View {
                     //                .cornerRadius(25)
                     //                .padding()
                     //                .frame(height: UIScreen.screenHeight * 0.32)
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(.white)
-                            .padding()
-                        NavigationLink("Change Lesson Mode", destination: ListProfilesView())
-                            .opacity(1)
-                            .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
-                            .foregroundColor(.black)
-                    }
-                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.2, alignment: .leading)
                 }
                 //.padding(.top, -60)
                 
+            }
                 //Section Setting Option
-                Section {
-                    Toggle(isOn: $boolNotification, label: {
-                        Text("Notification")
-                    })
-                    Toggle(isOn: $boolSavePhoto, label: {
-                        Text("Save Photo to Gallery")
-                    })
-                    
-                    // Ntr diganti destinationnya ke page lain
-                    NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
-                    
-                    NavigationLink("Change Lesson Mode", destination: EmptyView().environment(\.managedObjectContext, viewContext))
-                }
-                .environment(\.horizontalSizeClass, .regular)
-                .padding(.top, 10)
-                .padding(.bottom, 10)
+            Section {
+                Toggle(isOn: $boolNotification, label: {
+                    Text("Notification")
+                })
+                Toggle(isOn: $boolSavePhoto, label: {
+                    Text("Save Photo to Gallery")
+                })
+                
+                // Ntr diganti destinationnya ke page lain
+                NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
+                
+                NavigationLink("Change Lesson Mode", destination: EmptyView().environment(\.managedObjectContext, viewContext))
+            }
+            .environment(\.horizontalSizeClass, .regular)
+            .padding(.top, 10)
+            .padding(.bottom, 10)
                 
                 //Section untuk switch profile
-                Section {
-                    NavigationLink("Switch Profiles", destination: EmptyView().environment(\.managedObjectContext, viewContext))
-                }
-                
-                
-                
+            Section {
+                NavigationLink("Switch Profiles", destination: EmptyView().environment(\.managedObjectContext, viewContext))
             }
-            .background(Image("background"))
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                print("Edit button pressed...")
-            }) {
+        }
+        .background(Image("background"))
+        .onAppear{
+            userRepository = UserRepository(viewContext: viewContext)
+        }
+        .navigationBarItems(trailing:
+            Button(action: {
+            userRepository?.editUsername(name: username, user: user)
+            print(user.name)
+            print(username)
+        }) {
                 Text("Save")
             }
-            )
+        )
             //.navigationBarHidden(true)
-        }
-        
     }
     init(user: UserEntity) {
         self.user = user
-        //users = UserRepository.getActiveUser(user)
+        //_users = UserRepository.getActiveUser(userRepository!)
     }
 }
 
