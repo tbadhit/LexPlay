@@ -13,7 +13,7 @@ struct LexPlayApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CameraView()
+            ContentView()
                 .font(.lexendRegular())
                 .foregroundColor(.brandBlack)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)

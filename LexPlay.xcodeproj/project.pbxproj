@@ -63,6 +63,7 @@
 		163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BD2873AFE100C6051B /* LetterCaseView.swift */; };
 		163430C02873B44F00C6051B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BF2873B44F00C6051B /* UserModel.swift */; };
 		166A7C0E2887EA8900BCFBFB /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
+		166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A7C292888404F00BCFBFB /* UINavigationController+Ext.swift */; };
 		167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */; };
 		167124F12872948900ACEB28 /* CardAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F02872948900ACEB28 /* CardAvatar.swift */; };
 		167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */; };
@@ -190,6 +191,7 @@
 		162620352870BD130044895F /* SpecificLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificLettersView.swift; sourceTree = "<group>"; };
 		163430BD2873AFE100C6051B /* LetterCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
 		163430BF2873B44F00C6051B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		166A7C292888404F00BCFBFB /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
 		167124F02872948900ACEB28 /* CardAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAvatar.swift; sourceTree = "<group>"; };
 		167124F2287295BD00ACEB28 /* CustomAlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlphabetView.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				11D581012875434400027263 /* NSOrderedSet+Ext.swift */,
 				117D8A77287599660016E913 /* NavigationLazyView.swift */,
 				16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */,
+				166A7C292888404F00BCFBFB /* UINavigationController+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 				160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */,
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
+				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
