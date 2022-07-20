@@ -15,9 +15,12 @@ struct ProfileView: View {
     @State private var username: String = ""
     @State private var boolNotification: Bool = true
     @State private var boolSavePhoto: Bool = true
+    @State private var isGoToChangeAvatar : Bool = false
+    @State var avatar: AvatarEntity?
     //@State var user = UserModel()
     
     var body: some View {
+        
         Form {
             //Section untuk User Info (Username & Avatar)
             Section {
@@ -29,11 +32,27 @@ struct ProfileView: View {
                                 .font(.custom(FontStyle.lexendMedium, size: 24))
                                 .fontWeight(.semibold)
                                 .offset(y: -5)
-                            Text("Change Avatar")
-                                .foregroundColor(Color("red"))
-                                .font(.custom(FontStyle.lexendMedium, size: 16))
-                                .fontWeight(.medium)
-                                .offset(y: -5)
+                            
+                            ZStack(alignment: .leading) {
+                                Button {
+                                    isGoToChangeAvatar.toggle()
+                                } label: {
+                                    Text("Change Avatar")
+                                        .foregroundColor(Color("red"))
+                                        .font(.custom(FontStyle.lexendMedium, size: 16))
+                                        .fontWeight(.medium)
+                                }
+                                    
+                                NavigationLink(isActive: $isGoToChangeAvatar, destination: {
+                                    ChangeAvatarView(oldAvatar: $avatar).environment(\.managedObjectContext, viewContext)
+                                }, label: {
+                                    EmptyView()
+                                })
+                                .opacity(0.0)
+                            }
+                            .offset(y: -5)
+                            
+                            
                             HStack {
                                 Text("Username")
                                 TextField("Username", text: $username)
@@ -44,21 +63,13 @@ struct ProfileView: View {
                         .frame(width: UIScreen.screenWidth / 2, alignment: .leading)
                         .padding(.top, -10)
                         
-                        Image(user.avatar?.path ?? "")
+                        Image(avatar?.path ?? "")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
                             .offset(x:-5)
                     }
-                    
-                    //                }
-                    //                .background(Color.white)
-                    //                .environment(\.horizontalSizeClass, .regular)
-                    //                .cornerRadius(25)
-                    //                .padding()
-                    //                .frame(height: UIScreen.screenHeight * 0.32)
                 }
-                //.padding(.top, -60)
                 
             }
                 //Section Setting Option
@@ -66,6 +77,12 @@ struct ProfileView: View {
                 Toggle(isOn: $boolNotification, label: {
                     Text("Notification")
                 })
+                .onChange(of: boolNotification) { newValue in
+                    user.reminder?.active = newValue
+                }
+                
+                
+                
                 Toggle(isOn: $boolSavePhoto, label: {
                     Text("Save Photo to Gallery")
                 })
@@ -81,18 +98,28 @@ struct ProfileView: View {
                 
                 //Section untuk switch profile
             Section {
-                NavigationLink("Switch Profiles", destination: EmptyView().environment(\.managedObjectContext, viewContext))
+                NavigationLink("Switch Profiles", destination: ListProfilesView().environment(\.managedObjectContext, viewContext))
             }
         }
         .background(Image("background"))
         .onAppear{
             userRepository = UserRepository(viewContext: viewContext)
+            if avatar == nil {
+                avatar =  user.avatar
+            }
+            UITableView.appearance().backgroundColor = .clear
+            UITableView.appearance().isScrollEnabled = false
+        }
+        .onDisappear {
+            UITableView.appearance().backgroundColor = .systemGroupedBackground
+            
         }
         .navigationBarItems(trailing:
             Button(action: {
+            if username == "" {
+                username = user.name!
+            }
             userRepository?.editUsername(name: username, user: user)
-            print(user.name)
-            print(username)
         }) {
                 Text("Save")
             }
@@ -101,7 +128,6 @@ struct ProfileView: View {
     }
     init(user: UserEntity) {
         self.user = user
-        //_users = UserRepository.getActiveUser(userRepository!)
     }
 }
 
