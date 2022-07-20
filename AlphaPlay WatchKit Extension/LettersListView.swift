@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LettersListView: View {
-    @State private var idx: Int = 0
-    @State private var oldIdx: Int = 0
-    @State private var currentAlphabet: Alphabet = .a
-    
+    @State private var listItemId: Int = 0
+    @State private var visibleIds = [0, 1]
+    @State private var initialState = true
+
     var body: some View {
-        ScrollViewReader { _ in
+        ScrollViewReader { proxy in
             VStack {
                 List(0 ..< Alphabet.allCases.count, id: \.self) { i in
                     HStack {
@@ -21,7 +21,7 @@ struct LettersListView: View {
                             .frame(height: 100, alignment: .leading)
                             .font(.lexendBlack(40))
                         Spacer()
-                        if currentAlphabet == Alphabet.allCases[i] {
+                        if listItemId == i {
                             Image(systemName: "mic.fill")
                                 .resizable()
                                 .frame(width: 15, height: 25)
@@ -29,39 +29,52 @@ struct LettersListView: View {
                                 .padding(.trailing, 20)
                         }
                     }
-                    .listRowPlatterColor(Color("indigo"))
-//                    .onDisappear {
-//                        if idx > i {
-//                            print(Alphabet.allCases[i+1])
-//                        } else {
-//                            print(Alphabet.allCases[i-1])
-//                        }
-//                        idx = i
-//                    }
-                    .id(i)
-                    .task(id: i) {
-//                                idx = i
-//                                print(Alphabet.allCases[i])
-//                                if oldIdx == 0 {
-//                                    currentAlphabet = Alphabet.allCases[0]
-//                                } else if oldIdx == Alphabet.allCases.count - 1 {
-//                                    currentAlphabet = Alphabet.allCases[Alphabet.allCases.count - 1]
-//                                } else
-                        if oldIdx > i {
-    //                        print("up")
-                            currentAlphabet = Alphabet.allCases[i + 1]
-    //                        print(Alphabet.allCases[newValue + 1])
-                        } else {
-    //                        print("down")
-                            currentAlphabet = Alphabet.allCases[i - 1]
-    //                        print(Alphabet.allCases[newValue - 1])
-                        }
-                        oldIdx = i
+                    .task {
+                        visibleIds = visibleIds.filter { $0 != i }
+                        visibleIds.append(i)
+                    }.onDisappear {
+                        visibleIds = visibleIds.filter { $0 != i }
                     }
-                    //.background(Color("indigo"))
+                    .id(i)
+                    .listRowPlatterColor(Color("indigo").opacity(listItemId == i ? 1 : 0.5))
                 }
                 .listStyle(.carousel)
-                .navigationTitle("AlphaPlay")
+                .onChange(of: visibleIds) { newValue in
+                    if newValue.count > 2 {
+//                        reversal
+                        if newValue[2] == newValue[0] - 1 || newValue[2] == newValue[0] + 1 {
+                            listItemId = newValue[0]
+                        } else {
+                            listItemId = newValue[1]
+                        }
+                    } else if newValue.count > 1 {
+                        listItemId = newValue[1]
+                    }
+                    print(newValue.map { Alphabet.allCases[$0].rawValue })
+                }
+                .onAppear {
+                    guard initialState else { return }
+                    initialState = false
+                    initScroll(proxy: proxy)
+                }
+            }
+        }
+        .padding(.top, 0.4)
+        .navigationTitle("AlphaPlay")
+        .navigationBarTitleDisplayMode(.large)
+    }
+
+    func initScroll(proxy: ScrollViewProxy) {
+        let requiredVisibleIdxs = [1, 0]
+        let animationDuration = 0.001
+        proxy.scrollTo(Alphabet.allCases.count - 1)
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            withAnimation(.linear(duration: animationDuration)) {
+                proxy.scrollTo(0)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration * 2 + 0.35) {
+                guard visibleIds != requiredVisibleIdxs else { return }
+                initScroll(proxy: proxy)
             }
         }
     }
@@ -69,6 +82,8 @@ struct LettersListView: View {
 
 struct LettersListView_Previews: PreviewProvider {
     static var previews: some View {
-        LettersListView()
+        NavigationView {
+            LettersListView()
+        }
     }
 }
