@@ -2,7 +2,7 @@
 //  NotificationView.swift
 //  AlphaPlay WatchKit Extension
 //
-//  Created by Tubagus Adhitya Permana on 19/07/22.
+//  Created by Muhamad Fahmi Al Kautsar on 21/07/22.
 //
 
 import SwiftUI
