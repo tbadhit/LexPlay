@@ -24,23 +24,27 @@ struct ProfileView: View {
         Form {
             //Section untuk User Info (Username & Avatar)
             Section {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Hai, \(user.name ?? "")")
-                            .foregroundColor(Color("black"))
-                            .font(.custom(FontStyle.lexendMedium, size: 24))
-                            .fontWeight(.semibold)
-                            .offset(y: -5)
-                        
-                        ZStack(alignment: .leading) {
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Hai, \(user.name ?? "Tidak ada nama")")
+                                .foregroundColor(Color("black"))
+                                .font(.lexendSemiBold(24))
+                                .offset(y: -5)
+                            
+//                            Text("Ayo Bermain!")
+//                                .foregroundColor(Color("black"))
+//                                .font(.lexendSemiBold(18))
+//                                .offset(y: -5)
+                            
                             Button {
                                 isGoToChangeAvatar.toggle()
                             } label: {
                                 Text("Ubah Avatar")
                                     .foregroundColor(Color("red"))
-                                    .font(.custom(FontStyle.lexendMedium, size: 16))
-                                    .fontWeight(.medium)
+                                    .font(.lexendMedium(16))
                             }
+                            .buttonStyle(PlainButtonStyle())
                             
                             NavigationLink(isActive: $isGoToChangeAvatar, destination: {
                                 ChangeAvatarView(oldAvatar: $avatar).environment(\.managedObjectContext, viewContext)
@@ -48,27 +52,28 @@ struct ProfileView: View {
                                 EmptyView()
                             })
                             .opacity(0.0)
+                            .offset(y: -5)
+                            
                         }
-                        .offset(y: -5)
                         
-                        
-                        HStack {
-                            Text("Ubah nama")
-                            TextField("...", text: $username)
-                        }
-                        .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
-                        .padding(.top, 25)
+                        Image(avatar?.path ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
+                            .offset(x:-5, y: 7.5)
                     }
-                    .padding(.top, -10)
-                    .frame(width: UIScreen.screenWidth / 2, alignment: .leading)
                     
-                    Image(avatar?.path ?? "")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.screenWidth * 0.25, alignment: .leading)
-                        .offset(x:-5)
+                    Divider()
+//                    .frame(height: UIScreen.screenWidth / 2.5, alignment: .leading)
+                    
+                    HStack {
+                        Text("Ubah nama")
+                        Spacer()
+                        TextField("Masukkan nama baru...", text: $username)
+                    }
+//                    .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
+                    .padding(.vertical, 10)
                 }
-                .frame(height: UIScreen.screenWidth / 2.5, alignment: .leading)
                 
             }
             //Section Setting Option
@@ -129,6 +134,6 @@ struct ProfileView: View {
 
 //struct ProfileView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ProfileView()
+//        ProfileView(user: UserEntity())
 //    }
 //}
