@@ -76,6 +76,11 @@ extension UserRepository: UserRepositoryProtocol {
         save()
     }
     
+    func turnNotification(user: UserEntity, active : Bool) {
+        user.reminder?.active = active
+        save()
+    }
+    
     static func getActiveUserPredicate() -> FetchRequest<UserEntity> {
         return FetchRequest<UserEntity>(sortDescriptors: [], predicate: NSPredicate(format: "%K == %@", #keyPath(UserEntity.login), NSNumber(value: true)))
     }

@@ -86,20 +86,12 @@
 		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
 		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
-		AD59D90E288846B3009229DB /* LettersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59D90D288846B3009229DB /* LettersListView.swift */; };
-		AD59D90F28884700009229DB /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
-		AD59D91028884711009229DB /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
-		AD59D91128884714009229DB /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
-		ADE69FA52886A8D2008C69F9 /* LettersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE69FA42886A8D2008C69F9 /* LettersListView.swift */; };
-		ADE69FA62886ADA7008C69F9 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		ADF47E372886C9890058235E /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */; };
-		ADF47E382886C9A80058235E /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
 		ADF47E3A2886CAA60058235E /* Lexend-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509D286EA01A008D9D15 /* Lexend-Black.ttf */; };
-		ADF47E3B2886CB600058235E /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		ADF47E3C2886CCC40058235E /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */; };
 		ADF47E3D2886CCC60058235E /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */; };
 		ADF47E3E2886CCC80058235E /* Lexend-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */; };
@@ -232,7 +224,6 @@
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
-		AD59D90D288846B3009229DB /* LettersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersListView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
@@ -470,13 +461,13 @@
 			isa = PBXGroup;
 			children = (
 				16814AEA28869E550029E71E /* LexPlayApp.swift */,
+				ADE69FA42886A8D2008C69F9 /* LettersListView.swift */,
 				16814AEC28869E550029E71E /* ContentView.swift */,
 				16814AEE28869E550029E71E /* NotificationController.swift */,
 				16814AF028869E550029E71E /* NotificationView.swift */,
 				16814AF228869E550029E71E /* ComplicationController.swift */,
 				16814B062886C52B0029E71E /* OnboardingWatch.swift */,
 				16814B0D2887E54D0029E71E /* ParentView.swift */,
-				ADE69FA42886A8D2008C69F9 /* LettersListView.swift */,
 				16814AF428869E560029E71E /* Assets.xcassets */,
 				16814AF928869E560029E71E /* Info.plist */,
 				16814AFA28869E560029E71E /* PushNotificationPayload.apns */,

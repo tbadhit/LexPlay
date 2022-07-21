@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    //@FetchRequest private var users: FetchedResults<UserEntity>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var user: UserEntity
     @State private var userRepository: UserRepository? = nil
     @State private var username: String = ""
+    @State private var currentDate = Date()
     @State private var boolNotification: Bool = true
     @State private var boolSavePhoto: Bool = true
     @State private var isGoToChangeAvatar : Bool = false
+    private var reminderNotification: ReminderNotification?
     @State var avatar: AvatarEntity?
-    //@State var user = UserModel()
     
     var body: some View {
         
@@ -76,11 +77,12 @@ struct ProfileView: View {
                 Toggle(isOn: $boolNotification, label: {
                     Text("Notifikasi")
                 })
-                .onChange(of: boolNotification) { newValue in
-                    user.reminder?.active = newValue
+                
+                if boolNotification {
+                    DatePicker("Pick Your Time", selection: $currentDate, displayedComponents: [.hourAndMinute])
+                        .datePickerStyle(WheelDatePickerStyle())
+                        .labelsHidden()
                 }
-                
-                
                 
                 Toggle(isOn: $boolSavePhoto, label: {
                     Text("Simpan foto ke galeri")
@@ -109,6 +111,7 @@ struct ProfileView: View {
             }
             UITableView.appearance().backgroundColor = .clear
             UITableView.appearance().isScrollEnabled = false
+            boolNotification = user.reminder!.active
         }
         .navigationBarItems(trailing:
                                 Button(action: {
@@ -116,6 +119,12 @@ struct ProfileView: View {
                 username = user.name!
             }
             userRepository?.editUser(name: username,avatar: avatar!,  user: user)
+            userRepository?.turnNotification(user: user, active: boolNotification)
+            if boolNotification {
+                reminderNotification?.toggleNotification(entity: user.reminder! , time: currentDate, isActive: boolNotification)
+                print("AAAAA")
+            }
+            self.presentationMode.wrappedValue.dismiss()
         }) {
             Text("Simpan").foregroundColor(.blue)
         }

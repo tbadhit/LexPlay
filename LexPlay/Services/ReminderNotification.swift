@@ -62,8 +62,10 @@ extension ReminderNotification {
     }
 
     func toggleNotification(entity: ReminderEntity, time: Date, isActive: Bool) {
+        print("BERHASAAA")
         if isActive {
             addNotification(entity: entity, currentDate: time)
+            print("BERHASIL")
         } else {
             removeNotification(entity: entity)
         }
