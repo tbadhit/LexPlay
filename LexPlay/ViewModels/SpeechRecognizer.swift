@@ -173,10 +173,6 @@ extension SpeechRecognizer {
     func isCorrect(alphabet: Alphabet) -> Bool {
         return alphabet.spellings.contains(transcript.lowercased())
     }
-    
-    func isCorrect(startsWith: Alphabet) -> Bool {
-        return transcript.lowercased().starts(with: startsWith.rawValue.lowercased())
-    }
 }
 
 extension SFSpeechRecognizer {
@@ -184,16 +180,6 @@ extension SFSpeechRecognizer {
         await withCheckedContinuation { continuation in
             requestAuthorization { status in
                 continuation.resume(returning: status == .authorized)
-            }
-        }
-    }
-}
-
-extension AVAudioSession {
-    func hasPermissionToRecord() async -> Bool {
-        await withCheckedContinuation { continuation in
-            requestRecordPermission { authorized in
-                continuation.resume(returning: authorized)
             }
         }
     }

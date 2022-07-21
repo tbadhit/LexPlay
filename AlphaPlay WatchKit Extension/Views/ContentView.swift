@@ -17,7 +17,8 @@ struct ContentView: View {
 //                    UserDefaults.standard.hasOnboardedWatch = true
 //                }
 //            }
-            LettersListView()
+//            LettersListView()
+            RecordingView()
         }
     }
 }

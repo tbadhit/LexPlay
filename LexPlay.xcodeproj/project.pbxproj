@@ -58,6 +58,13 @@
 		11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		11E15947288938AB00903E3F /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
 		11E15948288938BA00903E3F /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
+		11E15950288974DE00903E3F /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1594F288974DE00903E3F /* RecordingView.swift */; };
+		11E15952288976A100903E3F /* AudioRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15951288976A100903E3F /* AudioRecorderViewModel.swift */; };
+		11E159542889801000903E3F /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159532889801000903E3F /* WatchViewModel.swift */; };
+		11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159552889802E00903E3F /* PhoneViewModel.swift */; };
+		11E159582889892E00903E3F /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159572889892E00903E3F /* AVAudioSession+Ext.swift */; };
+		11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159572889892E00903E3F /* AVAudioSession+Ext.swift */; };
+		11E1595B2889982F00903E3F /* SpeechRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1595A2889982F00903E3F /* SpeechRecognizerService.swift */; };
 		1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507B286C63CD008D9D15 /* CameraAlphabet.swift */; };
 		16025080286C6409008D9D15 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507E286C6409008D9D15 /* CameraView.swift */; };
 		16025081286C6409008D9D15 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602507F286C6409008D9D15 /* CameraPreview.swift */; };
@@ -193,6 +200,12 @@
 		11E1593F288937F900903E3F /* OnboardingWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingWatch.swift; sourceTree = "<group>"; };
 		11E15940288937F900903E3F /* ParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		11E15941288937F900903E3F /* LettersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersListView.swift; sourceTree = "<group>"; };
+		11E1594F288974DE00903E3F /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		11E15951288976A100903E3F /* AudioRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewModel.swift; sourceTree = "<group>"; };
+		11E159532889801000903E3F /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
+		11E159552889802E00903E3F /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		11E159572889892E00903E3F /* AVAudioSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Ext.swift"; sourceTree = "<group>"; };
+		11E1595A2889982F00903E3F /* SpeechRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerService.swift; sourceTree = "<group>"; };
 		1602507B286C63CD008D9D15 /* CameraAlphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAlphabet.swift; sourceTree = "<group>"; };
 		1602507E286C6409008D9D15 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1602507F286C6409008D9D15 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -268,6 +281,7 @@
 				1602507B286C63CD008D9D15 /* CameraAlphabet.swift */,
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				110A4C4F28717E070046C2C1 /* UserViewModel.swift */,
+				11E159532889801000903E3F /* WatchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -365,6 +379,7 @@
 				ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */,
 				112B08482870120400905CE5 /* AlphabetService.swift */,
 				1124C0C52872FA6900CAD128 /* AudioService.swift */,
+				11E1595A2889982F00903E3F /* SpeechRecognizerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -391,13 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				11E15923288936D700903E3F /* LexPlayApp.swift */,
-				11E15925288936D700903E3F /* ContentView.swift */,
-				11E15927288936D700903E3F /* NotificationController.swift */,
-				11E15929288936D700903E3F /* NotificationView.swift */,
-				11E1592B288936D700903E3F /* ComplicationController.swift */,
-				11E15941288937F900903E3F /* LettersListView.swift */,
-				11E1593F288937F900903E3F /* OnboardingWatch.swift */,
-				11E15940288937F900903E3F /* ParentView.swift */,
+				11E1595C2889C2CE00903E3F /* ViewModels */,
+				11E1595D2889C2DB00903E3F /* Views */,
+				11E1595E2889C2EE00903E3F /* Controllers */,
 				11E1592D288936D800903E3F /* Assets.xcassets */,
 				11E15932288936D800903E3F /* Info.plist */,
 				11E15933288936D800903E3F /* PushNotificationPayload.apns */,
@@ -412,6 +423,37 @@
 				11E15930288936D800903E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11E1595C2889C2CE00903E3F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11E15951288976A100903E3F /* AudioRecorderViewModel.swift */,
+				11E159552889802E00903E3F /* PhoneViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11E1595D2889C2DB00903E3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11E15925288936D700903E3F /* ContentView.swift */,
+				11E15929288936D700903E3F /* NotificationView.swift */,
+				11E15941288937F900903E3F /* LettersListView.swift */,
+				11E1594F288974DE00903E3F /* RecordingView.swift */,
+				11E1593F288937F900903E3F /* OnboardingWatch.swift */,
+				11E15940288937F900903E3F /* ParentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11E1595E2889C2EE00903E3F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11E15927288936D700903E3F /* NotificationController.swift */,
+				11E1592B288936D700903E3F /* ComplicationController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1602507D286C63DB008D9D15 /* Views */ = {
@@ -468,6 +510,7 @@
 				117D8A77287599660016E913 /* NavigationLazyView.swift */,
 				16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */,
 				166A7C292888404F00BCFBFB /* UINavigationController+Ext.swift */,
+				11E159572889892E00903E3F /* AVAudioSession+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -659,6 +702,7 @@
 			files = (
 				111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */,
 				167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */,
+				11E159582889892E00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				162620362870BD130044895F /* SpecificLettersView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
 				AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */,
@@ -677,6 +721,7 @@
 				1602507C286C63CD008D9D15 /* CameraAlphabet.swift in Sources */,
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
+				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
@@ -696,6 +741,7 @@
 				167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */,
 				16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
+				11E1595B2889982F00903E3F /* SpeechRecognizerService.swift in Sources */,
 				119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */,
 				1124C0BE2872A8DE00CAD128 /* HowToPlayView.swift in Sources */,
 				117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */,
@@ -728,7 +774,11 @@
 				11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */,
 				11E159452889381000903E3F /* Alphabet.swift in Sources */,
 				11E15924288936D700903E3F /* LexPlayApp.swift in Sources */,
+				11E15950288974DE00903E3F /* RecordingView.swift in Sources */,
+				11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */,
+				11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */,
 				11E1592A288936D700903E3F /* NotificationView.swift in Sources */,
+				11E15952288976A100903E3F /* AudioRecorderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,7 +920,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;
@@ -905,7 +955,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;
@@ -944,7 +994,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -975,7 +1025,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1002,7 +1052,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
@@ -1028,7 +1078,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
