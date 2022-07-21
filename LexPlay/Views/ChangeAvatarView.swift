@@ -21,23 +21,23 @@ struct ChangeAvatarView: View {
             Text("Pilih Avatar")
                 .font(.custom(FontStyle.lexendSemiBold, size: 24))
 
-            CardAvatar(imageWidth: 99, imageHeight: 151, avatar: avatars[0])
+            CardAvatar(imageWidth: 99, imageHeight: 151, avatar: avatars[1])
                 .onTapGesture {
-                    avatar = avatars[0]
+                    avatar = avatars[1]
                 }
-                .overlay(avatar == avatars[0] ?
+                .overlay(avatar == avatars[1] ?
                          RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 5):
                             RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 0))
                 .padding(.bottom, 30)
 
-            CardAvatar(imageWidth: 104, imageHeight: 115, avatar: avatars[1])
+            CardAvatar(imageWidth: 104, imageHeight: 115, avatar: avatars[0])
                 .onTapGesture {
-                    avatar = avatars[1]
+                    avatar = avatars[0]
                 }
                 .padding(.bottom, 24)
-                .overlay(avatar == avatars[1] ?
+                .overlay(avatar == avatars[0] ?
                          RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 5).padding(.bottom, 24) :
                             RoundedRectangle(cornerRadius: 0)

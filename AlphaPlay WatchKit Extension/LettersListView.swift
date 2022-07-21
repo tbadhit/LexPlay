@@ -16,27 +16,7 @@ struct LettersListView: View {
         ScrollViewReader { proxy in
             VStack {
                 List(0 ..< Alphabet.allCases.count, id: \.self) { i in
-                    HStack {
-                        Text("\(Alphabet.allCases[i].rawValue.uppercased())\(Alphabet.allCases[i].rawValue.lowercased())")
-                            .frame(height: 100, alignment: .leading)
-                            .font(.lexendBlack(40))
-                        Spacer()
-                        if listItemId == i {
-                            Image(systemName: "mic.fill")
-                                .resizable()
-                                .frame(width: 15, height: 25)
-                                .scaledToFit()
-                                .padding(.trailing, 20)
-                        }
-                    }
-                    .task {
-                        visibleIds = visibleIds.filter { $0 != i }
-                        visibleIds.append(i)
-                    }.onDisappear {
-                        visibleIds = visibleIds.filter { $0 != i }
-                    }
-                    .id(i)
-                    .listRowPlatterColor(Color("indigo").opacity(listItemId == i ? 1 : 0.5))
+                    LetterItem(visibleIds: $visibleIds, i: i, listItemId: listItemId)
                 }
                 .listStyle(.carousel)
                 .onChange(of: visibleIds) { newValue in
@@ -85,5 +65,39 @@ struct LettersListView_Previews: PreviewProvider {
         NavigationView {
             LettersListView()
         }
+    }
+}
+
+struct LetterItem: View {
+    @Binding var visibleIds: [Int]
+    var i: Int
+    var listItemId: Int
+    
+    var body: some View {
+        HStack {
+            Text("\(Alphabet.allCases[i].rawValue.uppercased())\(Alphabet.allCases[i].rawValue.lowercased())")
+                .frame(height: 100, alignment: .leading)
+                .font(.lexendBlack(40))
+            Spacer()
+            if listItemId == i {
+                Button {
+                    
+                } label: {
+                Image(systemName: "mic.fill")
+                    .resizable()
+                    .frame(width: 15, height: 25)
+                    .scaledToFit()
+                    .padding(.trailing, 20)
+                }
+            }
+        }
+        .task {
+            visibleIds = visibleIds.filter { $0 != i }
+            visibleIds.append(i)
+        }.onDisappear {
+            visibleIds = visibleIds.filter { $0 != i }
+        }
+        .id(i)
+        .listRowPlatterColor(.indigo.opacity(listItemId == i ? 1 : 0.5))
     }
 }
