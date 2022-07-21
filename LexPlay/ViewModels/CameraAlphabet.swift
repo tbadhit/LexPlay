@@ -113,9 +113,11 @@ class CameraAlphabet: NSObject, ObservableObject {
     
     func savePic(userAlphabet: UserAlphabetEntity) {
         if picData.count > 0 {
-            let image = UIImage(data: self.picData)!
             userAlphabetRepository.addPictureAlphabet(userAlphabet: userAlphabet, imageData: picData, hasDifficulity: true)
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            if UserDefaults.standard.isSavePicToGallery {
+                let image = UIImage(data: self.picData)!
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
             print("Saved successfully")
         } else {
             print("Gagal mengcapture gambar")

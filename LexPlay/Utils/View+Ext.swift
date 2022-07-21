@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension View {
+    
     func card() -> some View {
         return background(.white)
             .cornerRadius(32)

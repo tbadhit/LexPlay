@@ -62,6 +62,7 @@ struct LetterCaseView: View {
                 
                 //Nav Link (Ganti ke view lain)
                 Button {
+                    UserDefaults.standard.isSavePicToGallery = true
                     UserDefaults.standard.hasOnboarded = true
                     var letterCase: LetterCase = .upper
                     switch idx {

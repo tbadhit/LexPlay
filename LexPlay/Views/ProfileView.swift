@@ -14,7 +14,7 @@ struct ProfileView: View {
     @State private var userRepository: UserRepository? = nil
     @State private var username: String = ""
     @State private var boolNotification: Bool = true
-    @State private var boolSavePhoto: Bool = true
+    @State private var isSavePhoto: Bool = true
     @State private var isGoToChangeAvatar : Bool = false
     @State var avatar: AvatarEntity?
     //@State var user = UserModel()
@@ -87,12 +87,12 @@ struct ProfileView: View {
                 
                 
                 
-                Toggle(isOn: $boolSavePhoto, label: {
+                Toggle(isOn: $isSavePhoto, label: {
                     Text("Simpan foto ke galeri")
                 })
                 
                 // Ntr diganti destinationnya ke page lain
-                NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
+//                NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
                 
                 NavigationLink("Ubah mode pelajaran", destination: EmptyView().environment(\.managedObjectContext, viewContext))
             }
@@ -114,9 +114,11 @@ struct ProfileView: View {
             }
             UITableView.appearance().backgroundColor = .clear
             UITableView.appearance().isScrollEnabled = false
+            isSavePhoto = UserDefaults.standard.isSavePicToGallery
         }
         .navigationBarItems(trailing:
                                 Button(action: {
+            UserDefaults.standard.isSavePicToGallery = isSavePhoto
             if username == "" {
                 username = user.name!
             }

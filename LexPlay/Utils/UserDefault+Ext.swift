@@ -10,8 +10,10 @@ import Foundation
 extension UserDefaults {
     private enum UserDefaultsKey: String {
         case hasOnboarded
+        case hasOnboardedWatch
         case seedAlphabet
         case seedAvatar
+        case isSavePicToGallery
     }
 
     var hasOnboarded: Bool {
@@ -26,11 +28,21 @@ extension UserDefaults {
     
     var hasOnboardedWatch: Bool {
         get {
-            bool(forKey: UserDefaultsKey.hasOnboarded.rawValue)
+            bool(forKey: UserDefaultsKey.hasOnboardedWatch.rawValue)
         }
         
         set {
-            setValue(newValue, forKey: UserDefaultsKey.hasOnboarded.rawValue)
+            setValue(newValue, forKey: UserDefaultsKey.hasOnboardedWatch.rawValue)
+        }
+    }
+    
+    var isSavePicToGallery: Bool {
+        get {
+            bool(forKey: UserDefaultsKey.isSavePicToGallery.rawValue)
+        }
+        
+        set {
+            setValue(newValue, forKey: UserDefaultsKey.isSavePicToGallery.rawValue)
         }
     }
 
