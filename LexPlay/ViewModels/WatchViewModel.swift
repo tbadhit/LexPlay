@@ -19,13 +19,18 @@ class WatchViewModel: NSObject, WCSessionDelegate, ObservableObject {
         wcSession.delegate = self
         session.activate()
     }
-    
+
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
         print(file.description)
         speechRecognizerService.recognize(url: file.fileURL) { result in
-            let spoken = result.bestTranscription.formattedString
-            session.sendMessage(["recognized": spoken], replyHandler: nil, errorHandler: nil)
-//            print(spoken)
+            switch result {
+            case let .success(transcription):
+                let spoken = transcription.bestTranscription.formattedString
+                session.sendMessage(["recognized": spoken], replyHandler: nil)
+            case let .failure(error):
+                session.sendMessage(["recognized": ""], replyHandler: nil)
+                print(error.localizedDescription)
+            }
         }
     }
 

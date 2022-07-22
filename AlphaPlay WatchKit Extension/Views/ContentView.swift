@@ -10,15 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-//            if UserDefaults.standard.hasOnboardedWatch {
-//                ParentView(currentView: 2)
-//            } else {
-//                ParentView(currentView: 1).onAppear {
-//                    UserDefaults.standard.hasOnboardedWatch = true
-//                }
-//            }
-//            LettersListView()
-            RecordingView()
+            if UserDefaults.standard.hasOnboardedWatch {
+                ParentView(currentView: 2)
+            } else {
+                ParentView(currentView: 1).onAppear {
+                    UserDefaults.standard.hasOnboardedWatch = true
+                }
+            }
         }
     }
 }
