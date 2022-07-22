@@ -10,7 +10,7 @@ import Speech
 class SpeechRecognizerService {
     var audioPlayer: AVAudioPlayer?
 
-    func recognize(url: URL, completion: @escaping (SFSpeechRecognitionResult) -> Void) {
+    func recognize(url: URL, completion: @escaping (Result<SFSpeechRecognitionResult, Error>) -> Void) {
         SFSpeechRecognizer.requestAuthorization { status in
             switch status {
             case .notDetermined: print("Not determined")
@@ -31,9 +31,11 @@ class SpeechRecognizerService {
                 resultHandler: { result, error in
                     if let error = error {
                         print(error.localizedDescription)
+                        completion(.failure(error))
                     } else if let result = result {
                         if result.isFinal {
-                            completion(result)
+                            print("iphone recognize: \(result.bestTranscription.formattedString)")
+                            completion(.success(result))
                         }
                     }
                 })
