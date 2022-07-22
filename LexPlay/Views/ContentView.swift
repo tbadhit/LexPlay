@@ -10,23 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest private var activeUsers: FetchedResults<UserEntity>
-    
+
     var body: some View {
         NavigationView {
-            if UserDefaults.standard.hasOnboarded, let user = activeUsers.first {
-                if user.isLearnCustomLesson {
-                    CustomLessonsView(user: user)
+            VStack {
+                if UserDefaults.standard.hasOnboarded, let user = activeUsers.first {
+                    MainView(user: user)
                 } else {
-                    LessonsView(user: user)
+                    OnboardingView()
                 }
-                
-            } else {
-                OnboardingView()
-                    .navigationBarHidden(true)
             }
+            .navigationBarHidden(true)
         }
     }
-    
+
     init() {
         _activeUsers = UserRepository.getActiveUserPredicate()
     }

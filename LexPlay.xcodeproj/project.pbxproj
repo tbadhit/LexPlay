@@ -42,6 +42,7 @@
 		117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D8A77287599660016E913 /* NavigationLazyView.swift */; };
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
+		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
@@ -177,6 +178,7 @@
 		117D8A77287599660016E913 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
+		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
 		11E15916288936D600903E3F /* AlphaPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -462,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				11587178288075AC00E7FF37 /* ContentView.swift */,
+				11B93973288BF9FE000F24C9 /* MainView.swift */,
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
@@ -693,6 +696,7 @@
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
+				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,

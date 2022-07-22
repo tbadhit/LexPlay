@@ -14,7 +14,6 @@ struct ChangeAvatarView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var avatar: AvatarEntity?
     @Binding var oldAvatar: AvatarEntity?
-    //@Binding var isChangeAvatarViewPop : Bool
 
     var body: some View {
         VStack {
@@ -26,9 +25,9 @@ struct ChangeAvatarView: View {
                     avatar = avatars[1]
                 }
                 .overlay(avatar == avatars[1] ?
-                         RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.buttonAndSelectedtColor, lineWidth: 5):
-                            RoundedRectangle(cornerRadius: 0)
+                    RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.buttonAndSelectedtColor, lineWidth: 5) :
+                    RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 0))
                 .padding(.bottom, 30)
 
@@ -38,22 +37,15 @@ struct ChangeAvatarView: View {
                 }
                 .padding(.bottom, 24)
                 .overlay(avatar == avatars[0] ?
-                         RoundedRectangle(cornerRadius: 25)
+                    RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 5).padding(.bottom, 24) :
-                            RoundedRectangle(cornerRadius: 0)
+                    RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.buttonAndSelectedtColor, lineWidth: 0).padding(.bottom, 24))
                 .padding(.bottom, 70)
-            
+
             Button {
-//                    self.user.avatar = avatar
-//                    do {
-//                        try viewContext.save()
-//                    } catch {
-//
-//                    }
                 oldAvatar = avatar
-                //self.isChangeAvatarViewPop = false
-                
+
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Selesai")
@@ -63,19 +55,19 @@ struct ChangeAvatarView: View {
             }
             .background(Color.buttonAndSelectedtColor)
             .cornerRadius(38)
-            
+
             Spacer()
         }
         .padding(.horizontal, 20)
         .backgroundImage(Asset.background)
-        .onAppear{
+        .onAppear {
             avatar = oldAvatar
         }
     }
 }
 
-//struct ChangeAvatarView_Previews: PreviewProvider {
+// struct ChangeAvatarView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ChangeAvatarView()
 //    }
-//}
+// }

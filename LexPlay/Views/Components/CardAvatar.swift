@@ -22,7 +22,8 @@ struct CardAvatar: View {
             HStack {
                 Image(avatar.path ?? "")
                     .resizable()
-                    .frame(width: imageWidth, height: imageHeight)
+//                    .frame(width: imageWidth, height: imageHeight)
+                    .scaledToFit()
                     .padding(.trailing, 25)
                     .offset(y: 7.5)
 

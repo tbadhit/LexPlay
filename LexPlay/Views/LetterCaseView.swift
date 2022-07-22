@@ -109,6 +109,7 @@ struct LetterCaseView: View {
                     } label: {
                         EmptyView()
                     }
+                    .isDetailLink(false)
                 }
                 Spacer()
                 
