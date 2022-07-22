@@ -205,7 +205,7 @@ struct UserAlphabetView_Previews: PreviewProvider {
         UserAlphabetCardView(alphabet: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.alphabets?.toArray(of: UserAlphabetEntity.self).first)!)
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
-            .background(Image("background"))
+            .backgroundImage(Asset.background)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

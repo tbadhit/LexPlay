@@ -34,7 +34,7 @@ struct MiniReminderView: View {
 struct MiniReminderView_Previews: PreviewProvider {
     static var previews: some View {
         MiniReminderView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
-            .background(Image("background"))
+            .backgroundImage(Asset.background)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

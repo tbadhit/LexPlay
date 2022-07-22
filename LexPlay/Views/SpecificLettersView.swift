@@ -74,10 +74,7 @@ struct SpecificLettersView: View {
             .padding(.horizontal, 20)
             
         }
-        .background(Image("background")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .edgesIgnoringSafeArea(.all))
+        .backgroundImage(Asset.background)
         .ignoresSafeArea()
     }
 }

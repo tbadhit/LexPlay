@@ -57,7 +57,7 @@ struct LessonsView: View {
                 Spacer()
             }
             .font(.lexendMedium(16))
-            .background(Image("background"))
+            .backgroundImage(Asset.background)
             .scrollOnOverflow()
             .navigationBarHidden(true)
         

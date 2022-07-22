@@ -66,8 +66,8 @@ struct ChangeAvatarView: View {
             
             Spacer()
         }
-        .background(Image("background"))
         .padding(.horizontal, 20)
+        .backgroundImage(Asset.background)
         .onAppear{
             avatar = oldAvatar
         }

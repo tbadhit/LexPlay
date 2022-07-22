@@ -22,6 +22,19 @@ extension View {
     func scrollOnOverflow() -> some View {
         modifier(OverflowContentViewModifier())
     }
+
+    func backgroundImage(_ name: String) -> some View {
+        return background(Color.clear
+            .overlay(
+                Image(name)
+                    .resizable()
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .scaledToFill()
+//                    .edgesIgnoringSafeArea(.all)
+            )
+            .clipped()
+            .edgesIgnoringSafeArea(.all))
+    }
 }
 
 extension View {

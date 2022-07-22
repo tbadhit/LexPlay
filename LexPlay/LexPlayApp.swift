@@ -22,5 +22,6 @@ struct LexPlayApp: App {
     
     init() {
         let _ = WatchViewModel.shared
+        UITableView.appearance().backgroundColor = .clear
     }
 }

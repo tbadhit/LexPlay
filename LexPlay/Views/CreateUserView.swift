@@ -9,43 +9,43 @@ import SwiftUI
 
 struct CreateUserView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @State var user = UserModel()
-    
+
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.timestamp, ascending: true)],
                   animation: .default) private var avatars: FetchedResults<AvatarEntity>
     @State var avatar: AvatarEntity?
     @State var name = ""
     @State var isGoToSpecificLetterView = false
-    
+
     var body: some View {
-        HStack {
-            Spacer()
+        ZStack {
             VStack {
+                Spacer()
                 Text("Pilih avatarmu!")
                     .font(.custom(FontStyle.lexendMedium, size: 22))
-                
+
                 CardAvatar(imageWidth: 99, imageHeight: 151, avatar: avatars[0]).padding(.bottom, 11)
                     .onTapGesture {
                         avatar = avatars[0]
                     }
                     .overlay(avatar == avatars[0] ?
-                             RoundedRectangle(cornerRadius: 25)
+                        RoundedRectangle(cornerRadius: 25)
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 5).padding(.bottom, 11) :
-                                RoundedRectangle(cornerRadius: 0)
+                        RoundedRectangle(cornerRadius: 0)
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 0).padding(.bottom, 11))
-                
+
                 CardAvatar(imageWidth: 104, imageHeight: 115, avatar: avatars[1])
                     .onTapGesture {
                         avatar = avatars[1]
                     }
                     .padding(.bottom, 24)
                     .overlay(avatar == avatars[1] ?
-                             RoundedRectangle(cornerRadius: 25)
+                        RoundedRectangle(cornerRadius: 25)
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 5).padding(.bottom, 24) :
-                                RoundedRectangle(cornerRadius: 0)
+                        RoundedRectangle(cornerRadius: 0)
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 0).padding(.bottom, 24))
-                
+
                 TextField(text: $name) {
                     Text("Masukkan nama")
                         .font(.custom(FontStyle.lexendMedium, size: 21))
@@ -55,7 +55,7 @@ struct CreateUserView: View {
                 .cornerRadius(38)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 11)
-                
+
                 Button {
                     self.user.avatar = avatar
                     self.user.name = name
@@ -69,29 +69,24 @@ struct CreateUserView: View {
                         .cornerRadius(38)
                 }
                 .disabled(name.isEmpty ? true : false)
-                
+
                 if UserDefaults.standard.hasOnboarded {
                     Spacer()
                 }
+                Spacer()
             }
             .padding([.horizontal], 20)
-            Spacer()
+            .backgroundImage(Asset.background)
+            .navigationBarHidden(UserDefaults.standard.hasOnboarded ? false : true)
+            .onAppear {
+                avatar = avatars[0]
+            }
+
+            // Navigation
+            NavigationLink(isActive: $isGoToSpecificLetterView, destination: {
+                SpecificLettersView(user: user)
+            }, label: {})
         }
-        .background(Image("background")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .edgesIgnoringSafeArea(.all))
-        .navigationBarHidden(UserDefaults.standard.hasOnboarded ? false : true)
-        .onAppear {
-            avatar = avatars[0]
-    }
-        
-        // Navigation
-        NavigationLink(isActive: $isGoToSpecificLetterView, destination: {
-            SpecificLettersView(user: user).environment(\.managedObjectContext, viewContext)
-        }, label: {
-            EmptyView()
-        })
     }
 }
 

@@ -17,12 +17,12 @@ struct ProfileView: View {
     @State private var isNotificationOn: Bool = true
     @State private var isSavePhoto: Bool = true
     @State private var isGoToChangeAvatar : Bool = false
-    private var reminderNotification: ReminderNotification?
+    private var reminderNotification = ReminderNotification()
     @State var avatar: AvatarEntity?
     
     var body: some View {
         
-        List {
+        Form {
             //Section untuk User Info (Username & Avatar)
             Section {
                 VStack {
@@ -106,13 +106,12 @@ struct ProfileView: View {
             }
         }
         .font(.lexendMedium())
-        .background(Image("background"))
+        .backgroundImage(Asset.background)
         .onAppear{
             userRepository = UserRepository(viewContext: viewContext)
             if avatar == nil {
                 avatar =  user.avatar
             }
-            UITableView.appearance().backgroundColor = .clear
             isSavePhoto = UserDefaults.standard.isSavePicToGallery
             isNotificationOn = user.reminder!.active
             currentDate = user.reminder?.time ?? Date()
@@ -134,7 +133,7 @@ struct ProfileView: View {
         userRepository?.editUser(name: username,avatar: avatar!,  user: user)
         if isNotificationOn {
             userRepository?.turnNotification(user: user, active: isNotificationOn)
-            reminderNotification?.toggleNotification(entity: user.reminder! , time: currentDate, isActive: isNotificationOn)
+            reminderNotification.toggleNotification(entity: user.reminder! , time: currentDate, isActive: isNotificationOn)
             print("Berhasil set notif")
         }
         self.presentationMode.wrappedValue.dismiss()
@@ -142,7 +141,6 @@ struct ProfileView: View {
     
     init(user: UserEntity) {
         self.user = user
-        self.reminderNotification = ReminderNotification()
     }
 }
 

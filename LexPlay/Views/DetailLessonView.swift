@@ -50,7 +50,7 @@ struct DetailLessonView: View {
         }
         .padding(.top)
         .font(.custom(FontStyle.lexendMedium, size: 16))
-        .background(Image("background"))
+        .backgroundImage(Asset.background)
     }
 }
 

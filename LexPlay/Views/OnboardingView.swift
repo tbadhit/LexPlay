@@ -48,12 +48,7 @@ struct OnboardingView: View {
                 }
                 Spacer()
             }
-            .background(Image("bg-onboard")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all
-                ))
-
+            .backgroundImage(Asset.bgOnboard)
             .navigationBarHidden(true)
     }
 }

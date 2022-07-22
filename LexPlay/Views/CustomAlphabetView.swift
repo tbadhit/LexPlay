@@ -133,10 +133,7 @@ struct CustomAlphabetView: View {
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
         }
         .navigationBarTitleDisplayMode(.inline)
-        .background(Image("background")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .edgesIgnoringSafeArea(.all))
+        .backgroundImage(Asset.background)
     }
     
     func alphabets() -> [String] {

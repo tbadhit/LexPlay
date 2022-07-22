@@ -117,10 +117,7 @@ struct LetterCaseView: View {
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
-        .background(Image("background")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .edgesIgnoringSafeArea(.all))
+        .backgroundImage(Asset.background)
         .onAppear {
             userRepository = UserRepository(viewContext: viewContext)
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)

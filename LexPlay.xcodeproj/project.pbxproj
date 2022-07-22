@@ -28,6 +28,9 @@
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
+		114E93BE288BC69B009EB121 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BD288BC69B009EB121 /* Asset.swift */; };
+		114E93C0288BCACE009EB121 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BF288BCACE009EB121 /* FontStyle.swift */; };
+		114E93C1288BCAEB009EB121 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BF288BCACE009EB121 /* FontStyle.swift */; };
 		11587179288075AC00E7FF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11587178288075AC00E7FF37 /* ContentView.swift */; };
 		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
 		1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D47828752C30006F3D30 /* NSSet+Ext.swift */; };
@@ -57,7 +60,6 @@
 		11E159452889381000903E3F /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		11E15947288938AB00903E3F /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
-		11E15948288938BA00903E3F /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
 		11E15950288974DE00903E3F /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1594F288974DE00903E3F /* RecordingView.swift */; };
 		11E15952288976A100903E3F /* AudioRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15951288976A100903E3F /* AudioRecorderViewModel.swift */; };
 		11E159542889801000903E3F /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159532889801000903E3F /* WatchViewModel.swift */; };
@@ -79,7 +81,6 @@
 		160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */; };
 		160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */; };
 		160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */; };
-		160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
 		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
 		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
@@ -164,6 +165,8 @@
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
+		114E93BD288BC69B009EB121 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		114E93BF288BCACE009EB121 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		11587178288075AC00E7FF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
 		1162D47828752C30006F3D30 /* NSSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Ext.swift"; sourceTree = "<group>"; };
@@ -212,7 +215,6 @@
 		160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraLight.ttf"; sourceTree = "<group>"; };
 		160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
 		160250AB286EA033008D9D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		160250AC286EA17E008D9D15 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = LexPlay/Utils/FontStyle.swift; sourceTree = SOURCE_ROOT; };
 		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
@@ -338,6 +340,15 @@
 				114CDF1D2866A0600008273B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		114E93BC288BC677009EB121 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				114E93BD288BC69B009EB121 /* Asset.swift */,
+				114E93BF288BCACE009EB121 /* FontStyle.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		1160155D2873B0BA0034CB02 /* Recovered References */ = {
@@ -489,7 +500,7 @@
 		160250BA286F42D2008D9D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				160250AC286EA17E008D9D15 /* FontStyle.swift */,
+				114E93BC288BC677009EB121 /* Constants */,
 				1124C0BF2872A97700CAD128 /* Font+Ext.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
 				160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */,
@@ -659,6 +670,7 @@
 			files = (
 				111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */,
 				167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */,
+				114E93C0288BCACE009EB121 /* FontStyle.swift in Sources */,
 				11E159582889892E00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				162620362870BD130044895F /* SpecificLettersView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
@@ -666,6 +678,7 @@
 				110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */,
 				1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */,
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
+				114E93BE288BC69B009EB121 /* Asset.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */,
 				11587179288075AC00E7FF37 /* ContentView.swift in Sources */,
@@ -710,7 +723,6 @@
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
-				160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */,
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
 			);
@@ -722,7 +734,7 @@
 			files = (
 				11E15942288937F900903E3F /* OnboardingWatch.swift in Sources */,
 				11E15928288936D700903E3F /* NotificationController.swift in Sources */,
-				11E15948288938BA00903E3F /* FontStyle.swift in Sources */,
+				114E93C1288BCAEB009EB121 /* FontStyle.swift in Sources */,
 				11E15944288937F900903E3F /* LettersListView.swift in Sources */,
 				11E15926288936D700903E3F /* ContentView.swift in Sources */,
 				11E15947288938AB00903E3F /* Font+Ext.swift in Sources */,

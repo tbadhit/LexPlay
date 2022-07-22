@@ -46,6 +46,6 @@ struct MiniProfileView: View {
 struct MiniProfileView_Previews: PreviewProvider {
     static var previews: some View {
         MiniProfileView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
-            .background(Image("background")).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .backgroundImage(Asset.background).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

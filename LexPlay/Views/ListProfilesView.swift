@@ -83,10 +83,7 @@ struct ListProfilesView: View {
         .onAppear{
             print(users)
         }
-        .background(Image("background")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .edgesIgnoringSafeArea(.top))
+        .backgroundImage(Asset.background)
         .navigationTitle("Profil")
         .navigationBarTitleDisplayMode(.large)
         .navigationBarItems(trailing: Button(action: {

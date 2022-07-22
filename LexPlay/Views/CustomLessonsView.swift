@@ -22,7 +22,7 @@ struct CustomLessonsView: View {
         }
         .font(.custom(FontStyle.lexendMedium, size: 16))
         .scrollOnOverflow()
-        .background(Image("background"))
+        .backgroundImage(Asset.background)
         .navigationBarHidden(true)
     }
 
