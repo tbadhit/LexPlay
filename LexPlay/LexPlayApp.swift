@@ -19,4 +19,8 @@ struct LexPlayApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+    
+    init() {
+        let _ = WatchViewModel.shared
+    }
 }

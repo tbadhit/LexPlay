@@ -52,9 +52,9 @@ struct LettersListView: View {
             withAnimation(.linear(duration: animationDuration)) {
                 proxy.scrollTo(0)
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration * 2 + 0.35) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration * 2 + 0.5) {
                 guard visibleIds != requiredVisibleIdxs else { return }
-                initScroll(proxy: proxy)
+                //initScroll(proxy: proxy)
             }
         }
     }
@@ -70,25 +70,40 @@ struct LettersListView_Previews: PreviewProvider {
 
 struct LetterItem: View {
     @Binding var visibleIds: [Int]
+    @State var isTapped : Bool = false
     var i: Int
     var listItemId: Int
     
     var body: some View {
         HStack {
-            Text("\(Alphabet.allCases[i].rawValue.uppercased())\(Alphabet.allCases[i].rawValue.lowercased())")
-                .frame(height: 100, alignment: .leading)
-                .font(.lexendBlack(40))
-            Spacer()
-            if listItemId == i {
-                Button {
-                    
-                } label: {
-                Image(systemName: "mic.fill")
-                    .resizable()
-                    .frame(width: 15, height: 25)
-                    .scaledToFit()
-                    .padding(.trailing, 20)
+            if !isTapped {
+                Text("\(Alphabet.allCases[i].rawValue.uppercased())\(Alphabet.allCases[i].rawValue.lowercased())")
+                    .frame(height: 120, alignment: .leading)
+                    .font(.lexendBlack(40))
+                Spacer()
+                if listItemId == i {
+                    Button {
+                        isTapped.toggle()
+                    } label: {
+                    Image(systemName: "mic.fill")
+                        .resizable()
+                        .frame(width: 15, height: 25)
+                        .scaledToFit()
+                        .padding(.trailing, 20)
+                    }
                 }
+            }
+            if isTapped && listItemId == i {
+                Button  {
+                    isTapped.toggle()
+                } label: {
+                    Image("wave")
+                        .resizable()
+                        .frame(height: 85,alignment: .center)
+                        .scaledToFit()
+                        .padding(20)
+                }
+                    
             }
         }
         .task {
@@ -100,4 +115,14 @@ struct LetterItem: View {
         .id(i)
         .listRowPlatterColor(.indigo.opacity(listItemId == i ? 1 : 0.5))
     }
+}
+
+struct LetterItemBack : View {
+    var i: Int
+    var body: some View {
+        Image("wave")
+            .id(i)
+            .listRowPlatterColor(.indigo)
+    }
+    
 }
