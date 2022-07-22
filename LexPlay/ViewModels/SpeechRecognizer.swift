@@ -34,6 +34,8 @@ class SpeechRecognizer: ObservableObject {
     @Published var transcript: String = ""
     @Published var isRecoring: Bool = false
     @Published var isProcessing: Bool = false
+    @Published var errorMessage: String?
+    @Published var isError = false
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
@@ -59,6 +61,9 @@ class SpeechRecognizer: ObservableObject {
             }
             do {
                 _ = try prepareEngine()
+                cancelAndReset()
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }
@@ -82,10 +87,12 @@ class SpeechRecognizer: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
-        isRecoring = false
+        DispatchQueue.main.async {
+            self.isRecoring = false
+        }
     }
 
-    private func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
+    private func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest)? {
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
 
@@ -96,6 +103,15 @@ class SpeechRecognizer: ObservableObject {
         let inputNode = audioEngine.inputNode
 
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+
+        guard inputNode.inputFormat(forBus: 0).channelCount > 0 else {
+            DispatchQueue.main.async {
+                self.errorMessage = "NO_INPUT_NODE"
+                self.isError = true
+            }
+            return nil
+        }
+
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
             request.append(buffer)
         }
@@ -109,7 +125,9 @@ class SpeechRecognizer: ObservableObject {
         let receivedError = error != nil
 
         if receivedFinalResult || receivedError {
-            isProcessing = false
+            DispatchQueue.main.async {
+                self.isProcessing = false
+            }
             audioEngine?.stop()
             audioEngine?.inputNode.removeTap(onBus: 0)
         }
@@ -125,7 +143,9 @@ class SpeechRecognizer: ObservableObject {
     }
 
     private func speakError(_ error: Error) {
-        isProcessing = false
+        DispatchQueue.main.async {
+            self.isProcessing = false
+        }
         var errorMessage = ""
         if let error = error as? RecognizerError {
             errorMessage += error.message
@@ -133,7 +153,9 @@ class SpeechRecognizer: ObservableObject {
             errorMessage += error.localizedDescription
         }
 
-        transcript = "<< \(errorMessage) >>"
+        DispatchQueue.main.async {
+            self.transcript = "<< \(errorMessage) >>"
+        }
     }
 }
 
@@ -150,7 +172,7 @@ extension SpeechRecognizer {
             }
 
             do {
-                let (audioEngine, request) = try self.prepareEngine()
+                guard let (audioEngine, request) = try self.prepareEngine() else { return }
                 try self.audioSession.setActive(true, options: .notifyOthersOnDeactivation)
                 try audioEngine.start()
                 self.audioEngine = audioEngine

@@ -100,6 +100,11 @@ fileprivate struct AlphabetCardFront: View {
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
         }
+        .alert(isPresented: $speechRecognizer.isError) {
+            Alert(title: Text("Mic Error"),
+                  message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
+                  dismissButton: .default(Text("Mengerti")))
+        }
         .padding(16)
         .card()
         .opacity(isFlipped ? 0.5 : 1)
