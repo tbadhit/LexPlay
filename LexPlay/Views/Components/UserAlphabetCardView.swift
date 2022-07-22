@@ -103,7 +103,7 @@ fileprivate struct AlphabetCardFront: View {
         .padding(16)
         .card()
         .opacity(isFlipped ? 0.5 : 1)
-        .animation(.easeInOut(duration: 0.5))
+        .animation(.easeInOut(duration: 0.5), value: isFlipped)
         .padding(.horizontal)
         .padding(.bottom, 48)
         .rotation3DEffect(.init(degrees: degree), axis: (x: 0, y: 1, z: 0))
@@ -160,17 +160,19 @@ fileprivate struct AlphabetCardBack: View {
                 }
             }
             Spacer()
-            if let img = userAlphabet.imageAssociation, let uiImage = UIImage(data: img) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.screenWidth - 100, height: UIScreen.screenWidth - 130, alignment: .center)
-                    .clipped()
+            VStack {
+                if let img = userAlphabet.imageAssociation, let uiImage = UIImage(data: img) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
 
-            } else {
-                Text("Tidak ada gambar")
-                    .font(.lexendMedium(32))
+                } else {
+                    Text("Tidak ada gambar")
+                        .font(.lexendMedium(32))
+                }
             }
+            .padding(.vertical, 12)
             Spacer()
             Button(action: {
                 self.isGoToCameraView = true
@@ -191,7 +193,7 @@ fileprivate struct AlphabetCardBack: View {
         .padding(16)
         .card()
         .opacity(isFlipped ? 1 : 0.5)
-        .animation(.easeInOut(duration: 0.5))
+        .animation(.easeInOut(duration: 0.5), value: isFlipped)
         .padding(.horizontal)
         .padding(.bottom, 48)
         .rotation3DEffect(.init(degrees: degree), axis: (x: 0, y: 1, z: 0))

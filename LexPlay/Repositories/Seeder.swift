@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 struct Seeder {
     func seedAll(context: NSManagedObjectContext) {
@@ -106,6 +107,7 @@ struct Seeder {
         userAlphabetA.hasDifficulty = true
         userAlphabetA.lesson = lesson1
         userAlphabetA.alphabet = a
+        userAlphabetA.imageAssociation = UIImage(named: "background")?.jpegData(compressionQuality: .infinity)
         userAlphabetA.timestamp = Date().timeIntervalSince1970
         let userAlphabetB = UserAlphabetEntity(context: context)
         userAlphabetB.uuid = UUID()
