@@ -98,15 +98,6 @@
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
-		ADF47E372886C9890058235E /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */; };
-		ADF47E3A2886CAA60058235E /* Lexend-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509D286EA01A008D9D15 /* Lexend-Black.ttf */; };
-		ADF47E3C2886CCC40058235E /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */; };
-		ADF47E3D2886CCC60058235E /* Lexend-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */; };
-		ADF47E3E2886CCC80058235E /* Lexend-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */; };
-		ADF47E3F2886CCCA0058235E /* Lexend-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509C286EA01A008D9D15 /* Lexend-Light.ttf */; };
-		ADF47E402886CCCE0058235E /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */; };
-		ADF47E412886CCD00058235E /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509B286EA01A008D9D15 /* Lexend-Regular.ttf */; };
-		ADF47E422886CCD50058235E /* Lexend-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509E286EA01A008D9D15 /* Lexend-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +345,7 @@
 		1160155D2873B0BA0034CB02 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				168D54F628894CBC00D418CB /* TestSpeech.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -523,41 +515,6 @@
 				167124F728732A2300ACEB28 /* howToPlay.m4a */,
 			);
 			path = Audios;
-			sourceTree = "<group>";
-		};
-		16814ADE28869E540029E71E /* AlphaPlay WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				16814ADF28869E550029E71E /* Assets.xcassets */,
-			);
-			path = "AlphaPlay WatchKit App";
-			sourceTree = "<group>";
-		};
-		16814AE928869E550029E71E /* AlphaPlay WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				16814AEA28869E550029E71E /* LexPlayApp.swift */,
-				ADE69FA42886A8D2008C69F9 /* LettersListView.swift */,
-				16814AEC28869E550029E71E /* ContentView.swift */,
-				16814AEE28869E550029E71E /* NotificationController.swift */,
-				16814AF028869E550029E71E /* NotificationView.swift */,
-				16814AF228869E550029E71E /* ComplicationController.swift */,
-				16814B062886C52B0029E71E /* OnboardingWatch.swift */,
-				16814B0D2887E54D0029E71E /* ParentView.swift */,
-				16814AF428869E560029E71E /* Assets.xcassets */,
-				16814AF928869E560029E71E /* Info.plist */,
-				16814AFA28869E560029E71E /* PushNotificationPayload.apns */,
-				16814AF628869E560029E71E /* Preview Content */,
-			);
-			path = "AlphaPlay WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		16814AF628869E560029E71E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				16814AF728869E560029E71E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -923,7 +880,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;
@@ -958,7 +915,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LexPlay/Info.plist;
@@ -1055,7 +1012,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
@@ -1081,7 +1038,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
