@@ -10,6 +10,7 @@ import Foundation
 import Speech
 
 class SpeechRecognizer: ObservableObject {
+    static let shared = SpeechRecognizer()
     enum RecognizerError: Error {
         case nilRecognizer
         case notAuthorizedToRecognize
@@ -72,15 +73,15 @@ class SpeechRecognizer: ObservableObject {
     }
 
     private func reset() {
+        audioEngine?.stop()
+        audioEngine = nil
+        request = nil
+        task = nil
         do {
             try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
         } catch {
             print(error.localizedDescription)
         }
-        audioEngine?.stop()
-        audioEngine = nil
-        request = nil
-        task = nil
         isRecoring = false
     }
 
