@@ -23,32 +23,24 @@ struct RestaurantRow: View {
 }
 
 struct ListProfilesView: View {
-    // @FetchRequest (entity: UserEntity.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users : FetchedResults<UserEntity>
-    var users = [
-        Restaurant(name: "Joe's Original"),
-        Restaurant(name: "The Real Joe's Original"),
-        Restaurant(name: "Original Joe's"),
-        Restaurant(name: "The Real Joe's OriginalThe Real Joe's OriginalThe Real Joe's OriginalThe Real Joe's Original"),
-    ]
+    
+    private var users: [UserEntity]
+    @ObservedObject var userActive: UserEntity
     @State private var username: String = ""
-    @State private var userSelected: UserEntity?
+    @State private var userSelected: UserEntity? = nil
+    @State private var isGoToAddNewUser: Bool = false
     
     var body: some View {
         HStack {
             Spacer()
             VStack(alignment: .leading, spacing: 20) {
-                Text("Profil")
-                    .foregroundColor(Color("black"))
-                    .font(.lexendSemiBold(28))
-                    .frame(alignment: .topLeading)
-                
                 ForEach(users) {
                     user in
                     HStack {
-                        Image("play-avatar")
+                        Image(user.avatar?.path ?? "lex")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                        Text(user.name)
+                        Text(user.name ?? "tidak ada nama")
                             .foregroundColor(Color("black"))
                             .font(.lexendSemiBold(17))
                         
@@ -57,35 +49,61 @@ struct ListProfilesView: View {
                     .padding(10)
                     .frame(maxWidth: .infinity, maxHeight: UIScreen.screenWidth / 4.5)
                     .card()
+                    .overlay(userActive == user ? RoundedRectangle(cornerRadius: 25)
+                        .stroke(Color.buttonAndSelectedtColor, lineWidth: 5):
+                                RoundedRectangle(cornerRadius: 0)
+                        .stroke(Color.buttonAndSelectedtColor, lineWidth: 0))
+                    .padding(.bottom, 30)
                     
                 }
                 
                 Button(action: {
-                    print("AA")
+                    isGoToAddNewUser = true
                 }) {
                     Image(systemName: "plus")
                         .foregroundColor(Color("red"))
-                        .font(.custom(FontStyle.lexendMedium, size: 41).bold())
-                    
+                        .font(.lexendBold(41))
+                        .frame(maxWidth: .infinity, maxHeight: UIScreen.screenHeight * 0.10)
+                        .background(.white)
+                        .cornerRadius(40)
                 }
-                .frame(maxWidth: .infinity, maxHeight: UIScreen.screenHeight * 0.10)
-                .background(.white)
-                .cornerRadius(40)
+                
+                NavigationLink(isActive: $isGoToAddNewUser) {
+                    CreateUserView()
+                } label: {
+                    EmptyView()
+                }
+
+                
                 
                 Spacer()
             }
             .padding(.horizontal, 10)
         }
-        
+        .onAppear{
+            print(users)
+        }
         .background(Image("background")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .edgesIgnoringSafeArea(.top))
+        .navigationTitle("Profil")
+        .navigationBarTitleDisplayMode(.large)
+        .navigationBarItems(trailing: Button(action: {
+            
+        }, label: {
+            Text("Pilih").foregroundColor(.blue)
+        }))
+    }
+    
+    init(userActive: UserEntity) {
+        self.users = UserRepository().getAllUsers()
+        self.userActive = userActive
     }
 }
 
-struct ListProfilesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListProfilesView()
-    }
-}
+//struct ListProfilesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListProfilesView()
+//    }
+//}

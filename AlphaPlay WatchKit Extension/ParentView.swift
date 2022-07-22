@@ -12,7 +12,7 @@ struct ParentView: View {
     var body: some View {
         TabView(selection: $currentView) {
             OnboardingWatch().tag(1)
-            TestSpeech().tag(2)
+            LettersListView().tag(2)
         }
     }
 }

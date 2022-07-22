@@ -14,7 +14,7 @@ struct ProfileView: View {
     @State private var userRepository: UserRepository? = nil
     @State private var username: String = ""
     @State private var currentDate = Date()
-    @State private var boolNotification: Bool = true
+    @State private var isNotificationOn: Bool = true
     @State private var isSavePhoto: Bool = true
     @State private var isGoToChangeAvatar : Bool = false
     private var reminderNotification: ReminderNotification?
@@ -22,7 +22,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-        Form {
+        List {
             //Section untuk User Info (Username & Avatar)
             Section {
                 VStack {
@@ -33,10 +33,10 @@ struct ProfileView: View {
                                 .font(.lexendSemiBold(24))
                                 .offset(y: -5)
                             
-//                            Text("Ayo Bermain!")
-//                                .foregroundColor(Color("black"))
-//                                .font(.lexendSemiBold(18))
-//                                .offset(y: -5)
+                            //                            Text("Ayo Bermain!")
+                            //                                .foregroundColor(Color("black"))
+                            //                                .font(.lexendSemiBold(18))
+                            //                                .offset(y: -5)
                             
                             Button {
                                 isGoToChangeAvatar.toggle()
@@ -65,36 +65,34 @@ struct ProfileView: View {
                     }
                     
                     Divider()
-//                    .frame(height: UIScreen.screenWidth / 2.5, alignment: .leading)
                     
                     HStack {
                         Text("Ubah nama")
                         Spacer()
                         TextField("Masukkan nama baru...", text: $username)
                     }
-//                    .frame(width: UIScreen.screenWidth * 0.85, alignment: .leading)
                     .padding(.vertical, 10)
                 }
                 
             }
             //Section Setting Option
             Section {
-                Toggle(isOn: $boolNotification, label: {
+                Toggle(isOn: $isNotificationOn, label: {
                     Text("Notifikasi")
                 })
                 
-                if boolNotification {
-                    DatePicker("Pick Your Time", selection: $currentDate, displayedComponents: [.hourAndMinute])
-                        .datePickerStyle(WheelDatePickerStyle())
-                        .labelsHidden()
+                if isNotificationOn {
+                    HStack {
+                        Text("Atur notifikasi")
+                        Spacer()
+                        DatePicker("Pick Your Time", selection: $currentDate, displayedComponents: [.hourAndMinute]).labelsHidden()
+                    }
+                    .animation(.easeInOut, value: isNotificationOn)
                 }
                 
                 Toggle(isOn: $isSavePhoto, label: {
                     Text("Simpan foto ke galeri")
                 })
-                
-                // Ntr diganti destinationnya ke page lain
-//                NavigationLink("Change Specific Difficulties", destination: Text("Hello, World!").environment(\.managedObjectContext, viewContext))
                 
                 NavigationLink("Ubah mode pelajaran", destination: EmptyView().environment(\.managedObjectContext, viewContext))
             }
@@ -104,7 +102,7 @@ struct ProfileView: View {
             
             //Section untuk switch profile
             Section {
-                NavigationLink("Ganti profile", destination: ListProfilesView().environment(\.managedObjectContext, viewContext))
+                NavigationLink("Ganti profile", destination: ListProfilesView(userActive: user).environment(\.managedObjectContext, viewContext))
             }
         }
         .font(.lexendMedium())
@@ -115,31 +113,36 @@ struct ProfileView: View {
                 avatar =  user.avatar
             }
             UITableView.appearance().backgroundColor = .clear
-            UITableView.appearance().isScrollEnabled = false
             isSavePhoto = UserDefaults.standard.isSavePicToGallery
-            boolNotification = user.reminder!.active
+            isNotificationOn = user.reminder!.active
+            currentDate = user.reminder?.time ?? Date()
         }
         .navigationBarItems(trailing:
                                 Button(action: {
-            UserDefaults.standard.isSavePicToGallery = isSavePhoto
-            if username == "" {
-                username = user.name!
-            }
-            userRepository?.editUser(name: username,avatar: avatar!,  user: user)
-            userRepository?.turnNotification(user: user, active: boolNotification)
-            if boolNotification {
-                reminderNotification?.toggleNotification(entity: user.reminder! , time: currentDate, isActive: boolNotification)
-                print("AAAAA")
-            }
-            self.presentationMode.wrappedValue.dismiss()
+            saveData()
         }) {
             Text("Simpan").foregroundColor(.blue)
         }
         )
-        //.navigationBarHidden(true)
     }
+    
+    func saveData() {
+        UserDefaults.standard.isSavePicToGallery = isSavePhoto
+        if username == "" {
+            username = user.name!
+        }
+        userRepository?.editUser(name: username,avatar: avatar!,  user: user)
+        if isNotificationOn {
+            userRepository?.turnNotification(user: user, active: isNotificationOn)
+            reminderNotification?.toggleNotification(entity: user.reminder! , time: currentDate, isActive: isNotificationOn)
+            print("Berhasil set notif")
+        }
+        self.presentationMode.wrappedValue.dismiss()
+    }
+    
     init(user: UserEntity) {
         self.user = user
+        self.reminderNotification = ReminderNotification()
     }
 }
 

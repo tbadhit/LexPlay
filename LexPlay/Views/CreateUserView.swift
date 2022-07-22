@@ -69,6 +69,10 @@ struct CreateUserView: View {
                         .cornerRadius(38)
                 }
                 .disabled(name.isEmpty ? true : false)
+                
+                if UserDefaults.standard.hasOnboarded {
+                    Spacer()
+                }
             }
             .padding([.horizontal], 20)
             Spacer()
@@ -77,8 +81,7 @@ struct CreateUserView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .edgesIgnoringSafeArea(.all))
-        .navigationBarHidden(true)
-        .ignoresSafeArea()
+        .navigationBarHidden(UserDefaults.standard.hasOnboarded ? false : true)
         .onAppear {
             avatar = avatars[0]
     }
