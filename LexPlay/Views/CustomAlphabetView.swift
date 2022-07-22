@@ -128,6 +128,7 @@ struct CustomAlphabetView: View {
                 EmptyView()
             }
         }
+        .scrollOnOverflow()
         .onAppear{
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
         }

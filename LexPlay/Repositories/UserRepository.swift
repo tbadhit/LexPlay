@@ -34,6 +34,11 @@ class UserRepository {
 }
 
 extension UserRepository: UserRepositoryProtocol {
+    
+    func getAllUsers() -> [UserEntity] {
+        return try! context.fetch(UserEntity.fetchRequest())
+    }
+    
     func addUser(user: UserModel) {
         guard let avatar = user.avatar else { return }
         addUser(name: user.name, avatar: avatar, isLearnCustomLesson: user.isLearnCustomLesson)
