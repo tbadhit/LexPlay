@@ -28,6 +28,9 @@
 		114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114CDF1D2866A0600008273B /* Preview Assets.xcassets */; };
 		114CDF202866A0600008273B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF1F2866A0600008273B /* Persistence.swift */; };
 		114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114CDF212866A0600008273B /* LexPlay.xcdatamodeld */; };
+		114E93BE288BC69B009EB121 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BD288BC69B009EB121 /* Asset.swift */; };
+		114E93C0288BCACE009EB121 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BF288BCACE009EB121 /* FontStyle.swift */; };
+		114E93C1288BCAEB009EB121 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E93BF288BCACE009EB121 /* FontStyle.swift */; };
 		11587179288075AC00E7FF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11587178288075AC00E7FF37 /* ContentView.swift */; };
 		1160155B2873211B0034CB02 /* DetailLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160155A2873211B0034CB02 /* DetailLessonView.swift */; };
 		1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D47828752C30006F3D30 /* NSSet+Ext.swift */; };
@@ -37,8 +40,10 @@
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D8A77287599660016E913 /* NavigationLazyView.swift */; };
+		11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11899B03288C2C5A00E40074 /* AppDelegate.swift */; };
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
+		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
@@ -50,15 +55,13 @@
 		11E1592C288936D700903E3F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1592B288936D700903E3F /* ComplicationController.swift */; };
 		11E1592E288936D800903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E1592D288936D800903E3F /* Assets.xcassets */; };
 		11E15931288936D800903E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15930288936D800903E3F /* Preview Assets.xcassets */; };
-		11E15936288936D800903E3F /* AlphaPlay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 11E15916288936D600903E3F /* AlphaPlay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11E15936288936D800903E3F /* LexPlay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 11E15916288936D600903E3F /* LexPlay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11E15942288937F900903E3F /* OnboardingWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1593F288937F900903E3F /* OnboardingWatch.swift */; };
 		11E15943288937F900903E3F /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15940288937F900903E3F /* ParentView.swift */; };
 		11E15944288937F900903E3F /* LettersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15941288937F900903E3F /* LettersListView.swift */; };
 		11E159452889381000903E3F /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		11E15947288938AB00903E3F /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
-		11E15948288938BA00903E3F /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
-		11E15950288974DE00903E3F /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1594F288974DE00903E3F /* RecordingView.swift */; };
 		11E15952288976A100903E3F /* AudioRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15951288976A100903E3F /* AudioRecorderViewModel.swift */; };
 		11E159542889801000903E3F /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159532889801000903E3F /* WatchViewModel.swift */; };
 		11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159552889802E00903E3F /* PhoneViewModel.swift */; };
@@ -79,7 +82,6 @@
 		160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602509F286EA01A008D9D15 /* Lexend-SemiBold.ttf */; };
 		160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */; };
 		160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */; };
-		160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AC286EA17E008D9D15 /* FontStyle.swift */; };
 		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
 		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
@@ -134,7 +136,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				11E15936288936D800903E3F /* AlphaPlay.app in Embed Watch Content */,
+				11E15936288936D800903E3F /* LexPlay.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +166,8 @@
 		114CDF1D2866A0600008273B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		114CDF1F2866A0600008273B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		114CDF222866A0600008273B /* LexPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LexPlay.xcdatamodel; sourceTree = "<group>"; };
+		114E93BD288BC69B009EB121 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		114E93BF288BCACE009EB121 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		11587178288075AC00E7FF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1160155A2873211B0034CB02 /* DetailLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonView.swift; sourceTree = "<group>"; };
 		1162D47828752C30006F3D30 /* NSSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Ext.swift"; sourceTree = "<group>"; };
@@ -172,11 +176,13 @@
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		117D8A77287599660016E913 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		11899B03288C2C5A00E40074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
+		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
-		11E15916288936D600903E3F /* AlphaPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15918288936D700903E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlphaPlay WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15923288936D700903E3F /* LexPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexPlayApp.swift; sourceTree = "<group>"; };
@@ -191,7 +197,6 @@
 		11E1593F288937F900903E3F /* OnboardingWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingWatch.swift; sourceTree = "<group>"; };
 		11E15940288937F900903E3F /* ParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		11E15941288937F900903E3F /* LettersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersListView.swift; sourceTree = "<group>"; };
-		11E1594F288974DE00903E3F /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		11E15951288976A100903E3F /* AudioRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewModel.swift; sourceTree = "<group>"; };
 		11E159532889801000903E3F /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		11E159552889802E00903E3F /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
@@ -212,7 +217,6 @@
 		160250A0286EA01A008D9D15 /* Lexend-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-ExtraLight.ttf"; sourceTree = "<group>"; };
 		160250A1286EA01A008D9D15 /* Lexend-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Medium.ttf"; sourceTree = "<group>"; };
 		160250AB286EA033008D9D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		160250AC286EA17E008D9D15 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = LexPlay/Utils/FontStyle.swift; sourceTree = SOURCE_ROOT; };
 		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
@@ -293,10 +297,9 @@
 		114CDF0A2866A05D0008273B = {
 			isa = PBXGroup;
 			children = (
-				114CDF152866A05D0008273B /* LexPlay */,
+				11899B01288C288800E40074 /* iOS */,
+				11899B02288C288D00E40074 /* watchOS */,
 				112B08462870107000905CE5 /* .gitignore */,
-				11E15917288936D600903E3F /* AlphaPlay */,
-				11E15922288936D700903E3F /* AlphaPlay WatchKit Extension */,
 				114CDF142866A05D0008273B /* Products */,
 				1160155D2873B0BA0034CB02 /* Recovered References */,
 			);
@@ -306,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				114CDF132866A05D0008273B /* LexPlay.app */,
-				11E15916288936D600903E3F /* AlphaPlay.app */,
+				11E15916288936D600903E3F /* LexPlay.app */,
 				11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -317,6 +320,7 @@
 			children = (
 				160250AB286EA033008D9D15 /* Info.plist */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
+				11899B03288C2C5A00E40074 /* AppDelegate.swift */,
 				112BBA25286C8F8D0039377A /* Repositories */,
 				119C5996286B25CD00B87768 /* Domains */,
 				119C5997286B27A400B87768 /* Services */,
@@ -340,6 +344,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		114E93BC288BC677009EB121 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				114E93BD288BC69B009EB121 /* Asset.swift */,
+				114E93BF288BCACE009EB121 /* FontStyle.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		1160155D2873B0BA0034CB02 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +367,23 @@
 				163430BF2873B44F00C6051B /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		11899B01288C288800E40074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				114CDF152866A05D0008273B /* LexPlay */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		11899B02288C288D00E40074 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				11E15917288936D600903E3F /* AlphaPlay */,
+				11E15922288936D700903E3F /* AlphaPlay WatchKit Extension */,
+			);
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 		119C5996286B25CD00B87768 /* Domains */ = {
@@ -432,7 +462,6 @@
 				11E15925288936D700903E3F /* ContentView.swift */,
 				11E15929288936D700903E3F /* NotificationView.swift */,
 				11E15941288937F900903E3F /* LettersListView.swift */,
-				11E1594F288974DE00903E3F /* RecordingView.swift */,
 				11E1593F288937F900903E3F /* OnboardingWatch.swift */,
 				11E15940288937F900903E3F /* ParentView.swift */,
 			);
@@ -452,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				11587178288075AC00E7FF37 /* ContentView.swift */,
+				11B93973288BF9FE000F24C9 /* MainView.swift */,
 				111C65042871C5E70075DF47 /* Components */,
 				1602507F286C6409008D9D15 /* CameraPreview.swift */,
 				1602507E286C6409008D9D15 /* CameraView.swift */,
@@ -490,7 +520,7 @@
 		160250BA286F42D2008D9D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				160250AC286EA17E008D9D15 /* FontStyle.swift */,
+				114E93BC288BC677009EB121 /* Constants */,
 				1124C0BF2872A97700CAD128 /* Font+Ext.swift */,
 				16025082286C642E008D9D15 /* StrokeTextLabel.swift */,
 				160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */,
@@ -551,7 +581,7 @@
 			);
 			name = AlphaPlay;
 			productName = AlphaPlay;
-			productReference = 11E15916288936D600903E3F /* AlphaPlay.app */;
+			productReference = 11E15916288936D600903E3F /* LexPlay.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		11E1591D288936D700903E3F /* AlphaPlay WatchKit Extension */ = {
@@ -599,6 +629,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = 114CDF0A2866A05D0008273B;
 			productRefGroup = 114CDF142866A05D0008273B /* Products */;
@@ -659,6 +690,7 @@
 			files = (
 				111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */,
 				167124EF287292AB00ACEB28 /* ChangeAvatarView.swift in Sources */,
+				114E93C0288BCACE009EB121 /* FontStyle.swift in Sources */,
 				11E159582889892E00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				162620362870BD130044895F /* SpecificLettersView.swift in Sources */,
 				114CDF202866A0600008273B /* Persistence.swift in Sources */,
@@ -666,6 +698,7 @@
 				110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */,
 				1124C0C22872B10500CAD128 /* UserAlphabetCardView.swift in Sources */,
 				160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */,
+				114E93BE288BC69B009EB121 /* Asset.swift in Sources */,
 				1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */,
 				1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */,
 				11587179288075AC00E7FF37 /* ContentView.swift in Sources */,
@@ -680,6 +713,7 @@
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
+				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
@@ -710,8 +744,8 @@
 				112BBA2F286CC60C0039377A /* UserRepository.swift in Sources */,
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
-				160250AD286EA17E008D9D15 /* FontStyle.swift in Sources */,
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
+				11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,7 +756,7 @@
 			files = (
 				11E15942288937F900903E3F /* OnboardingWatch.swift in Sources */,
 				11E15928288936D700903E3F /* NotificationController.swift in Sources */,
-				11E15948288938BA00903E3F /* FontStyle.swift in Sources */,
+				114E93C1288BCAEB009EB121 /* FontStyle.swift in Sources */,
 				11E15944288937F900903E3F /* LettersListView.swift in Sources */,
 				11E15926288936D700903E3F /* ContentView.swift in Sources */,
 				11E15947288938AB00903E3F /* Font+Ext.swift in Sources */,
@@ -731,7 +765,6 @@
 				11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */,
 				11E159452889381000903E3F /* Alphabet.swift in Sources */,
 				11E15924288936D700903E3F /* LexPlayApp.swift in Sources */,
-				11E15950288974DE00903E3F /* RecordingView.swift in Sources */,
 				11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */,
 				11E1592A288936D700903E3F /* NotificationView.swift in Sources */,
@@ -805,13 +838,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -859,13 +893,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -876,21 +911,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LexPlay/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera digunakan untuk menangkap gambar yang kamu asosiasikan dengan huruf";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mic diperlukan untuk input pengenal suara alfabet";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Simpan gambar pada library";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kamu akan bisa tau apakah alfabet yang kamu ucapkan sudah benar";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -911,21 +948,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = KVFMXTTSFG;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
+				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LexPlay/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera digunakan untuk menangkap gambar yang kamu asosiasikan dengan huruf";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mic diperlukan untuk input pengenal suara alfabet";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Simpan gambar pada library";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Kamu akan bisa tau apakah alfabet yang kamu ucapkan sudah benar";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -945,12 +984,12 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -966,7 +1005,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -976,12 +1015,12 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -997,7 +1036,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1012,18 +1051,17 @@
 				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.github.mfahmialkautsar.LexPlay;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.mfahmialkautsar.LexPlay.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LexPlay;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1038,18 +1076,17 @@
 				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.github.mfahmialkautsar.LexPlay;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.mfahmialkautsar.LexPlay.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LexPlay;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
