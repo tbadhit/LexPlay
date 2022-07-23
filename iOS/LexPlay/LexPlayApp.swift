@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct LexPlayApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
@@ -19,9 +20,9 @@ struct LexPlayApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
-    
+
     init() {
-        let _ = WatchViewModel.shared
+        _ = WatchViewModel.shared
         UITableView.appearance().backgroundColor = .clear
     }
 }

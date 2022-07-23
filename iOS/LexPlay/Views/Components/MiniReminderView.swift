@@ -9,18 +9,20 @@ import SwiftUI
 
 struct MiniReminderView: View {
     private let userService = UserViewModel.shared
-    private let user: UserEntity
+    @ObservedObject private var user: UserEntity
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(userService.getReminderDate(user: user) ?? "DD/MM/YY")
-                Text(userService.getReminderTime(user: user) ?? "00:00")
+        NavigationLink(destination: ProfileView(user: user)) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(userService.getReminderDate(user: user) ?? "DD/MM/YY")
+                    Text(userService.getReminderTime(user: user) ?? "00:00")
+                }
+                Spacer()
+                Image(systemName: "bell.fill")
+                    .foregroundColor(user.reminder?.active ?? false ? Color.brandRed : Color.brandBlack)
+                    .font(.title)
             }
-            Spacer()
-            Image(systemName: "bell.fill")
-                .foregroundColor(Color("red"))
-                .font(.title)
         }
         .cardPadding()
         .card()

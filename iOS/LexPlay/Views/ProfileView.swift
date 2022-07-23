@@ -25,7 +25,7 @@ struct ProfileView: View {
             NavigationLink(isActive: $isGoToChangeAvatar, destination: {
                 ChangeAvatarView(oldAvatar: $avatar).environment(\.managedObjectContext, viewContext)
             }, label: {})
-            .frame(width: 0, height: 0, alignment: .center)
+                .frame(width: 0, height: 0, alignment: .center)
             Form {
                 // Section untuk User Info (Username & Avatar)
                 Section {
@@ -126,11 +126,9 @@ struct ProfileView: View {
             username = user.name!
         }
         userRepository?.editUser(name: username, avatar: avatar!, user: user)
-        if isNotificationOn {
-            userRepository?.turnNotification(user: user, active: isNotificationOn)
-            reminderNotification.toggleNotification(entity: user.reminder!, time: currentDate, isActive: isNotificationOn)
-            print("Berhasil set notif")
-        }
+        userRepository?.turnNotification(user: user, active: isNotificationOn)
+        reminderNotification.toggleNotification(entity: user.reminder!, time: currentDate, isActive: isNotificationOn)
+        print("Berhasil set notif")
         presentationMode.wrappedValue.dismiss()
     }
 

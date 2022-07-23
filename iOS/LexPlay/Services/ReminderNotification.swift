@@ -31,7 +31,8 @@ class ReminderNotification {
         }
 
         let content = UNMutableNotificationContent()
-        content.title = "🤓 Hey!! Lex & Play here!!"
+        let userName = entity.user?.name
+        content.title = "🤓 Hey\(" \(userName ?? "")")!! Lex & Play here!!"
         content.subtitle = "Ayok jangan lupa belajar"
         content.sound = UNNotificationSound.default
 

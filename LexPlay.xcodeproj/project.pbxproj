@@ -40,6 +40,7 @@
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D8A77287599660016E913 /* NavigationLazyView.swift */; };
+		11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11899B03288C2C5A00E40074 /* AppDelegate.swift */; };
 		119230D72870AC930033F5B3 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230D62870AC930033F5B3 /* LessonRepository.swift */; };
 		119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119230DA2870C19D0033F5B3 /* LessonsView.swift */; };
 		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
@@ -175,6 +176,7 @@
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		117D8A77287599660016E913 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		11899B03288C2C5A00E40074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		119230D62870AC930033F5B3 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
 		119230DA2870C19D0033F5B3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
 		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				160250AB286EA033008D9D15 /* Info.plist */,
 				114CDF162866A05D0008273B /* LexPlayApp.swift */,
+				11899B03288C2C5A00E40074 /* AppDelegate.swift */,
 				112BBA25286C8F8D0039377A /* Repositories */,
 				119C5996286B25CD00B87768 /* Domains */,
 				119C5997286B27A400B87768 /* Services */,
@@ -741,6 +744,7 @@
 				AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */,
 				114CDF232866A0600008273B /* LexPlay.xcdatamodeld in Sources */,
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
+				11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
