@@ -74,6 +74,11 @@ fileprivate struct AlphabetCardFront: View {
                     HowToPlayView()
                 }
             }
+            .alert(isPresented: $speechRecognizer.isError) {
+                Alert(title: Text("Mic Error"),
+                      message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
+                      dismissButton: .default(Text("Mengerti")))
+            }
             Spacer()
             Text(alphabet.alphabet?.char ?? "")
                 .font(.custom(FontStyle.lexendBold, size: 180))
@@ -88,6 +93,7 @@ fileprivate struct AlphabetCardFront: View {
                             speechRecognizer.transcribe()
                         } else {
                             speechRecognizer.stopTranscribing()
+                            guard !speechRecognizer.isError else { return }
                             showRecognizingResult = true
                         }
                     }, perform: {})
@@ -99,11 +105,6 @@ fileprivate struct AlphabetCardFront: View {
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
-        }
-        .alert(isPresented: $speechRecognizer.isError) {
-            Alert(title: Text("Mic Error"),
-                  message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
-                  dismissButton: .default(Text("Mengerti")))
         }
         .padding(16)
         .card()
@@ -185,8 +186,8 @@ fileprivate struct AlphabetCardBack: View {
                 Image(systemName: "camera.fill")
                     .font(.title)
             })
-                .font(.largeTitle)
-                .foregroundColor(.brandPurple)
+            .font(.largeTitle)
+            .foregroundColor(.brandPurple)
         }
         .background(
             NavigationLink(isActive: $isGoToCameraView, destination: {
