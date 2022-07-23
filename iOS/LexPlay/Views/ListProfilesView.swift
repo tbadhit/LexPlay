@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListProfilesView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \UserEntity.name, ascending: true), NSSortDescriptor(keyPath: \UserEntity.login, ascending: true)], animation: .default)
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \UserEntity.login, ascending: false), NSSortDescriptor(keyPath: \UserEntity.name, ascending: true)], animation: .default)
     private var users: FetchedResults<UserEntity>
     @State private var selectedUserId: UUID?
     @State private var isUserChanged = false
