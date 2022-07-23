@@ -295,10 +295,9 @@
 		114CDF0A2866A05D0008273B = {
 			isa = PBXGroup;
 			children = (
-				114CDF152866A05D0008273B /* LexPlay */,
+				11899B01288C288800E40074 /* iOS */,
+				11899B02288C288D00E40074 /* watchOS */,
 				112B08462870107000905CE5 /* .gitignore */,
-				11E15917288936D600903E3F /* AlphaPlay */,
-				11E15922288936D700903E3F /* AlphaPlay WatchKit Extension */,
 				114CDF142866A05D0008273B /* Products */,
 				1160155D2873B0BA0034CB02 /* Recovered References */,
 			);
@@ -364,6 +363,23 @@
 				163430BF2873B44F00C6051B /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		11899B01288C288800E40074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				114CDF152866A05D0008273B /* LexPlay */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		11899B02288C288D00E40074 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				11E15917288936D600903E3F /* AlphaPlay */,
+				11E15922288936D700903E3F /* AlphaPlay WatchKit Extension */,
+			);
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 		119C5996286B25CD00B87768 /* Domains */ = {
@@ -890,11 +906,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LexPlay/Info.plist;
+				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera digunakan untuk menangkap gambar yang kamu asosiasikan dengan huruf";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mic diperlukan untuk input pengenal suara alfabet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Simpan gambar pada library";
@@ -927,11 +943,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LexPlay/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LexPlay/Info.plist;
+				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera digunakan untuk menangkap gambar yang kamu asosiasikan dengan huruf";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mic diperlukan untuk input pengenal suara alfabet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Simpan gambar pada library";
@@ -963,11 +979,11 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -994,11 +1010,11 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AlphaPlay WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
