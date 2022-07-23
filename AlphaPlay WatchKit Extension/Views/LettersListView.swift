@@ -74,8 +74,6 @@ struct LettersListView: View {
                 }
             }
         }
-        .navigationTitle("AlphaPlay")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 
@@ -128,7 +126,7 @@ struct LetterItem: View {
                     stopRecordAndSendAudio()
                     isTapped = false
                 } label: {
-                    Image("wave")
+                    Image(systemName: "waveform")
                         .resizable()
 //                        .frame(height: 85, alignment: .center)
                         .scaledToFit()
@@ -166,10 +164,12 @@ struct LetterItem: View {
             }
         })
         .onAppear {
+            print("appear: \(Alphabet.allCases[i])")
             visibleIds = visibleIds.filter { $0 != i }
             visibleIds.insert(i, at: 0)
         }
         .onDisappear {
+            print("disappear: \(Alphabet.allCases[i])")
             visibleIds = visibleIds.filter { $0 != i }
         }
         .onChange(of: visibleIds) { _ in
@@ -177,7 +177,7 @@ struct LetterItem: View {
             endRecord()
         }
         .id(i)
-        .listRowPlatterColor(.indigo.opacity(isMain() ? 1 : 0.5))
+        .listRowPlatterColor(.orange.opacity(isMain() ? 1 : 0.5))
     }
 }
 
@@ -209,15 +209,6 @@ extension LetterItem {
     func endRecord() {
         audioRecorder.stopRecording()
         model.finish()
-    }
-}
-
-struct LetterItemBack: View {
-    var i: Int
-    var body: some View {
-        Image("wave")
-            .id(i)
-            .listRowPlatterColor(.indigo)
     }
 }
 

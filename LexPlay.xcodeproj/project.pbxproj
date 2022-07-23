@@ -54,14 +54,13 @@
 		11E1592C288936D700903E3F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1592B288936D700903E3F /* ComplicationController.swift */; };
 		11E1592E288936D800903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E1592D288936D800903E3F /* Assets.xcassets */; };
 		11E15931288936D800903E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15930288936D800903E3F /* Preview Assets.xcassets */; };
-		11E15936288936D800903E3F /* AlphaPlay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 11E15916288936D600903E3F /* AlphaPlay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11E15936288936D800903E3F /* LexPlay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 11E15916288936D600903E3F /* LexPlay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11E15942288937F900903E3F /* OnboardingWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1593F288937F900903E3F /* OnboardingWatch.swift */; };
 		11E15943288937F900903E3F /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15940288937F900903E3F /* ParentView.swift */; };
 		11E15944288937F900903E3F /* LettersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15941288937F900903E3F /* LettersListView.swift */; };
 		11E159452889381000903E3F /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		11E15947288938AB00903E3F /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C0BF2872A97700CAD128 /* Font+Ext.swift */; };
-		11E15950288974DE00903E3F /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1594F288974DE00903E3F /* RecordingView.swift */; };
 		11E15952288976A100903E3F /* AudioRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15951288976A100903E3F /* AudioRecorderViewModel.swift */; };
 		11E159542889801000903E3F /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159532889801000903E3F /* WatchViewModel.swift */; };
 		11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E159552889802E00903E3F /* PhoneViewModel.swift */; };
@@ -136,7 +135,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				11E15936288936D800903E3F /* AlphaPlay.app in Embed Watch Content */,
+				11E15936288936D800903E3F /* LexPlay.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +180,7 @@
 		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
-		11E15916288936D600903E3F /* AlphaPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15918288936D700903E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlphaPlay WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15923288936D700903E3F /* LexPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexPlayApp.swift; sourceTree = "<group>"; };
@@ -196,7 +195,6 @@
 		11E1593F288937F900903E3F /* OnboardingWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingWatch.swift; sourceTree = "<group>"; };
 		11E15940288937F900903E3F /* ParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		11E15941288937F900903E3F /* LettersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersListView.swift; sourceTree = "<group>"; };
-		11E1594F288974DE00903E3F /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		11E15951288976A100903E3F /* AudioRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewModel.swift; sourceTree = "<group>"; };
 		11E159532889801000903E3F /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		11E159552889802E00903E3F /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
@@ -310,7 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				114CDF132866A05D0008273B /* LexPlay.app */,
-				11E15916288936D600903E3F /* AlphaPlay.app */,
+				11E15916288936D600903E3F /* LexPlay.app */,
 				11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -444,7 +442,6 @@
 				11E15925288936D700903E3F /* ContentView.swift */,
 				11E15929288936D700903E3F /* NotificationView.swift */,
 				11E15941288937F900903E3F /* LettersListView.swift */,
-				11E1594F288974DE00903E3F /* RecordingView.swift */,
 				11E1593F288937F900903E3F /* OnboardingWatch.swift */,
 				11E15940288937F900903E3F /* ParentView.swift */,
 			);
@@ -564,7 +561,7 @@
 			);
 			name = AlphaPlay;
 			productName = AlphaPlay;
-			productReference = 11E15916288936D600903E3F /* AlphaPlay.app */;
+			productReference = 11E15916288936D600903E3F /* LexPlay.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		11E1591D288936D700903E3F /* AlphaPlay WatchKit Extension */ = {
@@ -747,7 +744,6 @@
 				11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */,
 				11E159452889381000903E3F /* Alphabet.swift in Sources */,
 				11E15924288936D700903E3F /* LexPlayApp.swift in Sources */,
-				11E15950288974DE00903E3F /* RecordingView.swift in Sources */,
 				11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */,
 				11E1592A288936D700903E3F /* NotificationView.swift in Sources */,
@@ -972,7 +968,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1003,7 +999,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlphaPlay WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "AlphaPlay WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = LexPlay;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlphaPlay_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1034,12 +1030,11 @@
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.github.mfahmialkautsar.LexPlay;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.mfahmialkautsar.LexPlay.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LexPlay;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1060,12 +1055,11 @@
 				DEVELOPMENT_TEAM = BAFJ582D2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = AlphaPlay;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.github.mfahmialkautsar.LexPlay;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.mfahmialkautsar.LexPlay.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LexPlay;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

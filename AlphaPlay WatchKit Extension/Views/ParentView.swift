@@ -14,6 +14,7 @@ struct ParentView: View {
             OnboardingWatch().tag(1)
             LettersListView().tag(2)
         }
+        .navigationTitle(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "LexPlay")
     }
 }
 
