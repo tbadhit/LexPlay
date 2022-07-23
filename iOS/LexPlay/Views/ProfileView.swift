@@ -88,7 +88,7 @@ struct ProfileView: View {
                         Text("Simpan foto ke galeri")
                     })
 
-                    NavigationLink("Ubah mode pelajaran", destination: EmptyView().environment(\.managedObjectContext, viewContext))
+//                    NavigationLink("Ubah mode pelajaran", destination: EmptyView().environment(\.managedObjectContext, viewContext))
                 }
                 .environment(\.horizontalSizeClass, .regular)
                 .padding(.top, 10)
