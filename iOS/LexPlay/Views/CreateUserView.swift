@@ -87,6 +87,7 @@ struct CreateUserView: View {
                 SpecificLettersView(user: user)
             }, label: {})
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
