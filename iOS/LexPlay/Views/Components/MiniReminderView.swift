@@ -15,7 +15,7 @@ struct MiniReminderView: View {
         NavigationLink(destination: ProfileView(user: user)) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(userService.getReminderDate(user: user) ?? "DD/MM/YY")
+//                    Text(userService.getReminderDate(user: user) ?? "DD/MM/YY")
                     Text(userService.getReminderTime(user: user) ?? "00:00")
                 }
                 Spacer()
