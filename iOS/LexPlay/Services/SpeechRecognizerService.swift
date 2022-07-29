@@ -8,9 +8,7 @@
 import Speech
 
 class SpeechRecognizerService {
-    var audioPlayer: AVAudioPlayer?
-
-    func recognize(url: URL, completion: @escaping (Result<SFSpeechRecognitionResult, Error>) -> Void) {
+    func recognize(data: Data, completion: @escaping (Result<SFSpeechRecognitionResult, Error>) -> Void) {
         SFSpeechRecognizer.requestAuthorization { status in
             switch status {
             case .notDetermined: print("Not determined")
@@ -23,32 +21,28 @@ class SpeechRecognizerService {
 
         let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "id-ID"))
 
-        func recognizeFromFile() {
-            let request = SFSpeechURLRecognitionRequest(url: url)
+        do {
+            let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!.appendingPathComponent("tmp-speech-audio.m4a")
+            try data.write(to: path)
+            let request = SFSpeechURLRecognitionRequest(url: path)
             speechRecognizer?.supportsOnDeviceRecognition = true
             speechRecognizer?.recognitionTask(
                 with: request,
                 resultHandler: { result, error in
                     if let error = error {
+                        print("Error recognizing")
                         print(error.localizedDescription)
                         completion(.failure(error))
                     } else if let result = result {
                         if result.isFinal {
-                            print("iphone recognize: \(result.bestTranscription.formattedString)")
+                            print("iPhone recognized: \(result.bestTranscription.formattedString)")
                             completion(.success(result))
                         }
                     }
+                    try? FileManager.default.removeItem(at: path)
                 })
-        }
-        recognizeFromFile()
-//        Play
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.volume = 0
-            audioPlayer?.play()
-            audioPlayer?.stop()
         } catch {
-            print(error)
+            completion(.failure(error))
         }
     }
 }

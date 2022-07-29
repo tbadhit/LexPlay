@@ -55,4 +55,9 @@ class AudioRecorderViewModel: ObservableObject {
         }
         recording = false
     }
+    
+    func finalize() {
+        guard let url = audioRecorder?.url else { return }
+        try? FileManager.default.removeItem(at: url)
+    }
 }

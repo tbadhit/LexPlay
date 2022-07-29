@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11032DEE28944AB0006A2BAD /* LetterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11032DEC28944A3B006A2BAD /* LetterListItem.swift */; };
 		110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserViewModel.swift */; };
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
@@ -144,6 +145,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11032DEC28944A3B006A2BAD /* LetterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterListItem.swift; sourceTree = "<group>"; };
 		110A4C4F28717E070046C2C1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11032DEB28944A28006A2BAD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				11032DEC28944A3B006A2BAD /* LetterListItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		111C65042871C5E70075DF47 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +468,7 @@
 		11E1595D2889C2DB00903E3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11032DEB28944A28006A2BAD /* Components */,
 				11E15925288936D700903E3F /* ContentView.swift */,
 				11E15929288936D700903E3F /* NotificationView.swift */,
 				11E15941288937F900903E3F /* LettersListView.swift */,
@@ -763,6 +774,7 @@
 				11E15943288937F900903E3F /* ParentView.swift in Sources */,
 				11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */,
 				11E159452889381000903E3F /* Alphabet.swift in Sources */,
+				11032DEE28944AB0006A2BAD /* LetterListItem.swift in Sources */,
 				11E15924288936D700903E3F /* LexPlayApp.swift in Sources */,
 				11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */,

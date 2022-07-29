@@ -20,21 +20,20 @@ class WatchViewModel: NSObject, WCSessionDelegate, ObservableObject {
         session.activate()
     }
 
-    func session(_ session: WCSession, didReceive file: WCSessionFile) {
-        print(file.description)
-        speechRecognizerService.recognize(url: file.fileURL) { result in
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+    }
+
+    func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
+        speechRecognizerService.recognize(data: messageData) { result in
             switch result {
             case let .success(transcription):
                 let spoken = transcription.bestTranscription.formattedString
-                session.sendMessage(["recognized": spoken], replyHandler: nil)
+                self.reply(result: spoken, replyHandler: replyHandler)
             case let .failure(error):
-                session.sendMessage(["recognized": ""], replyHandler: nil)
+                self.reply(result: "", replyHandler: replyHandler)
                 print(error.localizedDescription)
             }
         }
-    }
-
-    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
     }
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -44,5 +43,11 @@ class WatchViewModel: NSObject, WCSessionDelegate, ObservableObject {
     }
 
     func sessionDidDeactivate(_ session: WCSession) {
+    }
+}
+
+extension WatchViewModel {
+    private func reply(result: String, replyHandler: @escaping (Data) -> Void) {
+        replyHandler(Data(result.utf8))
     }
 }
