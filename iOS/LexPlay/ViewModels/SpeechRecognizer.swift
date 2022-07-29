@@ -32,10 +32,11 @@ class SpeechRecognizer: ObservableObject {
     }
 
     @Published var transcript: String = ""
-    @Published var isRecoring: Bool = false
+    @Published var isRecording: Bool = false
     @Published var isProcessing: Bool = false
     @Published var errorMessage: String?
     @Published var isError = false
+    var shouldProcess = false
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
@@ -72,11 +73,6 @@ class SpeechRecognizer: ObservableObject {
         cancelAndReset()
     }
 
-    private func cancelAndReset() {
-        task?.cancel()
-        reset()
-    }
-
     private func reset() {
         audioEngine?.stop()
         audioEngine = nil
@@ -88,7 +84,7 @@ class SpeechRecognizer: ObservableObject {
             print(error.localizedDescription)
         }
         DispatchQueue.main.async {
-            self.isRecoring = false
+            self.isRecording = false
         }
     }
 
@@ -161,24 +157,32 @@ class SpeechRecognizer: ObservableObject {
 
 extension SpeechRecognizer {
     func transcribe() {
+        shouldProcess = true
         DispatchQueue.main.async {
-            self.isRecoring = true
+            self.isRecording = true
             self.transcript = ""
         }
-        DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
-            guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
-                self?.speakError(RecognizerError.recognizerIsUnvailable)
+        DispatchQueue(label: "Speech Recognizer Queue", qos: .userInteractive).async {
+            guard let recognizer = self.recognizer, recognizer.isAvailable else {
+                self.speakError(RecognizerError.recognizerIsUnvailable)
                 return
             }
 
             do {
-                guard let (audioEngine, request) = try self.prepareEngine() else { return }
+                guard self.shouldProcess else { return }
+                guard let (audioEngine, request) = try self.prepareEngine() else {
+                    self.speakError(RecognizerError.recognizerIsUnvailable)
+                    return
+                }
+                guard self.shouldProcess else { return }
                 try self.audioSession.setActive(true, options: .notifyOthersOnDeactivation)
                 try audioEngine.start()
+                guard self.shouldProcess else { return }
                 self.audioEngine = audioEngine
                 self.request = request
                 self.task = recognizer.recognitionTask(with: request, resultHandler: self.recognitionHandler(result:error:))
                 DispatchQueue.main.async {
+                    guard self.shouldProcess else { return }
                     self.isProcessing = true
                 }
             } catch {
@@ -190,6 +194,15 @@ extension SpeechRecognizer {
 
     func stopTranscribing() {
         task?.finish()
+        reset()
+        shouldProcess = false
+    }
+
+    func cancelAndReset() {
+        task?.cancel()
+        DispatchQueue.main.async {
+            self.isProcessing = false
+        }
         reset()
     }
 

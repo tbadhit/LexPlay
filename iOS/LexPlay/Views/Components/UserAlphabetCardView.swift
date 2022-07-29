@@ -90,17 +90,21 @@ fileprivate struct AlphabetCardFront: View {
                 Button {} label: { Image(systemName: "mic.fill") }
                     .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
                         if pressing {
+                            showRecognizingResult = false
                             speechRecognizer.transcribe()
                         } else {
-                            speechRecognizer.stopTranscribing()
-                            guard !speechRecognizer.isError else { return }
                             showRecognizingResult = true
+                            speechRecognizer.stopTranscribing()
+                            if !speechRecognizer.isProcessing {
+                                speechRecognizer.cancelAndReset()
+                            }
                         }
                     }, perform: {})
                     .alert(isPresented: $showRecognizingResult) {
-                        Alert(title: getAlertTitle(isProcessing: speechRecognizer.isProcessing),
-                              message: getAlertMessage(isProcessing: speechRecognizer.isProcessing),
-                              dismissButton: !speechRecognizer.isProcessing ? .default(Text("Oke")) : .default(Text("Batalkan")))
+                        let isProcessing = speechRecognizer.isProcessing || speechRecognizer.isRecording
+                        return Alert(title: getAlertTitle(isProcessing: isProcessing),
+                                     message: getAlertMessage(isProcessing: isProcessing),
+                                     dismissButton: .default(Text(isProcessing ? "Batalkan" : "Oke"), action: { speechRecognizer.cancelAndReset() }))
                     }
             }
             .font(.largeTitle)
