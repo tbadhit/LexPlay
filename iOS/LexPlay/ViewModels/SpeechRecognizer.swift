@@ -42,6 +42,7 @@ class SpeechRecognizer: ObservableObject {
     private var task: SFSpeechRecognitionTask?
     private var recognizer: SFSpeechRecognizer?
     private let audioSession = AVAudioSession.sharedInstance()
+    private let speechRecognizerService = SpeechRecognizerService.shared
 
     init() {
         recognizer = SFSpeechRecognizer(locale: Locale(identifier: "id-ID"))
@@ -207,7 +208,7 @@ extension SpeechRecognizer {
     }
 
     func isCorrect(alphabet: Alphabet) -> Bool {
-        return alphabet.spellings.contains(transcript.lowercased())
+        return speechRecognizerService.isCorrect(alphabet: alphabet, spoken: transcript)
     }
 }
 
