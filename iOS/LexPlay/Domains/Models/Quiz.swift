@@ -20,13 +20,44 @@ class Quiz<Question, Answer>: BaseQuiz {
         self.answer = answer
         self.answerOptions = answerOptions
     }
+
+    func submitAnswer(answer: Answer) {
+        submittedAnswer = answer
+    }
+
+    func checkAnswer() -> Bool {
+        return false
+    }
 }
 
-class AlphabetQuiz: Quiz<Alphabet, Alphabet> {}
+class AlphabetQuiz: Quiz<Alphabet, Alphabet> {
+    override func checkAnswer() -> Bool {
+        return answer == submittedAnswer
+    }
+}
 
-class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {}
+class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {
+    override func checkAnswer() -> Bool {
+        return answer.contains(submittedAnswer?[0] ?? "")
+    }
 
-class AlphabetImageQuiz: Quiz<Data, Alphabet> {}
+    /**
+     Don't use this. Use the other one!
+     */
+    override func submitAnswer(answer: [String]) {
+        super.submitAnswer(answer: answer)
+    }
+
+    func submitAnswer(answer: String) {
+        submittedAnswer = [answer]
+    }
+}
+
+class AlphabetImageQuiz: Quiz<Data, Alphabet> {
+    override func checkAnswer() -> Bool {
+        return answer == submittedAnswer
+    }
+}
 
 // struct AlphabetBySpeaking: Quiz {
 //    typealias Question = Alphabet

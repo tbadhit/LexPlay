@@ -38,6 +38,32 @@ class QuizService {
         return quizzes
     }
 
+    func getCorrectAnswersCount(quizzes: [BaseQuiz]) -> (correct: Int, totalQuestions: Int) {
+        var score: (correct: Int, totalQuestions: Int) = (0, quizzes.count)
+        quizzes.forEach { quiz in
+            switch quiz {
+            case let alphabetQuiz as AlphabetQuiz:
+                score.correct += alphabetQuiz.checkAnswer().hashValue
+                break
+            case let alphabetSpeakingQuiz as AlphabetSpeakingQuiz:
+                score.correct += alphabetSpeakingQuiz.checkAnswer().hashValue
+                break
+            case let alphabetImageQuiz as AlphabetImageQuiz:
+                score.correct += alphabetImageQuiz.checkAnswer().hashValue
+                break
+            default:
+                break
+            }
+        }
+
+        return score
+    }
+
+    func getFinalScore(quizzes: [BaseQuiz]) -> Float {
+        let correctAnswersCount = getCorrectAnswersCount(quizzes: quizzes)
+        return Float(correctAnswersCount.correct) / Float(correctAnswersCount.totalQuestions)
+    }
+
     func example() {
         let user = UserEntity()
         let userAlphabets = user.alphabets?.toArray(of: UserAlphabetEntity.self)
