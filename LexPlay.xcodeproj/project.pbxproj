@@ -96,6 +96,7 @@
 		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
 		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
+		AD48AC8628B05BD600841439 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48AC8528B05BD600841439 /* QuizView.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
@@ -233,6 +234,7 @@
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
+		AD48AC8528B05BD600841439 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		111C65042871C5E70075DF47 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD48AC8828B097CF00841439 /* QuizComponents */,
 				111C65052871C5FA0075DF47 /* MiniProfileView.swift */,
 				111C650B287206410075DF47 /* MiniReminderView.swift */,
 				167124F02872948900ACEB28 /* CardAvatar.swift */,
@@ -507,6 +510,7 @@
 				167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */,
 				1124C0B22872229100CAD128 /* CustomLessonsView.swift */,
 				1160155A2873211B0034CB02 /* DetailLessonView.swift */,
+				AD48AC8528B05BD600841439 /* QuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -553,6 +557,13 @@
 				167124F728732A2300ACEB28 /* howToPlay.m4a */,
 			);
 			path = Audios;
+			sourceTree = "<group>";
+		};
+		AD48AC8828B097CF00841439 /* QuizComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QuizComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +726,7 @@
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
+				AD48AC8628B05BD600841439 /* QuizView.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetService.swift in Sources */,
