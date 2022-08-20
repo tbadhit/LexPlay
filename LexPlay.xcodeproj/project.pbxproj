@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11032DEE28944AB0006A2BAD /* LetterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11032DEC28944A3B006A2BAD /* LetterListItem.swift */; };
 		110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserViewModel.swift */; };
+		1112A24228AF815000467A88 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112A24128AF815000467A88 /* Quiz.swift */; };
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
 		111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65052871C5FA0075DF47 /* MiniProfileView.swift */; };
@@ -47,6 +48,7 @@
 		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
+		11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5CCF728B0A859007B0A58 /* QuizService.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
 		11E1591F288936D700903E3F /* AlphaPlay WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11E15924288936D700903E3F /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15923288936D700903E3F /* LexPlayApp.swift */; };
@@ -148,6 +150,7 @@
 /* Begin PBXFileReference section */
 		11032DEC28944A3B006A2BAD /* LetterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterListItem.swift; sourceTree = "<group>"; };
 		110A4C4F28717E070046C2C1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		1112A24128AF815000467A88 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		111C65052871C5FA0075DF47 /* MiniProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProfileView.swift; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
+		11D5CCF728B0A859007B0A58 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15918288936D700903E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlphaPlay WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				163430BF2873B44F00C6051B /* UserModel.swift */,
+				1112A24128AF815000467A88 /* Quiz.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				112B08482870120400905CE5 /* AlphabetService.swift */,
 				1124C0C52872FA6900CAD128 /* AudioService.swift */,
 				11E1595A2889982F00903E3F /* SpeechRecognizerService.swift */,
+				11D5CCF728B0A859007B0A58 /* QuizService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -736,6 +742,7 @@
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
 				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
+				1112A24228AF815000467A88 /* Quiz.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
@@ -769,6 +776,7 @@
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 				11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
+				11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

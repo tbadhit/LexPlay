@@ -8,6 +8,8 @@
 import Speech
 
 class SpeechRecognizerService {
+    static let shared = SpeechRecognizerService()
+
     func recognize(data: Data, completion: @escaping (Result<SFSpeechRecognitionResult, Error>) -> Void) {
         SFSpeechRecognizer.requestAuthorization { status in
             switch status {
@@ -44,5 +46,9 @@ class SpeechRecognizerService {
         } catch {
             completion(.failure(error))
         }
+    }
+
+    func isCorrect(alphabet: Alphabet, spoken: String) -> Bool {
+        return alphabet.spellings.contains(spoken.lowercased())
     }
 }
