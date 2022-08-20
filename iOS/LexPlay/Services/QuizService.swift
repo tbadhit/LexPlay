@@ -12,12 +12,12 @@ class QuizService {
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
 
-    func getQuizzes(userAlphabets: [UserAlphabetEntity], count: Int? = nil) -> [Any] {
-        var userAlphabets = userAlphabets.shuffled()
-        if let count = count, count < userAlphabets.count {
-            userAlphabets = Array(userAlphabets[...(count - 1)])
-        }
-        var quizzes = [Any]()
+    func getQuizzes(userAlphabets: [UserAlphabetEntity], count: Int? = nil) -> [BaseQuiz] {
+//        var userAlphabets = userAlphabets.shuffled()
+//        if let count = count, count < userAlphabets.count {
+//            userAlphabets = Array(userAlphabets[...(count - 1)])
+//        }
+        var quizzes = [BaseQuiz]()
 
         let alphabets: [Alphabet] = userAlphabets.compactMap { userAlphabet in
             guard let alphabetEntity = userAlphabet.alphabet, let char = alphabetEntity.char, let alphabet = Alphabet(rawValue: char) else { return nil }
@@ -29,6 +29,12 @@ class QuizService {
             quizzes.append(getVoiceByAlphabetQuiz(alphabets: alphabets, alphabet: alphabet))
             quizzes.append(getAlphabetByVoiceQuiz(alphabets: alphabets, alphabet: alphabet))
         }
+        quizzes.shuffle()
+
+        if let count = count {
+            return Array(quizzes[...(count - 1)])
+        }
+
         return quizzes
     }
 
@@ -61,12 +67,12 @@ class QuizService {
 
 extension QuizService {
     private func getAlphabetBySpeakingQuiz(alphabet: Alphabet) -> AlphabetQuiz {
-        return AlphabetQuiz(question: alphabet, answerOptions: nil, answer: alphabet)
+        return AlphabetQuiz(question: alphabet, answer: alphabet, answerOptions: nil)
     }
 
     private func getVoiceByAlphabetQuiz(alphabets: [Alphabet], alphabet: Alphabet) -> AlphabetQuiz {
         let randomAlphabets = Array(alphabets.shuffled()[...3])
-        return AlphabetQuiz(question: alphabet, answerOptions: randomAlphabets, answer: alphabet)
+        return AlphabetQuiz(question: alphabet, answer: alphabet, answerOptions: randomAlphabets)
     }
 
     private func getAlphabetByVoiceQuiz(alphabets: [Alphabet], alphabet: Alphabet) -> AlphabetQuiz {

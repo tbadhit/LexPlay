@@ -7,32 +7,26 @@
 
 import Foundation
 
-protocol Quiz {
-    associatedtype Question
-    associatedtype Answer
+class BaseQuiz {}
 
-    var question: Question { get }
-    var answerOptions: [Answer]? { get }
-    var answer: Answer { get }
+class Quiz<Question, Answer>: BaseQuiz {
+    var question: Question
+    var answer: Answer
+    var answerOptions: [Answer]?
+    var submittedAnswer: Answer?
+
+    init(question: Question, answer: Answer, answerOptions: [Answer]?) {
+        self.question = question
+        self.answer = answer
+        self.answerOptions = answerOptions
+    }
 }
 
-struct AlphabetQuiz: Quiz {
-    typealias Question = Alphabet
-    typealias Answer = Alphabet
+class AlphabetQuiz: Quiz<Alphabet, Alphabet> {}
 
-    var question: Alphabet
-    var answerOptions: [Alphabet]?
-    var answer: Alphabet
-}
+class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {}
 
-struct AlphabetImageQuiz: Quiz {
-    typealias Question = Data
-    typealias Answer = Alphabet
-
-    var question: Data
-    var answerOptions: [Alphabet]?
-    var answer: Alphabet
-}
+class AlphabetImageQuiz: Quiz<Data, Alphabet> {}
 
 // struct AlphabetBySpeaking: Quiz {
 //    typealias Question = Alphabet
