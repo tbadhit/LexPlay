@@ -101,6 +101,8 @@
 		AD48AC8628B05BD600841439 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48AC8528B05BD600841439 /* QuizView.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
+		AD9076FF28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */; };
+		AD90770328B2745D00F72ADF /* AlphabetImageQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -241,6 +243,8 @@
 		AD48AC8528B05BD600841439 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
+		AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetBySpeakingQuizView.swift; sourceTree = "<group>"; };
+		AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetImageQuizView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -568,6 +572,8 @@
 		AD48AC8828B097CF00841439 /* QuizComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */,
+				AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */,
 			);
 			path = QuizComponents;
 			sourceTree = "<group>";
@@ -740,6 +746,7 @@
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
+				AD9076FF28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
 				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
 				1112A24228AF815000467A88 /* Quiz.swift in Sources */,
@@ -776,6 +783,7 @@
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 				11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
+				AD90770328B2745D00F72ADF /* AlphabetImageQuizView.swift in Sources */,
 				11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
