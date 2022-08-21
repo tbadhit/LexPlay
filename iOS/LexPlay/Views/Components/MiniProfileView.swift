@@ -43,9 +43,9 @@ struct MiniProfileView: View {
     }
 }
 
-struct MiniProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        MiniProfileView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
-            .backgroundImage(Asset.background).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct MiniProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MiniProfileView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
+//            .backgroundImage(Asset.background).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}

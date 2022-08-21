@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11032DEE28944AB0006A2BAD /* LetterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11032DEC28944A3B006A2BAD /* LetterListItem.swift */; };
 		110A4C5028717E070046C2C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A4C4F28717E070046C2C1 /* UserViewModel.swift */; };
+		1112A24228AF815000467A88 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112A24128AF815000467A88 /* Quiz.swift */; };
 		11166AC02869C08300E32B87 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11166ABF2869C08300E32B87 /* Alphabet.swift */; };
 		111C65032871B7AA0075DF47 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65022871B7AA0075DF47 /* View+Ext.swift */; };
 		111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C65052871C5FA0075DF47 /* MiniProfileView.swift */; };
@@ -46,6 +48,7 @@
 		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
+		11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5CCF728B0A859007B0A58 /* QuizService.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
 		11E1591F288936D700903E3F /* AlphaPlay WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11E15924288936D700903E3F /* LexPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E15923288936D700903E3F /* LexPlayApp.swift */; };
@@ -95,8 +98,11 @@
 		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
 		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
+		AD48AC8628B05BD600841439 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48AC8528B05BD600841439 /* QuizView.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
+		AD9076FF28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */; };
+		AD90770328B2745D00F72ADF /* AlphabetImageQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */; };
 		ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */; };
 		ADBA0DA9286B4781007DE7A3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */; };
 /* End PBXBuildFile section */
@@ -144,7 +150,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11032DEC28944A3B006A2BAD /* LetterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterListItem.swift; sourceTree = "<group>"; };
 		110A4C4F28717E070046C2C1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		1112A24128AF815000467A88 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		11166ABF2869C08300E32B87 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		111C65022871B7AA0075DF47 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		111C65052871C5FA0075DF47 /* MiniProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProfileView.swift; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
+		11D5CCF728B0A859007B0A58 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E15918288936D700903E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E1591E288936D700903E3F /* AlphaPlay WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlphaPlay WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,8 +240,11 @@
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
+		AD48AC8528B05BD600841439 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
+		AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetBySpeakingQuizView.swift; sourceTree = "<group>"; };
+		AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetImageQuizView.swift; sourceTree = "<group>"; };
 		ADBA0DA6286B472C007DE7A3 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		ADBA0DA8286B4781007DE7A3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,9 +267,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11032DEB28944A28006A2BAD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				11032DEC28944A3B006A2BAD /* LetterListItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		111C65042871C5E70075DF47 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD48AC8828B097CF00841439 /* QuizComponents */,
 				111C65052871C5FA0075DF47 /* MiniProfileView.swift */,
 				111C650B287206410075DF47 /* MiniReminderView.swift */,
 				167124F02872948900ACEB28 /* CardAvatar.swift */,
@@ -364,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				163430BF2873B44F00C6051B /* UserModel.swift */,
+				1112A24128AF815000467A88 /* Quiz.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +423,7 @@
 				112B08482870120400905CE5 /* AlphabetService.swift */,
 				1124C0C52872FA6900CAD128 /* AudioService.swift */,
 				11E1595A2889982F00903E3F /* SpeechRecognizerService.swift */,
+				11D5CCF728B0A859007B0A58 /* QuizService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -458,6 +481,7 @@
 		11E1595D2889C2DB00903E3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11032DEB28944A28006A2BAD /* Components */,
 				11E15925288936D700903E3F /* ContentView.swift */,
 				11E15929288936D700903E3F /* NotificationView.swift */,
 				11E15941288937F900903E3F /* LettersListView.swift */,
@@ -496,6 +520,7 @@
 				167124EE287292AB00ACEB28 /* ChangeAvatarView.swift */,
 				1124C0B22872229100CAD128 /* CustomLessonsView.swift */,
 				1160155A2873211B0034CB02 /* DetailLessonView.swift */,
+				AD48AC8528B05BD600841439 /* QuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -542,6 +567,15 @@
 				167124F728732A2300ACEB28 /* howToPlay.m4a */,
 			);
 			path = Audios;
+			sourceTree = "<group>";
+		};
+		AD48AC8828B097CF00841439 /* QuizComponents */ = {
+			isa = PBXGroup;
+			children = (
+				AD9076FE28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift */,
+				AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */,
+			);
+			path = QuizComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -704,6 +738,7 @@
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
+				AD48AC8628B05BD600841439 /* QuizView.swift in Sources */,
 				112BBA27286C8FF20039377A /* ReminderRepository.swift in Sources */,
 				111C650C287206410075DF47 /* MiniReminderView.swift in Sources */,
 				112B08492870120400905CE5 /* AlphabetService.swift in Sources */,
@@ -711,8 +746,10 @@
 				1174A155286E93D700BC02BE /* LetterCase.swift in Sources */,
 				167124F12872948900ACEB28 /* CardAvatar.swift in Sources */,
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
+				AD9076FF28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
 				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
+				1112A24228AF815000467A88 /* Quiz.swift in Sources */,
 				1124C0C62872FA6900CAD128 /* AudioService.swift in Sources */,
 				ADBA0DA7286B472C007DE7A3 /* ReminderNotification.swift in Sources */,
 				1124C0B7287291BF00CAD128 /* Color+Ext.swift in Sources */,
@@ -746,6 +783,8 @@
 				160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */,
 				11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */,
 				166A7C2A2888404F00BCFBFB /* UINavigationController+Ext.swift in Sources */,
+				AD90770328B2745D00F72ADF /* AlphabetImageQuizView.swift in Sources */,
+				11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +802,7 @@
 				11E15943288937F900903E3F /* ParentView.swift in Sources */,
 				11E159462889384300903E3F /* UserDefault+Ext.swift in Sources */,
 				11E159452889381000903E3F /* Alphabet.swift in Sources */,
+				11032DEE28944AB0006A2BAD /* LetterListItem.swift in Sources */,
 				11E15924288936D700903E3F /* LexPlayApp.swift in Sources */,
 				11E159592889893D00903E3F /* AVAudioSession+Ext.swift in Sources */,
 				11E159562889802E00903E3F /* PhoneViewModel.swift in Sources */,

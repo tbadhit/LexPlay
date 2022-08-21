@@ -74,6 +74,11 @@ fileprivate struct AlphabetCardFront: View {
                     HowToPlayView()
                 }
             }
+            .alert(isPresented: $speechRecognizer.isError) {
+                Alert(title: Text("Mic Error"),
+                      message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
+                      dismissButton: .default(Text("Mengerti")))
+            }
             Spacer()
             Text(alphabet.alphabet?.char ?? "")
                 .font(.custom(FontStyle.lexendBold, size: 180))
@@ -85,25 +90,25 @@ fileprivate struct AlphabetCardFront: View {
                 Button {} label: { Image(systemName: "mic.fill") }
                     .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
                         if pressing {
+                            showRecognizingResult = false
                             speechRecognizer.transcribe()
                         } else {
-                            speechRecognizer.stopTranscribing()
                             showRecognizingResult = true
+                            speechRecognizer.stopTranscribing()
+                            if !speechRecognizer.isProcessing {
+                                speechRecognizer.cancelAndReset()
+                            }
                         }
                     }, perform: {})
                     .alert(isPresented: $showRecognizingResult) {
-                        Alert(title: getAlertTitle(isProcessing: speechRecognizer.isProcessing),
-                              message: getAlertMessage(isProcessing: speechRecognizer.isProcessing),
-                              dismissButton: !speechRecognizer.isProcessing ? .default(Text("Oke")) : .default(Text("Batalkan")))
+                        let isProcessing = speechRecognizer.isProcessing || speechRecognizer.isRecording
+                        return Alert(title: getAlertTitle(isProcessing: isProcessing),
+                                     message: getAlertMessage(isProcessing: isProcessing),
+                                     dismissButton: .default(Text(isProcessing ? "Batalkan" : "Oke"), action: { speechRecognizer.cancelAndReset() }))
                     }
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
-        }
-        .alert(isPresented: $speechRecognizer.isError) {
-            Alert(title: Text("Mic Error"),
-                  message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
-                  dismissButton: .default(Text("Mengerti")))
         }
         .padding(16)
         .card()
@@ -185,8 +190,8 @@ fileprivate struct AlphabetCardBack: View {
                 Image(systemName: "camera.fill")
                     .font(.title)
             })
-                .font(.largeTitle)
-                .foregroundColor(.brandPurple)
+            .font(.largeTitle)
+            .foregroundColor(.brandPurple)
         }
         .background(
             NavigationLink(isActive: $isGoToCameraView, destination: {

@@ -58,6 +58,7 @@ struct ChangeAvatarView: View {
 
             Spacer()
         }
+        .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal, 20)
         .backgroundImage(Asset.background)
         .onAppear {
