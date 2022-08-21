@@ -59,29 +59,10 @@ class AlphabetImageQuiz: Quiz<Data, Alphabet> {
     }
 }
 
-// struct AlphabetBySpeaking: Quiz {
-//    typealias Question = Alphabet
-//    typealias Answer = Alphabet
-//
-//    var question: Alphabet
-//    var answerOptions: [Alphabet]?
-//    var answer: Alphabet
-// }
-//
-// struct VoiceByAlphabet: Quiz {
-//    typealias Question = Alphabet
-//    typealias Answer = Alphabet
-//
-//    var question: Alphabet
-//    var answerOptions: [Alphabet]?
-//    var answer: Alphabet
-// }
-//
-// struct AlphabetByVoice: Quiz {
-//    typealias Question = Alphabet
-//    typealias Answer = Alphabet
-//
-//    var question: Alphabet
-//    var answerOptions: [Alphabet]?
-//    var answer: Alphabet
-// }
+class AlphabetBySpeakingQuiz: AlphabetSpeakingQuiz {}
+
+class VoiceByAlphabetQuiz: AlphabetQuiz {}
+
+class AlphabetByVoiceQuiz: AlphabetQuiz {}
+
+class ImageByAlphabetQuiz: AlphabetImageQuiz {}

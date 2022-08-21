@@ -24,11 +24,15 @@ class QuizService {
             return alphabet
         }
 
-        alphabets.forEach { alphabet in
+        for (i, alphabet) in alphabets.enumerated() {
             quizzes.append(getAlphabetBySpeakingQuiz(alphabet: alphabet))
-            quizzes.append(getVoiceByAlphabetQuiz(alphabets: alphabets, alphabet: alphabet))
-            quizzes.append(getAlphabetByVoiceQuiz(alphabets: alphabets, alphabet: alphabet))
+            quizzes.append(getVoiceByAlphabetQuiz(alphabet: alphabet, alphabets: alphabets))
+            quizzes.append(getAlphabetByVoiceQuiz(alphabet: alphabet, alphabets: alphabets))
+            if let imageByAlphabetQuiz = getImageByAlphabetQuiz(userAlphabet: userAlphabets[i], alphabet: alphabet, alphabets: alphabets) {
+                quizzes.append(imageByAlphabetQuiz)
+            }
         }
+
         quizzes.shuffle()
 
         if let count = count {
@@ -68,19 +72,19 @@ class QuizService {
         let user = UserEntity()
         let userAlphabets = user.alphabets?.toArray(of: UserAlphabetEntity.self)
         guard let userAlphabets = userAlphabets else { return }
-        let quizzes = getQuizzes(userAlphabets: userAlphabets)
+        let quizzes = getQuizzes(userAlphabets: userAlphabets, count: 10)
 
         quizzes.forEach { quiz in
             switch quiz {
-            case let alphabetQuiz as AlphabetQuiz:
-                let question = alphabetQuiz.question
-                let answerOptions = alphabetQuiz.answerOptions
-                let answer = alphabetQuiz.answer
+            case let alphabetByVoice as AlphabetByVoiceQuiz:
+                let question = alphabetByVoice.question
+                let answerOptions = alphabetByVoice.answerOptions
+                let answer = alphabetByVoice.answer
 
                 audioService.speak(question.rawValue)
                 let isCorrect = speechRecognizerService.isCorrect(alphabet: question, spoken: answer.rawValue)
                 break
-            case let alphabetImageQuiz as AlphabetImageQuiz:
+            case let imageByAlphabet as ImageByAlphabetQuiz:
 //                insert corresponding view
 //                SomeView(quiz: alphabetImageQuiz)
                 break
@@ -92,16 +96,25 @@ class QuizService {
 }
 
 extension QuizService {
-    private func getAlphabetBySpeakingQuiz(alphabet: Alphabet) -> AlphabetQuiz {
-        return AlphabetQuiz(question: alphabet, answer: alphabet, answerOptions: nil)
+    private func getAnswerOptions(alphabet: Alphabet, alphabets: [Alphabet]) -> [Alphabet] {
+        let randomAlphabets = alphabets.shuffled()[...2]
+        return (randomAlphabets + [alphabet]).shuffled()
     }
 
-    private func getVoiceByAlphabetQuiz(alphabets: [Alphabet], alphabet: Alphabet) -> AlphabetQuiz {
-        let randomAlphabets = Array(alphabets.shuffled()[...3])
-        return AlphabetQuiz(question: alphabet, answer: alphabet, answerOptions: randomAlphabets)
+    private func getAlphabetBySpeakingQuiz(alphabet: Alphabet) -> AlphabetBySpeakingQuiz {
+        return AlphabetBySpeakingQuiz(question: alphabet, answer: alphabet.spellings, answerOptions: nil)
     }
 
-    private func getAlphabetByVoiceQuiz(alphabets: [Alphabet], alphabet: Alphabet) -> AlphabetQuiz {
-        return getVoiceByAlphabetQuiz(alphabets: alphabets, alphabet: alphabet)
+    private func getVoiceByAlphabetQuiz(alphabet: Alphabet, alphabets: [Alphabet]) -> VoiceByAlphabetQuiz {
+        return VoiceByAlphabetQuiz(question: alphabet, answer: alphabet, answerOptions: getAnswerOptions(alphabet: alphabet, alphabets: alphabets))
+    }
+
+    private func getAlphabetByVoiceQuiz(alphabet: Alphabet, alphabets: [Alphabet]) -> AlphabetByVoiceQuiz {
+        return AlphabetByVoiceQuiz(question: alphabet, answer: alphabet, answerOptions: getAnswerOptions(alphabet: alphabet, alphabets: alphabets))
+    }
+
+    private func getImageByAlphabetQuiz(userAlphabet: UserAlphabetEntity, alphabet: Alphabet, alphabets: [Alphabet]) -> ImageByAlphabetQuiz? {
+        guard let image = userAlphabet.imageAssociation else { return nil }
+        return ImageByAlphabetQuiz(question: image, answer: alphabet, answerOptions: getAnswerOptions(alphabet: alphabet, alphabets: alphabets))
     }
 }
