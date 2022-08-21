@@ -356,7 +356,6 @@
 		1160155D2873B0BA0034CB02 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				168D54F628894CBC00D418CB /* TestSpeech.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -912,7 +911,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -949,7 +948,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -985,7 +984,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
@@ -1016,7 +1015,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
