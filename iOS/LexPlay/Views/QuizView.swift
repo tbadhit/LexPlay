@@ -10,9 +10,14 @@ import SwiftUI
 struct QuizView: View {
     @State var progressbarValue : Float = 0.2
     var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()))
+    
+    let shared = QuizService()
+    let audioService = AudioService.shared
+    let speechRecognizerService = SpeechRecognizerService.shared
+    
     var body: some View {
         VStack {
-            //Header Quiz
+            //MARK : Header Quiz
             HStack {
                 Spacer()
                 Spacer()
@@ -35,17 +40,34 @@ struct QuizView: View {
             }
             .padding(.bottom)
             .onTapGesture {
-                progressbarValue += 0.15 //Untuk Test Progress barnya bisa jalan gak
+                progressbarValue += 0.15
             }
             
-            //Progress Bar
+            //MARK : Progress Bar
             ProgressBar(value: $progressbarValue)
                 .frame(minHeight: 23, maxHeight: 30)
             
-            //TODO : Add conditional statement to show different Quiz Question based on quiz type 
+            //MARK : Iterate through Quizzes and shows each quiz
             Group {
-                if quizzes != nil {
-                    AlphabetBySpeakingQuizView()
+                //AlphabetBySpeakingQuizView()
+                //AlphabetImageQuizView()
+                ForEach(quizzes.indices) { quiz in
+                    switch quizzes[quiz] {
+                    case let alphabetByVoice as AlphabetByVoiceQuiz:
+                        Text("AlphabetByVoiceQuiz")
+                        
+                    case let imageByAlphabet as ImageByAlphabetQuiz:
+                        AlphabetImageQuizView()
+                        
+                    case let voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
+                        Text("VoiceByAlphabetQuiz")
+
+                    case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
+                        AlphabetBySpeakingQuizView()
+                        
+                    default:
+                        EmptyView()
+                    }
                 }
             }
             Spacer()
@@ -58,7 +80,6 @@ struct QuizView: View {
                 print(i)
             }
         }
-        
     }
 }
 

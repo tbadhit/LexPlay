@@ -19,7 +19,7 @@ struct MiniProfileView: View {
                         .offset(y: -5)
                     Text("Ayo Bermain!")
                 }
-                NavigationLink(destination: ProfileView(user: user)) {
+                NavigationLink(destination: QuizView()) {
                     Text("Lihat Profil")
                         .foregroundColor(Color("red"))
                 }
