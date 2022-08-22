@@ -9,7 +9,7 @@ import Foundation
 
 class BaseQuiz {}
 
-class Quiz<Question, Answer>: BaseQuiz {
+class Quiz<Question, Answer: Equatable>: BaseQuiz {
     var question: Question
     var answer: Answer
     var answerOptions: [Answer]?
@@ -26,15 +26,11 @@ class Quiz<Question, Answer>: BaseQuiz {
     }
 
     func checkAnswer() -> Bool {
-        return false
-    }
-}
-
-class AlphabetQuiz: Quiz<Alphabet, Alphabet> {
-    override func checkAnswer() -> Bool {
         return answer == submittedAnswer
     }
 }
+
+class AlphabetQuiz: Quiz<Alphabet, Alphabet> {}
 
 class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {
     override func checkAnswer() -> Bool {
@@ -53,12 +49,9 @@ class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {
     }
 }
 
-class AlphabetImageQuiz: Quiz<Data, Alphabet> {
-    override func checkAnswer() -> Bool {
-        return answer == submittedAnswer
-    }
-}
+class AlphabetImageQuiz: Quiz<Data, Alphabet> {}
 
+// Specific Quizzes
 class AlphabetBySpeakingQuiz: AlphabetSpeakingQuiz {}
 
 class VoiceByAlphabetQuiz: AlphabetQuiz {}

@@ -56,9 +56,12 @@ fileprivate struct AlphabetCardFront: View {
     let width: CGFloat
     let height: CGFloat
     let alphabet: UserAlphabetEntity
+    private let guidedComponents: [GuidingAudio] = [.alphabetCard__Speaker, .alphabetCard__Mic]
     @Binding var degree: Double
     @Binding var isFlipped: Bool
     @State var popInfo: Bool = false
+    @State private var phase: CGFloat = 0
+    @State private var highlighted: GuidingAudio? = nil
 
     var body: some View {
         VStack {
@@ -87,7 +90,9 @@ fileprivate struct AlphabetCardFront: View {
                 Button {
                     audioController.speak(alphabet: alphabet.alphabet)
                 } label: { Image(systemName: "speaker.wave.2.fill") }
+                    .highlighted(tag: .alphabetCard__Speaker, highlightedComponent: highlighted, animationPhase: $phase)
                 Button {} label: { Image(systemName: "mic.fill") }
+                    .highlighted(tag: .alphabetCard__Mic, highlightedComponent: highlighted, animationPhase: $phase)
                     .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
                         if pressing {
                             showRecognizingResult = false
@@ -109,6 +114,20 @@ fileprivate struct AlphabetCardFront: View {
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
+        }
+        .onAppear {
+            var idx = 0
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                if idx >= guidedComponents.count {
+                    idx = -1
+                }
+                if idx >= 0 {
+                    highlighted = guidedComponents[idx]
+                } else {
+                    highlighted = nil
+                }
+                idx += 1
+            }
         }
         .padding(16)
         .card()
