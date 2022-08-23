@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailLessonView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var viewRouter: ViewRouter
     let user: UserEntity
     let lesson: LessonEntity
 
@@ -48,6 +49,9 @@ struct DetailLessonView: View {
                 .environment(\.managedObjectContext, viewContext)
             Spacer()
         }
+        .onAppear(perform: {
+            viewRouter.currentPage = .detailLesson
+        })
         .padding(.top)
         .font(.custom(FontStyle.lexendMedium, size: 16))
         .backgroundImage(Asset.background)

@@ -10,6 +10,7 @@ import SwiftUI
 struct LessonsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.view) private var lessonView
     @FetchRequest private var lessons: FetchedResults<LessonEntity>
     @ObservedObject private var user: UserEntity
     
@@ -56,6 +57,9 @@ struct LessonsView: View {
                 }
                 Spacer()
             }
+            .onAppear(perform: {
+                lessonView.wrappedValue = 5
+            })
             .font(.lexendMedium(16))
             .backgroundImage(Asset.background)
             .scrollOnOverflow()
