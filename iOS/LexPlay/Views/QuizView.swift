@@ -9,8 +9,8 @@ import SwiftUI
 
 struct QuizView: View {
     @State var progressbarValue : Float = 0.2
-    var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()))
-    
+    @State var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()))
+    @State var indexSoal = 0
     let shared = QuizService()
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
@@ -51,28 +51,29 @@ struct QuizView: View {
             Group {
                 //AlphabetBySpeakingQuizView()
                 //AlphabetImageQuizView()
-                ForEach(quizzes.indices) { quiz in
-                    switch quizzes[quiz] {
-                    case let alphabetByVoice as AlphabetByVoiceQuiz:
-                        Text("AlphabetByVoiceQuiz")
-                        
-                    case let imageByAlphabet as ImageByAlphabetQuiz:
-                        AlphabetImageQuizView()
-                        
-                    case let voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
-                        Text("VoiceByAlphabetQuiz")
+                //AlphabetByVoiceQuizView()
+                //VoiceByAlphabetQuizView()
+                switch quizzes[indexSoal] {
+                case let alphabetByVoice as AlphabetByVoiceQuiz:
+                    AlphabetByVoiceQuizView(quiz: alphabetByVoice)
 
-                    case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
-                        AlphabetBySpeakingQuizView()
-                        
-                    default:
-                        EmptyView()
-                    }
+                case let imageByAlphabet as ImageByAlphabetQuiz:
+                    AlphabetImageQuizView()
+
+                case let voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
+                    VoiceByAlphabetQuizView(quiz: voiceByAlphabetQuiz)
+
+                case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
+                    AlphabetBySpeakingQuizView()
+
+                default:
+                    EmptyView()
                 }
             }
             Spacer()
             Spacer()
         }
+        .scrollOnOverflow()
         .offset(y: -20)
         .backgroundImage(Asset.background)
         .onAppear {

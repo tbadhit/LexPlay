@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AlphabetImageQuizView: View {
+//    var question: Question
+//    var answer: Answer
+//    var answerOptions: [Answer]?
     let answerOptions = ["A","B","C","D"]
     @State var idx : Int = 0
     var body: some View {
