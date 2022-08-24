@@ -30,9 +30,9 @@ class Quiz<Question, Answer: Equatable>: BaseQuiz {
     }
 }
 
-class AlphabetQuiz: Quiz<Alphabet, Alphabet> {}
+class AlphabetQuiz: Quiz<AlphabetEntity, AlphabetEntity> {}
 
-class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {
+class AlphabetSpeakingQuiz: Quiz<AlphabetEntity, [String]> {
     override func checkAnswer() -> Bool {
         return answer.contains(submittedAnswer?[0] ?? "")
     }
@@ -49,7 +49,7 @@ class AlphabetSpeakingQuiz: Quiz<Alphabet, [String]> {
     }
 }
 
-class AlphabetImageQuiz: Quiz<Data, Alphabet> {}
+class AlphabetImageQuiz: Quiz<Data, AlphabetEntity> {}
 
 // Specific Quizzes
 class AlphabetBySpeakingQuiz: AlphabetSpeakingQuiz {}

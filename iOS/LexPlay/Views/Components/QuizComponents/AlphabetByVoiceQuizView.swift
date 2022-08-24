@@ -18,7 +18,7 @@ struct AlphabetByVoiceQuizView: View {
     
     var body: some View {
         VStack {
-            Text("\(quiz.question.rawValue)")
+            Text("\(quiz.question.toString())")
                 .foregroundColor(Color.brandBlack)
                 .font(.custom(FontStyle.lexendMedium, size: 142))
                 .fontWeight(.semibold)
@@ -30,18 +30,18 @@ struct AlphabetByVoiceQuizView: View {
                 Spacer()
                 VoiceAnswerOptionCard(answerOption: "bluey", id: 1, idx: idx)
                     .onTapGesture {
-                        audioController.speak(quiz.answerOptions![0].rawValue)
+                        audioController.speak(alphabet: quiz.answerOptions![0])
                         idx = 1
-                        answer = quiz.answerOptions![0].rawValue
+                        answer = quiz.answerOptions![0].toString()
                         quiz.submittedAnswer = quiz.answerOptions![0]
                         disabled = false
                     }
                 Spacer()
                 VoiceAnswerOptionCard(answerOption: "orangey", id: 2, idx: idx)
                     .onTapGesture {
-                        audioController.speak(quiz.answerOptions![1].rawValue)
+                        audioController.speak(alphabet: quiz.answerOptions![1])
                         idx = 2
-                        answer = quiz.answerOptions![1].rawValue
+                        answer = quiz.answerOptions![1].toString()
                         quiz.submittedAnswer = quiz.answerOptions![1]
                         disabled = false
                     }
@@ -53,9 +53,9 @@ struct AlphabetByVoiceQuizView: View {
                 Spacer()
                 VoiceAnswerOptionCard(answerOption: "limey", id: 3, idx: idx)
                     .onTapGesture {
-                        audioController.speak(quiz.answerOptions![2].rawValue)
+                        audioController.speak(alphabet: quiz.answerOptions![2])
                         idx = 3
-                        answer = quiz.answerOptions![2].rawValue
+                        answer = quiz.answerOptions![2].toString()
                         quiz.submittedAnswer = quiz.answerOptions![2]
                         disabled = false
                     }
@@ -63,9 +63,9 @@ struct AlphabetByVoiceQuizView: View {
                 Spacer()
                 VoiceAnswerOptionCard(answerOption: "cyany", id: 4, idx: idx)
                     .onTapGesture {
-                        audioController.speak(quiz.answerOptions![3].rawValue)
+                        audioController.speak(alphabet: quiz.answerOptions![3])
                         idx = 4
-                        answer = quiz.answerOptions![3].rawValue
+                        answer = quiz.answerOptions![3].toString()
                         quiz.submittedAnswer = quiz.answerOptions![3]
                         disabled = false
                     }
@@ -108,9 +108,9 @@ struct AlphabetByVoiceQuizView: View {
                 }))
             }
         }
-        .onAppear {
-            print(quiz.question)
-        }
+//        .onAppear {
+//            print(quiz.question)
+//        }
     }
     
     func getAlertTitle(isCorrect : Bool) -> Text {

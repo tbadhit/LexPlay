@@ -20,7 +20,7 @@ struct VoiceByAlphabetQuizView: View {
         VStack (spacing: 30) {
             HStack {
                 Button {
-                    audioController.speak(quiz.question.rawValue)
+                    audioController.speak(alphabet: quiz.question)
                 } label: {
                     Image(systemName: "speaker.circle.fill")
                         .foregroundColor(Color.brandBlue)
@@ -36,7 +36,7 @@ struct VoiceByAlphabetQuizView: View {
                     .onTapGesture {
                         idx = 1
                         isPresented = idx == 1
-                        answer = quiz.answerOptions![0].rawValue
+                        answer = quiz.answerOptions![0].toString()
                         quiz.submittedAnswer = quiz.answerOptions![0]
                     }
                     
@@ -45,7 +45,7 @@ struct VoiceByAlphabetQuizView: View {
                     .onTapGesture {
                         idx = 2
                         isPresented = idx == 2
-                        answer = quiz.answerOptions![1].rawValue
+                        answer = quiz.answerOptions![1].toString()
                         quiz.submittedAnswer = quiz.answerOptions![1]
                     }
                 Spacer()
@@ -59,7 +59,7 @@ struct VoiceByAlphabetQuizView: View {
                     .onTapGesture {
                         idx = 3
                         isPresented = idx == 3
-                        answer = quiz.answerOptions![2].rawValue
+                        answer = quiz.answerOptions![2].toString()
                         quiz.submittedAnswer = quiz.answerOptions![2]
                     }
                 Spacer()
@@ -67,7 +67,7 @@ struct VoiceByAlphabetQuizView: View {
                     .onTapGesture {
                         idx = 4
                         isPresented = idx == 4
-                        answer = quiz.answerOptions![3].rawValue
+                        answer = quiz.answerOptions![3].toString()
                         quiz.submittedAnswer = quiz.answerOptions![3]
                     }
                 Spacer()
@@ -84,9 +84,9 @@ struct VoiceByAlphabetQuizView: View {
                 }))
             }
         }
-        .onAppear {
-            print(quiz.question)
-        }
+//        .onAppear {
+//            print(quiz.question)
+//        }
     }
     
     func getAlertTitle(isCorrect : Bool) -> Text {
@@ -105,7 +105,7 @@ struct VoiceByAlphabetQuizView: View {
 }
 
 struct LetterAnswerOptionCard : View {
-    let answerOption : Alphabet
+    let answerOption : AlphabetEntity
     let id : Int
     let idx : Int
     
@@ -116,7 +116,7 @@ struct LetterAnswerOptionCard : View {
                 .frame(maxWidth : 180,maxHeight: 180, alignment: .center)
             
             VStack {
-                Text("\(answerOption.rawValue)")
+                Text("\(answerOption.toString())")
                     .foregroundColor(id == idx ?  Color.white : Color("blue"))
                     .font(.custom(FontStyle.lexendMedium, size: 99))
                     .fontWeight(.semibold)

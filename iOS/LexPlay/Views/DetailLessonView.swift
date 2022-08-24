@@ -16,7 +16,7 @@ struct DetailLessonView: View {
     @State var startAlphabet: String = ""
     @State var endAlphabet: String = ""
     @State var progressValue: Float = 0.0
-    
+
     var body: some View {
         VStack(spacing: 24) {
             HStack {
@@ -32,13 +32,13 @@ struct DetailLessonView: View {
                         .frame(width: min(CGFloat(progressValue), .infinity * CGFloat(progressValue)))
                         .frame(height: 70)
                         .opacity(0.3)
-                    .foregroundColor(Color(UIColor.systemTeal))
+                        .foregroundColor(Color(UIColor.systemTeal))
                 }
                 .cornerRadius(100)
                 .padding(.leading, 20)
-                
+
                 NavigationLink {
-                    QuizView(user: user)
+                    NavigationLazyView(QuizView(user: user))
                 } label: {
                     Image("quiz")
                         .resizable()
@@ -50,10 +50,10 @@ struct DetailLessonView: View {
                         .padding(.trailing, 20)
                 }
             }
-            
+
             LessonAlphabetsView(alphabets: alphabets, color: color)
                 .environment(\.managedObjectContext, viewContext)
-            
+
             Spacer()
         }
         .onAppear {
@@ -70,7 +70,7 @@ struct DetailLessonView: View {
             guideViewModel.stopAndReset()
         }
     }
-    
+
     init(user: UserEntity, lesson: LessonEntity, color: Color) {
         self.user = user
         _alphabets = UserAlphabetRepository.getByLessonPredicate(user: user, lesson: lesson)
@@ -79,12 +79,12 @@ struct DetailLessonView: View {
 }
 
 #if DEBUG
-struct DetailLessonView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailLessonView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!, lesson: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.lessons?.toArray(of: LessonEntity.self).first)!, color: Color("red"))
-            .font(.custom(FontStyle.lexendRegular, size: 16))
-            .foregroundColor(Color("black"))
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    struct DetailLessonView_Previews: PreviewProvider {
+        static var previews: some View {
+            DetailLessonView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!, lesson: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.lessons?.toArray(of: LessonEntity.self).first)!, color: Color("red"))
+                .font(.custom(FontStyle.lexendRegular, size: 16))
+                .foregroundColor(Color("black"))
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
-}
 #endif

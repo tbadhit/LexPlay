@@ -16,7 +16,7 @@ struct UserAlphabetCardView: View {
     @State var frontDegree = 0.0
     @State var backDegree = -90.0
     @State var isFlipped = false
-    
+
     @Binding var isCustomLessonView: Bool
 
     let width: CGFloat = UIScreen.screenWidth
@@ -96,13 +96,17 @@ fileprivate struct AlphabetCardFront: View {
     var body: some View {
         VStack {
             if isCustomLessonView {
-                HStack {
-                    Spacer()
-                    Image("quiz")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70)
-                        .overlay(Circle().stroke(Color("red"), lineWidth: 4))
+                NavigationLink {
+                    NavigationLazyView(QuizView(user: alphabet.user!))
+                } label: {
+                    HStack {
+                        Spacer()
+                        Image("quiz")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70)
+                            .overlay(Circle().stroke(Color("red"), lineWidth: 4))
+                    }
                 }
             }
             Spacer()
@@ -181,7 +185,6 @@ fileprivate struct AlphabetCardBack: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    
 
                 } else {
                     Text("Tidak ada gambar")

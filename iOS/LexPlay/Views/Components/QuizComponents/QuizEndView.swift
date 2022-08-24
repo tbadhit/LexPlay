@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuizEndView: View {
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("Pelajaran\nSelesai!")
@@ -27,7 +29,7 @@ struct QuizEndView: View {
             }
             
             Button {
-                print("Button Pressed")
+                presentation.wrappedValue.dismiss()
             } label: {
                 ZStack{
                     HStack {
