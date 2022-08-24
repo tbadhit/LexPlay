@@ -82,8 +82,8 @@ struct QuizView: View {
             Spacer()
         }
         .scrollOnOverflow()
-        .offset(y: -20)
         .backgroundImage(Asset.background)
+        .navigationBarTitleDisplayMode(.inline)
         .onChange(of: indexSoal) { newValue in
             if indexSoal != 0 {
                 progressbarValue = (Float(indexSoal) / Float(quizzes.count))

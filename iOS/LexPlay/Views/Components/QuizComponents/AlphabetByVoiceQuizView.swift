@@ -104,8 +104,8 @@ struct AlphabetByVoiceQuizView: View {
                              dismissButton: .default(Text("Oke"), action: {
                     if quiz.checkAnswer() {
                         indexSoal+=1
+                        idx = 0
                     }
-                    //print(indexSoal)
                 }))
             }
         }
