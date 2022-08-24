@@ -14,6 +14,7 @@ struct VoiceByAlphabetQuizView: View {
     @State var answer : String = ""
     @State var isCorrect : Bool = false
     @State var isPresented : Bool = false
+    @Binding var indexSoal : Int
     
     
     var body: some View {
@@ -46,7 +47,12 @@ struct VoiceByAlphabetQuizView: View {
                     .alert(isPresented: ($isPresented)) {
                         return Alert(title: getAlertTitle(isCorrect: isCorrect),
                                      message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text(isCorrect ? "Batalkan" : "Oke"), action: {}))
+                                     dismissButton: .default(Text("Oke"), action: {
+                            if isCorrect {
+                                indexSoal+=1
+                            }
+                            //print(indexSoal)
+                        }))
                     }
                     
                 Spacer()
@@ -64,7 +70,12 @@ struct VoiceByAlphabetQuizView: View {
                     .alert(isPresented: ($isPresented)) {
                         return Alert(title: getAlertTitle(isCorrect: isCorrect),
                                      message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text(isCorrect ? "Batalkan" : "Oke"), action: {}))
+                                     dismissButton: .default(Text("Oke"), action: {
+                            if isCorrect {
+                                indexSoal+=1
+                            }
+                            //print(indexSoal)
+                        }))
                     }
                 Spacer()
                 Spacer()
@@ -87,7 +98,12 @@ struct VoiceByAlphabetQuizView: View {
                     .alert(isPresented: ($isPresented)) {
                         return Alert(title: getAlertTitle(isCorrect: isCorrect),
                                      message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text(isCorrect ? "Batalkan" : "Oke"), action: {}))
+                                     dismissButton: .default(Text("Oke"), action: {
+                            if isCorrect {
+                                indexSoal+=1
+                            }
+                            //print(indexSoal)
+                        }))
                     }
                 Spacer()
                 LetterAnswerOptionCard(answerOption: quiz.answerOptions![3], id: 4, idx: idx)
@@ -104,11 +120,19 @@ struct VoiceByAlphabetQuizView: View {
                     .alert(isPresented: ($isPresented)) {
                         return Alert(title: getAlertTitle(isCorrect: isCorrect),
                                      message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text(isCorrect ? "Batalkan" : "Oke"), action: {}))
+                                     dismissButton: .default(Text("Oke"), action: {
+                            if isCorrect {
+                                indexSoal+=1
+                            }
+                            //print(indexSoal)
+                        }))
                     }
                 Spacer()
                 Spacer()
             }
+        }
+        .onAppear {
+            print(quiz.question)
         }
     }
     

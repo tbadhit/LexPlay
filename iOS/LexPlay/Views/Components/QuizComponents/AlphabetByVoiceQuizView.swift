@@ -15,6 +15,8 @@ struct AlphabetByVoiceQuizView: View {
     @State var isCorrect : Bool = false
     @State var isPresented : Bool = false
     @State private var disabled = true
+    @Binding var indexSoal : Int
+    
     var body: some View {
         VStack {
             Text("\(quiz.question.rawValue)")
@@ -115,8 +117,16 @@ struct AlphabetByVoiceQuizView: View {
             .alert(isPresented: ($isPresented)) {
                 return Alert(title: getAlertTitle(isCorrect: isCorrect),
                              message: getAlertMessage(isCorrect: isCorrect),
-                             dismissButton: .default(Text(isCorrect ? "Batalkan" : "Oke"), action: {}))
+                             dismissButton: .default(Text("Oke"), action: {
+                    if isCorrect {
+                        indexSoal+=1
+                    }
+                    //print(indexSoal)
+                }))
             }
+        }
+        .onAppear {
+            print(quiz.question)
         }
     }
     

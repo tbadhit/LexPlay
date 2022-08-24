@@ -99,6 +99,7 @@
 		16845B5E2879372E00F366FD /* OverflowContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */; };
 		16A6697828784835001AEE0F /* CardSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6697728784835001AEE0F /* CardSays.swift */; };
 		16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D27004287372E80052814B /* UIScreen+Ext.swift */; };
+		AD3CE5B028B627B20075744F /* QuizEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3CE5AF28B627B20075744F /* QuizEndView.swift */; };
 		AD48AC8628B05BD600841439 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48AC8528B05BD600841439 /* QuizView.swift */; };
 		AD6E06622870274200F3BD76 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06612870274200F3BD76 /* ProfileView.swift */; };
 		AD6E06642870A74600F3BD76 /* ListProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E06632870A74600F3BD76 /* ListProfilesView.swift */; };
@@ -244,6 +245,7 @@
 		16845B5D2879372E00F366FD /* OverflowContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowContentViewModifier.swift; sourceTree = "<group>"; };
 		16A6697728784835001AEE0F /* CardSays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSays.swift; sourceTree = "<group>"; };
 		16D27004287372E80052814B /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
+		AD3CE5AF28B627B20075744F /* QuizEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEndView.swift; sourceTree = "<group>"; };
 		AD48AC8528B05BD600841439 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		AD6E06612870274200F3BD76 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD6E06632870A74600F3BD76 /* ListProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfilesView.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				AD90770228B2745D00F72ADF /* AlphabetImageQuizView.swift */,
 				AD7F06F128B37ED700406A80 /* AlphabetByVoiceQuizView.swift */,
 				AD7F06F328B3947F00406A80 /* VoiceByAlphabetQuizView.swift */,
+				AD3CE5AF28B627B20075744F /* QuizEndView.swift */,
 			);
 			path = QuizComponents;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				1162D47928752C30006F3D30 /* NSSet+Ext.swift in Sources */,
 				AD7F06F228B37ED700406A80 /* AlphabetByVoiceQuizView.swift in Sources */,
 				11587179288075AC00E7FF37 /* ContentView.swift in Sources */,
+				AD3CE5B028B627B20075744F /* QuizEndView.swift in Sources */,
 				111C65062871C5FA0075DF47 /* MiniProfileView.swift in Sources */,
 				1124C0C02872A97700CAD128 /* Font+Ext.swift in Sources */,
 				1124C0BC2872A1E200CAD128 /* LessonAlphabetsView.swift in Sources */,
@@ -963,7 +967,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -1000,7 +1004,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -1036,7 +1040,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
@@ -1067,7 +1071,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
@@ -1099,7 +1103,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1124,7 +1128,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAFJ582D2S;
+				DEVELOPMENT_TEAM = 6QG5DSTZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

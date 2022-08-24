@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct AlphabetImageQuizView: View {
-//    var question: Question
-//    var answer: Answer
-//    var answerOptions: [Answer]?
-    let answerOptions = ["A","B","C","D"]
-    @State var idx : Int = 0
+    @State var idx = 0
+    @State var quiz : ImageByAlphabetQuiz
+    @State var answer : String = ""
+    @State var isCorrect : Bool = false
+    @State var isPresented : Bool = false
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("example")
+                let uiImage = UIImage(data: quiz.question) 
+                Image(uiImage: uiImage!)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(45)
@@ -28,12 +30,12 @@ struct AlphabetImageQuizView: View {
             HStack {
                 Spacer()
                 Spacer()
-                AnswerOptionCard(answerOption: answerOptions[0], id: 1, idx: idx)
+                AnswerOptionCard(answerOption: quiz.answerOptions![0].rawValue, id: 1, idx: idx)
                     .onTapGesture {
                         idx = 1
                     }
                 Spacer()
-                AnswerOptionCard(answerOption: answerOptions[1], id: 2, idx: idx)
+                AnswerOptionCard(answerOption: quiz.answerOptions![1].rawValue, id: 2, idx: idx)
                     .onTapGesture {
                         idx = 2
                     }
@@ -43,12 +45,12 @@ struct AlphabetImageQuizView: View {
             HStack {
                 Spacer()
                 Spacer()
-                AnswerOptionCard(answerOption: answerOptions[2], id: 3, idx: idx)
+                AnswerOptionCard(answerOption: quiz.answerOptions![2].rawValue, id: 3, idx: idx)
                     .onTapGesture {
                         idx = 3
                     }
                 Spacer()
-                AnswerOptionCard(answerOption: answerOptions[3], id: 4, idx: idx)
+                AnswerOptionCard(answerOption: quiz.answerOptions![3].rawValue, id: 4, idx: idx)
                     .onTapGesture {
                         idx = 4
                     }
@@ -80,8 +82,8 @@ struct AnswerOptionCard : View {
     }
 }
 
-struct AlphabetImageQuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlphabetImageQuizView()
-    }
-}
+//struct AlphabetImageQuizView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AlphabetImageQuizView(quiz: quiz)
+//    }
+//}

@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct QuizView: View {
-    @State var progressbarValue : Float = 0.2
-    @State var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()))
+    @State var progressbarValue : Float = 0.0
+    @State var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()), count: 5)
     @State var indexSoal = 0
     let shared = QuizService()
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
     
     var body: some View {
+        
         VStack {
             //MARK : Header Quiz
             HStack {
@@ -48,27 +49,25 @@ struct QuizView: View {
                 .frame(minHeight: 23, maxHeight: 30)
             
             //MARK : Iterate through Quizzes and shows each quiz
-            Group {
-                //AlphabetBySpeakingQuizView()
-                //AlphabetImageQuizView()
-                //AlphabetByVoiceQuizView()
-                //VoiceByAlphabetQuizView()
+            if indexSoal < quizzes.count {
                 switch quizzes[indexSoal] {
                 case let alphabetByVoice as AlphabetByVoiceQuiz:
-                    AlphabetByVoiceQuizView(quiz: alphabetByVoice)
+                    AlphabetByVoiceQuizView(quiz: alphabetByVoice, indexSoal: $indexSoal)
 
-                case let imageByAlphabet as ImageByAlphabetQuiz:
-                    AlphabetImageQuizView()
+    //                case let imageByAlphabet as ImageByAlphabetQuiz:
+    //                    AlphabetImageQuizView(quiz: imageByAlphabet)
 
                 case let voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
-                    VoiceByAlphabetQuizView(quiz: voiceByAlphabetQuiz)
+                    VoiceByAlphabetQuizView(quiz: voiceByAlphabetQuiz, indexSoal: $indexSoal)
 
-                case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
-                    AlphabetBySpeakingQuizView()
+    //                case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
+    //                    AlphabetBySpeakingQuizView()
 
                 default:
                     EmptyView()
                 }
+            } else {
+                QuizEndView()
             }
             Spacer()
             Spacer()
@@ -80,6 +79,12 @@ struct QuizView: View {
             for i in quizzes {
                 print(i)
             }
+        }
+        .onChange(of: indexSoal) { newValue in
+            if indexSoal != 0 {
+                progressbarValue = (Float(indexSoal) / Float(quizzes.count))
+            }
+            print(progressbarValue)
         }
     }
 }

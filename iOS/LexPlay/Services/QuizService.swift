@@ -25,12 +25,12 @@ class QuizService {
         }
 
         for (i, alphabet) in alphabets.enumerated() {
-            quizzes.append(getAlphabetBySpeakingQuiz(alphabet: alphabet))
+            //quizzes.append(getAlphabetBySpeakingQuiz(alphabet: alphabet))
             quizzes.append(getVoiceByAlphabetQuiz(alphabet: alphabet, alphabets: alphabets))
             quizzes.append(getAlphabetByVoiceQuiz(alphabet: alphabet, alphabets: alphabets))
-            if let imageByAlphabetQuiz = getImageByAlphabetQuiz(userAlphabet: userAlphabets[i], alphabet: alphabet, alphabets: alphabets) {
-                quizzes.append(imageByAlphabetQuiz)
-            }
+//            if let imageByAlphabetQuiz = getImageByAlphabetQuiz(userAlphabet: userAlphabets[i], alphabet: alphabet, alphabets: alphabets) {
+//                quizzes.append(imageByAlphabetQuiz)
+//            }
         }
 
         quizzes.shuffle()
