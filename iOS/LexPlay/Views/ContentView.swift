@@ -7,31 +7,11 @@
 
 import SwiftUI
 
-
-class ViewRouter: ObservableObject {
-    @Published var currentPage: Page = .lesson
-    
-    enum Page {
-        case onboarding1
-        case onboarding2
-        case createUser
-        case specificLetter
-        case customAlphabet
-        case letterCase
-        case lesson
-        case customLesson
-        case detailLesson
-        case quiz
-    }
-}
-
-
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var viewRouter = ViewRouter()
     @FetchRequest private var activeUsers: FetchedResults<UserEntity>
     @State private var mainView = 2
-    
+
     var body: some View {
         ZStack {
             NavigationView {
@@ -45,34 +25,27 @@ struct ContentView: View {
                 .navigationBarHidden(true)
             }
             FloatingView()
-
         }
-        .environmentObject(viewRouter)
-        
     }
-    
+
     init() {
         _activeUsers = UserRepository.getActiveUserPredicate()
     }
 }
 
 struct FloatingView: View {
-    @EnvironmentObject var viewRouter: ViewRouter
-    
+    @StateObject var guideViewModel = GuideViewModel.shared
     @State private var currentPosition: CGSize = CGSize(width: 150, height: UIScreen.screenHeight / 2 - 72)
     @State private var newPosition: CGSize = CGSize(width: 150, height: UIScreen.screenHeight / 2 - 72)
-    
+
     var body: some View {
-        
         Image("play")
             .resizable()
             .frame(width: UIScreen.screenWidth / 6 - 2.5, height: UIScreen.screenWidth / 5 - 5)
             .offset(x: self.currentPosition.width, y: self.currentPosition.height)
-            .onTapGesture(perform: {
-                
-//                debugPrint("Action")
-                print("Page saat ini :\(viewRouter.currentPage)")
-            })
+            .onTapGesture {
+                guideViewModel.toggleAudio()
+            }
             .gesture(DragGesture()
                 .onChanged { value in
                     print("onCHange width : \(value.translation.width + self.newPosition.width)")
@@ -83,7 +56,6 @@ struct FloatingView: View {
                             height: value.translation.height + self.newPosition.height
                         )
                     }
-                    
                 }
                 .onEnded { value in
                     withAnimation(.easeOut(duration: 0.35)) {
@@ -98,14 +70,14 @@ struct FloatingView: View {
                                     width: width < -widthSafeArea ? -widthSafeArea : width,
                                     height: heightSafeArea
                                 )
-                            } else if currentPosition.height < -heightSafeArea  {
+                            } else if currentPosition.height < -heightSafeArea {
                                 self.currentPosition = CGSize(
                                     width: width < -widthSafeArea ? -widthSafeArea : width,
                                     height: -heightSafeArea
                                 )
-                            }else {
+                            } else {
                                 self.currentPosition = CGSize(
-                                    width:  -UIScreen.screenWidth / 2 - -35,
+                                    width: -UIScreen.screenWidth / 2 - -35,
                                     height: value.translation.height + self.newPosition.height
                                 )
                             }
@@ -124,11 +96,10 @@ struct FloatingView: View {
                                     height: -heightSafeArea)
                             } else {
                                 self.currentPosition = CGSize(
-                                    width:  UIScreen.screenWidth / 2 - 35,
+                                    width: UIScreen.screenWidth / 2 - 35,
                                     height: value.translation.height + self.newPosition.height
                                 )
                             }
-                            
                         }
                         self.newPosition = self.currentPosition
                     }

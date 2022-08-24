@@ -44,7 +44,7 @@ struct HowToPlayView: View {
                     if audioService.isSpeaking() {
                         audioService.stopSpeaking()
                     } else {
-                        audioService.speak(name: .howToPlay)
+                        audioService.speak(name: AudioName.howToPlay.rawValue)
                     }
                 } label: {
                     Image(systemName: "speaker.wave.2.fill")

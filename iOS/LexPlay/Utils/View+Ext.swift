@@ -36,20 +36,24 @@ extension View {
     }
 
     @ViewBuilder
-    func highlighted(tag name: GuidingAudio, highlightedComponent: GuidingAudio?, animationPhase: Binding<CGFloat>) -> some View {
-        let _ = tag(name)
+    func highlighted(tag name: GuidingAudio, highlightedComponent: GuidingAudio?, animationPhase: CGFloat) -> some View {
+        let v = tag(name)
         if let activeComponent = highlightedComponent, activeComponent == name {
-            overlay(RoundedRectangle(cornerRadius: 8)
-                .strokeBorder(style: StrokeStyle(lineWidth: 4, dash: [10], dashPhase: animationPhase.wrappedValue))
+            v.overlay(RoundedRectangle(cornerRadius: 8)
+                .strokeBorder(style: StrokeStyle(lineWidth: 4, dash: [10], dashPhase: animationPhase))
                 .foregroundColor(.brandRed)
-                .onAppear {
-                    withAnimation(.linear.repeatForever(autoreverses: false)) {
-                        animationPhase.wrappedValue -= 20
-                    }
-                })
+                .animation(.linear.repeatForever(autoreverses: false), value: animationPhase))
         } else {
-            self
+            v
         }
+    }
+
+    func onWillDisappear(_ perform: @escaping () -> Void) -> some View {
+        modifier(WillDisappearModifier(callback: perform))
+    }
+
+    func onDidAppear(_ perform: @escaping () -> Void) -> some View {
+        modifier(DidAppearModifier(callback: perform))
     }
 }
 
@@ -63,5 +67,65 @@ extension View {
         } else {
             self
         }
+    }
+}
+
+fileprivate struct ViewObserver: UIViewControllerRepresentable {
+    func makeCoordinator() -> ViewObserver.Coordinator {
+        Coordinator(onDidAppear: onDidAppear, onWillDisappear: onWillDisappear)
+    }
+
+    var onDidAppear: () -> Void = {}
+    var onWillDisappear: () -> Void = {}
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ViewObserver>) -> UIViewController {
+        context.coordinator
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<ViewObserver>) {
+    }
+
+    typealias UIViewControllerType = UIViewController
+
+    class Coordinator: UIViewController {
+        var onDidAppear: () -> Void = {}
+        var onWillDisappear: () -> Void = {}
+
+        init(onDidAppear: @escaping () -> Void, onWillDisappear: @escaping () -> Void) {
+            self.onDidAppear = onDidAppear
+            self.onWillDisappear = onWillDisappear
+            super.init(nibName: nil, bundle: nil)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            onDidAppear()
+        }
+
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            onWillDisappear()
+        }
+    }
+}
+
+fileprivate struct WillDisappearModifier: ViewModifier {
+    let callback: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .background(ViewObserver(onWillDisappear: callback))
+    }
+}
+
+fileprivate struct DidAppearModifier: ViewModifier {
+    let callback: () -> Void
+
+    func body(content: Content) -> some View {
+        content.background(ViewObserver(onDidAppear: callback))
     }
 }

@@ -64,7 +64,6 @@ fileprivate struct AlphabetCardFront: View {
     @Binding var isFlipped: Bool
     @Binding var isCustomLessonView: Bool
     @State var popInfo: Bool = false
-    @State private var phase: CGFloat = 0
     @State private var highlighted: GuidingAudio? = nil
     let color: Color
 
@@ -95,8 +94,6 @@ fileprivate struct AlphabetCardFront: View {
                         .background(Color("blue"))
                 }
                 .cornerRadius(38)
-                
-                .highlighted(tag: .alphabetCard__Speaker, highlightedComponent: highlighted, animationPhase: $phase)
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
