@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     @State var isNextOnboard = false
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var guideViewModel = GuideViewModel.shared
 
     var body: some View {
             HStack {
@@ -50,11 +51,17 @@ struct OnboardingView: View {
             }
             .backgroundImage(Asset.bgOnboard)
             .navigationBarHidden(true)
+            .onAppear {
+                guideViewModel.stopAudio()
+                guideViewModel.guidingAudios = [.onboarding]
+                guideViewModel.playAudio()
+            }
     }
 }
 
 struct OnboardingView2: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var guideViewModel = GuideViewModel.shared
 
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 1)
 
@@ -113,6 +120,9 @@ struct OnboardingView2: View {
                         .padding(.bottom, 60)
                 }
             }
+        }
+        .onAppear {
+            guideViewModel.guidingAudios = [.onboarding]
         }
         .background(Image("background")
             .resizable()

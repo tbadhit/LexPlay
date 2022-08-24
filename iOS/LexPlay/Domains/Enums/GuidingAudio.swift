@@ -6,6 +6,7 @@
 //
 
 enum GuidingAudio: String {
+    case onboarding
     case alphabetCard__Mic
     case createAccount__Avatar
     case createAccount__Name

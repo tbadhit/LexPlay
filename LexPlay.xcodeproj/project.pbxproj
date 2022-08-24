@@ -41,6 +41,7 @@
 		1174A155286E93D700BC02BE /* LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A154286E93D700BC02BE /* LetterCase.swift */; };
 		1174A157286ED05700BC02BE /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174A156286ED05700BC02BE /* Seeder.swift */; };
 		117629BE28B72824001CB6F8 /* AlphabetEntity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117629BD28B72824001CB6F8 /* AlphabetEntity+Ext.swift */; };
+		117629C028B731BD001CB6F8 /* onboarding.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 117629BF28B731BD001CB6F8 /* onboarding.m4a */; };
 		1178D3A32868EA02007A23A0 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */; };
 		117D8A78287599660016E913 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D8A77287599660016E913 /* NavigationLazyView.swift */; };
 		11899B04288C2C5A00E40074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11899B03288C2C5A00E40074 /* AppDelegate.swift */; };
@@ -208,6 +209,7 @@
 		1174A154286E93D700BC02BE /* LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCase.swift; sourceTree = "<group>"; };
 		1174A156286ED05700BC02BE /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		117629BD28B72824001CB6F8 /* AlphabetEntity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlphabetEntity+Ext.swift"; sourceTree = "<group>"; };
+		117629BF28B731BD001CB6F8 /* onboarding.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.m4a; sourceTree = "<group>"; };
 		1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		117D8A77287599660016E913 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		11899B03288C2C5A00E40074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 		167124F628732A0000ACEB28 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				117629BF28B731BD001CB6F8 /* onboarding.m4a */,
 				11C8238528B6221600F6CE13 /* alphabetCard__Alphabet.m4a */,
 				11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */,
 				11C8238B28B6221700F6CE13 /* alphabetCard__Flip.m4a */,
@@ -769,6 +772,7 @@
 				11C8239528B6221700F6CE13 /* lesson__List.m4a in Resources */,
 				11C823A028B6221700F6CE13 /* quiz__ImageByAlphabet.m4a in Resources */,
 				11C8239628B6221700F6CE13 /* chooseAlphabet__Case.m4a in Resources */,
+				117629C028B731BD001CB6F8 /* onboarding.m4a in Resources */,
 				116CDA7328770C26002E81A7 /* howToPlay.m4a in Resources */,
 				11C8239D28B6221700F6CE13 /* alphabetCard__Speaker.m4a in Resources */,
 				11C8239828B6221700F6CE13 /* createAccount__Name.m4a in Resources */,

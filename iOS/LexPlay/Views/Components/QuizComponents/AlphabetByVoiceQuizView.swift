@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AlphabetByVoiceQuizView: View {
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @State var idx = 0
     @Binding var quiz : AlphabetByVoiceQuiz
     private let audioController: AudioService = AudioService.shared
@@ -108,9 +109,12 @@ struct AlphabetByVoiceQuizView: View {
                 }))
             }
         }
-//        .onAppear {
-//            print(quiz.question)
-//        }
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.quiz__AlphabetByVoice]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
+        }
     }
     
     func getAlertTitle(isCorrect : Bool) -> Text {
