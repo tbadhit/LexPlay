@@ -9,11 +9,14 @@ import SwiftUI
 
 struct UserAlphabetCardView: View {
     @ObservedObject var alphabet: UserAlphabetEntity
+    let color: Color
 
     @State private var popInfo = false
     @State var frontDegree = 0.0
     @State var backDegree = -90.0
     @State var isFlipped = false
+    
+    @Binding var isCustomLessonView: Bool
 
     let width: CGFloat = UIScreen.screenWidth
     let height: CGFloat = UIScreen.screenHeight
@@ -40,7 +43,7 @@ struct UserAlphabetCardView: View {
 
     var body: some View {
         ZStack {
-            AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped)
+            AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped, isCustomLessonView: $isCustomLessonView, color: color)
             AlphabetCardBack(width: width, height: height, userAlphabet: alphabet, degree: $backDegree, isFlipped: $isFlipped)
         }.onTapGesture {
             flipCard()
@@ -59,58 +62,41 @@ fileprivate struct AlphabetCardFront: View {
     private let guidedComponents: [GuidingAudio] = [.alphabetCard__Speaker, .alphabetCard__Mic]
     @Binding var degree: Double
     @Binding var isFlipped: Bool
+    @Binding var isCustomLessonView: Bool
     @State var popInfo: Bool = false
     @State private var phase: CGFloat = 0
     @State private var highlighted: GuidingAudio? = nil
+    let color: Color
 
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    popInfo.toggle()
-                } label: { Image(systemName: "info.circle.fill")
-                    .font(.title)
-                    .foregroundColor(.brandPurple)
+            if isCustomLessonView {
+                HStack {
+                    Spacer()
+                    Image("quiz")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 70, height: 70)
+                        .overlay(Circle().stroke(Color("red"), lineWidth: 4))
                 }
-                .popover(isPresented: $popInfo) {
-                    HowToPlayView()
-                }
-            }
-            .alert(isPresented: $speechRecognizer.isError) {
-                Alert(title: Text("Mic Error"),
-                      message: Text("Mic tidak terdeteksi. Tidak dapat menggunakan fitur bicara."),
-                      dismissButton: .default(Text("Mengerti")))
             }
             Spacer()
             Text(alphabet.alphabet?.char ?? "")
-                .font(.custom(FontStyle.lexendBold, size: 180))
+                .font(.openDyslexicBold(100))
+                .foregroundColor(color)
             Spacer()
             HStack {
                 Button {
                     audioController.speak(alphabet: alphabet.alphabet)
-                } label: { Image(systemName: "speaker.wave.2.fill") }
-                    .highlighted(tag: .alphabetCard__Speaker, highlightedComponent: highlighted, animationPhase: $phase)
-                Button {} label: { Image(systemName: "mic.fill") }
-                    .highlighted(tag: .alphabetCard__Mic, highlightedComponent: highlighted, animationPhase: $phase)
-                    .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
-                        if pressing {
-                            showRecognizingResult = false
-                            speechRecognizer.transcribe()
-                        } else {
-                            showRecognizingResult = true
-                            speechRecognizer.stopTranscribing()
-                            if !speechRecognizer.isProcessing {
-                                speechRecognizer.cancelAndReset()
-                            }
-                        }
-                    }, perform: {})
-                    .alert(isPresented: $showRecognizingResult) {
-                        let isProcessing = speechRecognizer.isProcessing || speechRecognizer.isRecording
-                        return Alert(title: getAlertTitle(isProcessing: isProcessing),
-                                     message: getAlertMessage(isProcessing: isProcessing),
-                                     dismissButton: .default(Text(isProcessing ? "Batalkan" : "Oke"), action: { speechRecognizer.cancelAndReset() }))
-                    }
+                } label: {
+                    Image(systemName: "speaker.wave.2.fill")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: 70)
+                        .background(Color("blue"))
+                }
+                .cornerRadius(38)
+                
+                .highlighted(tag: .alphabetCard__Speaker, highlightedComponent: highlighted, animationPhase: $phase)
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
@@ -176,18 +162,6 @@ fileprivate struct AlphabetCardBack: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    popInfo.toggle()
-                } label: { Image(systemName: "info.circle.fill")
-                    .font(.title)
-                    .foregroundColor(.brandPurple)
-                }
-                .popover(isPresented: $popInfo) {
-                    HowToPlayView()
-                }
-            }
             Spacer()
             VStack {
                 if let img = userAlphabet.imageAssociation, let uiImage = UIImage(data: img) {
@@ -195,6 +169,7 @@ fileprivate struct AlphabetCardBack: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    
 
                 } else {
                     Text("Tidak ada gambar")
@@ -207,8 +182,11 @@ fileprivate struct AlphabetCardBack: View {
                 self.isGoToCameraView = true
             }, label: {
                 Image(systemName: "camera.fill")
-                    .font(.title)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, maxHeight: 70)
+                    .background(Color("blue"))
             })
+            .cornerRadius(38)
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
         }
@@ -231,7 +209,7 @@ fileprivate struct AlphabetCardBack: View {
 
 struct UserAlphabetView_Previews: PreviewProvider {
     static var previews: some View {
-        UserAlphabetCardView(alphabet: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.alphabets?.toArray(of: UserAlphabetEntity.self).first)!)
+        UserAlphabetCardView(alphabet: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.alphabets?.toArray(of: UserAlphabetEntity.self).first)!, color: .red, isCustomLessonView: .constant(false))
             .font(.lexendRegular())
             .foregroundColor(.brandBlack)
             .backgroundImage(Asset.background)

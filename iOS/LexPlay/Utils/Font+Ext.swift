@@ -39,4 +39,20 @@ extension Font {
     static func lexendThin(_ size: CGFloat = 16) -> Self {
         return .custom(FontStyle.lexendThin, size: size)
     }
+    
+    static func openDyslexicBold(_ size: CGFloat = 16) -> Self {
+        return .custom(FontStyle.openDyslexicBold, size: size)
+    }
+    
+    static func openDyslexicItalic(_ size: CGFloat = 16) -> Self {
+        return .custom(FontStyle.openDyslexicItalic, size: size)
+    }
+    
+    static func openDyslexicRegular(_ size: CGFloat = 16) -> Self {
+        return .custom(FontStyle.openDyslexicRegular, size: size)
+    }
+    
+    static func openDyslexicBoldItalic(_ size: CGFloat = 16) -> Self {
+        return .custom(FontStyle.openDyslexicBoldItalic, size: size)
+    }
 }

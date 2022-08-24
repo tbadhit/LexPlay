@@ -9,62 +9,69 @@ import SwiftUI
 
 struct DetailLessonView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var viewRouter: ViewRouter
-    let user: UserEntity
-    let lesson: LessonEntity
-
+    @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
+    let color: Color
+    @State var startAlphabet: String = ""
+    @State var endAlphabet: String = ""
+    @State var progressValue: Float = 0.0
+    
     var body: some View {
         VStack(spacing: 24) {
             HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Pelajaran \(lesson.name ?? "")")
-                        .font(.lexendMedium(24))
-                    Text("Galeri")
+                ZStack(alignment: .leading) {
+                    Text("\(startAlphabet)-\(endAlphabet)")
+                        .font(.openDyslexicBold(35))
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 70)
+                        .foregroundColor(color)
+                        .card()
+                    Rectangle()
+                        .frame(width: min(CGFloat(progressValue), .infinity * CGFloat(progressValue)))
+                        .frame(height: 70)
+                        .opacity(0.3)
+                    .foregroundColor(Color(UIColor.systemTeal))
                 }
-                Spacer()
-                HStack {
-                    Image("bluey")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 88)
-                        .padding(.bottom, -90)
-                        .padding(.top, -64)
-                        .padding(.trailing, -32)
-                    Image("play-avatar")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 100)
-                        .padding(.bottom, -50)
-                        .padding(.top, -16)
-                        .padding(.trailing, -8)
-                }
-                .padding(.trailing, -32)
+                .cornerRadius(100)
+                .padding(.leading, 20)
+                
+                Image("quiz")
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .padding()
+                    .frame(width: UIScreen.screenWidth / 3, height: 70)
+                    .card()
+                    .cornerRadius(100)
+                    .padding(.trailing, 20)
             }
-            .padding()
-            .padding(.horizontal, 24)
-            .card()
-            .cornerRadius(100)
-            .padding(.horizontal)
-            LessonAlphabetsView(user: user, lesson: lesson)
+            
+            LessonAlphabetsView(alphabets: alphabets, color: color)
                 .environment(\.managedObjectContext, viewContext)
+            
             Spacer()
         }
-        .onAppear(perform: {
-            viewRouter.currentPage = .detailLesson
-        })
+        .onAppear {
+            self.startAlphabet = alphabets[0].alphabet?.char ?? ""
+            self.endAlphabet = alphabets[alphabets.count - 1].alphabet?.char ?? ""
+        }
         .padding(.top)
         .font(.custom(FontStyle.lexendMedium, size: 16))
         .backgroundImage(Asset.background)
     }
+    
+    init(user: UserEntity, lesson: LessonEntity, color: Color) {
+        _alphabets = UserAlphabetRepository.getByLessonPredicate(user: user, lesson: lesson)
+        self.color = color
+    }
 }
 
 #if DEBUG
-    struct DetailLessonView_Previews: PreviewProvider {
-        static var previews: some View {
-            DetailLessonView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!, lesson: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.lessons?.toArray(of: LessonEntity.self).first)!)
-                .font(.custom(FontStyle.lexendRegular, size: 16))
-                .foregroundColor(Color("black"))
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-        }
+struct DetailLessonView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailLessonView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!, lesson: (UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()?.lessons?.toArray(of: LessonEntity.self).first)!, color: Color("red"))
+            .font(.custom(FontStyle.lexendRegular, size: 16))
+            .foregroundColor(Color("black"))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
+}
 #endif

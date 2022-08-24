@@ -17,4 +17,8 @@ class FontStyle {
     static let lexendRegular = "Lexend-Regular"
     static let lexendSemiBold = "Lexend-SemiBold"
     static let lexendThin = "Lexend-Thin"
+    static let openDyslexicBold = "OpenDyslexic-Bold"
+    static let openDyslexicBoldItalic = "OpenDyslexic-BoldItalic"
+    static let openDyslexicRegular = "OpenDyslexic-Regular"
+    static let openDyslexicItalic = "OpenDyslexic-Italic"
 }

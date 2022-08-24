@@ -15,8 +15,8 @@ struct CustomLessonsView: View {
             MiniProfileView(user: user)
                 .padding(.top, 32)
                 .padding(.horizontal)
-            MiniReminderView(user: user)
-                .padding(.horizontal)
+//            MiniReminderView(user: user)
+//                .padding(.horizontal)
             CustomLessonAlphabetsView(user: user)
             Spacer()
         }

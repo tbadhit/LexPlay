@@ -89,6 +89,10 @@
 		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
 		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
+		1616FCAE28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */; };
+		1616FCAF28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */; };
+		1616FCB028B4EB9F0098CB81 /* OpenDyslexic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */; };
+		1616FCB128B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */; };
 		162620362870BD130044895F /* SpecificLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162620352870BD130044895F /* SpecificLettersView.swift */; };
 		163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BD2873AFE100C6051B /* LetterCaseView.swift */; };
 		163430C02873B44F00C6051B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BF2873B44F00C6051B /* UserModel.swift */; };
@@ -233,6 +237,10 @@
 		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
+		1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
+		1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
+		1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Bold.otf"; sourceTree = "<group>"; };
+		1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
 		162620352870BD130044895F /* SpecificLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificLettersView.swift; sourceTree = "<group>"; };
 		163430BD2873AFE100C6051B /* LetterCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
 		163430BF2873B44F00C6051B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -535,6 +543,10 @@
 		16025098286E9FFB008D9D15 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */,
+				1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */,
+				1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */,
+				1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */,
 				1602509D286EA01A008D9D15 /* Lexend-Black.ttf */,
 				1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */,
 				16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */,
@@ -691,18 +703,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */,
+				1616FCB028B4EB9F0098CB81 /* OpenDyslexic-Bold.otf in Resources */,
 				116CDA7328770C26002E81A7 /* howToPlay.m4a in Resources */,
 				160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */,
 				160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */,
 				160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */,
+				1616FCAF28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf in Resources */,
 				112B08472870107000905CE5 /* .gitignore in Resources */,
 				160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */,
 				160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */,
 				160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */,
 				114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */,
+				1616FCB128B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf in Resources */,
 				160250A6286EA01A008D9D15 /* Lexend-Black.ttf in Resources */,
 				160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */,
 				114CDF1B2866A0600008273B /* Assets.xcassets in Resources */,
+				1616FCAE28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
