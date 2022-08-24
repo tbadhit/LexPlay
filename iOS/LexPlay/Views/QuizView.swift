@@ -15,6 +15,7 @@ struct QuizView: View {
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
     let user: UserEntity
+    let lesson: LessonEntity? = nil
     
     var body: some View {
         
@@ -41,9 +42,6 @@ struct QuizView: View {
                 Spacer()
             }
             .padding(.bottom)
-            .onTapGesture {
-                progressbarValue += 0.15
-            }
             
             //MARK : Progress Bar
             ProgressBar(value: $progressbarValue)
@@ -92,9 +90,13 @@ struct QuizView: View {
         }
     }
     
-    init(user: UserEntity) {
+    init(user: UserEntity, lesson: LessonEntity? = nil) {
         self.user = user
-        _quizzes = State(initialValue: quizService.getQuizzes(user: user, count: 5))
+        if let lesson = lesson {
+            _quizzes = State(initialValue: quizService.getQuizzes(lesson: lesson))
+        } else {
+            _quizzes = State(initialValue: quizService.getQuizzes(user: user, count: 5))
+        }
     }
 }
 

@@ -14,7 +14,12 @@ class QuizService {
 
     func getQuizzes(user: UserEntity, count: Int? = nil) -> [BaseQuiz] {
         guard let userAlphabets = user.alphabets?.toArray(of: UserAlphabetEntity.self) else { return [] }
-        return getQuizzes(userAlphabets: userAlphabets, count: count)
+        return getQuizzes(userAlphabets: userAlphabets.filter({ $0.hasDifficulty }), count: count)
+    }
+    
+    func getQuizzes(lesson: LessonEntity) -> [BaseQuiz] {
+        guard let userAlphabets = lesson.alphabets?.toArray(of: UserAlphabetEntity.self) else { return [] }
+        return getQuizzes(userAlphabets: userAlphabets)
     }
 
     func getQuizzes(userAlphabets: [UserAlphabetEntity], count: Int? = nil) -> [BaseQuiz] {
@@ -40,7 +45,7 @@ class QuizService {
 
         quizzes.shuffle()
 
-        if let count = count {
+        if let count = count, quizzes.count >= count {
             return Array(quizzes[...(count - 1)])
         }
 
@@ -72,32 +77,6 @@ class QuizService {
         let correctAnswersCount = getCorrectAnswersCount(quizzes: quizzes)
         return Float(correctAnswersCount.correct) / Float(correctAnswersCount.totalQuestions)
     }
-
-//    func example() {
-//        let user = UserEntity()
-//        let userAlphabets = user.alphabets?.toArray(of: UserAlphabetEntity.self)
-//        guard let userAlphabets = userAlphabets else { return }
-//        let quizzes = getQuizzes(userAlphabets: userAlphabets, count: 10)
-//
-//        quizzes.forEach { quiz in
-//            switch quiz {
-//            case let alphabetByVoice as AlphabetByVoiceQuiz:
-//                let question = alphabetByVoice.question
-//                let answerOptions = alphabetByVoice.answerOptions
-//                let answer = alphabetByVoice.answer
-//
-//                audioService.speak(question.char!)
-//                let isCorrect = speechRecognizerService.isCorrect(alphabet: question, spoken: answer.char!)
-//                break
-//            case let imageByAlphabet as ImageByAlphabetQuiz:
-    ////                insert corresponding view
-    ////                SomeView(quiz: alphabetImageQuiz)
-//                break
-//            default:
-//                break
-//            }
-//        }
-//    }
 }
 
 extension QuizService {

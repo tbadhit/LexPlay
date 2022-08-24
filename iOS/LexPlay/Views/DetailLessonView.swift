@@ -13,6 +13,7 @@ struct DetailLessonView: View {
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
     let color: Color
     let user: UserEntity
+    let lesson: LessonEntity
     @State var startAlphabet: String = ""
     @State var endAlphabet: String = ""
     @State var progressValue: Float = 0.0
@@ -38,7 +39,7 @@ struct DetailLessonView: View {
                 .padding(.leading, 20)
 
                 NavigationLink {
-                    NavigationLazyView(QuizView(user: user))
+                    NavigationLazyView(QuizView(user: user, lesson: lesson))
                 } label: {
                     Image("quiz")
                         .resizable()
@@ -73,6 +74,7 @@ struct DetailLessonView: View {
 
     init(user: UserEntity, lesson: LessonEntity, color: Color) {
         self.user = user
+        self.lesson = lesson
         _alphabets = UserAlphabetRepository.getByLessonPredicate(user: user, lesson: lesson)
         self.color = color
     }

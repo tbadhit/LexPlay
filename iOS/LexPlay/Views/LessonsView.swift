@@ -36,14 +36,13 @@ struct LessonsView: View {
                     .padding(.leading, 10)
                     .padding(.top, 8)
                 ForEach(0 ..< lessons.count, id: \.self) { i in
-                    getNavLink(i: i)
+                    if i < images.count {
+                        getNavLink(i: i)
+                    }
                 }.padding(.horizontal)
             }
             Spacer()
         }
-//            .onAppear(perform: {
-//                print(UIScreen.screenWidth / 2.5)
-//            })
         .font(.lexendMedium(16))
         .scrollOnOverflow()
         .backgroundImage(Asset.background)
@@ -57,11 +56,12 @@ struct LessonsView: View {
     }
 
     func getNavLink(i: Int) -> some View {
-        return NavigationLink(destination: DetailLessonView(user: user, lesson: lessons[i], color: Color.generateFrom(data: images[i].0))
-            .navigationBarTitle("", displayMode: .inline)) {
-                LessonItemView(user: user, lesson: lessons[i], image: images[i]).padding(.bottom, 3)
-                    .highlighted(tag: .lesson__List, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
-            }
+        return NavigationLink { DetailLessonView(user: user, lesson: lessons[i], color: Color.generateFrom(data: images[i].0))
+            .navigationBarTitle("", displayMode: .inline)
+        } label: {
+            LessonItemView(user: user, lesson: lessons[i], image: images[i]).padding(.bottom, 3)
+                .highlighted(tag: .lesson__List, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
+        }
     }
 
     init(user: UserEntity) {
