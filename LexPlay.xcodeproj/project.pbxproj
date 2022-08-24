@@ -48,6 +48,21 @@
 		11B93974288BF9FE000F24C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B93973288BF9FE000F24C9 /* MainView.swift */; };
 		11C090AC287303BC00A40230 /* CustomLessonAlphabetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */; };
 		11C346E328B3924700685EAE /* GuidingAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C346E228B3924700685EAE /* GuidingAudio.swift */; };
+		11C8238428B61EA800F6CE13 /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8238328B61EA800F6CE13 /* GuideViewModel.swift */; };
+		11C8239328B6221700F6CE13 /* alphabetCard__Alphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238528B6221600F6CE13 /* alphabetCard__Alphabet.m4a */; };
+		11C8239428B6221700F6CE13 /* alphabetCard.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238628B6221600F6CE13 /* alphabetCard.m4a */; };
+		11C8239528B6221700F6CE13 /* lesson__List.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238728B6221600F6CE13 /* lesson__List.m4a */; };
+		11C8239628B6221700F6CE13 /* chooseAlphabet__Case.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238828B6221600F6CE13 /* chooseAlphabet__Case.m4a */; };
+		11C8239728B6221700F6CE13 /* createAccount__Avatar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238928B6221600F6CE13 /* createAccount__Avatar.m4a */; };
+		11C8239828B6221700F6CE13 /* createAccount__Name.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238A28B6221700F6CE13 /* createAccount__Name.m4a */; };
+		11C8239928B6221700F6CE13 /* alphabetCard__Flip.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238B28B6221700F6CE13 /* alphabetCard__Flip.m4a */; };
+		11C8239A28B6221700F6CE13 /* chooseLessonType__Button.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238C28B6221700F6CE13 /* chooseLessonType__Button.m4a */; };
+		11C8239B28B6221700F6CE13 /* quiz__AlphabetByVoice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238D28B6221700F6CE13 /* quiz__AlphabetByVoice.m4a */; };
+		11C8239C28B6221700F6CE13 /* chooseAlphabet__Alphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238E28B6221700F6CE13 /* chooseAlphabet__Alphabet.m4a */; };
+		11C8239D28B6221700F6CE13 /* alphabetCard__Speaker.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8238F28B6221700F6CE13 /* alphabetCard__Speaker.m4a */; };
+		11C8239E28B6221700F6CE13 /* alphabetCard__Camera.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */; };
+		11C8239F28B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239128B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a */; };
+		11C823A028B6221700F6CE13 /* quiz__ImageByAlphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239228B6221700F6CE13 /* quiz__ImageByAlphabet.m4a */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5CCF728B0A859007B0A58 /* QuizService.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
@@ -89,6 +104,10 @@
 		160250AF286EA2D4008D9D15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250AE286EA2D4008D9D15 /* OnboardingView.swift */; };
 		160250B5286ED7DE008D9D15 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */; };
 		160250B7286F2A2A008D9D15 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160250B6286F2A2A008D9D15 /* CreateUserView.swift */; };
+		1616FCAE28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */; };
+		1616FCAF28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */; };
+		1616FCB028B4EB9F0098CB81 /* OpenDyslexic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */; };
+		1616FCB128B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */; };
 		162620362870BD130044895F /* SpecificLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162620352870BD130044895F /* SpecificLettersView.swift */; };
 		163430BE2873AFE100C6051B /* LetterCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BD2873AFE100C6051B /* LetterCaseView.swift */; };
 		163430C02873B44F00C6051B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163430BF2873B44F00C6051B /* UserModel.swift */; };
@@ -194,6 +213,21 @@
 		11B93973288BF9FE000F24C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11C090AB287303BC00A40230 /* CustomLessonAlphabetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLessonAlphabetsView.swift; sourceTree = "<group>"; };
 		11C346E228B3924700685EAE /* GuidingAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidingAudio.swift; sourceTree = "<group>"; };
+		11C8238328B61EA800F6CE13 /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
+		11C8238528B6221600F6CE13 /* alphabetCard__Alphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard__Alphabet.m4a; sourceTree = "<group>"; };
+		11C8238628B6221600F6CE13 /* alphabetCard.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard.m4a; sourceTree = "<group>"; };
+		11C8238728B6221600F6CE13 /* lesson__List.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson__List.m4a; sourceTree = "<group>"; };
+		11C8238828B6221600F6CE13 /* chooseAlphabet__Case.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chooseAlphabet__Case.m4a; sourceTree = "<group>"; };
+		11C8238928B6221600F6CE13 /* createAccount__Avatar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = createAccount__Avatar.m4a; sourceTree = "<group>"; };
+		11C8238A28B6221700F6CE13 /* createAccount__Name.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = createAccount__Name.m4a; sourceTree = "<group>"; };
+		11C8238B28B6221700F6CE13 /* alphabetCard__Flip.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard__Flip.m4a; sourceTree = "<group>"; };
+		11C8238C28B6221700F6CE13 /* chooseLessonType__Button.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chooseLessonType__Button.m4a; sourceTree = "<group>"; };
+		11C8238D28B6221700F6CE13 /* quiz__AlphabetByVoice.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz__AlphabetByVoice.m4a; sourceTree = "<group>"; };
+		11C8238E28B6221700F6CE13 /* chooseAlphabet__Alphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chooseAlphabet__Alphabet.m4a; sourceTree = "<group>"; };
+		11C8238F28B6221700F6CE13 /* alphabetCard__Speaker.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard__Speaker.m4a; sourceTree = "<group>"; };
+		11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard__Camera.m4a; sourceTree = "<group>"; };
+		11C8239128B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz__VoiceByAlphabet.m4a; sourceTree = "<group>"; };
+		11C8239228B6221700F6CE13 /* quiz__ImageByAlphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz__ImageByAlphabet.m4a; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
 		11D5CCF728B0A859007B0A58 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +268,10 @@
 		160250AE286EA2D4008D9D15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		160250B4286ED7DE008D9D15 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		160250B6286F2A2A008D9D15 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
+		1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
+		1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
+		1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Bold.otf"; sourceTree = "<group>"; };
+		1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
 		162620352870BD130044895F /* SpecificLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificLettersView.swift; sourceTree = "<group>"; };
 		163430BD2873AFE100C6051B /* LetterCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCaseView.swift; sourceTree = "<group>"; };
 		163430BF2873B44F00C6051B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -306,6 +344,7 @@
 				1178D3A22868EA02007A23A0 /* SpeechRecognizer.swift */,
 				110A4C4F28717E070046C2C1 /* UserViewModel.swift */,
 				11E159532889801000903E3F /* WatchViewModel.swift */,
+				11C8238328B61EA800F6CE13 /* GuideViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -537,6 +576,10 @@
 		16025098286E9FFB008D9D15 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1616FCAC28B4EB9F0098CB81 /* OpenDyslexic-Bold.otf */,
+				1616FCAD28B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf */,
+				1616FCAB28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf */,
+				1616FCAA28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf */,
 				1602509D286EA01A008D9D15 /* Lexend-Black.ttf */,
 				1602509A286EA01A008D9D15 /* Lexend-Bold.ttf */,
 				16025099286EA01A008D9D15 /* Lexend-ExtraBold.ttf */,
@@ -573,6 +616,20 @@
 		167124F628732A0000ACEB28 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				11C8238528B6221600F6CE13 /* alphabetCard__Alphabet.m4a */,
+				11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */,
+				11C8238B28B6221700F6CE13 /* alphabetCard__Flip.m4a */,
+				11C8238F28B6221700F6CE13 /* alphabetCard__Speaker.m4a */,
+				11C8238628B6221600F6CE13 /* alphabetCard.m4a */,
+				11C8238E28B6221700F6CE13 /* chooseAlphabet__Alphabet.m4a */,
+				11C8238828B6221600F6CE13 /* chooseAlphabet__Case.m4a */,
+				11C8238C28B6221700F6CE13 /* chooseLessonType__Button.m4a */,
+				11C8238928B6221600F6CE13 /* createAccount__Avatar.m4a */,
+				11C8238A28B6221700F6CE13 /* createAccount__Name.m4a */,
+				11C8238728B6221600F6CE13 /* lesson__List.m4a */,
+				11C8238D28B6221700F6CE13 /* quiz__AlphabetByVoice.m4a */,
+				11C8239228B6221700F6CE13 /* quiz__ImageByAlphabet.m4a */,
+				11C8239128B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a */,
 				167124F728732A2300ACEB28 /* howToPlay.m4a */,
 			);
 			path = Audios;
@@ -694,18 +751,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				160250A2286EA01A008D9D15 /* Lexend-ExtraBold.ttf in Resources */,
+				1616FCB028B4EB9F0098CB81 /* OpenDyslexic-Bold.otf in Resources */,
+				11C8239528B6221700F6CE13 /* lesson__List.m4a in Resources */,
+				11C823A028B6221700F6CE13 /* quiz__ImageByAlphabet.m4a in Resources */,
+				11C8239628B6221700F6CE13 /* chooseAlphabet__Case.m4a in Resources */,
 				116CDA7328770C26002E81A7 /* howToPlay.m4a in Resources */,
+				11C8239D28B6221700F6CE13 /* alphabetCard__Speaker.m4a in Resources */,
+				11C8239828B6221700F6CE13 /* createAccount__Name.m4a in Resources */,
+				11C8239428B6221700F6CE13 /* alphabetCard.m4a in Resources */,
 				160250A5286EA01A008D9D15 /* Lexend-Light.ttf in Resources */,
 				160250A3286EA01A008D9D15 /* Lexend-Bold.ttf in Resources */,
 				160250A7286EA01A008D9D15 /* Lexend-Thin.ttf in Resources */,
+				1616FCAF28B4EB9F0098CB81 /* OpenDyslexic-Italic.otf in Resources */,
 				112B08472870107000905CE5 /* .gitignore in Resources */,
 				160250A9286EA01A008D9D15 /* Lexend-ExtraLight.ttf in Resources */,
 				160250AA286EA01A008D9D15 /* Lexend-Medium.ttf in Resources */,
 				160250A4286EA01A008D9D15 /* Lexend-Regular.ttf in Resources */,
+				11C8239A28B6221700F6CE13 /* chooseLessonType__Button.m4a in Resources */,
 				114CDF1E2866A0600008273B /* Preview Assets.xcassets in Resources */,
+				1616FCB128B4EB9F0098CB81 /* OpenDyslexic-BoldItalic.otf in Resources */,
 				160250A6286EA01A008D9D15 /* Lexend-Black.ttf in Resources */,
+				11C8239928B6221700F6CE13 /* alphabetCard__Flip.m4a in Resources */,
+				11C8239C28B6221700F6CE13 /* chooseAlphabet__Alphabet.m4a in Resources */,
+				11C8239F28B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a in Resources */,
+				11C8239728B6221700F6CE13 /* createAccount__Avatar.m4a in Resources */,
 				160250A8286EA01A008D9D15 /* Lexend-SemiBold.ttf in Resources */,
+				11C8239E28B6221700F6CE13 /* alphabetCard__Camera.m4a in Resources */,
 				114CDF1B2866A0600008273B /* Assets.xcassets in Resources */,
+				11C8239328B6221700F6CE13 /* alphabetCard__Alphabet.m4a in Resources */,
+				11C8239B28B6221700F6CE13 /* quiz__AlphabetByVoice.m4a in Resources */,
+				1616FCAE28B4EB9F0098CB81 /* OpenDyslexic-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +858,7 @@
 				16025081286C6409008D9D15 /* CameraPreview.swift in Sources */,
 				167124F3287295BD00ACEB28 /* CustomAlphabetView.swift in Sources */,
 				16D27005287372E90052814B /* UIScreen+Ext.swift in Sources */,
+				11C8238428B61EA800F6CE13 /* GuideViewModel.swift in Sources */,
 				114CDF172866A05D0008273B /* LexPlayApp.swift in Sources */,
 				11E1595B2889982F00903E3F /* SpeechRecognizerService.swift in Sources */,
 				119230DB2870C19D0033F5B3 /* LessonsView.swift in Sources */,
@@ -967,7 +1043,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -1004,7 +1080,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS/LexPlay/Preview Content\"";
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/LexPlay/Info.plist;
@@ -1040,7 +1116,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
@@ -1071,7 +1147,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS/AlphaPlay WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS/AlphaPlay WatchKit Extension/Info.plist";
@@ -1103,7 +1179,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1128,7 +1204,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6QG5DSTZ27;
+				DEVELOPMENT_TEAM = KVFMXTTSFG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlphaPlay_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

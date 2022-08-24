@@ -13,6 +13,10 @@
 		<string>Lexend-Light.ttf</string>
 		<string>Lexend-ExtraLight.ttf</string>
 		<string>Lexend-Thin.ttf</string>
+		<string>OpenDyslexic-Bold.otf</string>
+		<string>OpenDyslexic-BoldItalic.otf</string>
+		<string>OpenDyslexic-Regular.otf</string>
+		<string>OpenDyslexic-Italic.otf</string>
 	</array>
 </dict>
 </plist>

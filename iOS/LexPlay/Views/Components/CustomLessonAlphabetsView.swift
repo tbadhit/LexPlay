@@ -19,7 +19,7 @@ struct CustomLessonAlphabetsView: View {
             TabView {
                 ForEach(alphabets) { alphabet in
                     VStack {
-                        UserAlphabetCardView(alphabet: alphabet)
+                        UserAlphabetCardView(alphabet: alphabet, color: Color("red"), isCustomLessonView: .constant(true))
                         Spacer()
                     }
                 }

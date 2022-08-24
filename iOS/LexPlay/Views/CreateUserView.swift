@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateUserView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @State var user = UserModel()
 
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \AvatarEntity.timestamp, ascending: true)],
@@ -34,11 +35,13 @@ struct CreateUserView: View {
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 5).padding(.bottom, 11) :
                         RoundedRectangle(cornerRadius: 0)
                         .stroke(Color.buttonAndSelectedtColor, lineWidth: 0).padding(.bottom, 11))
+                    .highlighted(tag: .createAccount__Avatar, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
 
                 CardAvatar(imageWidth: 104, imageHeight: 115, avatar: avatars[1])
                     .onTapGesture {
                         avatar = avatars[1]
                     }
+                    .highlighted(tag: .createAccount__Avatar, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .padding(.bottom, 24)
                     .overlay(avatar == avatars[1] ?
                         RoundedRectangle(cornerRadius: 25)
@@ -54,6 +57,7 @@ struct CreateUserView: View {
                 .background(.white)
                 .cornerRadius(38)
                 .multilineTextAlignment(.center)
+                .highlighted(tag: .createAccount__Name, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                 .padding(.bottom, 11)
 
                 Button {
@@ -88,6 +92,12 @@ struct CreateUserView: View {
             }, label: {})
         }
         .navigationBarTitleDisplayMode(.inline)
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.createAccount__Avatar, .createAccount__Name]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
+        }
     }
 }
 

@@ -9,6 +9,18 @@ import AVFoundation
 
 class AudioService {
     static let shared = AudioService()
+    var playerDelegate: AVAudioPlayerDelegate? {
+        didSet {
+            audio?.delegate = playerDelegate
+        }
+    }
+
+    var synthesizerDelegate: AVSpeechSynthesizerDelegate? {
+        didSet {
+            synthesizer.delegate = synthesizerDelegate
+        }
+    }
+
     private var audio: AVAudioPlayer?
     private let synthesizer = AVSpeechSynthesizer()
 
@@ -33,9 +45,9 @@ class AudioService {
         speak("'\(char)'")
     }
 
-    func speak(name: AudioName, format: String = "m4a") {
+    func speak(name: String, format: String = "m4a") {
         audio?.stop()
-        guard let path = Bundle.main.path(forResource: name.rawValue, ofType: format) else { return }
+        guard let path = Bundle.main.path(forResource: name, ofType: format) else { return }
         do {
             audio = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             audio?.play()

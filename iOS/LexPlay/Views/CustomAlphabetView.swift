@@ -12,6 +12,7 @@ struct CustomAlphabetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var userAlphabetRepository: UserAlphabetRepository? = nil
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     
     @State var user: UserModel?
     var userEntity: UserEntity? = nil
@@ -67,6 +68,7 @@ struct CustomAlphabetView: View {
                         }
                         Spacer()
                     }
+                    .highlighted(tag: .chooseAlphabet__Alphabet, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .padding(.horizontal, 20)
                 }
             }
@@ -131,6 +133,12 @@ struct CustomAlphabetView: View {
         .scrollOnOverflow()
         .onAppear{
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
+        }
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.chooseAlphabet__Alphabet]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
         }
         .navigationBarTitleDisplayMode(.inline)
         .backgroundImage(Asset.background)

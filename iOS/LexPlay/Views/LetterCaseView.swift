@@ -10,6 +10,7 @@ import SwiftUI
 struct LetterCaseView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @FetchRequest private var activeUsers: FetchedResults<UserEntity>
     
     @State var user: UserModel
@@ -122,6 +123,12 @@ struct LetterCaseView: View {
         .onAppear {
             userRepository = UserRepository(viewContext: viewContext)
             userAlphabetRepository = UserAlphabetRepository(viewContext: viewContext)
+        }
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.chooseAlphabet__Case]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
         }
     }
     
