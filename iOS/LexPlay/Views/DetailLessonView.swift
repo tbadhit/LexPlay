@@ -60,15 +60,15 @@ struct DetailLessonView: View {
             self.startAlphabet = alphabets[0].alphabet?.char ?? ""
             self.endAlphabet = alphabets[alphabets.count - 1].alphabet?.char ?? ""
         }
+        .padding(.top)
+        .font(.custom(FontStyle.lexendMedium, size: 16))
+        .backgroundImage(Asset.background)
         .onDidAppear {
             guideViewModel.guidingAudios = [.alphabetCard__Alphabet, .alphabetCard__Speaker, .alphabetCard__Flip, .alphabetCard__Camera]
         }
         .onWillDisappear {
             guideViewModel.stopAndReset()
         }
-        .padding(.top)
-        .font(.custom(FontStyle.lexendMedium, size: 16))
-        .backgroundImage(Asset.background)
     }
     
     init(user: UserEntity, lesson: LessonEntity, color: Color) {

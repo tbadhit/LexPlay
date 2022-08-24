@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct LessonsView: View {
-    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest private var lessons: FetchedResults<LessonEntity>
     @ObservedObject private var user: UserEntity
     @ObservedObject var guideViewModel = GuideViewModel.shared
-    
+
     private let images: [(String, CGFloat, CGFloat, CGFloat)] = [
         ("bluey", CGFloat(95), CGFloat(-80), CGFloat(47)),
         ("orangey", CGFloat(171), CGFloat(-32), CGFloat(-10)),
@@ -21,51 +20,50 @@ struct LessonsView: View {
         ("cyany", CGFloat(125), CGFloat(-80), CGFloat(26)),
         ("er", CGFloat(227), CGFloat(-20), CGFloat(-70)),
     ]
-    
+
     var body: some View {
-            VStack {
-                MiniProfileView(user: user)
-                    .padding(.top, 32)
-                    .padding(.bottom, 8)
-                    .padding(.horizontal)
+        VStack {
+            MiniProfileView(user: user)
+                .padding(.top, 32)
+                .padding(.bottom, 8)
+                .padding(.horizontal)
 //                MiniReminderView(user: user)
 //                    .padding(.horizontal)
-                VStack(alignment: .leading) {
-                    Text("Pelajaran")
-                        .font(.custom(FontStyle.lexendSemiBold, size: 24))
-                        .padding(.horizontal)
-                        .padding(.leading, 10)
-                        .padding(.top, 8)
-                    ForEach(0 ..< lessons.count, id: \.self) { i in
-                        getNavLink(i: i)
-                    }.padding(.horizontal)
-                }
-                .highlighted(tag: .lesson__List, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
-                Spacer()
+            VStack(alignment: .leading) {
+                Text("Pelajaran")
+                    .font(.custom(FontStyle.lexendSemiBold, size: 24))
+                    .padding(.horizontal)
+                    .padding(.leading, 10)
+                    .padding(.top, 8)
+                ForEach(0 ..< lessons.count, id: \.self) { i in
+                    getNavLink(i: i)
+                }.padding(.horizontal)
             }
+            Spacer()
+        }
 //            .onAppear(perform: {
 //                print(UIScreen.screenWidth / 2.5)
 //            })
-            .font(.lexendMedium(16))
-            .scrollOnOverflow()
-            .backgroundImage(Asset.background)
-            .navigationBarHidden(true)
-            .onDidAppear {
-                guideViewModel.guidingAudios = [.lesson__List]
-            }
-            .onWillDisappear {
-                guideViewModel.stopAndReset()
-            }
-        
+        .font(.lexendMedium(16))
+        .scrollOnOverflow()
+        .backgroundImage(Asset.background)
+        .navigationBarHidden(true)
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.lesson__List]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
+        }
     }
-    
+
     func getNavLink(i: Int) -> some View {
         return NavigationLink(destination: DetailLessonView(user: user, lesson: lessons[i], color: Color.generateFrom(data: images[i].0))
             .navigationBarTitle("", displayMode: .inline)) {
                 LessonItemView(user: user, lesson: lessons[i], image: images[i]).padding(.bottom, 3)
+                    .highlighted(tag: .lesson__List, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
             }
     }
-    
+
     init(user: UserEntity) {
         self.user = user
         _lessons = LessonRepository.getPredicate(user: user)
@@ -109,7 +107,7 @@ struct LessonItemView: View {
     let image: (String, CGFloat, CGFloat, CGFloat)
     @State var startAlphabet: String = ""
     @State var endAlphabet: String = ""
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -137,8 +135,8 @@ struct LessonItemView: View {
             self.endAlphabet = alphabets[alphabets.count - 1].alphabet?.char ?? ""
         }
     }
-    
-    init(user: UserEntity, lesson: LessonEntity, image:(String, CGFloat, CGFloat, CGFloat)) {
+
+    init(user: UserEntity, lesson: LessonEntity, image: (String, CGFloat, CGFloat, CGFloat)) {
         _alphabets = UserAlphabetRepository.getByLessonPredicate(user: user, lesson: lesson)
         self.image = image
     }
