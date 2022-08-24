@@ -9,11 +9,12 @@ import SwiftUI
 
 struct QuizView: View {
     @State var progressbarValue : Float = 0.0
-    @State var quizzes = QuizService().getQuizzes(userAlphabets: (UserAlphabetRepository().getAllUserAlphabet()), count: 5)
+    @State var quizzes: [BaseQuiz]
     @State var indexSoal = 0
-    let shared = QuizService()
+    let quizService = QuizService()
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
+    let user: UserEntity
     
     var body: some View {
         
@@ -51,14 +52,22 @@ struct QuizView: View {
             //MARK : Iterate through Quizzes and shows each quiz
             if indexSoal < quizzes.count {
                 switch quizzes[indexSoal] {
-                case let alphabetByVoice as AlphabetByVoiceQuiz:
-                    AlphabetByVoiceQuizView(quiz: alphabetByVoice, indexSoal: $indexSoal)
+                case var alphabetByVoice as AlphabetByVoiceQuiz:
+                    AlphabetByVoiceQuizView(quiz: Binding<AlphabetByVoiceQuiz>(get: {
+                        alphabetByVoice
+                    }, set: {
+                        alphabetByVoice = $0
+                    }), indexSoal: $indexSoal)
 
     //                case let imageByAlphabet as ImageByAlphabetQuiz:
     //                    AlphabetImageQuizView(quiz: imageByAlphabet)
 
-                case let voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
-                    VoiceByAlphabetQuizView(quiz: voiceByAlphabetQuiz, indexSoal: $indexSoal)
+                case var voiceByAlphabetQuiz as VoiceByAlphabetQuiz :
+                    VoiceByAlphabetQuizView(quiz: Binding<VoiceByAlphabetQuiz>(get: {
+                        voiceByAlphabetQuiz
+                    }, set: {
+                        voiceByAlphabetQuiz = $0
+                    }), indexSoal: $indexSoal)
 
     //                case let alphabetBySpeakingQuiz as AlphabetBySpeakingQuiz :
     //                    AlphabetBySpeakingQuizView()
@@ -75,17 +84,17 @@ struct QuizView: View {
         .scrollOnOverflow()
         .offset(y: -20)
         .backgroundImage(Asset.background)
-        .onAppear {
-            for i in quizzes {
-                print(i)
-            }
-        }
         .onChange(of: indexSoal) { newValue in
             if indexSoal != 0 {
                 progressbarValue = (Float(indexSoal) / Float(quizzes.count))
             }
-            print(progressbarValue)
+//            print(progressbarValue)
         }
+    }
+    
+    init(user: UserEntity) {
+        self.user = user
+        _quizzes = State(initialValue: quizService.getQuizzes(user: user, count: 5))
     }
 }
 
@@ -113,7 +122,7 @@ struct ProgressBar: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(user: UserRepository(viewContext: PersistenceController.preview.container.viewContext).getActiveUser()!)
             .previewInterfaceOrientation(.portrait)
     }
 }

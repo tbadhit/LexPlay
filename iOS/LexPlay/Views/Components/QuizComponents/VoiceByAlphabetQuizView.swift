@@ -9,10 +9,9 @@ import SwiftUI
 
 struct VoiceByAlphabetQuizView: View {
     @State var idx = 0
-    @State var quiz : VoiceByAlphabetQuiz
+    @Binding var quiz : VoiceByAlphabetQuiz
     private let audioController: AudioService = AudioService.shared
     @State var answer : String = ""
-    @State var isCorrect : Bool = false
     @State var isPresented : Bool = false
     @Binding var indexSoal : Int
     
@@ -38,21 +37,7 @@ struct VoiceByAlphabetQuizView: View {
                         idx = 1
                         isPresented = idx == 1
                         answer = quiz.answerOptions![0].rawValue
-                        if answer == quiz.question.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
-                    }
-                    .alert(isPresented: ($isPresented)) {
-                        return Alert(title: getAlertTitle(isCorrect: isCorrect),
-                                     message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text("Oke"), action: {
-                            if isCorrect {
-                                indexSoal+=1
-                            }
-                            //print(indexSoal)
-                        }))
+                        quiz.submittedAnswer = quiz.answerOptions![0]
                     }
                     
                 Spacer()
@@ -61,21 +46,7 @@ struct VoiceByAlphabetQuizView: View {
                         idx = 2
                         isPresented = idx == 2
                         answer = quiz.answerOptions![1].rawValue
-                        if answer == quiz.question.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
-                    }
-                    .alert(isPresented: ($isPresented)) {
-                        return Alert(title: getAlertTitle(isCorrect: isCorrect),
-                                     message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text("Oke"), action: {
-                            if isCorrect {
-                                indexSoal+=1
-                            }
-                            //print(indexSoal)
-                        }))
+                        quiz.submittedAnswer = quiz.answerOptions![1]
                     }
                 Spacer()
                 Spacer()
@@ -89,21 +60,7 @@ struct VoiceByAlphabetQuizView: View {
                         idx = 3
                         isPresented = idx == 3
                         answer = quiz.answerOptions![2].rawValue
-                        if answer == quiz.question.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
-                    }
-                    .alert(isPresented: ($isPresented)) {
-                        return Alert(title: getAlertTitle(isCorrect: isCorrect),
-                                     message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text("Oke"), action: {
-                            if isCorrect {
-                                indexSoal+=1
-                            }
-                            //print(indexSoal)
-                        }))
+                        quiz.submittedAnswer = quiz.answerOptions![2]
                     }
                 Spacer()
                 LetterAnswerOptionCard(answerOption: quiz.answerOptions![3], id: 4, idx: idx)
@@ -111,24 +68,20 @@ struct VoiceByAlphabetQuizView: View {
                         idx = 4
                         isPresented = idx == 4
                         answer = quiz.answerOptions![3].rawValue
-                        if answer == quiz.question.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
-                    }
-                    .alert(isPresented: ($isPresented)) {
-                        return Alert(title: getAlertTitle(isCorrect: isCorrect),
-                                     message: getAlertMessage(isCorrect: isCorrect),
-                                     dismissButton: .default(Text("Oke"), action: {
-                            if isCorrect {
-                                indexSoal+=1
-                            }
-                            //print(indexSoal)
-                        }))
+                        quiz.submittedAnswer = quiz.answerOptions![3]
                     }
                 Spacer()
                 Spacer()
+            }
+            .alert(isPresented: ($isPresented)) {
+                return Alert(title: getAlertTitle(isCorrect: quiz.checkAnswer()),
+                             message: getAlertMessage(isCorrect: quiz.checkAnswer()),
+                             dismissButton: .default(Text("Oke"), action: {
+                    if quiz.checkAnswer() {
+                        indexSoal+=1
+                    }
+                    //print(indexSoal)
+                }))
             }
         }
         .onAppear {

@@ -39,8 +39,8 @@ struct SpecificLettersView: View {
                             .foregroundColor(.white)
                     }
                     .background(Color.buttonAndSelectedtColor)
-                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .cornerRadius(38)
+                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     
                     Button {
                         isGoToSelectLetterCase.toggle()
@@ -57,8 +57,8 @@ struct SpecificLettersView: View {
                             )
                     }
                     .background(.white)
-                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .cornerRadius(38)
+                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                 }
                 Spacer()
                 

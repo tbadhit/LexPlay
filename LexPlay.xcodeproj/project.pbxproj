@@ -63,6 +63,7 @@
 		11C8239E28B6221700F6CE13 /* alphabetCard__Camera.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */; };
 		11C8239F28B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239128B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a */; };
 		11C823A028B6221700F6CE13 /* quiz__ImageByAlphabet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 11C8239228B6221700F6CE13 /* quiz__ImageByAlphabet.m4a */; };
+		11C823A228B6410B00F6CE13 /* QuizEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C823A128B6410B00F6CE13 /* QuizEnum.swift */; };
 		11D581022875434400027263 /* NSOrderedSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D581012875434400027263 /* NSOrderedSet+Ext.swift */; };
 		11D5CCF828B0A859007B0A58 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5CCF728B0A859007B0A58 /* QuizService.swift */; };
 		11E15919288936D700903E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E15918288936D700903E3F /* Assets.xcassets */; };
@@ -228,6 +229,7 @@
 		11C8239028B6221700F6CE13 /* alphabetCard__Camera.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alphabetCard__Camera.m4a; sourceTree = "<group>"; };
 		11C8239128B6221700F6CE13 /* quiz__VoiceByAlphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz__VoiceByAlphabet.m4a; sourceTree = "<group>"; };
 		11C8239228B6221700F6CE13 /* quiz__ImageByAlphabet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quiz__ImageByAlphabet.m4a; sourceTree = "<group>"; };
+		11C823A128B6410B00F6CE13 /* QuizEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEnum.swift; sourceTree = "<group>"; };
 		11D581012875434400027263 /* NSOrderedSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOrderedSet+Ext.swift"; sourceTree = "<group>"; };
 		11D5CCF728B0A859007B0A58 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		11E15916288936D600903E3F /* LexPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +484,7 @@
 				1174A154286E93D700BC02BE /* LetterCase.swift */,
 				116CDA7128770AFF002E81A7 /* AudioName.swift */,
 				11C346E228B3924700685EAE /* GuidingAudio.swift */,
+				11C823A128B6410B00F6CE13 /* QuizEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				11E159542889801000903E3F /* WatchViewModel.swift in Sources */,
 				AD9076FF28B1087700F72ADF /* AlphabetBySpeakingQuizView.swift in Sources */,
 				163430C02873B44F00C6051B /* UserModel.swift in Sources */,
+				11C823A228B6410B00F6CE13 /* QuizEnum.swift in Sources */,
 				AD7F06F428B3947F00406A80 /* VoiceByAlphabetQuizView.swift in Sources */,
 				11B93974288BF9FE000F24C9 /* MainView.swift in Sources */,
 				11C346E328B3924700685EAE /* GuidingAudio.swift in Sources */,

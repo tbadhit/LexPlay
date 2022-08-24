@@ -30,8 +30,7 @@ class GuideViewModel: NSObject, AVAudioPlayerDelegate, AVSpeechSynthesizerDelega
     }
 
     deinit {
-        stopAudio()
-        guidingAudios = []
+        stopAndReset()
     }
 
     func playAudio(name: GuidingAudio? = nil) {
@@ -58,10 +57,10 @@ class GuideViewModel: NSObject, AVAudioPlayerDelegate, AVSpeechSynthesizerDelega
 
     func stopAudio() {
         audioService.stopSpeaking()
-        guidedComponent = nil
+        shouldPlay = false
         idx = 0
         phase = 0
-        shouldPlay = false
+        guidedComponent = nil
         isPlaying = false
         timer?.invalidate()
     }

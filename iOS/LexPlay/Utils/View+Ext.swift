@@ -38,7 +38,7 @@ extension View {
     @ViewBuilder
     func highlighted(tag name: GuidingAudio, highlightedComponent: GuidingAudio?, animationPhase: CGFloat) -> some View {
         let v = tag(name)
-        if let activeComponent = highlightedComponent, activeComponent == name {
+        if highlightedComponent == name {
             v.overlay(RoundedRectangle(cornerRadius: 8)
                 .strokeBorder(style: StrokeStyle(lineWidth: 4, dash: [10], dashPhase: animationPhase))
                 .foregroundColor(.brandRed)

@@ -9,10 +9,9 @@ import SwiftUI
 
 struct AlphabetByVoiceQuizView: View {
     @State var idx = 0
-    @State var quiz : AlphabetByVoiceQuiz
+    @Binding var quiz : AlphabetByVoiceQuiz
     private let audioController: AudioService = AudioService.shared
     @State var answer : String = ""
-    @State var isCorrect : Bool = false
     @State var isPresented : Bool = false
     @State private var disabled = true
     @Binding var indexSoal : Int
@@ -34,12 +33,8 @@ struct AlphabetByVoiceQuizView: View {
                         audioController.speak(quiz.answerOptions![0].rawValue)
                         idx = 1
                         answer = quiz.answerOptions![0].rawValue
+                        quiz.submittedAnswer = quiz.answerOptions![0]
                         disabled = false
-                        if answer == quiz.answer.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
                     }
                 Spacer()
                 VoiceAnswerOptionCard(answerOption: "orangey", id: 2, idx: idx)
@@ -47,12 +42,8 @@ struct AlphabetByVoiceQuizView: View {
                         audioController.speak(quiz.answerOptions![1].rawValue)
                         idx = 2
                         answer = quiz.answerOptions![1].rawValue
+                        quiz.submittedAnswer = quiz.answerOptions![1]
                         disabled = false
-                        if answer == quiz.answer.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
                     }
                 Spacer()
                 Spacer()
@@ -65,12 +56,8 @@ struct AlphabetByVoiceQuizView: View {
                         audioController.speak(quiz.answerOptions![2].rawValue)
                         idx = 3
                         answer = quiz.answerOptions![2].rawValue
+                        quiz.submittedAnswer = quiz.answerOptions![2]
                         disabled = false
-                        if answer == quiz.answer.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
                     }
                     
                 Spacer()
@@ -79,12 +66,8 @@ struct AlphabetByVoiceQuizView: View {
                         audioController.speak(quiz.answerOptions![3].rawValue)
                         idx = 4
                         answer = quiz.answerOptions![3].rawValue
+                        quiz.submittedAnswer = quiz.answerOptions![3]
                         disabled = false
-                        if answer == quiz.answer.rawValue {
-                            isCorrect = true
-                        } else {
-                            isCorrect = false
-                        }
                     }
                 Spacer()
                 Spacer()
@@ -92,7 +75,7 @@ struct AlphabetByVoiceQuizView: View {
             .padding(.bottom, 20)
             
             Button {
-                print("Button Pressed")
+//                print("Button Pressed")
                 isPresented = true
             } label: {
                 ZStack{
@@ -115,10 +98,10 @@ struct AlphabetByVoiceQuizView: View {
             }
             .disabled(disabled)
             .alert(isPresented: ($isPresented)) {
-                return Alert(title: getAlertTitle(isCorrect: isCorrect),
-                             message: getAlertMessage(isCorrect: isCorrect),
+                return Alert(title: getAlertTitle(isCorrect: quiz.checkAnswer()),
+                             message: getAlertMessage(isCorrect: quiz.checkAnswer()),
                              dismissButton: .default(Text("Oke"), action: {
-                    if isCorrect {
+                    if quiz.checkAnswer() {
                         indexSoal+=1
                     }
                     //print(indexSoal)

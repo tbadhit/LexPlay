@@ -12,6 +12,7 @@ struct DetailLessonView: View {
     @ObservedObject var guideViewModel = GuideViewModel.shared
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
     let color: Color
+    let user: UserEntity
     @State var startAlphabet: String = ""
     @State var endAlphabet: String = ""
     @State var progressValue: Float = 0.0
@@ -36,14 +37,18 @@ struct DetailLessonView: View {
                 .cornerRadius(100)
                 .padding(.leading, 20)
                 
-                Image("quiz")
-                    .resizable()
-                    .frame(width: 70, height: 70)
-                    .padding()
-                    .frame(width: UIScreen.screenWidth / 3, height: 70)
-                    .card()
-                    .cornerRadius(100)
-                    .padding(.trailing, 20)
+                NavigationLink {
+                    QuizView(user: user)
+                } label: {
+                    Image("quiz")
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        .padding()
+                        .frame(width: UIScreen.screenWidth / 3, height: 70)
+                        .card()
+                        .cornerRadius(100)
+                        .padding(.trailing, 20)
+                }
             }
             
             LessonAlphabetsView(alphabets: alphabets, color: color)
@@ -67,6 +72,7 @@ struct DetailLessonView: View {
     }
     
     init(user: UserEntity, lesson: LessonEntity, color: Color) {
+        self.user = user
         _alphabets = UserAlphabetRepository.getByLessonPredicate(user: user, lesson: lesson)
         self.color = color
     }

@@ -11,6 +11,11 @@ class QuizService {
     static let shared = QuizService()
     let audioService = AudioService.shared
     let speechRecognizerService = SpeechRecognizerService.shared
+    
+    func getQuizzes(user: UserEntity, count: Int? = nil) -> [BaseQuiz] {
+        guard let userAlphabets = user.alphabets?.toArray(of: UserAlphabetEntity.self) else { return [] }
+        return getQuizzes(userAlphabets: userAlphabets, count: count)
+    }
 
     func getQuizzes(userAlphabets: [UserAlphabetEntity], count: Int? = nil) -> [BaseQuiz] {
 //        var userAlphabets = userAlphabets.shuffled()
