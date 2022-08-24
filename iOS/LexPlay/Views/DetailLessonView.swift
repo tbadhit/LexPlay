@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailLessonView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @FetchRequest private var alphabets: FetchedResults<UserAlphabetEntity>
     let color: Color
     @State var startAlphabet: String = ""
@@ -53,6 +54,12 @@ struct DetailLessonView: View {
         .onAppear {
             self.startAlphabet = alphabets[0].alphabet?.char ?? ""
             self.endAlphabet = alphabets[alphabets.count - 1].alphabet?.char ?? ""
+        }
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.alphabetCard__Alphabet, .alphabetCard__Speaker, .alphabetCard__Flip, .alphabetCard__Camera]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
         }
         .padding(.top)
         .font(.custom(FontStyle.lexendMedium, size: 16))

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomLessonsView: View {
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     private let user: UserEntity
 
     var body: some View {
@@ -24,6 +25,12 @@ struct CustomLessonsView: View {
         .scrollOnOverflow()
         .backgroundImage(Asset.background)
         .navigationBarHidden(true)
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.alphabetCard, .alphabetCard__Alphabet, .alphabetCard__Speaker, .alphabetCard__Flip, .alphabetCard__Camera]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
+        }
     }
 
     init(user: UserEntity) {

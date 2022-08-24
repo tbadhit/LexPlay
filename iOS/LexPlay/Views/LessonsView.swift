@@ -12,6 +12,7 @@ struct LessonsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest private var lessons: FetchedResults<LessonEntity>
     @ObservedObject private var user: UserEntity
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     
     private let images: [(String, CGFloat, CGFloat, CGFloat)] = [
         ("bluey", CGFloat(95), CGFloat(-80), CGFloat(47)),
@@ -39,15 +40,22 @@ struct LessonsView: View {
                         getNavLink(i: i)
                     }.padding(.horizontal)
                 }
+                .highlighted(tag: .lesson__List, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                 Spacer()
             }
-            .onAppear(perform: {
-                print(UIScreen.screenWidth / 2.5)
-            })
+//            .onAppear(perform: {
+//                print(UIScreen.screenWidth / 2.5)
+//            })
             .font(.lexendMedium(16))
             .scrollOnOverflow()
             .backgroundImage(Asset.background)
             .navigationBarHidden(true)
+            .onDidAppear {
+                guideViewModel.guidingAudios = [.lesson__List]
+            }
+            .onWillDisappear {
+                guideViewModel.stopAndReset()
+            }
         
     }
     

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SpecificLettersView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     
     @State var user: UserModel
     @State var isGoToSelectLetterCase = false
@@ -38,6 +39,7 @@ struct SpecificLettersView: View {
                             .foregroundColor(.white)
                     }
                     .background(Color.buttonAndSelectedtColor)
+                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .cornerRadius(38)
                     
                     Button {
@@ -55,6 +57,7 @@ struct SpecificLettersView: View {
                             )
                     }
                     .background(.white)
+                    .highlighted(tag: .chooseLessonType__Button, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
                     .cornerRadius(38)
                 }
                 Spacer()
@@ -76,6 +79,12 @@ struct SpecificLettersView: View {
         }
         .backgroundImage(Asset.background)
         .ignoresSafeArea()
+        .onDidAppear {
+            guideViewModel.guidingAudios = [.chooseLessonType__Button]
+        }
+        .onWillDisappear {
+            guideViewModel.stopAndReset()
+        }
     }
 }
 

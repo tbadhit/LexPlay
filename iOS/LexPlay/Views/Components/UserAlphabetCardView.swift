@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserAlphabetCardView: View {
     @ObservedObject var alphabet: UserAlphabetEntity
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     let color: Color
 
     @State private var popInfo = false
@@ -41,6 +42,12 @@ struct UserAlphabetCardView: View {
         }
     }
 
+    func changeCardDirection(to: Bool) {
+        if to != isFlipped {
+            flipCard()
+        }
+    }
+
     var body: some View {
         ZStack {
             AlphabetCardFront(width: width, height: height, alphabet: alphabet, degree: $frontDegree, isFlipped: $isFlipped, isCustomLessonView: $isCustomLessonView, color: color)
@@ -48,23 +55,42 @@ struct UserAlphabetCardView: View {
         }.onTapGesture {
             flipCard()
         }
+        .highlighted(tag: .alphabetCard__Flip, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
+        .onChange(of: guideViewModel.guidedComponent) { newValue in
+            guard let newValue = newValue else { return }
+            switch newValue {
+            case .alphabetCard__Mic:
+                changeCardDirection(to: false)
+            case .alphabetCard:
+                changeCardDirection(to: false)
+            case .alphabetCard__Alphabet:
+                changeCardDirection(to: false)
+            case .alphabetCard__Speaker:
+                changeCardDirection(to: false)
+            case .alphabetCard__Flip:
+                changeCardDirection(to: !isFlipped)
+            case .alphabetCard__Camera:
+                changeCardDirection(to: true)
+            default:
+                break
+            }
+        }
     }
 }
 
 fileprivate struct AlphabetCardFront: View {
-    private let audioController: AudioService = AudioService.shared
+    private let audioService: AudioService = AudioService.shared
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @StateObject private var speechRecognizer = SpeechRecognizer.shared
     @State private var showRecognizingResult = false
 
     let width: CGFloat
     let height: CGFloat
     let alphabet: UserAlphabetEntity
-    private let guidedComponents: [GuidingAudio] = [.alphabetCard__Speaker, .alphabetCard__Mic]
     @Binding var degree: Double
     @Binding var isFlipped: Bool
     @Binding var isCustomLessonView: Bool
     @State var popInfo: Bool = false
-    @State private var highlighted: GuidingAudio? = nil
     let color: Color
 
     var body: some View {
@@ -83,10 +109,11 @@ fileprivate struct AlphabetCardFront: View {
             Text(alphabet.alphabet?.char ?? "")
                 .font(.openDyslexicBold(100))
                 .foregroundColor(color)
+                .highlighted(tag: .alphabetCard__Alphabet, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
             Spacer()
             HStack {
                 Button {
-                    audioController.speak(alphabet: alphabet.alphabet)
+                    audioService.speak(alphabet: alphabet.alphabet)
                 } label: {
                     Image(systemName: "speaker.wave.2.fill")
                         .foregroundColor(.white)
@@ -94,23 +121,10 @@ fileprivate struct AlphabetCardFront: View {
                         .background(Color("blue"))
                 }
                 .cornerRadius(38)
+                .highlighted(tag: .alphabetCard__Speaker, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
             }
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
-        }
-        .onAppear {
-            var idx = 0
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                if idx >= guidedComponents.count {
-                    idx = -1
-                }
-                if idx >= 0 {
-                    highlighted = guidedComponents[idx]
-                } else {
-                    highlighted = nil
-                }
-                idx += 1
-            }
         }
         .padding(16)
         .card()
@@ -151,6 +165,7 @@ fileprivate struct AlphabetCardFront: View {
 fileprivate struct AlphabetCardBack: View {
     let width: CGFloat
     let height: CGFloat
+    @ObservedObject var guideViewModel = GuideViewModel.shared
     @ObservedObject var userAlphabet: UserAlphabetEntity
     @Binding var degree: Double
     @Binding var isFlipped: Bool
@@ -186,6 +201,7 @@ fileprivate struct AlphabetCardBack: View {
             .cornerRadius(38)
             .font(.largeTitle)
             .foregroundColor(.brandPurple)
+            .highlighted(tag: .alphabetCard__Camera, highlightedComponent: guideViewModel.guidedComponent, animationPhase: guideViewModel.phase)
         }
         .background(
             NavigationLink(isActive: $isGoToCameraView, destination: {
